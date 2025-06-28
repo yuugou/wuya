@@ -1,0 +1,13 @@
+site_name: 我的知识库
+
+theme:
+    name: material # 启用 Material 主题
+    features:
+        - navigation.tabs # 顶部标签页导航
+        - navigation.sections # 自动提取标题生成章节锚点
+    palette:
+        - scheme: default # 浅色模式
+        - scheme: slate # 暗黑模式（用户可切换）
+
+extra_css:
+    - stylesheets/extra.css # 自定义CSS
