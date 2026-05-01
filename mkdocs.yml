@@ -1,13 +1,116 @@
-site_name: 我的知识库
+site_name: WUYA
+site_url: http://localhost:8111
+site_author: yuugou
 
 theme:
     name: material # 启用 Material 主题
     features:
         - navigation.tabs # 顶部标签页导航
         - navigation.sections # 自动提取标题生成章节锚点
+        - navigation.top # 顶部导航
+        - search.suggest # 搜索建议
+        - content.code.annotate # 代码注释
     palette:
         - scheme: default # 浅色模式
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
         - scheme: slate # 暗黑模式（用户可切换）
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
+    icon:
+        admonition:
+            note: material/note
+nav:
+    - 首页:
+          - 学习笔记: sites/studyNotes.md
+    - TWS API:
+          - 目录: twsApi/index.md
+          - 介绍: twsApi/introduction.md
+          - 注意事项和限制: twsApi/notesAndLimitations.md
+          - "下载 TWS 或 IB Gateway": twsApi/download.md
+          - "TWS 设置": twsApi/settings.md
+          - "下载 TWS API": twsApi/downloadApi.md
+          - "TWSAPI 基础教程": twsApi/basics.md
+          - "第三方 API 平台": twsApi/thirdParty.md
+          - "独特的配置": twsApi/uniqueConfigs.md
+          - 故障排除与支持: twsApi/troubleshooting.md
+          - 架构: twsApi/architecture.md
+          - 节流限制: twsApi/pacing.md
+          - 连接: twsApi/connectivity.md
+          - "同步 API": twsApi/synchronous.md
+          - "账户与投资组合数据": twsApi/accountAndPortfolio.md
+          - "公告": twsApi/bulletins.md
+          - "合约（金融工具）": twsApi/contracts.md
+    - PySide6:
+          - 前言: PySide6/index.md
+          - 开发环境搭建: PySide6/env.md
+          - 开发工具: PySide6/tools.md
+          - PySide6 与 PyQt6 的区别: PySide6/differences.md
+          - 第一个 PySide6 应用: PySide6/first.md
+          #   - 创建、编译和运行项目: pyside6/project.md
+          #   - 基础语法: pyside6/base.md
+          #   - 进阶语法: pyside6/advanced.md
+          #   - 组件使用: pyside6/components.md
+          #   - 布局管理: pyside6/layouts.md
+          #   - 信号与槽: pyside6/signals_and_slots.md
+    - Flutter:
+          - Introduction to Flutter: flutter/ch01.md
+          - Dart Essentials: flutter/ch02.md
+          - Building the Movie App: flutter/ch03.md
+          - Basic Widgets: flutter/ch04.md
+          - Themes, Colors and Fonts: flutter/ch05.md
+          - State Management Fundamentals: flutter/ch06.md
+          - Advanced Widgets: flutter/ch07.md
+          - Navigation and Routing: flutter/ch08.md
+          - Animations and Transitions: flutter/ch09.md
+          - Futures and Async/Await: flutter/ch10.md
+          - Networking: flutter/ch11.md
+          - Local Storage and Databases: flutter/ch12.md
+          - Web and Desktop: flutter/ch13.md
+          - Handling User Input and Gestures: flutter/ch14.md
+          - Firebase: flutter/ch15.md
+          - Packages: flutter/ch16.md
+          - Platform Channels and Plugins: flutter/ch17.md
+          - Testing and Performance: flutter/ch18.md
+          - Building and Publishing: flutter/ch19.md
+          - Index: flutter/index.md
+    - Rust:
+          - 前言: rustStudy/index.md
+          - 开发环境搭建: rustStudy/env.md
+          - 创建、编译和运行项目: rustStudy/project.md
+          - 基础语法: rustStudy/base.md
+
+    - MKDocs:
+          - 学习: MKDocs/index.md
+
+    - Cooking:
+          - 早餐: Cooking/breakfast.md
+          - 午餐: Cooking/lunch.md
+          - 晚餐: Cooking/dinner.md
+
+    - 测试:
+          - 文档1: test/doc1.md
+          - 文档2: test/doc2.md
+    - 关于: about.md
 
 extra_css:
     - stylesheets/extra.css # 自定义CSS
+
+extra_javascript:
+    - javascripts/extra.js
+
+markdown_extensions:
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+          alternate_style: true
+          combine_header_slug: true
+          slugify: !!python/object/apply:pymdownx.slugs.slugify
+              kwds:
+              case: lower
+    - admonition
+    - pymdownx.details

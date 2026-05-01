@@ -1,22 +1,26 @@
-# Welcome to MkDocs
+# Useful Official Websites for Development
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Python
 
-## Commands
+- [Python Documentation - Chinese Edition](https://docs.python.org/zh-cn/3/)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## FastAPI
 
-## Project layout
+- [FastAPI Documentation - Official](https://fastapi.tiangolo.com/)
+- [FastAPI GitHub](https://github.com/tiangolo/fastapi)
+- [FastAPI Documentation - Official Chinese Edition](https://fastapi.tiangolo.com/zh/)
+- [FastAPI Best Practice](https://hellowac.github.io/fastapi-best-practices-zh-cn/)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## SQLite
 
-## New Content
+- [SQLite Documentation - Official](https://www.sqlite.org/docs.html)
+- [SQLite Documentation - Chinese Edition](https://sqlite.ac.cn/docs.html)
 
-    test
-    
+## Vue.js
+
+- [Vue.js Documentation - Official](https://cn.vuejs.org)
+- [VueUse](https://vueuse.org)
+
+## MKDocs
+
+- [Material for MkDocs 官网](https://squidfunk.github.io/mkdocs-material)
