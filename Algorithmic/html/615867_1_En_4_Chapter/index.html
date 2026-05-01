@@ -1,0 +1,3430 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/Algorithmic/html/615867_1_En_4_Chapter/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>615867 1 En 4 Chapter - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-architectural-solution-part-2-services-and-subsystems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              615867 1 En 4 Chapter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../flutter/ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#microservice-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservice Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Microservice Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategy-search-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategy Search Subsystem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strategy Search Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processing-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing Generators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finite State Machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-of-theory-processing-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept of Theory Processing Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation-of-subtheories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculation of Subtheories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculation of Subtheories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-review-for-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Review for Generators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization Algorithms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sandbox-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sandbox Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-trading-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Trading Subsystem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real Trading Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-exchanges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Exchanges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launch-and-operation-of-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch and Operation of Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-and-disabling-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling and Disabling Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-type-of-financial-instrument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking the Type of Financial Instrument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#master-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>4. Architectural Solution Part 2: Services and Subsystems</p>
+<p>© The Author(s), under exclusive license to APress Media, LLC, part of Springer Nature 2024</p>
+<p>V. DolzhenkoAlgorithmic Trading Systems and Strategies: A New Approach<a href="https://doi.org/10.1007/979-8-8688-0357-4_4">https://doi.org/10.1007/979-8-8688-0357-4_4</a></p>
+<h1 id="4-architectural-solution-part-2-services-and-subsystems">4. Architectural Solution Part 2: Services and Subsystems</h1>
+<p>Viktoria Dolzhenko<a href="#Aff2">1</a>  </p>
+<p>(1)</p>
+<p>San Jose, Costa Rica</p>
+<p>In the previous chapter, we described the logic of our system and compiled a list of requirements and entities. That is, we decided on what our system should do, and in this chapter we will talk about how it will do it. The goal of this chapter is to list the services and describe their functionality and dependencies.</p>
+<p>I propose the following plan:</p>
+<ul>
+<li>
+<p>We decide on the architecture. Before compiling a list of services, you need to decide what they will look like. Will it be one large application that can do everything or many small, conditionally independent services?</p>
+</li>
+<li>
+<p>We identify a list of subsystems. Any complex problem is easier and better solved by decomposing a large problem into smaller ones. This approach also works great when creating a system architecture. The first step is to identify a list of subsystems and a list of their functionality and dependencies.</p>
+</li>
+<li>
+<p>We identify a list of services. A subsystem is only an enlarged representation of the system. It does not contain information about the list of applications or their external contracts. That is, each subsystem must be divided into a list of services.</p>
+</li>
+<li>
+<p>We will create a short description for each service. You will get a detailed description of services in the following chapters. Here I want to focus only on describing the functionality, defining dependencies, and describing the general logic of work.</p>
+</li>
+</ul>
+<h2 id="microservice-architecture">Microservice Architecture</h2>
+<p>To begin with, I will talk about ways to build systems (Figure <a href="#Fig1">4-1</a>). Figure <a href="#Fig1">4-1</a> shows two types of application architecture.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig1_HTML.jpg" /></p>
+<p>The architecture of microservices is monolithic. Microservices involve the data flow of three services with components and databases. Monolithic involves three components and a database.</p>
+<p>Figure 4-1</p>
+<p>Two common methods: microsevices and monoliths</p>
+<p>There are two common methods.</p>
+<ul>
+<li>
+<p>A monolithic architecture is an architectural style based on one large application that is responsible for all the functionality of the system.</p>
+</li>
+<li>
+<p>Microservice application architecture is a design approach centered around the concept of microservices, which are small, independent, and loosely coupled software components. These microservices are self-contained and focused on specific business functionalities, making them highly modular and scalable.</p>
+<p>While individual microservices may not address user problems in isolation, they play a crucial role in collectively delivering complex functionalities within a larger system.</p>
+</li>
+</ul>
+<p>Some time ago, all systems were monolithic; this was primarily due to the lack of developed application life-cycle management mechanisms. Over time, these mechanisms have improved and become so simple that now almost all new systems are built on a microservice architecture.</p>
+<p>Microservices have the following advantages:</p>
+<ul>
+<li>
+<p><strong>Independence</strong><strong>.</strong> This is perhaps one of the main advantages of microservices. Each microservice can be updated independently of other services. First, this allows you to release releases more often, and second, you can localize errors faster.</p>
+<p>This is a very critical moment for our system. For example, if we talk about our system, it is unacceptable that the release of a new version of some component related to the search for profitable strategies will affect or even destroy the functionality of the real trading block.</p>
+</li>
+<li>
+<p><strong>Scaling</strong><strong>.</strong> Imagine that the number of users in the system has increased, but all of them use only one function of your application. If you used a monolithic architecture, then you would have to scale not only the services that implement the desired functionality but also all other services, and this is a waste of a lot of resources. This is also an important advantage for our system. It allows us to independently scale the obviously necessary blocks for finding strategies and real trading. Perhaps at first, only after the system has started, it makes sense to direct most of the resources to the search and optimization block, because a small number of profitable strategies will participate in real trading.</p>
+</li>
+<li>
+<p><strong>Contextual constraint</strong><strong>.</strong> Each microservice has its own strictly limited list of implemented functionality, which the microservice should not go beyond. This helps avoid tightly coupled services. Each service is essentially a separate program, with its own source code and interfaces. Thanks to this, you physically cannot use the internal classes of one service in the code of another service. All you have at your disposal are their interfaces; you don’t need to know about the internal features.</p>
+</li>
+<li>
+<p><strong>Distributed architecture</strong><strong>.</strong> This has a valuable quality: your microservices can be deployed on different servers. For example, I use a cluster of several home computers to search and optimize strategies, and for real trading I rent servers because they guarantee uninterrupted operation. This approach allows me to save money, since home computers are cheaper and the requirement for uninterrupted operation is not so high.</p>
+</li>
+</ul>
+<p>Microservice architecture also has its disadvantages. The main one is the increasing complexity of system development. If in a monolithic architecture everything is synchronous and consistent, then in a microservices architecture this is not the case. It is necessary to start thinking asynchronously and about events. But this drawback for me was easily offset by the possibility of independent scaling and updating. For me, it is critically important to be able to quickly change the code of the components responsible for the search strategy and at the same time not break the strategies that work in real trading. It was also important that I could conduct testing on relatively cheap equipment at home and rent servers only for real trading. Then, to be honest, at first my real trading system worked on a separate computer at home. It was cheap, and I was also sure that if something went completely wrong, I could simply turn off the power to the computer.</p>
+<p>Before we go any further, I would like to cover a few important concepts related to microservices so that there is no misunderstanding.</p>
+<ul>
+<li>
+<p>A subsystem is a set of services related in meaning. For example, within our system I see two main large subsystems: the strategy search subsystem and the real trading subsystem.</p>
+</li>
+<li>
+<p>A service is what is called a microservice in a microservice architecture. This is an independent unit that serves one purpose and provides limited functionality.</p>
+</li>
+<li>
+<p>The application is what makes up the components of the service. Usually there are no more than two. One of them provides API functionality, and the other is responsible for executing possibly lengthy and resource-intensive asynchronous background tasks, such as periodically receiving or updating data from other systems or periodically taking a long time to calculate something.</p>
+</li>
+<li>
+<p>A library is a collection of software functions or classes intended for use in different applications. For example, it makes sense to use the same library for logging, rather than writing your own for each service.</p>
+</li>
+</ul>
+<h3 id="kubernetes">Kubernetes</h3>
+<p>In this section, I’ll talk about an important topic: Kubernetes. I’ll tell you more about how to install it on a server, manage it, and deliver your applications to it in Chapter <a href="615867_1_En_9_Chapter.xhtml">9</a>. But in this chapter I will cover a few important concepts so you can better understand some of my architectural decisions.</p>
+<p>In the past few decades, a large number of approaches to software development have accumulated in the software field. Dozens of programming languages have become popular, each of which has its own compilation and execution mechanism. This means that in addition to the complexity of writing a program, there is also the complexity of running it on the server, because the system administrator has to understand the intricacies of how programs work in a particular language. Adding to this complexity is the different dependencies between applications. Often your program cannot run without other pre-installed applications. Sometimes when you create a service, it will fine on your personal computer, but when it is deployed to another server for testing, something goes wrong. It might be that your application requires one version of a pre-installed helper application, and the server has another installed. This problem was solved with the arrival of containers.</p>
+<p>A container is a standardized and portable package that includes everything you need to run your application. This allows you to separate your application from the infrastructure, which includes the operating system and pre-installed applications.</p>
+<p>It doesn’t matter what environment your application will run in, what language it is written in, and what dependencies it has. The developer just needs to create a program and pack it into a container, and the administrator can work with the container, which is ready to run. Of course, you can launch it manually. If the developers have released a new version of the application, you will also have to update the entire system manually. You must not forget about the uninterrupted operation of the system, which means you first need to launch a new version, transfer the load to the environment with the new version, and only then stop the application on the old environment. Figure <a href="#Fig2">4-2</a> shows how this process looks schematically.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig2_HTML.jpg" /></p>
+<p>An illustration depicts four interactions. 1. The application version 0.1 and the clients. 2. The application version 0.1 and the clients with application version 0.2. 3. The application version 0.2 and the clients with app version 0.1. 4. Application version 0.2 and the clients.</p>
+<p>Figure 4-2</p>
+<p>Application update process</p>
+<p>There is a high chance of error in this entire procedure, which can be solved with orchestrators.</p>
+<p>An orchestrator is a system that helps manage the launch and operation of containers. The most popular of them is Kubernetes. The orchestrator not only provides the functionality to deploy your containers but also allows you to easily scale, update, and monitor the performance of your entire system. In this chapter, it is important for me to tell you about scaling. One of the central concepts of Kubernetes is the pod. This is the basic building block of this orchestrator, and it is also the only object in Kubernetes that causes the container to run. Roughly speaking, a pod is a small computer on which your application runs. Kubernetes allows you to create multiple pods for one application. It is this feature that provides the ability to horizontally scale your system. Since one application can have several pods, it is important when designing an application to remember that any of your applications may not be launched in a single copy. For example, if your application processes theories, it is important when designing it to consider that two different pods could start working in parallel on the same theory, which could lead to data corruption.</p>
+<p>Now that you have the minimum knowledge required to design a system built on a microservices architecture, let’s get started.</p>
+<h2 id="subsystems">Subsystems</h2>
+<p>Let’s first determine the list of subsystems and their functionality. I see only two subsystems in our system. This is a subsystem for searching for profitable strategies and a subsystem for real trading. We talked about them a lot in the previous chapter; I see no reason to complicate our system at the current design stage.</p>
+<p>The task of the search subsystem is to find a profitable strategy and report this to the real trading subsystem. The real trading subsystem must start trading based on the found strategy and pass the strategy indicators to the search subsystem to optimize the strategy. As a result, the enlarged diagram of our system will look like Figure <a href="#Fig3">4-3</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig3_HTML.jpg" /></p>
+<p>A block diagram illustrates the profitable strategies and information about real trading between the strategy search subsystem and the real trading subsystem.</p>
+<p>Figure 4-3</p>
+<p>Subsystem interaction diagram</p>
+<h2 id="strategy-search-subsystem">Strategy Search Subsystem</h2>
+<p>The purpose of the subsystem is to search for profitable strategies. Let me remind you that for this the user themselves or with the help of a generator must generate theories. This means that the search subsystem must provide the user with an interface that allows this to be done. This entails the creation of a separate front-end service.</p>
+<p>Whenever it comes to users, it is very important to raise the issue of roles. What are the user roles in the system? How are these users authorized? Is there a need to store user actions? I decided not to add this functionality to my system. The main reason is that most likely the system will be used by a limited circle of people with the same full rights. I prefer to focus on the strategy search functionality and can add an authorization system and normal accounting of user actions later if necessary.</p>
+<p>Since our system will not have users as entities, there is no need for a single API service to provide uniform functionality to the front end. It will be redundant and turn into a simple and nonfunctional layer. Therefore, at the current stage, the subsystem will look like diagram 2 in Figure <a href="#Fig4">4-4</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig4_HTML.jpg" /></p>
+<p>Two flow maps. Schema 1. Front end to backend services through A P I Services. Schema 2. Front end to backend services.</p>
+<p>Figure 4-4</p>
+<p>Options for interaction with the front end</p>
+<h3 id="processing-generators">Processing Generators</h3>
+<p>Let’s go in order. The user, using our front-end service, should be able to control the generator to generate theories. So, the user went to the generator settings page, filled out the required fields, and clicked the generate button. The front end sends a request to the back end for generation, and theories are generated. They can be generated synchronously, when the user waits until the system generates all the theories, or asynchronously, when the user is notified that the process has started, and the result can be viewed in a special tab or in the same window.</p>
+<p>I chose the asynchronous option for a number of reasons.</p>
+<ul>
+<li>
+<p>Generating theories may take some time because there may be many of them. It’s not a good idea to make the user wait all this time.</p>
+</li>
+<li>
+<p>It is not clear what to do if an error occurs during the generation process, when some of the theories have already been generated. Should I delete the old ones? Also, how do I understand which of them relate specifically to this request? It turns out that in the case of an error, the user will wait not only for the theories to be generated but also for them to be deleted.</p>
+</li>
+<li>
+<p>How will the user know the result if the session is suddenly interrupted such as when the Internet goes off?</p>
+</li>
+</ul>
+<p>Since the generation of theories will be asynchronous, it is necessary to somehow display information about the progress of the generator, as well as the generation status, on the front end. Since the generator has a state in the form of a status, it means it becomes an entity. That is, the user will be able to see a list of previously created generators with their statuses and settings.</p>
+<p>There are several more arguments in favor of the generator as an entity.</p>
+<ul>
+<li>
+<p>The generator as an entity allows the user to fill in only part of the required fields, save their work, and return to it later.</p>
+</li>
+<li>
+<p>The generator as an entity allows the user to create generators by copying. This means that if the user wants to change, for example, only the list of indicators, they will not have to enter the remaining fields again.</p>
+</li>
+<li>
+<p>The user will be able to see a summary of the generated theories in one place because they will be linked to a specific generator.</p>
+</li>
+</ul>
+<p>As a result, I see the generator settings page as shown in Figure <a href="#Fig5">4-5</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig5_HTML.jpg" /></p>
+<p>A chart reads the settings of I d, risk control, capital management, indicators, signal templates, search settings, and status with save and generate options. It lists the theories with status, strategies, and best performance.</p>
+<p>Figure 4-5</p>
+<p>Generator settings display option</p>
+<p>Let’s move on. Here the user clicked the Generate button. The front end sent a signal to the back end to start generation. And we agreed that the generation of theories is an asynchronous process. This means the back end must somewhere note the fact that this generator needs to be processed and send a response to the front stating that the user’s request has been processed.</p>
+<p>Of course, the program must change the status of the generator to waiting. In principle, this status can be used as a flag for the generator processing process, and then some background job will pick up this generator and begin processing it. By background job, I mean a special process that runs on a schedule, for example once a minute, and does a specific job.</p>
+<p>This solution has one big drawback: the degradation of the search speed for active generators. This happens because the total number of generators will grow, which means that a request to search for generators in a certain status will work slower and slower. An alternative to working with statuses is working with a queue. You can put a generator in a queue, and background jobs will see it, process it, and remove it from the queue. This way, only active generators will be stored in the queue and it will not grow. There are several options for implementing queues, for example based on a database. Many cloud platforms have great queuing and processing solutions. There are also several mechanisms for managing queues; one of the most popular is Kafka. However, cloud solutions does not suit me, because I want my system to be independent of the cloud platform so I can deploy it on my home computer. I also think that using Kafka to solve this issue is too cumbersome, because you need to understand it and also be able to administer it.</p>
+<p>To make a decision about how this process will be implemented, it is necessary to take into account that the theory generators will be created by the user, which means that there will be few of them, and the degradation will be insignificant. Therefore, I propose taking the simplest route.</p>
+<p>When calling the back-end method, the waiting status is set, which will serve as a flag that the generator needs to be processed. Then some job should hire him. What this job will do is run periodically, check if there are generators for processing, and, if any, process them. At this stage, it is important to discuss whether these jobs will run in the same application as the API or whether it will be a separate application.</p>
+<p>I believe that this should be a separate application, and there is one important reason for this. The process of generating theories can be lengthy and costly. During this time, the user should be able to continue working without interruption or slowdown in performance. If an application is busy generating theories, then it will not be able to process user requests with the same efficiency as before. In addition, this approach will allow these two applications to scale independently of each other. After all, we understand that the API App load will most likely be lower than on the Background Jobs App. Therefore, at this stage, the strategy search service looks like Figure <a href="#Fig6">4-6</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig6_HTML.jpg" /></p>
+<p>The flow diagram of the strategy search service. The A P I app and the background jobs app are combined and sent to the database.</p>
+<p>Figure 4-6</p>
+<p>Strategy Search Service application structure</p>
+<p>As a result, the process of automatic theory generation will look like this:</p>
+<ul>
+<li>
+<p>The user enters the required data in the front-end service and clicks the Generate button.</p>
+</li>
+<li>
+<p>The API App of the Strategy Search Service accepts a request from the front end and sets the generator to Waiting status in the database.</p>
+</li>
+<li>
+<p>The Background Jobs App of the Strategy Search Service periodically queries the database table with generators, and if it finds a generator in the Waiting status, it begins to generate theories.</p>
+</li>
+<li>
+<p>After generating theories, Background Jobs App sets the generator status to Done and starts looking for the next generator in the Waiting status.</p>
+</li>
+</ul>
+<h3 id="queue">Queue</h3>
+<p>We have decided how theories will be generated. But after generation, the system must take these theories to work. Each of these theories must go through the three steps described in the previous chapter, and if the first step is unsuccessful, the process of searching for strategies according to this theory must be stopped.</p>
+<p>To process theories, you can, of course, use statuses as in the case of generators, but I don’t like this option because, unlike generators, there will be many theories, which means that the request to search for theories with the required status will degrade. There is also another problem that we will encounter: when two pods simultaneously take on the same theory. And this means only one thing: a queue is needed. I have already said that I do not want to use a queue built on the mechanisms of cloud platforms, since I do not want to tie my system to any solution provider, so we will build a queue at home.</p>
+<p>I have several queue requirements.</p>
+<ul>
+<li>
+<p>It should be preserved even if the pod is stopped.</p>
+</li>
+<li>
+<p>The ability to horizontally scale queue handlers is required.</p>
+</li>
+</ul>
+<p>There are several popular solutions for this task: RabitMQ, Kafka, or a Postgres-based queue.</p>
+<p>I discard RabitMQ right away, since it does not guarantee message delivery, and for me this is an important point, because I do not want any of the theories to be processed.</p>
+<p>Kafka is a great mechanism, but it requires quite a lot of server resources, so I will consider it as a growth point for my application. If it grows to such an extent that the Postgres-based mechanism becomes ineffective, then Kafka can be implemented.</p>
+<p>The Postgres-based queue is perhaps not the most common solution, but it has one big advantage: it is cheap in terms of the resources required, and besides, our application will already use Postgres to store data.</p>
+<p>So, our queue should provide the following functionality:</p>
+<ul>
+<li>
+<p>Only those entities that need to be processed should be in the queue. This means that after processing, it is necessary to remove the processed entity from the queue.</p>
+</li>
+<li>
+<p>Ensure that entities are quickly added to the processing queue.</p>
+</li>
+<li>
+<p>Ensure that parallel processing of one entity by two pods is prohibited.</p>
+</li>
+</ul>
+<p>Let’s immediately design the tables in the database that we will need to organize the queue. Of course, we will have a queue table with an entity_id column. It will contain entries with new theories. In order to prevent two pods from using the same theory, it is necessary to somehow mark the theories that are already being processed by the system.</p>
+<p>Note</p>
+<p>Table locking in a database is a mechanism that allows you to lock an entire table or its individual records, for example, for reading or writing for another database user. I’ll talk more about it in the next chapter, but for now the main thing to understand is that when a pod starts working on theories, it can lock a table or rows in it, and then a request from another pod will wait for the lock to end.</p>
+<p>If we lock the queue table, then it will not be possible to add new records with theories to it. An additional table will help us get around this point, called active_queue, with an entity_id column. When the next pod wants to process the queue of theories, it will do the following:</p>
+<ul>
+<li>
+<p>Lock the active_queue table</p>
+</li>
+<li>
+<p>Select an unoccupied theory, that is, a theory that is in the process_queue table and not in the active_queue table</p>
+</li>
+<li>
+<p>Record that it is active in the active_queue table</p>
+</li>
+<li>
+<p>Release the lock from active_queue</p>
+</li>
+</ul>
+<p>But what would you do if the pod started working on a theory and suddenly ceased to exist? How do other pods find out that no one is working with this theory anymore? To solve this problem, let’s add a timestamp column to the active_queue table. When the next pod starts working, it will take over the theory even from the active queue if more than a certain amount of time has passed from the timestamp, for example several minutes. As a result, the tables providing the queue will look like Figure <a href="#Fig7">4-7</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig7_HTML.jpg" /></p>
+<p>The stack flow depicts how the theory is split into a process queue and an active queue.</p>
+<p>Figure 4-7</p>
+<p>Database table schema</p>
+<p>Let’s also solve the scaling issue. There will be tasks for processing the launch queue of the BackgroundJobs application, which have already been generating theories, or it is worth moving them into a separate application, or a service.</p>
+<p>I don’t yet see any reason to move the theory processing process into a separate service, because this will add more work for us in the form of needing to transfer data about created theories to a new service. This is a large amount of data, and we will also have to solve the problem of transferring information about created indicators and methods and money management between the two services and ensure their consistency. Yes, perhaps our service is becoming like some kind of hybrid between a monolith and a microservice, but I am trying to strike a balance between the ability to quickly scale the system and the complexity of its development. If a team of developers, or even several teams, were working on it, then of course it would make sense to move work with theories into a separate service. But since I work alone and a temporary stop in processing the queue of active theories in the event of an unsuccessful update of the BackgroundJobs application is not critical for me, I believe that there is no need for a new service.</p>
+<p>I propose solving the issue with easy horizontal scaling by increasing the number of applications for this service. Now there will be three of them with one common database, where the Theory Processing App will process the queue and guide the theories in three steps (see Figure <a href="#Fig8">4-8</a>).</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig8_HTML.jpg" /></p>
+<p>The flow diagram of the strategy search service. The A P I app, the background jobs app, and the theory processing app are combined and sent to the database.</p>
+<p>Figure 4-8</p>
+<p>Structure of Strategy Search Service with three applications</p>
+<h3 id="finite-state-machine">Finite State Machine</h3>
+<p>We came up with a horizontally scalable solution for theory processing. But what will this processing look like? A simple movement from status to status does not suit us, if only because after the first step we can either recognize the theory as unsuitable or move on to the second step, which means that the process of processing the theory has branches. And when you are faced with the task of moving some entity through a business process, with branches, it makes sense to think about implementing a state machine. A state machine is one of the ways to process an entity according to a business process. The idea of a state machine or finite state machine is that your entity can be in only one state at any given time. The number of these states is finite, and the state machine also contains rules for transitions between states.</p>
+<p>Transitions between states occur under the influence of external signals. For example, transitioning the state “Processing the first step” to “Checking the suitability of the theory” means calculating all strategies that were generated using the optimization algorithm. Figure <a href="#Fig9">4-9</a> shows a simplified diagram of the movement of the theory through states.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig9_HTML.jpg" /></p>
+<p>A flow diagram depicts how the first step processes the quality condition. The checked data undergoes second- and third step processing and is then finished.</p>
+<p>Figure 4-9</p>
+<p>Enlarged theory processing process</p>
+<h3 id="concept-of-theory-processing-steps">Concept of Theory Processing Steps</h3>
+<p>At this stage, we decided how the theory would move through the process. Let’s discuss how this process will occur. In the previous chapter we found out that the processing of the theory will be carried out in three steps.</p>
+<ul>
+<li>
+<p>The first step is a quick test of the theory. In this step, a subtheory is created with a limited number of parameter variations by increasing the step of values for each of them. After this, an optimization algorithm configured in breadth is launched. Thanks to this, strategies are generated and calculated. This process is iterative because the optimization algorithm creates a new set of strategy parameters based on the performance of the strategies created in the previous iteration. After the optimization algorithm is completed, the strategies are checked against quality conditions. If at least one strategy meets these conditions, then the theory is considered to be of quality.</p>
+</li>
+<li>
+<p>If, as a result of the first step, the theory is recognized as qualitative, then the iterative creation of subtheories occurs with a decrease in the step of parameters and a narrowing of the range of their values. Next, all created strategies are checked for the second quality condition.</p>
+</li>
+<li>
+<p>In the third step, the suitable strategies of the second step are calculated again, but using tools not used in the first and second steps. After that, they are checked for final quality status and sent to the real trading subsystem.</p>
+</li>
+</ul>
+<p>When I described all three steps, the first thing I thought of was creating step entities because they have a lot in common. They take input settings in the form of an optimization algorithm and financial instruments, and as an output you get a set of strategies. See Figure <a href="#Fig10">4-10</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig10_HTML.jpg" /></p>
+<p>The step module intakes optimization algorithm, quality condition, and instruments, and gives the strategies.</p>
+<p>Figure 4-10</p>
+<p>Step entity</p>
+<p>But when I thought about what should happen in each step, I abandoned this idea because all three steps are significantly different from each other. In the first step, only one subtheory is created. There is absolutely no logic in narrowing the range of values and iterative search for strategies. In the third step, there is no work with the optimization algorithm; in this step, only the calculation of already created strategies and their selection occurs. As a result, I came to the conclusion that I would not be able to delegate the authority to create subtheories to another entity to facilitate the logic of passage through the theory process.</p>
+<p>As a result, it turned out that the theory moves through the process within the first step, as shown on the state machine state map in Figure <a href="#Fig11">4-11</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig11_HTML.jpg" /></p>
+<p>A flow chart defines the processes in the first step. It comprises creating a fast check sub theory, waiting, triggering, checking the first quality condition, second step, third step, and finishing by setting the status worthless.</p>
+<p>Figure 4-11</p>
+<p>Logic of the first step of the theory process</p>
+<p>In this process, special attention should be paid to the event of completion of subtheory calculations. Calculating a subtheory is an iterative process that can take a long time, and I may even decide to outsource this work to a separate application or service, which is why, instead of taking the “Calculation of a subtheory” step, I chose a scheme with asynchronous calculation. This means that the theory will wait and do nothing until a signal arrives that the subtheory has been completely calculated. I would also like to point out that in this diagram, the status is just a marking that will be needed to show the user the progress of work on the theory, nothing more. That is, this status has absolutely no effect on the process.</p>
+<p>Figure <a href="#Fig12">4-12</a> shows the second step of the processing process.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig12_HTML.jpg" /></p>
+<p>A flow chart defines the processes in the second step. It comprises creating a sub-theory, waiting, triggering, checking the exit condition, checking the second quality condition, the third step, and finishing.</p>
+<p>Figure 4-12</p>
+<p>Logic of the second step of the theory process</p>
+<p>In this diagram, it is worth paying attention to the fact that subtheories are created iteratively. Let me remind you that the calculation of parameters for a new subtheory is based on the calculation results of the previous subtheory, but the very first system will be created based on the settings of the theory.</p>
+<p>Figure <a href="#Fig13">4-13</a> shows the third step of the processing process.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig13_HTML.jpg" /></p>
+<p>A flow chart defines the processes in the third step. It comprises running strategies, waiting, triggering, checking all strategies and final quality conditions, sending strategies to the real trade subsystem, setting the status as done, and finishing by setting the status as finish worthless.</p>
+<p>Figure 4-13</p>
+<p>Logic of the third step of the theory process</p>
+<p>There are several things that are notable about this scheme.</p>
+<p>The first of them is the asynchronous calculation of strategies. We’ll talk about this a little later, but I’ll say right away that it will be parallel and horizontally scalable. The theory can move to the next state only after calculating all strategies, which means we need to check the fact that all strategies have been calculated every time we complete the calculation of the next strategy. It is also important that our state machine be able to work with the parallel arrival of events. Imagine a situation where the two last strategies were calculated at the same time. When checking, the service will “see” that there is another uncalculated strategy and will not change the state of the theory. As a result, the theory will forever remain at the “Wait” step.</p>
+<p>Please also note that if the final check fails, I set the status to FinishWorthless, not Worthless. This is done so that the user can see the difference between a worthless theory after the first quick test and after the final one. It is quite possible that they will use ideas from this theory when generating the next batch of theories.</p>
+<h3 id="calculation-of-subtheories">Calculation of Subtheories</h3>
+<p>Let’s think about how the subtheory will work. Obviously, this has a certain process. At a minimum, it should have several statuses such as Created, In Progress, and Completed. The question is whether this process is complicated enough to start using a finite state machine. I see the subtheory process taking place as shown in Figure <a href="#Fig14">4-14</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig14_HTML.jpg" /></p>
+<p>A flow chart defines the processes in sub-theory. It sets the status as pending, creates strategies, waits and triggers the event strategy, checks all strategies, checks the number of templates greater than 0, and sets the status as completed.</p>
+<p>Figure 4-14</p>
+<p>Subtheory processing</p>
+<p>It’s easy to imagine what this process would look like using a finite state machine. The main thing to remember is that a subtheory must have a separate state map.</p>
+<h4 id="process-review-for-generators">Process Review for Generators</h4>
+<p>So at this stage we already have two entities that use the state machine. And you know what I really don’t like at this stage in the system diagram? Generators have begun to deviate from the uniform pattern of entity processing. Even worse, the service will have a separate Background Jobs App exclusively for them. I suggest reconsidering this point.</p>
+<p>Note</p>
+<p>The fact that I periodically change my solution can be confusing, but let me remind you that creating an architectural solution is an iterative process. Revising architectural decisions is a normal phenomenon. It is better to reconsider your decisions now, before development begins, than to realize that something needs to be changed at a later time.</p>
+<p>At this stage, the state map for the generators looks very simple (see Figure <a href="#Fig15">4-15</a>).</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig15_HTML.jpg" /></p>
+<p>A flow chart defines the theory generation. It sets the status as pending, generates theories, sets the status as completed, and finishes.</p>
+<p>Figure 4-15</p>
+<p>State map for theory generation process</p>
+<p>The process of generating theories is iterative. Still, it’s a slow process. Iteration will provide the user with the opportunity to interrupt the process of generating theories if the user understands that all the theories created in the previous iterations are worthless. Better yet, this check should be performed automatically, as shown in Figure <a href="#Fig16">4-16</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig16_HTML.jpg" /></p>
+<p>A flow chart of the improved state. It sets the status as pending, generates theories, waits and triggers the completed theories, checks whether there is at least one good theory, and sets the status as completed by generating all the theories.</p>
+<p>Figure 4-16</p>
+<p>Improved state map</p>
+<p>There is another option for the theory generation scenario: to implement it using an optimization algorithm. Once we have indicators of the theory’s performance in the form of indicators of the effectiveness of its best strategies, then we can use this data to work with optimization algorithms. We will discuss this issue in more detail in Chapter <a href="https://doi.org/10.1007/979-8-8688-0357-4_11">11</a>.</p>
+<p>Using a state machine to work with generators would be a proactive decision on our part. Although the requirements for the system did not explicitly indicate that the process of generating theories would be so complex, we will create a system that will make it quite easy to complicate this process.</p>
+<p>That is, we will stop using Background Jobs to process generators and start using pods of the Theory Processing App for these purposes. This means that when the user clicks the Generate button, the API App will make a new entry in the processign_queue table.</p>
+<p>Also, since the state machine will begin to process not only theories but also subtheories with generators, it makes sense to rename the Theory Processing App to the Processing App. I will talk in detail about the operation of my state machine in future chapters. Figure <a href="#Fig17">4-17</a> shows the updated service diagram, without a separate application for background jobs.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig17_HTML.jpg" /></p>
+<p>A flow diagram of the strategy search service. The A P I app and the processing app are combined under the database.</p>
+<p>Figure 4-17</p>
+<p>Final Strategy Search Service application structure</p>
+<h4 id="optimization-algorithms">Optimization Algorithms</h4>
+<p>I would like to abstract the work with optimization algorithms into a separate module, which will have its own separate versions and which will not know anything about the fact that it works with strategies or subtheories. This is necessary to separate responsibilities between modules. Imagine that you want to make changes to the subtheory in such a way that the logic for generating variables for optimization algorithms will change. For example, you will add the ability to use not only indicator values in your signals but also their slope angles, or even switch to formulas instead of pure indicator values. If optimization algorithms are not abstracted and work directly with strategies, then you will have to change this block; otherwise, you will only need to change the class that is responsible for converting strategy data into a set of variables for the algorithm.</p>
+<p>Moving optimization algorithms into a separate module provides another important advantage: you can test their work on much faster mathematical functions, such as the Kearfott or Rastigin function. I will discuss in detail how to test the optimization algorithm in Chapter <a href="615867_1_En_7_Chapter.xhtml">7</a>. Now the main thing to understand is that complex optimization algorithms are not a constant, but a kind of constructor of methods and parameters. You can create an infinite number of variations of the genetic algorithm or other algorithms derived from it. Therefore, the functionality for quickly checking the operation of your algorithm is vital.</p>
+<p>In Figure <a href="#Fig18">4-18</a>, I clearly demonstrated working with the future library of optimization algorithms.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig18_HTML.jpg" /></p>
+<p>A flow diagram depicts the strategies data sent to the strategy serializer is processed via optimization algorithms library and received as strategies via strategy deserializer.</p>
+<p>Figure 4-18</p>
+<p>An example of using the optimization algorithms module</p>
+<p>The fact that the user will have to independently create optimization algorithms based on some templates suggests that the optimization algorithm also becomes an entity.</p>
+<h4 id="tasks">Tasks</h4>
+<p>We have decided how strategies will be created. But how will they be calculated? To calculate a strategy, two components are required: the strategy itself and a certain period of historical data for the instrument.</p>
+<p>I placed the historical data period into a simple entity called TestCandleInterval. This entity accumulates all the information necessary to obtain a set of candles.</p>
+<p>Namely:</p>
+<ul>
+<li>
+<p>Exchange Id. It is no secret that the same instrument can be traded on several exchanges, which means its prices can be different.</p>
+</li>
+<li>
+<p>Financial instrument Id.</p>
+</li>
+<li>
+<p>StartDate. All candles with an opening date greater than this value will be included in the selection for TestCandleInterval.</p>
+</li>
+<li>
+<p>StopDate. The second border is for the opening date of the candles.</p>
+</li>
+</ul>
+<p>In this book, I implement a relatively simple system. Therefore, the user will create the TestCandleInterval independently. But there is room for growth here. For example, you can create a TestCandleInterval while loading historical data. Remember in the previous chapter we talked about what tools should be used to launch a ready-made strategy. And one of the options was to separate them not by types of instruments but by types of charts. The new entity is perfect for both implementations because it contains a StartDate and a StopDate. This allows you to divide the historical data of one instrument into several test intervals.</p>
+<p>In connection with the introduction of the new TestCandleInterval entity, it turns out that to calculate the strategy, only two components are needed: the strategy itself and TestCandleInterval. I combined these parameters into a separate entity and called it Task. It also makes sense to add a status to the task to understand whether it has been counted or is still being counted or maybe just waiting in queue for calculation. Tasks will not have a complex process. This is a small elementary unit that will have only four states with elementary logic for transitioning from each other: Created, Pending, Done, Error. There will be many tasks—hundreds of thousands. Putting them in the same queue as generators and theories is not a good idea. We will then lose flexibility in scaling the system. Therefore, I decided to put the tasks in a separate queue and even allocate a separate application for them.</p>
+<p>This is how it will work:</p>
+<ul>
+<li>
+<p>The subtheory will generate tasks and place them in a queue.</p>
+</li>
+<li>
+<p>A separate application with a large number of pods will take a task from the queue, mark it as active, and after calculation, remove it from the queue.</p>
+</li>
+<li>
+<p>If the user decides that the theory is bad even before completing all the steps, then when the theory calculation is cancelled, their subtheories will be cancelled, and their tasks will simply be removed from the queue.</p>
+</li>
+</ul>
+<p>Figure <a href="#Fig19">4-19</a> shows the task queue processing process. It can receive tasks from several sources. For example, the user can create a task through the front end and set it to be calculated via the API App. Or the Processing App, while working on a subtheory, will set tasks for calculation.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig19_HTML.jpg" /></p>
+<p>A flow diagram depicts how the A pi app and N number of processing app pods are sent via the task queue that comprises N number of tasks. It converts them into N number of tasks calculators.</p>
+<p>Figure 4-19</p>
+<p>Task queue processing process</p>
+<p>It is extremely important that the calculation of tasks is as fast as possible. This process needs to be optimized down to the millisecond. At this point, I ran into a problem. I must have a mechanism by which I can verify that my system is working correctly. To do this, I needed not only the final indicators of the effectiveness of the strategy but also the intermediate results, such as the calculated values of the indicators on each of the candles, as well as all created positions with system orders and deals. I would like to take a separate task and see how the strategy behaved, when, and why it opened positions. Obviously, to implement this functionality, it is necessary to save data on the progress of the strategy into a database, and this is not a quick procedure. I also knew that the automated parts of the system did not need this data; the final results were enough for it. In connection with all of this, I added three calculation modes to the task:</p>
+<ul>
+<li>
+<p><strong>With only the final information about the calculation saved.</strong> In this mode, the database will store information about the final results of the calculation, the minimum necessary for the operation of the automated parts of the system</p>
+</li>
+<li>
+<p><strong>With saving data on positions.</strong> In this mode, in addition to the final results, the database stores information about open positions with status history, with all orders and transactions</p>
+</li>
+<li>
+<p><strong>With saving indicator values.</strong> In this mode, not only all data from the previous two modes is saved, but also information about signal calculations, which includes the values of indicators and groups of conditions on each candle.</p>
+</li>
+</ul>
+<h3 id="core">Core</h3>
+<p>In our entire scheme of dividing the system into two subsystems, I am confused by the fact that testing and verification of the trading strategy will take place in one subsystem, and the strategy will work in another. It is necessary to build the architecture in such a way that the system nodes responsible for making decisions about opening or closing positions, the logic of the system orders, and all the components of the strategy are common to the search and real trading subsystems.</p>
+<p>This is reasonable, because we will test not only the strategies but also the code that implements them, which means this code should be the same. For this I created a separate library called Core. It is in Core that the logic of the strategy and all its components will be concentrated.</p>
+<p>As input, Core will receive information about changes in the market, as well as signals about changes in the status of exchange orders, and as output, it will send signals about the need to place or close an order with a broker. See Figure <a href="#Fig20">4-20</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig20_HTML.jpg" /></p>
+<p>A block diagram of the top-level view of the core module. The core module intakes trading data, deals with events, and gives the commands to place an order and cancel an order.</p>
+<p>Figure 4-20</p>
+<p>Top-level view of the Core module</p>
+<p>Obviously, Core will store entities such as Strategy, Signal, Instrument, and so on. This means it must contain all the necessary components to work with the database. I thought about separating Core into a separate microservice but quickly abandoned this idea, mainly because when calculating tasks, a lot of time would be spent on network interaction between the task calculation service and Core, and we cannot afford this.</p>
+<p>I would also like to include in Core the functionality for calculating indicators of the effectiveness of the strategies; it would be strange if the real trading system calculated indicators using one formula while the search subsystem used another.</p>
+<h3 id="sandbox-exchange">Sandbox Exchange</h3>
+<p>At this stage, we need to know what will process signals and how we will process them. This means we will need to create a small Sandbox Exchange module that will store orders, respond to signals for placing or cancelling an order, and make a decision about closing an order as candles arrive.</p>
+<p>As a result, I see the big-picture process of calculating the task as follows:</p>
+<ul>
+<li>
+<p>We get candles by setting TestCandleInterval (all of it or in batches).</p>
+</li>
+<li>
+<p>In a loop we go through all the candles, doing the following:</p>
+<ol>
+<li>
+<p>a.</p>
+<p>We notify Sandbox Exchange about the appearance of new candles.</p>
+</li>
+<li>
+<p>b.</p>
+<p>We notify Core about the appearance of new candles.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>Such a system does not ideally correspond to what will happen in real trading because Sandbox Exchange in our version does not know anything about the order book. This means it will not be able to correctly simulate order execution because it doesn’t know whether there were enough offers at that moment in time and at what prices they were offered.</p>
+<p>But we still have no choice. There is no way we can wait several years until we collect the required amount of information, because it is almost impossible to find historical data with order books. Therefore, I will simply try to implement Sandbox Exchange as similar as possible to a real exchange.</p>
+<h2 id="real-trading-subsystem">Real Trading Subsystem</h2>
+<p>This subsystem has the following goals:</p>
+<ul>
+<li>
+<p>Ensuring smooth operation of profitable strategies</p>
+</li>
+<li>
+<p>Ensuring the strategies work with the right types of financial instruments</p>
+</li>
+<li>
+<p>Constant determination of the type of financial instruments</p>
+</li>
+<li>
+<p>Providing the user with the ability to manage the trading process such as the ability to enable or disable a strategy</p>
+</li>
+</ul>
+<p>Again, since it’s an interface, a separate front-end service is needed. As in the case of the search subsystem, I propose we abandon the system of roles and solving issues of access levels, because at the beginning the system will have a limited list of trusted users with the same full rights to all actions in the system.</p>
+<h3 id="integration-with-exchanges">Integration with Exchanges</h3>
+<p>In a real trading system, there is a big problem that we have to face: the large amount of information coming from exchanges. Imagine that the candle update information for an instrument such as the Bitcoin-Dollar pair could be received via websockets from the exchange at least once every 50 ms. And we will have many such financial instruments.</p>
+<p>First, it is necessary to separate the work with exchanges from other services of the subsystem into a separate service that provides a single interface. I don’t want other services to know anything about the internal implementation of integration with each of the exchanges. But is this enough? Imagine that you discovered a bug or decided to add integration with another exchange. If all the code for working with exchanges is located in one service, then when updating the code associated with one exchange, you will have to stop working with the others. This means that orders will not be placed and data on changes in candlesticks will not be received, which entails a loss of money. Therefore, it makes sense to make each of the adapters (the module responsible for converting specific information from the exchange into our single standard) a separate service.</p>
+<p>Let’s imagine a scenario where a certain service of our subsystem wants to place an order with a broker. To do this, the service will have to take the URL of the required adapter, which is responsible for integration with a specific broker. It turns out that each back-end service that needs to use adapters will have to contain the logic for determining this URL. What happens if the broker switches to a new version of the API and we have to change the adapter interfaces? This is the first problem. The second problem is that somewhere we need to store a mapping between our instrument names and the broker names. This means that we will need a database. And what? We have to create a separate database for each broker? To solve these problems, we can create a proxy service, an exchange gateway. This will take on the functionality of knowing which of the adapters needs to be addressed, and it will also store name comparisons in its database and monitor the uniformity of adapter interfaces.</p>
+<p>Figure <a href="#Fig21">4-21</a> demonstrates both approaches.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig21_HTML.jpg" /></p>
+<p>Two networks define how the exchange adapters access the backend services, with and without an exchange gateway.</p>
+<p>Figure 4-21</p>
+<p>Possible exchange gateway architectural solutions</p>
+<p>Now let’s define the approximate functionality of the subsystem for working with exchanges. Since to work with exchanges it is necessary to create several services (and even this will be a relatively independent unit that can be used in other systems), I will separate it into a separate subsystem.</p>
+<p>So, what functionality will be included in the subsystem for working with exchanges?</p>
+<ul>
+<li>
+<p>Ability to place orders using a common interface for all exchanges.</p>
+</li>
+<li>
+<p>Possibility of order cancellation.</p>
+</li>
+<li>
+<p>Providing information on updating order statuses and completing deals.</p>
+</li>
+<li>
+<p>Providing trade data. In our case, this will only be data on updating candles, but in the future it can be expanded with information about changes in the order book.</p>
+</li>
+</ul>
+<p>Figure <a href="#Fig22">4-22</a> shows what the first and second steps will look.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig22_HTML.jpg" /></p>
+<p>A flow diagram of four stages. Backend service, exchange gateway, exchange adapter, and exchange.</p>
+<p>Figure 4-22</p>
+<p>Sequence of service calls when creating an order</p>
+<p>This looks bulky. Time will be wasted on networking, but I decided to compromise on this issue. I initially defined my system not as a system for scalping trading, since I understood that I most likely would not be able to compete with traders who rent their servers in close proximity to the exchange servers. I will purposefully look for strategies in which the average lifetime of open positions is measured in minutes or hours, not in seconds, and I believe it is worthwhile to compromise on ease of development and maintenance, at the expense of speed.</p>
+<p>We have decided on placing and cancelling orders. Providing information about updating order statuses and trading data will be more difficult. Let’s imagine that the exchange sent a message about a candle change. How will the information reach consumers? And there will be several of them, because it is normal for several strategies to work with one financial instrument, and both strategies should receive the same information. So, the adapter will have to know about all the strategies that need this information. That doesn’t sound very good. In addition, the adapter may not have time to notify all information consumers before the arrival of a new message from the exchange.</p>
+<p>I think there is only one solution that meets our needs to send messages to multiple consumers, even with high throughput: the use of message brokers. Message brokers were created to solve this problem. The source of information (in our case, the adapter) simply sends a message to the message broker, and that’s it. That’s where its work ends. It doesn’t know anything about the number of consumers or whether they exist at all. Its task is simply to send the message to the message broker, and this is very fast operation. Then the broker ensures the transfer of data to all information consumers. So, the most suitable solution for the system is a solution based on the Kafka message queue system because we need high throughput and Kafka is capable of passing up to millions of messages per second. Of course, like any queue built not on pushing messages but on reading them by consumers, this does not guarantee real-time delivery of messages, especially if the consumer takes a long time to process the messages. But our architecture is based on distributing the load between pods, which will provide the ability to scale the system.</p>
+<p>Note</p>
+<p>Kafka is a distributed message broker that works on a publisher-subscriber basis. Data in Kafka is represented as key-value pairs. Kafka guarantees that all messages will be ordered in the exact order in which they were received. Kafka stores read messages for a period of time.</p>
+<p>The next question is, will the adapter itself send messages to the queue? Or will they also go through the exchange gateway? On the one hand, it makes sense for them to go through the exchange gateway; this way we will hide Kafka and leave working with it in one place. We also guarantee that Kafka topics will contain messages of the same type; that is, we will remove the problem when one adapter sends messages to the old version, and another to the new one.</p>
+<p>On the other hand, the exchange gateway will become a bottleneck. If we need to update it or we find an error in it, it will affect information flows from all adapters.</p>
+<p>As a result, I am more inclined to the second option, where we give the adapters some freedom and they themselves will write messages to the Kafka topic, because I am afraid that in the future there will be problems with the performance of the exchange gateway. Yes, perhaps here I am breaking the encapsulation of the adapters, and they are starting to know too much; however, I will provide a library for sending messages to the topic, common to all adapters.</p>
+<p>As a result, Figure <a href="#Fig23">4-23</a> shows the process of obtaining data from exchanges.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig23_HTML.jpg" /></p>
+<p>An architecture defines how the N number of exchanges are processed via N exchange adapters and sent to Kafka.</p>
+<p>Figure 4-23</p>
+<p>Adapter service architecture</p>
+<h3 id="launch-and-operation-of-strategies">Launch and Operation of Strategies</h3>
+<p>Let’s get back to discussing how strategies work. A new strategy has entered our subsystem and needs to be launched, or maybe it’s not a new strategy but simply a restart of the strategy after an update or failure. In any case, the startup process will look the same.</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Store frequently used information in RAM, such as strategy identifier, exchange and financial instrument identifier, minimum lot size, number of decimal places in the price, and so on. There is not a lot of this information, but the strategy will use it often.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Correctly respond to messages about transactions that came from the exchange during downtime. If the strategy has not worked for a long time, then it may make sense to close all open positions.</p>
+</li>
+<li>
+<p>1.</p>
+<p>It needs to subscribe to the desired trading information topic. For each exchange-instrument pair, a separate topic will be created in Kafka so that strategies can receive information only on the financial instrument they need.</p>
+</li>
+<li>
+<p>1.</p>
+<p>After this, it needs to load historical trading data, because many indicators require information about previous candles to work correctly. This is especially important if we have to scale several indicators to the same scale.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Only after this can we consider that the strategy has begun to work.</p>
+</li>
+</ol>
+<p>The strategy operation block must be isolated so that data on the operation of one strategy does not affect the operation of another. The question is how do we do this? At what level should this insulation be ensured? In software, when a certain instance of a class is conditionally created for each strategy (which ensures the operation of the strategy, when will there be a separate pod in Kubernetes for each strategy-instrument pair? Or maybe some kind of hybrid solution, when, according to some logic, the number of working strategies on one pod will be set?</p>
+<p>On the one hand, the strategies will work both in weakly volatile markets and in highly volatile ones. If changes in trading information occur rarely, then it may make sense to have one pod ensure the operation of several such strategies. On the other hand, such a small unit as a pod may not have time to process frequently received signals from highly volatile markets for several strategies. Therefore, it is important to maintain a balance.</p>
+<p>There is one more important detail: a weakly volatile market can at some point become highly volatile, and then what? Redistribute strategies between pods? Provide yourself with periodic downtime at work? I don’t like this option. I think that in this matter a good solution would be the logic of one pair of strategy/instrument and one pod. I also like this approach because we will know for sure that only one strategy works in this instance of the program, and we will certainly avoid trouble in the code associated with the influence of data from one strategy on another.</p>
+<h3 id="enabling-and-disabling-strategies">Enabling and Disabling Strategies</h3>
+<p>We have decided that each strategy will have a separate pod. But how will this work? Let’s imagine that information came from the strategy search subsystem with a list of strategies with the types of instruments on which they can work. Let’s first put them in the table with profitable strategies called profitable_strategies, where there will be two columns: strategy_id and instrument_type. But to launch a strategy, we need an instrument, not a type of it. It turns out that we need another instrument table where there is a type. At the start it will take an unoccupied strategy, so somehow we need to mark that it is already occupied and start working with it.</p>
+<p>How will it understand that the strategy is not busy? It is possible, of course, for everyone to select a list of strategies from profitable_strategies, connect it with instruments, and then take an unused strategy-instrument pair to work. But what if we want to change this logic? For example, add an is_enabled checkbox for an instrument so that the user can independently enable or disable the instrument. Because the program code for determining working strategies will change, you will have to update it, which means you will have to restart the pods working with the strategies, which you would like to avoid. This means the logic for determining working strategies should be placed in a separate application with separate pods. That is, we will have one application (let’s call it tasks), which will determine which strategies are working, and another application (let’s call it worker), which launches these strategies and ensures their operation.</p>
+<p>As a result, I see tables like these in the database, as shown in Figure <a href="#Fig24">4-24</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig24_HTML.jpg" /></p>
+<p>A stack flow diagram defines how the profitable strategies are mapped to working strategies and transformed into active strategies. The working strategies are additionally employed with instruments.</p>
+<p>Figure 4-24</p>
+<p>Relationship between database tables</p>
+<p>This is how it will work:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The strategy search subsystem notifies the real trading subsystem about the emergence of new profitable strategies. They are written to the profitable_strategies table.</p>
+</li>
+<li>
+<p>1.</p>
+<p>A special background job from the tasks application, which monitors the state of working strategies, “sees” that a new strategy has appeared that is not in the working_strategies table. It checks all required is_enabled conditions and makes an entry in working_strategies with the new strategy and the tools it can run on.</p>
+</li>
+<li>
+<p>1.</p>
+<p>A free pod, on which a separate application for working worker strategies is running, “sees” that an entry has appeared in working_strategies, which is not in active_strategies, and takes it to work.</p>
+</li>
+</ol>
+<p>If the opposite situation occurs, when for some reason the user turns off a financial instrument or the type of the instrument changes, or maybe the strategy itself is turned off, then the job will delete records from the working_strategies table, and the worker under that works with it will detect this during the next check. This will delete the entry from active_strategies and try to use the next free strategy.</p>
+<p>There is one more important point to consider. There is a probability that a certain worker will suddenly cease to exist. What we get is that in active_strategies there is a record that the strategy-instrument pair is busy, but in fact it does not work. I solved this problem simply. Every time the worker pod checks the working strategies and nothing has changed, it updates the value in the timestamp column. If the date in this column lags behind the current one by a certain time interval, this will mean that the worker pod has stopped working with the strategy and it can be taken by another pod. At the current stage, I see the strategy service shown in Figure <a href="#Fig25">4-25</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig25_HTML.jpg" /></p>
+<p>A block diagram of the strategy service module defines how the A PI app, tasks app, and worker app accesses the database.</p>
+<p>Figure 4-25</p>
+<p>Strategy Service structure</p>
+<h3 id="checking-the-type-of-financial-instrument">Checking the Type of Financial Instrument</h3>
+<p>In the previous chapter, I mentioned the importance of determining the type of financial instrument. The type of instrument or chart greatly influences the profitability of the strategy. Often, a profitable strategy becomes unprofitable if it works on the wrong instrument. Perhaps the simplest way to determine the type of instrument is to use the logic already inherent in the signal. I think using a signal is a great option for these reasons:</p>
+<ul>
+<li>
+<p>Often, determining the type of chart is based on indicator values. For example, a trend can be determined by analyzing the values of such indicators as Moving Average (MA), Moving Average Convergence Divergence (MACD), the Bollinger Band (BB), and Parabolic SAR. All conditions can be perfectly applied to the logic of the signal, and if the functionality is insufficient, it can be easily expanded by adding a specific indicator.</p>
+</li>
+<li>
+<p>The very purpose of the Signal entity helps us in solving the problem of determining the type of instrument. After all, the purpose of the signal is to provide us with a yes/no answer. That is, it helps us figure out whether the financial instrument corresponds to the type or not.</p>
+</li>
+<li>
+<p>This mechanism will already be implemented in the Core library, and we will not need to invent or create anything new.</p>
+</li>
+</ul>
+<p>It turns out that in the table with types of instruments, we will need a column with a signal, with the help of which the system will be able to determine the type of instrument in real time for the real trading subsystem and when loading historical data in the strategy search subsystem.</p>
+<p>As is the case with ensuring the continuous operation of strategies, when determining the type of instrument, the system will need to analyze a large flow of trading data. Therefore, it makes sense, as in the case of strategy, to allocate its own pod for each instrument, which will be subscribed to the desired Kafka topic from which the trading data comes.</p>
+<p>Why is that and not, for example, a pool of topics that process message queues? Well, to calculate most indicators, it is necessary to take into account candles in the previous n segments. And if the pod does not have this information in its memory, then it will have to be taken, for example, from a database or directly from the exchange, and these requests are quite slow.</p>
+<p>As a result, the strategy service has a fourth application: Instruments App. At this stage, I am starting to worry about the number of tasks that the strategy service is responsible for.</p>
+<ul>
+<li>
+<p>API for the front end</p>
+</li>
+<li>
+<p>Background tasks such as managing the working_strategies table</p>
+</li>
+<li>
+<p>A separate application for ensuring the strategies work</p>
+</li>
+<li>
+<p>Separate application for determining the type of financial instruments</p>
+</li>
+</ul>
+<p>It looks like the strategy service needs to be divided into three independent services, with separate databases and applications.</p>
+<ul>
+<li>
+<p><strong>Strategy Service.</strong> This service will ensure the operation of strategies. It will have two applications: the API App for receiving a command to enable or disable a strategy-instrument pair and of course the Worker App, an application that will ensure the strategies work. It will have many pods, one for each strategy-instrument pair. I really like separating this logic into a separate service. It allows us to truly isolate the operation of strategies from other parts of the application.</p>
+</li>
+<li>
+<p><strong>Instruments Service</strong><strong>.</strong> This service will determine the types of financial instruments. It will also have two applications: the API App for information about changes in the instruments and a Worker App to define instrument types. There will be one pod for each instrument.</p>
+</li>
+<li>
+<p><strong>Strategy Manager Service</strong><strong>.</strong> Judging by the name, this service is a prime candidate for division into several smaller services because it will be responsible for solving several problems. However, since they are small, I don’t see the point of making it too complicated for now. So, this service will also have two applications. The API App will provide the front end with the necessary methods. This application will also receive information from the search subsystem about the emergence of new strategies. You also need an application to manage the working_strategies table; let’s call it the Tasks App.</p>
+</li>
+</ul>
+<p>As a result, at the current stage, the real trading subsystem looks like Figure <a href="#Fig26">4-26</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig26_HTML.jpg" /></p>
+<p>A data flow diagram of the real trading subsystem. It comprises instrument services, strategy manager services, strategy services, and exchange getaway services accessing a single Kafka bus via the front and search subsystems.</p>
+<p>Figure 4-26</p>
+<p>General architectural diagram of the trading system</p>
+<p>Let’s look at several scenarios for the real trading subsystem.</p>
+<p>Here is how new strategies arrive from the search subsystem:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Some service from the strategy search subsystem makes an HTTP request to the API App of the Strategy Manager Service, sending it information about profitable strategies and types of instruments.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API App of the Strategy Manager Service records this information in the database without calculating anything.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Tasks App of the Strategy Manager Service “sees” that new strategies have appeared and sends an HTTP request to the API App of the Strategy Service with a signal about the need to take on new strategies.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API App of the Strategy Service writes to the database new working strategies.</p>
+</li>
+<li>
+<p>1.</p>
+<p>One of the free Workers App pods of the Strategy Service “sees” that a new, unactivated strategy has appeared and takes it to work.</p>
+</li>
+</ol>
+<p>Here is how the Workers App of the Strategy Service works:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Every pod of the Workers App of the Strategy Service is subscribed to a specific Kafka topic, through which information about changes in candles for the financial instrument they need is broadcast. The Workers App responds to these changes, calculates signal values, and monitors the logic of system order execution. At some point, a signal to place an order with a broker may be triggered.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Workers App of the Strategy Service sends an HTTP request to the API App of the Exchange Gateway Service to place an order with the broker.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API App of the Exchange Gateway Service redirects the request to the desired Adapter App of the Exchange Gateway Service. The adapter places an order with the broker with which it is integrated.</p>
+</li>
+<li>
+<p>1.</p>
+<p>After some time, the Adapter App of the Exchange Gateway Service “learns” that the status of this order has changed. The way to obtain order statuses can be different; it all depends on the broker and its API. Maybe the adapter will periodically poll the broker about changes in information about orders, or maybe the broker provides a webSocket interface and itself will notify the adapter about these changes. It doesn’t matter. The important thing is that the adapter somehow learned that the order status had changed.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Adapter App sends messages about changes in order status to the desired Kafka topic.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Workers App of the Strategy Service is subscribed to the topic from the previous step. This means it receives this message, and it acts according to the logic embedded within it.</p>
+</li>
+</ol>
+<p>This is how the Instrument Service works:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>When creating a new financial instrument, the front end makes an HTTP request to the API App of the Strategy Manager Service, passing information about the new instrument to it.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API App of the Strategy Manager Service makes an HTTP request to the API App of the Instruments Service with a message about the availability of a new financial instrument.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API App of the Instruments Service writes information to the database.</p>
+</li>
+<li>
+<p>1.</p>
+<p>A free one pod of the Tasks App of the Instruments Service “sees” that a new free tool has appeared, takes it to work, and subscribes to the desired Kafka topic with information about changing candles.</p>
+</li>
+<li>
+<p>1.</p>
+<p>If the logic of changing the type of an instrument is triggered in the Tasks App of the Instruments Service, the application writes this information to the database and makes an HTTP request to the API App of the Strategy Manager Service with information about changing the type of the financial instrument.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Strategy Manager Service Tasks App “sees” that the type of financial instrument has changed and gives the necessary commands to the Strategy Service to enable or disable strategies.</p>
+</li>
+</ol>
+<h3 id="master-data">Master Data</h3>
+<p>I have one big question about this scheme. Which service is a source of reference information? Here a new signal is created, no matter whether it came from the search subsystem or the user. Where will it be created, and how will other services know that a new signal or strategy has appeared? Based on Figure <a href="#Fig26">4-26</a>, the central system for storing this information will be the Strategy Manager Service. It turns out that this service will have another task of storing reference information. I think this is too much. Typically, for such purposes, a separate Master Data Service is used, which stores general information used, for example, a list of signals, strategies, instruments, exchanges, etc.</p>
+<p>Also, taking into account the fact that we have such a system, it may already make sense to add an API Service to hide information from the front end about which service it turns to for certain data.</p>
+<p>With the advent of the Master Data Service, the real trading subsystem diagram will look like Figure <a href="#Fig27">4-27</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_4_Chapter/615867_1_En_4_Fig27_HTML.jpg" /></p>
+<p>A data flow diagram of the trading subsystem. It comprises instrument services, strategy manager services, strategy services, and exchange getaway services accessing a single Kafka bus via an A P I that includes a front and search subsystem.</p>
+<p>Figure 4-27</p>
+<p>General architectural diagram of the trading system with Master Data Service</p>
+<p>Figure <a href="#Fig27">4-27</a> shows that all requests now go through the API Service, which decides which microservice to contact. The API Service will have only one application, which is the API App.</p>
+<p>The script for creating reference information, such as a financial instrument, now looks like this:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The front end makes an HTTP request to the API Service to create a new tool.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The API Service makes an HTTP request to the Master Data Service.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The Master Data Service saves the new financial instrument in the database and sends a message to Kafka indicating that a new instrument has appeared.</p>
+</li>
+<li>
+<p>1.</p>
+<p>All subscribers to this event will receive this message and save the information they need in their database.</p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>This chapter did not describe everything that is necessary for a well-described architectural solution. In it, we only touched on tables in databases and did not touch upon signatures of API methods at all. Also, the functional diagrams were only superficially described. I plan to go deeper into these issues in future chapters dedicated to the subsystems.</p>
+<p>In this chapter, I did the most important thing, which was to divide our system into independent parts, describe the tasks of each of them, and describe how they would solve them.</p>
+<p>The scheme of the real trading subsystem turned out to be more complicated than the scheme of the strategy search subsystem, and it was also obvious that the architectures of these subsystems use different approaches. This is understandable, because in the strategy search subsystem, it was necessary to pay special attention to the speed of calculating strategies, which means that it is necessary to minimize interservice interaction and, as a consequence, the number of services. On the other hand, in the real trading subsystem, it was necessary to pay more attention to independence. I consider the fact that it is possible to independently update and scale in this subsystem to be very critical. Therefore, it has more independent services.</p>
+<p>Now we understand what our system will look like and the parts it will consist of.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

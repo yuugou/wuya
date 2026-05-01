@@ -1,0 +1,3470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch16/">
+      
+      
+        <link rel="prev" href="../ch15/">
+      
+      
+        <link rel="next" href="../ch17/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Packages - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-16-packages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Packages
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-data-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie data project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Movie data project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example app
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refactoring-code-to-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring code to package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Refactoring code to package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movies-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movies project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-a-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing a package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publishing a package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspecyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubspec.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readme.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelogmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verified-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verified publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-data-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie data project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Movie data project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example app
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refactoring-code-to-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring code to package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Refactoring code to package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movies-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movies project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-a-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing a package
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publishing a package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspecyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubspec.yaml
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readme.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changelogmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verified-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verified publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publishing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-16-packages"><a href="../contents/#ch16a">CHAPTER 16 Packages</a></h1>
+<h2 id="introduction"><a href="../contents/#sc2_293a">Introduction</a></h2>
+<p>In this chapter, you will learn all about packages and how to create one. You will also learn how to fix any errors that come with refactoring a project with a package. Share your projects with the Flutter community by publishing your very own package. You will also learn about the importance of being a verified publisher. These skills will help you reuse your code for other projects as well as sharing with others. While you will use other packages, there is great satisfaction in helping others with the knowledge you have learned by writing packages that can be shared with others.</p>
+<h2 id="structure"><a href="../contents/#sc2_294a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>Introduction to packages</li>
+<li>Creating a package</li>
+<li>Refactoring code to package</li>
+<li>Publishing a package</li>
+</ul>
+<h2 id="objectives"><a href="../contents/#sc2_295a">Objectives</a></h2>
+<p>By the end of this chapter, you will have learned all about packages and how to create a new one. You will learn how to register to become a verified publisher and how to publish a package. You will have a good understanding of what a package is and some of the benefits of using your own package.</p>
+<h2 id="introduction-to-packages"><a href="../contents/#sc2_296a">Introduction to packages</a></h2>
+<p>Packages are collections of Dart code put into their own project. Think of it as a mini-Flutter project. The project does not have to be Flutter related but can be just Dart code. Packages can also include assets and will have a pubspec.yaml file, just like a Flutter project. This pubspec.yaml does the same thing as in a Flutter project.</p>
+<p>The difference between a package and a plugin is that a package does not contain native code, just Dart. The most common place to store packages is at Google's pub.dev site. While you can publish to other sites, most people expect packages to be at pub.dev. Each package on the site has a score that developers can use to judge the quality of the package. People can like a package, but pub.dev also auto-generates a popularity value (measured as the number of apps that depend on this package over the last 60 days) and pub points, which are a combination of:</p>
+<ul>
+<li>Following Dart file conventions, up to 30 points.</li>
+<li>Provides documentation, up to 20 points.</li>
+<li>Platform support (how many platforms), up to 20 points.</li>
+<li>Pass static analysis, up to 50 points. Errors will count against.</li>
+<li>Up-to-date dependencies, up to 20 points.</li>
+</ul>
+<p>To add a local package to your project (and not one from pub.dev), you would give the package a name and a path. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">my_package</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../my_package</span>
+</code></pre></div>
+<p>Remember that when we added the menubar package, we used git settings. Those were as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">menubar</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">git</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;https://github.com/google/flutter-desktop-embedding&gt;</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugins/menubar</span>
+<span class="w">    </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12decbe0f592e14e03223f6f2c0c7e0e2dbd70a1</span>
+</code></pre></div>
+<p>Here, the URL is the path to GitHub, the path is the sub-project, and the ref is the git commit hash. As you can see, there are several ways to import a package. We will use the local package method for our new package.</p>
+<h2 id="creating-a-package"><a href="../contents/#sc2_297a">Creating a package</a></h2>
+<p>We are going to create our own package by moving all of the database and networking code to its own package. This will isolate the code so that other team members can work on just that portion of the project to improve or make changes to it. You could also create a package if you felt your code would be useful to others. For example, I created a package to make it easier to use the Supabase Postgres database. Initially, I had it as part of one project and then realized that I needed that same code for other projects. By creating it in its own package, and eventually publishing it, I was able to make changes in one place, and all projects would get those updates. Of course, updating a package requires updating the version number in the <code>pubspec.yaml</code> file.</p>
+<p>To create a project, you can use your IDE or create one from the command line. To create a new package from the command line, you would use the flutter create command as follows:</p>
+<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>create<span class="w"> </span>--template<span class="o">=</span>package<span class="w"> </span>--org<span class="o">=</span>&lt;org&gt;<span class="w"> </span>--project-name<span class="o">=</span>&lt;project<span class="w"> </span>name&gt;<span class="w"> </span>&lt;directory<span class="w"> </span>name&gt;
+</code></pre></div>
+<h3 id="movie-data-project"><a href="../contents/#sc3_298a">Movie data project</a></h3>
+<p>To create our package, do the following:</p>
+<ol>
+<li>
+<p>Go to the Terminal app.</p>
+</li>
+<li>
+<p>Go to the directory above your current directory.</p>
+</li>
+<li>
+<p>Type the following:</p>
+<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>create<span class="w"> </span>--template<span class="o">=</span>package<span class="w"> </span>--org<span class="o">=</span>com.bpb.movies<span class="w"> </span>--project-name<span class="o">=</span>movie_data<span class="w"> </span>movie_data
+</code></pre></div>
+</li>
+</ol>
+<p>This will create a new folder named <code>movie_data</code> with a new package. If you look at the generated files, they look pretty similar. The packages have:</p>
+<ul>
+<li>A <code>lib</code> directory for source files.</li>
+<li>A <code>test</code> directory for test files.</li>
+<li>A <code>pubspec.yaml</code> file for other packages.</li>
+</ul>
+<p>What it does not have are the platform directories:</p>
+<ul>
+<li>android</li>
+<li>ios</li>
+<li>windows</li>
+<li>macos</li>
+<li>linux</li>
+<li>web</li>
+</ul>
+<p>One of the files created from this process is the <code>README.md</code> file. This is an important file that is shown as the main page when you publish your package. The other two files that are generated for you are:</p>
+<ul>
+<li><code>ChangeLog.md</code>: Lists changes for each version.</li>
+<li><code>LICENSE</code> file: What type of license this project is under.</li>
+</ul>
+<h4 id="example-app"><a href="../contents/#sc4_299a">Example app</a></h4>
+<p>In addition to the package documentation in the README file, it is really helpful to create an example project. This example project will be inside of the package at the root level. This will be an application, and when created, it will have the typical counter app. It is recommended to replace this with a sample app that demonstrates how to use your package. In our case, you might have different screens that make calls into the movie API or database calls so that the user can see how your code is called.</p>
+<p>To create the example app, go to the terminal and perform the following:</p>
+<ol>
+<li>
+<p>Create the <code>example</code> directory.</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>example
+</code></pre></div>
+</li>
+<li>
+<p>Go into the example directory.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>example
+</code></pre></div>
+</li>
+<li>
+<p>Create a new project.</p>
+<div class="highlight"><pre><span></span><code>Flutter<span class="w"> </span>create<span class="w"> </span>.
+</code></pre></div>
+</li>
+</ol>
+<p>Take a look at the generated project. It looks like a normal Flutter app and has the <code>android</code>, <code>ios</code>, <code>linux</code>, <code>macos</code>, <code>web</code>, and <code>windows</code> directories. Inside the <code>lib</code> folder is one main.dart file. You can delete all the code here and create or own and even create other files. Sometimes, copying files from your main project will help create this sample app.</p>
+<h2 id="refactoring-code-to-package"><a href="../contents/#sc2_300a">Refactoring code to package</a></h2>
+<p>What we want to do is move all of the files in the <code>data</code> and <code>network</code> folders to these new packages. The steps are as follows:</p>
+<ol>
+<li>
+<p>Open the <code>movie_data</code> project.</p>
+</li>
+<li>
+<p>Inside of the <code>lib</code> directory create a new <code>src</code> directory.</p>
+</li>
+</ol>
+<p><strong>Note that packages use a <code>src</code> directory instead of being directly inside of the <code>lib</code> directory. These files are hidden unless you export them via the <code>movie_data.dart</code> file.</strong></p>
+<ol>
+<li>
+<p>From the Finder, File Explorer, or other file system app, move the <code>data</code> and <code>network</code> directories to the <code>src</code> directory in the new package. (You can do this in some IDEs, but it might be harder)</p>
+</li>
+<li>
+<p>Move the following packages from the <code>movies</code> project's <code>pubspec.yaml</code> to the <code>movie_data</code> project's <code>pubspec.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">json_annotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^4.11.0</span>
+<span class="nt">freezed_annotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.1.0</span>
+<span class="nt">dio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^5.9.2</span>
+<span class="nt">drift</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.31.0</span>
+<span class="nt">drift_flutter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.2.8</span>
+<span class="nt">sqlite3_flutter_libs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.5.42</span>
+<span class="nt">cloud_firestore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.2.0</span>
+<span class="nt">firebase_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.3.0</span>
+<span class="nt">google_sign_in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^7.2.0</span>
+</code></pre></div>
+<p>Add the following dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">intl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.20.0</span>
+<span class="nt">lumberdash</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.0.0</span>
+<span class="nt">firebase_core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^4.6.0</span>
+</code></pre></div>
+<p>Move the following dev_dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">json_serializable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.13.0</span>
+<span class="nt">freezed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.2.5</span>
+<span class="nt">drift_dev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.31.0</span>
+</code></pre></div>
+<p>Add these dev_dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">build_runner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.13.1</span>
+</code></pre></div>
+</li>
+<li>
+<p>Do a global replace in <code>movie_data</code> to replace <code>'package:movies'</code> to <code>'package:movie_data/src'</code>. Most IDE's have a global find and replace function.</p>
+</li>
+<li>
+<p>Delete the <code>test/movie_data_test.dart</code> file.</p>
+</li>
+<li>
+<p>Move the file <code>database_interface.dart</code> in the <code>data/database/drift</code> folder to the <code>database</code> folder.</p>
+</li>
+<li>
+<p>Fix any incorrect imports to <code>database_interface.dart</code>.</p>
+</li>
+<li>
+<p>Open <code>firebase_database.dart</code>. We need to make a few changes.</p>
+</li>
+<li>
+<p>Remove the <code>firebase_options.dart</code> import.</p>
+</li>
+<li>
+<p>Add a new field below imagesCollection, add a constructor, and change the initialize method.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">FirebaseOptions</span><span class="w"> </span><span class="n">options</span><span class="p">;</span>
+<span class="n">FirebaseDatabase</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">options</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Remove the <code>initialize</code> method.</p>
+</li>
+<li>
+<p>Open <code>movie_api_service.dart</code>.</p>
+</li>
+<li>
+<p>Remove the two imports that do not exist.</p>
+</li>
+<li>
+<p>Change the constructor and <code>init</code> method to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MovieAPIService</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">apiKey</span><span class="p">);</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">init</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">configureDio</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Remove the <code>webload</code> method.</p>
+<p>Notice the <code>movie_data.dart</code> file. This is the entry point for projects using your package.</p>
+</li>
+<li>
+<p>Open <code>movie_data.dart</code>. This is the barrel file for the package (a barrel file is simply a list of dart files you export).</p>
+</li>
+<li>
+<p>Remove the generated calculator method.</p>
+</li>
+<li>
+<p>Add the following exports so that users of the package will see the files:</p>
+<div class="highlight"><pre><span></span><code><span class="k">library</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/models/models.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/database/models/database_models.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/database/firebase/firebase_database.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/database/firebase/firebase_auth.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/database/drift/drift_database.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/repository/movie_repository.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/sources/database_source.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/sources/movie_source.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/sources/network_movie_source.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/network/movie_api_service.dart&#39;</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;src/data/database/database_interface.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>The model files have all of the models in them.</p>
+</li>
+<li>
+<p>Open <code>src/data/models/models.dart</code>.</p>
+</li>
+<li>
+<p>Add a missing export:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="s1">&#39;genre_state.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Copy the <code>build.yaml</code> file over to the project root directory.</p>
+</li>
+<li>
+<p>In the terminal, type:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>run<span class="w"> </span>build_runner<span class="w"> </span>build.
+</code></pre></div>
+<p>To make sure the build system works probably.</p>
+</li>
+</ol>
+<h3 id="movies-project"><a href="../contents/#sc3_301a">Movies project</a></h3>
+<p>Now, we need to update the main project.</p>
+<ol>
+<li>
+<p>Open <code>pubspec.yaml</code>.</p>
+</li>
+<li>
+<p>Remove the following packages, if you have not already.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">json_annotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^4.11.0</span>
+<span class="nt">freezed_annotation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.1.0</span>
+<span class="nt">dio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^5.9.2</span>
+<span class="nt">drift</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.31.0</span>
+<span class="nt">drift_flutter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.2.8</span>
+<span class="nt">sqlite3_flutter_libs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.5.42</span>
+<span class="nt">cloud_firestore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.2.0</span>
+<span class="nt">firebase_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.3.0</span>
+<span class="nt">google_sign_in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^7.2.0</span>
+</code></pre></div>
+<p>dev_dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">json_serializable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.13.0</span>
+<span class="nt">freezed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.2.5</span>
+<span class="nt">drift_dev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.31.0</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the <code>movies_data</code> package:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">movie_data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../movie_data</span>
+</code></pre></div>
+</li>
+<li>
+<p>Do a Pub Get.</p>
+</li>
+<li>
+<p>Find all files with the old imports and places with errors and replace them with:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movie_data/movie_data.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Open <code>providers.dart</code> and remove the incorrect imports.</p>
+</li>
+<li>
+<p>Change the <code>movieAPIService</code> call to (and add needed imports):</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">MovieAPIService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">movieAPIService</span><span class="p">(</span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">apiKey</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isWeb</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotenv</span><span class="p">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;TMDB_KEY&#39;</span><span class="p">]</span><span class="o">!</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">webLoad</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieAPIService</span><span class="p">(</span><span class="n">apiKey</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">webLoad</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">dotEnvString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">rootBundle</span><span class="p">.</span><span class="n">loadString</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dotEnvString</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;TMDB_KEY&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotEnvString</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parts</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parts</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">apiKey</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apiKey</span><span class="p">.</span><span class="n">replaceAll</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotEnvString</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">apiKey</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change the database, and Firebase calls to:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">IDatabase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">database</span><span class="p">(</span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Change this to what we want to use</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">firebaseFuture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">firebaseProvider</span><span class="p">.</span><span class="n">future</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">firebaseFuture</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">IDatabase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">firebase</span><span class="p">(</span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">FirebaseDatabase</span><span class="p">(</span><span class="n">DefaultFirebaseOptions</span><span class="p">.</span><span class="n">currentPlatform</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>In the terminal, type:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>run<span class="w"> </span>build_runner<span class="w"> </span>build.
+</code></pre></div>
+</li>
+<li>
+<p>To fix a few problems with iOS overflow and the top system, open <code>ui/theme/theme.dart</code>. Add the following to the ThemeData:  </p>
+<div class="highlight"><pre><span></span><code><span class="nl">scaffoldBackgroundColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span>
+</code></pre></div>
+</li>
+<li>
+<p>In <code>main_screen.dart</code>, remove the <code>SizedBox</code> around the <code>BottomNavigationBar</code>. </p>
+</li>
+</ol>
+<p>Try running the app now to make sure that it works.</p>
+<h2 id="publishing-a-package"><a href="../contents/#sc2_302a">Publishing a package</a></h2>
+<p>If you would like to share your package with others, then <code>pub.dev</code> is the place where other developers can find it. <code>pub.dev</code> has the ability to easily search for packages that are sorted by relevance and popularity. To get popular, you need to have good documentation and make your package easy to use. To publish a package, there are a few things that are required for a package. The most important file is the <code>pubspec.yaml</code>. This will describe the package. In order for the user on <code>pub.dev</code> to know what your package is all about; they would read what you put into the <code>Readme.md</code> file. This is a markdown file and should be formatted using the markdown language. One site for documentation on markdown is <a href="https://www.markdownguide.org/">https://www.markdownguide.org/</a>. Without a good Readme, users will not know why to use your package. So, it is critical that you describe your package, what it does, how to use it, and maybe even why they should use it. To know what you have done for each version, you will update the <code>Changelog.md</code> file describing what you have done in each version. Finally, you need a license that lets the user know how they can use your package.</p>
+<h4 id="pubspecyaml"><a href="../contents/#sc4_303a">pubspec.yaml</a></h4>
+<p>You already know about this file, but it is also used by the publishing tool, so certain fields need to be filled out. Make sure you fill out:</p>
+<ul>
+<li>name: Name of the package.</li>
+<li>description: A small description of the package.</li>
+<li>version: The current version of the package.</li>
+<li>repository: URL to your repo, usually a GitHub site. (Optional)</li>
+<li>homepage: URL to a homepage for the package. It can also be the GitHub site. (Optional)</li>
+</ul>
+<h4 id="readmemd"><a href="../contents/#sc4_304a">Readme.md</a></h4>
+<p>This is your place to describe your package and explain how to use it. Here is a quick set of markdown characters:</p>
+<ul>
+<li>Use the '#' characters for different header levels. One # is a top level, ## is the second level, etc.</li>
+<li>
+<p>Use the triple backtick character for the code. For example:</p>
+<p>```dart
+Final configuration = Configuration();
+```</p>
+</li>
+<li>
+<p>Use the '**' character to surround the text to make it bold.</p>
+</li>
+</ul>
+<p>Use a markdown app to view the results before publishing. If you can add graphics, it would be even better, as that will catch the eyes of readers. If you are building a widget, show what the widget looks like in its different variations.</p>
+<h4 id="changelogmd"><a href="../contents/#sc4_305a">Changelog.md</a></h4>
+<p>This file is for commenting on the changes you make for each version. Make sure you update this file every time you publish a new version. The first version goes at the bottom, and the newer versions go above that. Here is an example:</p>
+<pre><code>\## 1.0.1
+
+- Add Movie Theme
+
+\## 1.0.0-dev.1
+
+- First release.
+</code></pre>
+<p>Make sure you keep the version in the <code>pubspec.yaml</code> synced with the <code>Changelog</code> file.</p>
+<h4 id="license-file"><a href="../contents/#sc4_306a">License file</a></h4>
+<p>To publish a package, you will need a license file. The recommended license is the BSD 3-clause file. <a href="https://opensource.org/license/BSD-3-Clause">https://opensource.org/license/BSD-3-Clause</a>. If you need any other type of license, you can find them online. Just put it in the LICENSE file.</p>
+<h3 id="requirements"><a href="../contents/#sc3_307a">Requirements</a></h3>
+<p>There are a few other requirements:</p>
+<ul>
+<li>The package size should be less than 100 MB after compression. You can split it into multiple packages if needed.</li>
+<li>Included packages should be from <code>pub.dev</code>.</li>
+<li>You will need a Google account to manage permissions.</li>
+</ul>
+<h4 id="verified-publisher"><a href="../contents/#sc4_308a">Verified publisher</a></h4>
+<p>Being a verified publisher means that you have your own domain that can be verified by Google. You can publish your package as an unverified publisher, but it is not recommended. You will have a higher rating, and people will trust your package more if you are a verified publisher. It takes a bit of time, but it is worth it. To become a verified publisher, do the following:</p>
+<ul>
+<li>
+<p>Go to pub.dev.</p>
+</li>
+<li>
+<p>Log in with your Google account:</p>
+<p><img alt=" " src="../images/Figure_16.1.png" /></p>
+<p>Figure 16.1: Pub.dev sign-in</p>
+</li>
+<li>
+<p>Select Create publisher:</p>
+<p><img alt=" " src="../images/Figure_16.2.png" /></p>
+<p>Figure 16.2: Create publisher</p>
+</li>
+<li>
+<p>Follow the instructions on the next page:</p>
+<p><img alt=" " src="../images/Figure_16.3.png" /></p>
+<p>Figure 16.3: Start verification</p>
+<p>It takes quite a bit of work after this, as you will have to have access to your domain settings by setting some DNS-CNAME records. Google will then verify these settings, and after some time, you will become verified.</p>
+</li>
+</ul>
+<h4 id="publishing"><a href="../contents/#sc4_309a">Publishing</a></h4>
+<p>To publish, you will use the dart command-line tool. You can find more information at <a href="https://dart.dev/tools/pub/cmd/pub-lish">https://dart.dev/tools/pub/cmd/pub-lish</a> and <a href="https://dart.dev/tools/pub/publishing">https://dart.dev/tools/pub/publishing</a>. The command for publishing is:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>pub<span class="w"> </span>publish
+</code></pre></div>
+<p>This has an additional optional parameter of <code>–dry-run</code>. This allows you to test your publishing before it actually sends it to <code>pub.dev</code>. Once you have everything ready: from the <code>readme</code>, <code>changelog</code>, <code>license file</code>, and <code>pubspec.yaml</code>, you can try to publish.</p>
+<blockquote>
+<p>It is critical that you have this in a Git repo as the publish command uses git to list files.</p>
+<p>Some readers may find some of the topics discussed to be overly elementary. However, we hope that while you read, you will learn some new and useful ideas. The intention is for all readers to be familiar with these foundations and be able to utilize Wireshark to its full potential.</p>
+</blockquote>
+<p>To do a dry run for publishing the package, apply the following:</p>
+<ol>
+<li>
+<p>In the terminal type:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>pub<span class="w"> </span>publish<span class="w"> </span>–dry-run
+</code></pre></div>
+<p>Trying a dry-run in our package produces:</p>
+<p><img alt=" " src="../images/Figure_16.4.png" /></p>
+<p>Figure 16.4: Publish dry run</p>
+<p>As you can see, we have a few errors we need to fix. This tells us that we are missing the <code>path_provider</code> and the <code>path</code> package as it is needed for the <code>drift</code> package.</p>
+</li>
+<li>
+<p>Add the two missing packages to <code>pubspec.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">path_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.1.5</span>
+<span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^1.9.1</span>
+</code></pre></div>
+</li>
+<li>
+<p>From the command line type:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>pub<span class="w"> </span>publish<span class="w"> </span>–-dry-run
+</code></pre></div>
+<p>Look through the errors to see if you can fix any issues before you publish. Also, note that having your package in a path that has spaces in the name could cause issues as well. If you have files that you do not want to be published, create a <code>.pubignore</code> file and add those files to that file. The output from the publish command looks like:</p>
+<p><img alt=" " src="../images/Figure_16.5.png" /></p>
+<p>Figure 16.5: Successful publish dry run</p>
+</li>
+</ol>
+<h2 id="conclusion"><a href="../contents/#sc2_310a">Conclusion</a></h2>
+<p>In this chapter, you learned all about packages and how to create a new package. You then learned how to fix any errors that come with refactoring a project with a package. Finally, you learned how to register to become a verified publisher and how to publish a package.</p>
+<p>In the next chapter, you will learn all about platform channels and plugins. This will help you understand plugins and how you would go about creating your own package for Android and iOS and accessing native systems.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

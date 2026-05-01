@@ -1,0 +1,3303 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch05/">
+      
+      
+        <link rel="prev" href="../ch04/">
+      
+      
+        <link rel="next" href="../ch06/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Themes, Colors and Fonts - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-themes-colors-and-fonts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Themes, Colors and Fonts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-fonts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Fonts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fully-customized-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fully customized theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorscheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorScheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-theme-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Theme Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-vs-dark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light vs dark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-fonts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Fonts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fully-customized-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fully customized theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorscheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ColorScheme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-theme-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Theme Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#light-vs-dark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Light vs dark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-5-themes-colors-and-fonts"><a href="../contents/#ch05a">CHAPTER 5 Themes, Colors and Fonts</a></h1>
+<h2 id="introduction"><a href="../contents/#sc2_99a">Introduction</a></h2>
+<p>In this chapter, we will cover all the design elements that make up your app. You will learn about Material Design, Google’s open-source design system, which makes it easy to create a great-looking app. Finally, you will create your own theme that incorporates all these elements.</p>
+<h2 id="structure"><a href="../contents/#sc2_100a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>Colors</li>
+<li>Typography</li>
+<li>Material Design</li>
+<li>Google Fonts</li>
+<li>Themes</li>
+</ul>
+<h2 id="colors"><a href="../contents/#sc2_102a">Colors</a></h2>
+<p>In Flutter, a color is represented as a hexadecimal number made up of the red, green, blue, and alpha values of a color. Alpha is a number for setting the opacity of the color. 0xFF means it is completely opaque(不透明), and the full color is shown. 0x00 means that it is fully transparent. You can set the opacity with the <code>withOpacity</code> method on a color:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">grey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">grey</span><span class="p">.</span><span class="n">withOpacity</span><span class="p">(</span><span class="m">0.5</span><span class="p">);</span>
+</code></pre></div>
+<p>This creates a grey color at a 50% transparent level. There are many predefined colors in Flutter. Not only are there traditional colors like red, blue, green, purple, etc., but there are values with different opacity levels. For example, Color.white70 is a white with 70% opacity. You can use these colors in your app or create your own. To create your own, you can either create a new Color class with a hex value as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">primaryRed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFFC13437</span><span class="p">);</span>
+</code></pre></div>
+<p>You could also use <code>Color</code> methods. These are extension methods:</p>
+<ul>
+<li>fromARGB: alpha, red, green, blue</li>
+<li>fromRGBO: red, green, blue, opacity</li>
+</ul>
+<p>Red, green and blue use values from 0 to 255, while opacity is 0.0 to 1.0. Alpha is from 0 to 255. A lot of widgets can take a color parameter. The <code>Container</code> widget has a <code>color</code> parameter and looks as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Container</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF111111</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>For Text, you need to set the color in the <code>TextStyle</code> class, and use the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Text</span><span class="p">(</span>
+<span class="w">  </span><span class="s1">&#39;Now Playing&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="typography"><a href="../contents/#sc2_103a">Typography</a></h2>
+<p>Typography(排版样式) is the technique of arranging text on the screen using different fonts, font sizes, colors, line spacing, and letter spacing. Normally, you use typography in <code>Text</code> widgets with a <code>TextStyle</code> class. This class defines the different attributes that will be used to display the text. You can set the font size, font weight (bold), font, letter spacing, colors, and more. While you can set each text’s style manually, it is usually easier to define it once and reuse it. You can create variables for those or set them in a theme (discussed below).</p>
+<h2 id="material-design"><a href="../contents/#sc2_104a">Material Design</a></h2>
+<p>Material Design is a design system by Google created to help developers and designers build beautiful, usable, and consistent digital experiences across various platforms.</p>
+<p>While the material design was originally designed for Android, it can be used on many other platforms as well. Google uses it for its Android and web products. You can still use the Material Design system on iOS, but it will not have the iOS look and feel. However, designers today usually create designs made for the app and company and not tied to a particular platform. This way, they can design the app once and use it on multiple platforms. This could use the company’s colors and a specific design for their app. Material Design is customizable, so you do not have to use the default colors and styles. Material Design is built into the Flutter framework and can be customized by providing a theme with all the colors, fonts, and styles needed for your app. This system has custom-built elements such as buttons, cards, dialogs, and other widgets that use this system.</p>
+<p>To use Material Design, you will start your app using the MaterialApp widget. This allows you to provide a theme (for colors, fonts, and other styles) and a router (for page navigation). Many Material Design widgets require a parent Material widget like <code>MaterialApp</code>. If there is no Material parent, you can use the Material widget to wrap your widget.</p>
+<h2 id="google-fonts"><a href="../contents/#sc2_105a">Google Fonts</a></h2>
+<p>Google Fonts for Flutter is a package that simplifies the process of using Google Fonts in your Flutter applications. It allows you to easily access a vast collection of free, open-source fonts from Google and integrate them seamlessly into your app's text elements. To see all the fonts provided by Google, go to <a href="https://fonts.google.com/">https://fonts.google.com/</a>. The fonts page would be displayed as follows:</p>
+<p><img alt=" " src="../images/Figure_5.1.png" /></p>
+<p>Figure 5.1: Google Fonts</p>
+<p>Currently, this page lists 1,644 font families. Many of these are for different languages. This page also allows you to filter the fonts to find the one that works for you. Google also has a special font family called <code>Noto</code> that has all the current languages available. For the movie app, we are going to be using the <code>Roboto</code> font.</p>
+<p>The steps to add Google Fonts are as follows:</p>
+<ol>
+<li>
+<p>You can add the <code>google_fonts</code> package by using the following command line:</p>
+<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>pub<span class="w"> </span>add<span class="w"> </span>google_fonts
+</code></pre></div>
+<p>It can also be added by opening up <code>pubspec.yaml</code> in your project and adding the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">google_fonts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^8.0.2</span>
+</code></pre></div>
+</li>
+<li>
+<p>Now, create a new folder for your theme. Inside of the lib/ui folder, create a folder named <code>theme</code>. Now, create a new file named <code>theme.dart</code>. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:google_fonts/google_fonts.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="n">roboto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GoogleFonts</span><span class="p">.</span><span class="n">roboto</span><span class="p">();</span>
+</code></pre></div>
+<p>This imports the <code>material.dart</code> and <code>google_font</code> packages.</p>
+</li>
+<li>
+<p>Using the <code>GoogleFonts</code> class, use the <code>roboto</code> function to retrieve an instance of the <code>Roboto TextStyle</code>. Now, let us create some textStyles needed for the movie app. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">largeTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>This creates a variable named <code>largeTitle</code> that uses <code>roboto</code>, a font size of 24, a weight of 600 (which is semibold 半粗体), and a color of white. Font weights go from w100 (thin) to w900 (thick). Bold is considered a w700 weight, and normal is a w400 weight.</p>
+</li>
+<li>
+<p>Now add the rest of your styles, using the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">heading1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">20</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">heading2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">18</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body1Regular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body1Bold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w700</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body2Regular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">14</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body2Bold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">14</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w700</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body3Regular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">body3Bold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w700</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">verySmallText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roboto</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>There are many fonts here, but these are the styles that the app's designer provided. There are large fonts for titles and smaller ones for movie cast members' names. Usually, font sizes do not go below 10 pixels, as they become very hard to read.</p>
+</li>
+<li>
+<p>To use these fonts, you would replace the hard-coded styles used with these variables. Open up <code>home_screen.dart</code> and find the <code>Now Playing</code> text field. Replace the style with <code>largeTitle</code>. You will have to add the following import:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/theme/theme.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>This looks a lot cleaner. Having to constantly type large <code>TextStyle</code>s can waste a lot of time.</p>
+</li>
+<li>
+<p>What about colors? If you look above the <code>Now Playing</code> text, you will see Color(0xFF111111). We can replace this with variables as well. In <code>theme.dart</code>, add the following colors to the top:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Colors</span>
+<span class="k">const</span><span class="w"> </span><span class="n">screenBackground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF111111</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">searchBarBackground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF1E1E1E</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">primaryButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFFD9D9D9</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">posterBorder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFFB5A9A9</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="n">buttonGrey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF504F4F</span><span class="p">);</span>
+</code></pre></div>
+<p>These are some named variables that you will be using in the app.</p>
+</li>
+<li>
+<p>Now replace that color with <code>screenBackground</code>. The rest of the colors will be used in the app when you start building the different screens.</p>
+</li>
+</ol>
+<h2 id="themes"><a href="../contents/#sc2_106a">Themes</a></h2>
+<p>When a visual or UI designer starts to design an app, they start with a set of colors, fonts, shapes, and icons. This makes up the theme of the app. With a theme, every screen should follow that design, making screens consistent for a beautiful app. Flutter provides a way to use those colors, fonts, shapes, and icons by providing a <code>theme</code> parameter for the <code>MaterialApp</code> widget. That parameter is a <code>ThemeData</code> class. This class holds all the information needed to define the elements of your app. When using widgets in your Flutter app, if you specify any formatting for that widget, it will override the system styling. If you do not specify any formatting, Flutter will use the current theme’s settings.</p>
+<p>There are many ways to create a <code>ThemeData</code> class. The easiest is to use <code>ThemeData.light(useMaterial3: true)</code> or <code>ThemeData.dark(useMaterial3: true)</code>. This will use either the light or dark theme defined by Flutter. This sets the theme's brightness level and uses the other defaults. If you know the main color you want to use for your app, like blue, then you can use the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ThemeData</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">useMaterial3:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// Define the default brightness and colors.</span>
+<span class="w">  </span><span class="nl">colorScheme:</span><span class="w"> </span><span class="n">ColorScheme</span><span class="p">.</span><span class="n">fromSeed</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">seedColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">blue</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">brightness:</span><span class="w"> </span><span class="n">Brightness</span><span class="p">.</span><span class="n">dark</span><span class="p">,</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Here, you specify a <code>seedColor</code> and Flutter creates a color scheme for you. You can set the brightness as well to either dark or light.</p>
+<h3 id="fully-customized-theme"><a href="../contents/#sc3_107a">Fully customized theme</a></h3>
+<p>If you want to customize your theme fully, you will set the following parameters:</p>
+<ul>
+<li><code>colorScheme</code>: Colors for the theme.</li>
+<li><code>textTheme</code>: Text styles.</li>
+<li><code>appBarTheme</code>: Theme for the AppBar.</li>
+<li><code>bottomNavigationBarTheme</code>: Theme for the bottom navigation bar.</li>
+<li><code>snackBarTheme</code>: Theme for snackbars.</li>
+<li><code>tabBarTheme</code>: Theme for tabs.</li>
+<li><code>actionIconTheme</code>: The action icons like back, close and drawer icons.</li>
+<li><code>textButtonTheme</code>: Theme for text buttons.</li>
+<li><code>useMaterial3</code>: Flag for using the newer Material 3 design system. This is true by default.</li>
+</ul>
+<h3 id="colorscheme"><a href="../contents/#sc3_108a">ColorScheme</a></h3>
+<p>As mentioned above, the easiest way to create a <code>ColorScheme</code> is to use the <code>fromSeed</code> method. In addition to the <code>seedColor</code>, you can set other colors. You can set the primary, <code>onPrimary</code> (the color drawn on top of primary), secondary, and others. We will create a color scheme later in the chapter. To learn more about <code>ColorScheme</code>s and create your own, visit the Material 3 website: <a href="https://m3.material.io/styles/color/roles/color-roles">https://m3.material.io/styles/color/roles/color-roles</a>. There are two different types of color schemes: Static and dynamic. Static just means you set the color once and do not change it. Dynamic is when you want your screens to match a color from that screen.</p>
+<h3 id="material-theme-builder"><a href="../contents/#sc3_109a">Material Theme Builder</a></h3>
+<p>To help with dynamic colors, use the Material Theme Builder. The steps to launch Material Theme Builder are as follows:</p>
+<ol>
+<li>
+<p>If you go to <a href="https://www.figma.com/community/plugin/1034969338659738588/material-theme-builder">https://www.figma.com/community/plugin/1034969338659738588/material-theme-builder</a>, you can launch Figma’s Material Theme Builder. This allows you to set your colors and text fonts. The screen will be as follows:</p>
+<p><img alt=" " src="../images/Figure_5.2.png" /></p>
+<p>Figure 5.2: Material Theme Builder</p>
+</li>
+<li>
+<p>Click on the <code>Open in…</code> button, and you will see the following:</p>
+<p><img alt=" " src="../images/Figure_5.3.png" /></p>
+<p>Figure 5.3: Color scheme</p>
+</li>
+<li>
+<p>Click on the <code>resources</code> button, which is circled in red in Figure 5.3. This will bring up the Material Theme Builder dialog. Here, you can choose a color scheme in several different ways. If you select an image, it will create a color scheme based on that image. Or you can select your Primary colors, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.4.png" /></p>
+<p>Figure 5.4: Core colors</p>
+</li>
+<li>
+<p>Selecting any of the color rows will bring up the color picker, as follows:</p>
+<p><img alt=" " src="../images/Figure_5.5.png" /></p>
+<p>Figure 5.5: Color picker</p>
+</li>
+<li>
+<p>Change the <code>Hue</code>色相 to set the color, and then adjust the <code>Chroma</code>色度 and <code>Tone</code>色调 to get the exact color you want. To set a blue color, move the <code>Chroma</code> to the right and adjust the <code>Hue</code> towards blue, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.6.png" /></p>
+<p>Figure 5.6: Blue color picker</p>
+</li>
+<li>
+<p>Once you have finished, click <code>Apply</code>. You can then export the design to Flutter by choosing the <code>Export</code> button as follows:</p>
+<p><img alt=" " src="../images/Figure_5.7.png" /></p>
+<p>Figure 5.7: Exporting</p>
+</li>
+<li>
+<p>This will download a <code>material-theme.zip</code> file. Unzip the file, and you will find a lib directory with several files, as follows:</p>
+<ul>
+<li><code>util.dart</code>: Creates the <code>TextTheme</code>.</li>
+<li><code>theme.dart</code>: Creates some custom classes to store Figma’s scheme colors.</li>
+<li><code>main.dart</code>: Example usage of the theme.</li>
+</ul>
+</li>
+</ol>
+<p>While this is a nice tool for designing a color scheme, in this book, we will create our theme by hand so you can see all the different options available.</p>
+<h3 id="light-vs-dark"><a href="../contents/#sc3_110a">Light vs dark</a></h3>
+<p>In <code>main.dart</code>, an interesting line of code, that gets the device’s brightness, is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">platformDispatcher</span><span class="p">.</span><span class="n">platformBrightness</span><span class="p">;</span>
+</code></pre></div>
+<p>You can then use a light or dark theme based on that brightness:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">theme:</span><span class="w"> </span><span class="n">brightness</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">light</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">theme</span><span class="p">.</span><span class="n">dark</span><span class="p">(),</span>
+</code></pre></div>
+<p>This is a good way to change your theme based on the device's current brightness level.</p>
+<p>Note: That this does not listen for changes in the brightness and will not change until the app is relaunched.</p>
+<h3 id="creating-a-theme"><a href="../contents/#sc3_111a">Creating a theme</a></h3>
+<p>The steps to create a theme are as follows:</p>
+<ol>
+<li>
+<p>Inside of theme.dart, create a new method using the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ThemeData</span><span class="w"> </span><span class="n">createTheme</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ThemeData</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>The movie app does not use many colors, but if you wanted to set a color scheme, you would add it to the <code>colorScheme</code> parameter as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">colorScheme:</span><span class="w"> </span><span class="n">ColorScheme</span><span class="p">.</span><span class="n">fromSeed</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">seedColor:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF2196F3</span><span class="p">),</span><span class="w"> </span><span class="c1">// Base blue color</span>
+<span class="w">    </span><span class="nl">primary:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF2196F3</span><span class="p">),</span><span class="w"> </span><span class="c1">// Primary color (can be same as seed)</span>
+<span class="w">    </span><span class="nl">onPrimary:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="c1">// Text/icon color on primary background</span>
+<span class="w">    </span><span class="nl">secondary:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF90CAF9</span><span class="p">),</span><span class="w"> </span><span class="c1">// Secondary color (lighter blue)</span>
+<span class="w">    </span><span class="nl">onSecondary:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span><span class="w"> </span><span class="c1">// Background color (very light blue)</span>
+<span class="w">    </span><span class="nl">surfaceContainerHighest:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span><span class="w"> </span><span class="c1">// Text/icon color on background</span>
+<span class="w">    </span><span class="nl">surface:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFFBBDEFB</span><span class="p">),</span><span class="w"> </span><span class="c1">// Surface color (cards, menus, etc.)</span>
+<span class="w">    </span><span class="nl">onSurface:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span><span class="w"> </span><span class="c1">// Text/icon color on surface</span>
+<span class="w">    </span><span class="nl">error:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFFB00020</span><span class="p">),</span><span class="w"> </span><span class="c1">// Error color (red)</span>
+<span class="w">    </span><span class="nl">onError:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="c1">// Text/icon color on error background</span>
+<span class="w">    </span><span class="nl">brightness:</span><span class="w"> </span><span class="n">Brightness</span><span class="p">.</span><span class="n">light</span><span class="p">,</span><span class="w"> </span><span class="c1">// Overall brightness (light or dark)</span>
+<span class="p">),</span>
+</code></pre></div>
+</li>
+<li>
+<p>Here, we provide a seed color and a few other basic colors. Next, you will define the <code>textTheme</code> using the variables you created earlier. Add the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">textTheme:</span><span class="w"> </span><span class="n">Typography</span><span class="p">.</span><span class="n">material2021</span><span class="p">().</span><span class="n">englishLike</span><span class="p">.</span><span class="n">copyWith</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">headlineLarge:</span><span class="w"> </span><span class="n">heading1</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">headlineMedium:</span><span class="w"> </span><span class="n">heading2</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">headlineSmall:</span><span class="w"> </span><span class="n">body2Regular</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">titleLarge:</span><span class="w"> </span><span class="n">largeTitle</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">titleMedium:</span><span class="w"> </span><span class="n">heading2</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">titleSmall:</span><span class="w"> </span><span class="n">body2Bold</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">bodyLarge:</span><span class="w"> </span><span class="n">body1Regular</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">bodyMedium:</span><span class="w"> </span><span class="n">body2Regular</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">bodySmall:</span><span class="w"> </span><span class="n">body3Regular</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">labelLarge:</span><span class="w"> </span><span class="n">body1Bold</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">labelMedium:</span><span class="w"> </span><span class="n">body2Bold</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">labelSmall:</span><span class="w"> </span><span class="n">caption</span><span class="p">,</span>
+<span class="p">),</span>
+</code></pre></div>
+</li>
+<li>
+<p>This starts by copying the Material 2021 theme (remember that Material 3 was introduced in 2021) and then adds all the styles we defined earlier.</p>
+<p>There are many more themes you can set. We will go over a few of the common themes. The first one is for the <code>AppBar</code>. The <code>AppBar</code> is the title section of an app. You can change the theme using the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">appBarTheme:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">AppBarTheme</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="c1">// App bar background color</span>
+<span class="w">  </span><span class="nl">foregroundColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span><span class="w"> </span><span class="c1">// Text/icon color on app bar</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>You can also set the elevation高度, shadow color, surface tint color, shape, height, and many more. Next, set the theme for the bottom navigation bar. Add the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">bottomNavigationBarTheme:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BottomNavigationBarThemeData</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">searchBarBackground</span><span class="p">,</span><span class="w"> </span><span class="c1">// Bottom nav background color</span>
+<span class="w">  </span><span class="nl">selectedItemColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span><span class="w"> </span><span class="c1">// Selected item color</span>
+<span class="w">  </span><span class="nl">unselectedLabelStyle:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">showUnselectedLabels:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">unselectedItemColor:</span><span class="w"> </span><span class="n">posterBorder</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unselected item color</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Here, we set the background color to a dark color and set the selected color to white. There are a few other themes you can set that are not needed for the app, but you may find them useful in yours. There is a theme for the <code>snackbar</code>. You can customize it with the <code>SnackBarThemeData</code> class. For text buttons, there is the <code>TextButtonThemeData</code>, and for tab bars there is <code>TabBarTheme</code>.</p>
+</li>
+</ol>
+<p>Now that you have your theme set up, it is time to add it to your app. Open up <code>main.dart</code> and add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">theme:</span><span class="w"> </span><span class="n">createTheme</span><span class="p">(),</span>
+</code></pre></div>
+<p>The code should be added after <code>home: MainScreen()</code>.</p>
+<h3 id="ios"><a href="../contents/#sc3_112a">iOS</a></h3>
+<p>So far, we have only talked about running the app on Android. Now, we will try this on an iOS simulator. If you do not have a Mac, you can skip this section and just continue to test on your device.</p>
+<h4 id="xcode"><a href="../contents/#sc4_113a">Xcode</a></h4>
+<p>The steps are as follows:</p>
+<ol>
+<li>
+<p>Open up Xcode. The first thing you want to do is make sure you have a simulator. From the Window menu, select Devices and Simulators, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.8.png" /></p>
+<p>Figure 5.8: Window menu</p>
+</li>
+<li>
+<p>You should see the following screen:</p>
+<p><img alt=" " src="../images/Figure_5.9.png" /></p>
+<p>Figure 5.9: Simulators</p>
+</li>
+<li>
+<p>Click on the plus button in the bottom left. Enter a name and select a device. Press Create. The create screen is as follows:</p>
+<p><img alt=" " src="../images/Figure_5.10.png" /></p>
+<p>Figure 5.10: Create simulator</p>
+</li>
+<li>
+<p>You should now see the following screen:</p>
+<p><img alt=" " src="../images/Figure_5.11.png" /></p>
+<p>Figure 5.11: Simulators</p>
+</li>
+<li>
+<p>Next, open the Simulator tool, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.12.png" /></p>
+<p>Figure 5.12: Simulator tool</p>
+</li>
+<li>
+<p>The simulator will be generated as follows:</p>
+<p><img alt=" " src="../images/Figure_5.13.png" /></p>
+<p>Figure 5.13: iOS simulator</p>
+</li>
+<li>
+<p>In Android Studio, select the device drop-down and select Open iOS Simulator, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.14.png" /></p>
+<p>Figure 5.14: Device picker</p>
+<p>If everything is set up properly, your simulator should show up.</p>
+<p>Press the green run button. You should now see the following:</p>
+<p><img alt=" " src="../images/Figure_5.15.png" /></p>
+<p>Figure 5.15: App on iOS simulator</p>
+</li>
+</ol>
+<p>If you do not like that simulator, you can choose another. The steps to do so are as follows:</p>
+<ol>
+<li>
+<p>In the simulator, select Open Simulator from the File menu, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.16.png" /></p>
+<p>Figure 5.16: Changing devices</p>
+</li>
+<li>
+<p>Your simulator list may be different. Stop the current build in Android Studio, select the new device, and run again.</p>
+</li>
+</ol>
+<p>Running on iOS can often have issues and being able to solve these issues is important.</p>
+<p>Open up Xcode and your project. You can find your project in the <code>ios</code> folder, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.17.png" /></p>
+<p>Figure 5.17: Project chooser</p>
+<p>Click on Open. This will open the Runner.xcodeproj file. Once the project is open, select the Runner folder on the left, as selected in the following figure:</p>
+<p><img alt=" " src="../images/Figure_5.18.png" /></p>
+<p>Figure 5.18: Xcode project</p>
+<p>Notice that the Minimum Deployments are set to 12. This is one of the main areas for setting up your iOS or macOS app. Notice that the App Category is set to None. You could set this to Entertainment for the movie app. You can usually run everything from the Android Studio, but some things are easier to see in Xcode. Explore the different tabs. Some are harder to understand than others but luckily you do not need to change most of them.</p>
+<h2 id="conclusion"><a href="../contents/#sc2_114a">Conclusion</a></h2>
+<p>In this chapter, you learned about what makes up the design of an app: Colors and typography. You use those to create a theme throughout your app for a consistent UI. You can also access tools like the Google Fonts page and the Material Theme builder, which will help design your app.</p>
+<p>In the next chapter, you will learn about state management, a key aspect of building Flutter apps. You will also learn about some very nice packages for handling state. The genre screen will also be created, completing your second screen.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

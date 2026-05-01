@@ -1,0 +1,3602 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/Algorithmic/615867_1_En_3_Chapter/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>615867 1 En 3 Chapter - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-architectural-solution-part-1-identifying-the-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              615867 1 En 3 Chapter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flutter/ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements-elicitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements Elicitation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements Elicitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-view-of-the-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First View of the Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theory-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theory Generator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Theory Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategies-searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategies Searching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strategies Searching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-step-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-Step Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-step-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Step Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-and-forward-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection and Forward Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-of-financial-instruments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection of Financial Instruments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-a-search-for-a-profitable-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up a Search for a Profitable Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-logic-of-searching-for-profitable-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Logic of Searching for Profitable Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-trading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real Trading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#life-cycle-of-a-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Life Cycle of a Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capital-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capital Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#take-profit-and-stop-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Take Profit and Stop Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trailing-system-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trailing System Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-of-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability of Indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>3. Architectural Solution Part 1: Identifying the Requirements</p>
+<p>© The Author(s), under exclusive license to APress Media, LLC, part of Springer Nature 2024</p>
+<p>V. DolzhenkoAlgorithmic Trading Systems and Strategies: A New Approach<a href="https://doi.org/10.1007/979-8-8688-0357-4_3">https://doi.org/10.1007/979-8-8688-0357-4_3</a></p>
+<h1 id="3-architectural-solution-part-1-identifying-the-requirements">3. Architectural Solution Part 1: Identifying the Requirements</h1>
+<p>Viktoria Dolzhenko<a href="#Aff2">1</a>  </p>
+<p>(1)</p>
+<p>San Jose, Costa Rica</p>
+<p>In the previous chapter, we discussed the general theory of creating trading systems and talked about the modules that are present in such systems and their functionality. In this chapter, we will put this knowledge into practice and build our product. We will draw up a high-level plan of the system, describe the subsystems and their services, and also determine how those parts will interact with each other.</p>
+<p>In most cases, creating the architecture of our application consists of the following steps:</p>
+<ol>
+<li>
+<p>1.</p>
+<p><strong>Identifying the requirements</strong></p>
+<p>At this stage, we must understand what the system should be able to do. What behavior do we expect from our system? What technical expectations and limitations do we have of it? This step lays the foundation of our application. The first diagram is drawn. We understand how many users will interact with our system and how they will do it. The result of this stage should be a list of technical tasks.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Making architectural decisions</strong></p>
+<p>At this stage, we decide how the assigned tasks will be solved. For example, will we use a queue or create some kind of service? What architectural patterns and templates will we use to solve the problem? Here we can superficially discuss whether we will use databases and how our services will interact with each other. The result of this stage is a list of architectural solutions for each of the assigned tasks.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Identifying subsystems</strong></p>
+<p>At this stage, we determine the list of subsystems of our future system. We briefly define its input and output. The result of this stage should be a list of the subsystems of our future system with a description of the functionality for which it is responsible.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Identifying the services of all the subsystems</strong></p>
+<p>At this stage, we must clearly understand the composition of services. How will they scale? Will they have their own databases? What will the API of each service look like? How will caching be carried out? Let’s discuss what kind of applications will be built on the basis of these services. How will our services scale and make decisions to optimize performance? The result of this stage will be a service diagram for each subsystem.</p>
+</li>
+</ol>
+<p>This sequence of actions is conditional and may include other steps. It is also worth keeping in mind that the process of building an architectural solution is iterative. It often happens that even when describing a service, the architect understands that their higher-level solution is not optimal and has to go back and redo the overall solution scheme. Sometimes these shortcomings become visible after the prototyping stage, when a prototype of the future system or its individual components is quickly created to more accurately determine the weaknesses of the architectural solution and check with the customer’s expectations. It is much more unpleasant if the shortcomings of an architectural solution are revealed at the development stage, when the cost of an error increases significantly. Therefore, creating an architectural solution is one of the key stages in the development of any system.</p>
+<p>After thoroughly going through all the stages of building an architectural solution, we will create a comprehensive diagram of our future application. In this chapter, I will show how a general vision of the system is created and describe the processes that will occur. Of course, for this it is necessary to identify the requirements.</p>
+<h2 id="requirements-elicitation">Requirements Elicitation</h2>
+<p>This is the first and perhaps most important stage of creating a system. After all, a mistake in identifying requirements has a high cost. Therefore, it is important to determine them as accurately as possible. At this stage, we must not only identify the requirements for the functionality of our application but also decide on specific numbers. For example, we need to understand how many users will work with the application. How many strategies can the system support?</p>
+<p>Let’s first define general concepts and make a list of entities that will be used in our system. Entities are the main objects or concepts that the system operates on to achieve its goals. They have their own set of properties that we will manipulate.</p>
+<h3 id="signals">Signals</h3>
+<p>Here I will show an example conversation between a customer and a system architect to help you understand this process as best as possible. For the sake of brevity, this conversation has been simplified.</p>
+<ul>
+<li>
+<p>Architect: Why do you need a system? What purpose does it serve?</p>
+</li>
+<li>
+<p>Customer: To make money. As much money as possible.</p>
+</li>
+<li>
+<p>Architect: How will it make money?</p>
+</li>
+<li>
+<p>Customer: It will generate profitable strategies and use them in real trading. The more strategies and the better they are, the more money your program will bring me.</p>
+</li>
+<li>
+<p>Architect: What does it mean to “generate strategies”? How do you see the result of this generation?</p>
+</li>
+<li>
+<p>Customer: Well, it must create new conditions based on indicators, and the trading system, based on these conditions, will understand when it is time to enter a position and when it is time to exit it.</p>
+</li>
+<li>
+<p>Architect: How many new terms are there? Here we have a strategy, position, indicators and some conditions. The concept of an indicator is familiar to me. Do I understand correctly that an indicator is a certain formula, for example a formula for calculating the width of the Bollinger band or a function or anything, for example, the percentage of special words in a ChatGPT response, in general, something that gives us a number?</p>
+</li>
+<li>
+<p>Customer: Yes, that’s absolutely right.</p>
+</li>
+</ul>
+<p>At this stage, we have the first entity of our future system: an <strong>Indicator</strong> (Figure <a href="#Fig1">3-1</a>). The purpose of this entity is to calculate a certain number according to its unique logic, based on the current situation on the market, for example, the appearance of new candles, changes in the order book, or news feed.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig1_HTML.jpg" /></p>
+<p>A block diagram of the indicator module that takes the trading data and gives the numeric value.</p>
+<p>Figure 3-1</p>
+<p>Indicator entity</p>
+<ul>
+<li>
+<p>Architect: Fine. What do you mean by conditions? What is their purpose?</p>
+</li>
+<li>
+<p>Customer: This is a set of conditions taking indicators, processing their values, and giving a signal whether it’s time to enter or exit a position or maybe neither.</p>
+</li>
+<li>
+<p>Architect: Do I understand correctly that, in fact, the purpose of a set of conditions is simply to return a yes or no value to us when passing trading data such as candles or the order book as input?</p>
+</li>
+<li>
+<p>Customer: Yes, that’s right.</p>
+</li>
+<li>
+<p>Architect: Could this set of conditions be different for giving a signal to open and close a position?</p>
+</li>
+<li>
+<p>Customer: Yes, maybe.</p>
+</li>
+<li>
+<p>Architect: But in fact, are they the same thing? Are the parameters or formulas just different?</p>
+</li>
+<li>
+<p>Customer: Yes that’s right.</p>
+</li>
+<li>
+<p>Architect: Do you mind if we call the set of these conditions “Signal” and continue to operate with this concept?</p>
+</li>
+<li>
+<p>Customer: Yes, I like it.</p>
+</li>
+</ul>
+<p>Here we have another entity: <em>Signal</em>. Its purpose is to give a yes/no answer in response to changes in trading data. To do this, the signal operates on indicator values. See Figure <a href="#Fig2">3-2</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig2_HTML.jpg" /></p>
+<p>The block diagram of the signal module with indicators. It takes the trading data and gives the yes or no as an answer.</p>
+<p>Figure 3-2</p>
+<p>Signal entity</p>
+<h3 id="first-view-of-the-process">First View of the Process</h3>
+<p>The conversation continues:</p>
+<ul>
+<li>
+<p>Architect: Great. Now let’s turn our attention to our strategies. It turns out that a strategy is an entity that combines signals about opening and closing a position. That’s all? How will the system understand how much money needs to be opened?</p>
+</li>
+<li>
+<p>Customer: Understanding position size is also part of the strategy. There are different methods of money management. One of the most primitive is to open a position for a certain percentage of the remaining capital; more advanced ones look at the historical or test indicators of the strategy and, based on them, decide on the size of the position.</p>
+</li>
+<li>
+<p>Architect: What about risk management? Will there be any protection in the case of unexpected market behavior?</p>
+</li>
+<li>
+<p>Customer: Undoubtedly! We must protect ourselves from sudden price drops and also be able to take profits. Here, too, there are simple methods and more complex ones. You can simply place a Stop Loss and Take Profit order, you can use a slightly smarter system and use trailing orders, or you can make a hybrid system with a trailing order, an additional signal, and even a limit on the number of open positions. But this does not change the essence. Yes, we need something that will monitor the current state of positions and close them in case of something unexpected or the need to take profits.</p>
+</li>
+</ul>
+<p>At this stage, we have one of the central entities of our system: a <strong>strategy</strong>.</p>
+<p>By strategy we understand that an entity combines the following:</p>
+<ul>
+<li>
+<p>Signal to open a position</p>
+</li>
+<li>
+<p>Signal to close a position</p>
+</li>
+<li>
+<p>Capital management method</p>
+</li>
+<li>
+<p>Risk control method</p>
+</li>
+</ul>
+<p>The purpose of the strategy is to give a signal to open or close a position with the size of that position. The strategy also manages risks, namely, placing an order.</p>
+<ul>
+<li>
+<p>Architect: What about indicator parameters? For example, Bollinger Bands Width (BBW) has several parameters, and one of them is the number of standard deviations. Are these parameters included in the strategy? Anything else?</p>
+</li>
+<li>
+<p>Customer: Yes, the specific values of these parameters are part of the strategy. Also, please keep in mind that some theories use indicator values not only of the last candles, but also of the previous ones. For example, this is a simple condition: the closing prices of the last three candles must be greater than their opening prices.</p>
+</li>
+<li>
+<p>Architect: I understood about the use of indicator values not only of the last candles. But what about the theory? What is it, and how does it differ from strategy? Better yet, tell us the process of your manual search for a strategy.</p>
+</li>
+<li>
+<p>Customer: First, I come up with or read a theory on forums or from other sources. A theory is an idea for a future strategy. It does not contain specific parameter values for indicators. The theory is a description of the conditions of the signals, that is, the logic by which the signals will process the indicator values.</p>
+</li>
+<li>
+<p>For example:</p>
+</li>
+<li>
+<p>We open a position when the closing price crosses the WMA from bottom to top. We close when the closing price crosses the WMA from top to bottom. This strategy will work only if there is a strong trend, which we will check using the ADX indicator; that is, it must be greater than a certain value.</p>
+</li>
+<li>
+<p>We open a position when the closing price breaks the upper Bolinger band and trading volumes increase. Exit a position at Stop Loss or Take Profit.</p>
+</li>
+<li>
+<p>Next I test my theory. I take several variations of indicator parameter values, choose a capital management method, and test these strategies on historical data. If I understand that there is something in this theory, then I look for the most stable and profitable strategy for my instrument based on it. And after that I start trading on it.</p>
+</li>
+</ul>
+<p>Here we have a new entity: <strong>Theory</strong>. It consists of signals for opening and closing a position without indicator parameters, and it is on its basis that strategies are generated. The strategy includes data from the theory and specific values of the parameters that are necessary for the functioning of its components. See Figure <a href="#Fig3">3-3</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig3_HTML.jpg" /></p>
+<p>A cell defines the strategy from theory with its parameters. Open signal, close signal, risk control, and capital management.</p>
+<p>Figure 3-3</p>
+<p>Strategy entity</p>
+<p>Now it becomes clear what the whole process will look like:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The user creates theories in the system using a generator or independently.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Based on some algorithm, the performance of the theory is checked.</p>
+</li>
+<li>
+<p>1.</p>
+<p>If, according to some criteria, the system understands that the theory is workable, then the process of searching for the optimal strategy begins.</p>
+</li>
+<li>
+<p>1.</p>
+<p>If a strategy is found that meets the user’s criteria, then it begins to participate in real trading. See Figure <a href="#Fig4">3-4</a>.</p>
+</li>
+</ol>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig4_HTML.jpg" /></p>
+<p>A flow diagram defines how the user and their generator inputs are fed via theory and gives multiple strategies.</p>
+<p>Figure 3-4</p>
+<p>First view of the process</p>
+<h2 id="theory-generator">Theory Generator</h2>
+<p>We have identified the main stages of the strategy life cycle, from the moment of theory generation to the moment of using the strategy in real trading. Now let’s look deeper and think about how each of these stages will work. The result of our discussions should be a complete understanding of the functionality of our system, as well as a list of tasks that need to be solved.</p>
+<p>Let’s start with generating theories.</p>
+<p>First, theories can be created in two modes by the user: manually or using a generator.</p>
+<p>Here we have two requirements for the system:</p>
+<ul>
+<li>
+<p>It should provide the user with a tool for creating theories.</p>
+</li>
+<li>
+<p>It must implement a mechanism for generating theories.</p>
+</li>
+</ul>
+<p>If everything is clear with the first requirement, we implement it using a special form on the front end, and we understand that a user can create dozens of theories manually. Then, with the requirement about the theory generation mechanism, we need to work and understand how this process occurs and what data it requires.</p>
+<p>Obviously, to generate a theory, we need to generate signals. To understand how to do this, we need to delve deeper into this concept. So, we know that the signal includes a set of indicators and, receiving trading data as input, returns a yes/no response using them. But how does this magic of working with indicators happen?</p>
+<p>Basically, the signals look like this:</p>
+<p>If</p>
+<ul>
+<li>Indicator_1 &gt; Indicator_2</li>
+</ul>
+<p>AND</p>
+<ul>
+<li>Indicator_3 &lt; Indicator_4 on the last three candles</li>
+</ul>
+<p>we should buy.</p>
+<p>For example, here’s the theory: the entry signal will be carried out by crossing the regression line (LRC) of the weighted moving average (WMA) from bottom to top and, accordingly, to the exit when LRC crosses the WMA from top to bottom. RSI is used as a confirmation factor for the transaction. That is, when we receive a crossover signal, we look to see if this candle or several previous ones have a corresponding RSI value. For example, if there is a buy signal, then the RSI value should be less than 30, and a sell signal should be greater than 70. We will also add an additional condition to the input for the width of the Bollinger Band (BBW). If this becomes more than 0.04, then check the value of the ADX indicator; it should be more than 30.</p>
+<p>In my presentation, this theory looks like this:</p>
+<p>Signal to open a position:</p>
+<ul>
+<li>
+<p><em><strong>AND</strong></em> group:</p>
+</li>
+<li>
+<p>LRC &gt; WMA on the current candle</p>
+</li>
+<li>
+<p>RSI &lt; Const on the previous three candles</p>
+</li>
+<li>
+<p>BBW &gt; Const on the current candle</p>
+</li>
+<li>
+<p>BBW on the previous candle &lt; Const</p>
+</li>
+<li>
+<p>ADX &gt; Const</p>
+</li>
+</ul>
+<p>Signal to close a position:</p>
+<ul>
+<li>
+<p><em><strong>AND</strong></em> group:</p>
+</li>
+<li>
+<p>LRC &lt; WMA on the current candle</p>
+</li>
+<li>
+<p>RSI &gt; Const on the previous three candles</p>
+</li>
+</ul>
+<p>Here we have the concept of <strong>condition</strong> and <strong>condition group</strong>. The condition contains left and right indicators and a comparison condition. <em>Time intervals</em>, candle intervals at which it is necessary to check the condition, become additional parameters in the strategy along with indicator parameters. The result of a condition being met is a yes/no response, but often we need to group these conditions.</p>
+<p>For example, the following:</p>
+<ul>
+<li>Condition_1 AND (Condition_2 OR Condition_3)</li>
+</ul>
+<p>can be expressed using groups like this:</p>
+<ul>
+<li>
+<p>Group_1 = Condition_2 OR Condition_3</p>
+</li>
+<li>
+<p>Group_2 = Condition_1 AND Group_1</p>
+</li>
+</ul>
+<p>As a result, the root group of the signal will be Group_2. This is what will give us the long-awaited yes/no answer. See Figure <a href="#Fig5">3-5</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig5_HTML.jpg" /></p>
+<p>A signal block illustrates the sets of conditions 1 and 2 and conditions 3 and 4.</p>
+<p>Figure 3-5</p>
+<p>Conditions</p>
+<p>Let’s return to the theory generator. Somehow it must generate signals. From the logic of signal construction, it is clear that the number of combinations of conditions and their groupings can be infinite. This means we need to somehow limit this amount. I propose to do this by using signal templates, which will initially have condition layouts with groups, and the generator, substituting indicators in them, will create new signals.</p>
+<p>It is worth noting here that this is not the only possible approach to creating signals. Conditions can also be created programmatically using the brute-force method with restrictions on possible options, for example, with a limit on the depth of nesting of groups and a number of conditions in each of them. Or you can use an optimization algorithm rather than a brute-force method, which will speed up the process of finding a profitable strategy.</p>
+<p>Now imagine the beginning of the process of setting up the theory generator. The user first creates signal templates and then selects indicators. The generator, using the selected signal templates and substituting different combinations of indicators into them, will generate new signals.</p>
+<p>At this stage, I will remind you what the theory consists of. These are signals for opening and closing a position, a capital management method, and a risk control method. We have closed the question of how signals will be generated, so now let’s think about what to do with capital and risk management methods. In fact, there is nothing to invent here. We have a list of these methods, which is not large, so the user can simply specify a list of these methods when setting up the generator, and the generator will create theories where it will try each of them.</p>
+<h3 id="strategies-searching">Strategies Searching</h3>
+<p>Theories are generated or created manually by the user. But one of the key requirements for our system is the search for profitable strategies and not the generation of theories. But how to look for them? And what does “searching for profitable strategies” even mean? The search process includes two important concepts: the search method and the criterion by which we understand that the search process is completed. We have a theory. We need to understand how to search for profitable strategies based on it and how we will carry out this search.</p>
+<h4 id="one-step-approach">One-Step Approach</h4>
+<p>Let’s start with the parameters that distinguish theory from strategy. They include indicator parameters and condition parameters, such as the depth of the candles at which the check takes place and time intervals. This means that to find a profitable strategy, we need to generate strategies by varying these parameters.</p>
+<p>First, you need to understand that these parameters are limited. The depth of candles must clearly be greater than 0; for example, perhaps it cannot be greater than 50 and must always be an integer. And time intervals are generally limited to a finite list of values: 1 minute, 2 minutes, 3 minutes, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 4 hours, 1 day, 1 week, 1 month, and 1 year. These restrictions greatly simplify our task, but there can be many parameters, and therefore there can be many possible variations of strategies.</p>
+<p>For example, let’s collect all the parameters and restrictions for the strategy we looked at earlier. For convenience, I have indexed the conditions and groups to make it easier to navigate their parameters.</p>
+<p>Here’s a signal to open a position:</p>
+<ul>
+<li>
+<p>GROUP_1               <em><strong>AND</strong></em> group:</p>
+</li>
+<li>
+<p>CONDITION_1          LRC &gt; WMA on the current candle</p>
+</li>
+<li>
+<p>CONDITION_2          RSI &lt; Const on the previous three candles</p>
+</li>
+<li>
+<p>CONDITION_3          BBW &gt; Const on the current candle</p>
+</li>
+<li>
+<p>CONDITION_4          BBW on the previous candle &lt; Const</p>
+</li>
+<li>
+<p>CONDITION_5          ADX &gt; Const</p>
+</li>
+</ul>
+<p>Here’s a signal to close a position:</p>
+<ul>
+<li>
+<p>GROUP_1               <em><strong>AND</strong></em> group:</p>
+</li>
+<li>
+<p>CONDITION_1          LRC &lt; WMA on the current candle</p>
+</li>
+<li>
+<p>CONDITION_2          RSI &gt; Const on the previous three candles</p>
+</li>
+</ul>
+<p>What parameters does the LRC indicator from GROUP_1 CONDITION_1 signal for opening a position (SIGNAL_1) have?</p>
+<p>First, we need to take into account the parameter of the LookbackPeriod indicator itself, which is how many candles this indicator will be calculated on. Second, we need to understand at what time interval (TimeInterval) this indicator will work. Third, what candle depth (CandlesDeep) will the signal use to calculate conditions? As a result, we get that the first INDICATOR_1 (LRC) from GROUP_1 CONDITION_1 and SIGNAL_1 has the following parameters:</p>
+<p>GROUP_1</p>
+<p>CONDITION_1</p>
+<p>INDICATOR_1</p>
+<p>LookbackPeriod</p>
+<p>TimeInterval</p>
+<p>CandlesDeep</p>
+<p>Remember when we talked about parameter limitations? Let's add them to our parameters:</p>
+<p>GROUP_1</p>
+<p>CONDITION_1</p>
+<p>INDICATOR_1</p>
+<p>LookbackPeriod    from 2 to 300 step 1</p>
+<p>TimeInterval      limited to list of 12 values</p>
+<p>CandlesDeep       from 0 to 0 step 1</p>
+<p>We can calculate how many strategy variations INDICATOR_1 from CONDITION_1 of the group GROUP_1 will cost us.</p>
+<p>LookbackPeriod      (300 - 2 + 1) * 1 = 299</p>
+<p>TimeInterval        12</p>
+<p>CandlesDeep         1</p>
+<p>Total               299 * 12 * 1 = 3588</p>
+<p>Now let’s do the same calculations with the remaining signal indicators for opening a position, SIGNAL_1.</p>
+<p>GROUP_1</p>
+<p>CONDITION_1</p>
+<p>INDICATOR_1 (LRC)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 0 step 1</p>
+<p>INDICATOR_2 (WMA)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 0 step 1</p>
+<p>CONDITION_2</p>
+<p>INDICATOR_1 (RSI)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 10 step 1</p>
+<p>INDICATOR_2 (Const)</p>
+<p>Value               from 0 to 100 step 0.1</p>
+<p>CONDITION_3</p>
+<p>INDICATOR_1 (BBW)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>StandardDeviations  from 1 to 20 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 0 step 1</p>
+<p>INDICATOR_2 (Const)</p>
+<p>Value               from 0 to 0.6 step 0.001</p>
+<p>CONDITION_4</p>
+<p>INDICATOR_1 (BBW)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>StandardDeviations  from 1 to 20 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 10 step 1</p>
+<p>INDICATOR_2 (Const)</p>
+<p>Value               from 0 to 0.6 step 0.001</p>
+<p>CONDITION_5</p>
+<p>INDICATOR_1 (ADX)</p>
+<p>LookbackPeriod      from 2 to 300 step 1</p>
+<p>TimeInterval        limited to list of 12 values</p>
+<p>CandlesDeep         from 0 to 0 step 1</p>
+<p>INDICATOR_2 (Const)</p>
+<p>Value               from 0 to 100 step 0.1</p>
+<p>If we count all the possible variations of strategies, we get the following:</p>
+<p>SIGNAL_1=</p>
+<p>CONDITION_1 (299 * 12 * 1  *  299 * 12 * 1)</p>
+<p>* CONDITION_2 (299 * 12 * 10  *  1000)</p>
+<p>* CONDITION_3 (299 * 20 * 12 * 1  *  600)</p>
+<p>* CONDITION_4 (299 * 20 * 12 * 10  *  600)</p>
+<p>* CONDITION_5 (299 * 12 * 1  *  1000)</p>
+<p>\= 12,873,744 * 35,880,000 * 43,056,000 * 430,560,000 * 3,588,000</p>
+<p>\= 3.072395344219699e+35.</p>
+<p>This is the number of variations based only on the signal to open a position! This is an incredibly large number.</p>
+<p>If we use even a very powerful server cluster and ignore the fact that working with such large numbers in any programming language is difficult, then it will still take millennia to run such a large number of strategies on historical data. For example, if our cluster calculates thousands of strategies per second, then it will take 9.742501725709345*1024 years to calculate all the options. This is completely unacceptable for us.</p>
+<p>This means we need algorithms that are smarter than simply searching through all the possible options for parameters.</p>
+<p>Simply distributing strategies evenly across the space of all possible options is not a bad idea, but it is not enough, because there may be a strategy with much more impressive results very close by. See Figure <a href="#Fig6">3-6</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig6_HTML.jpg" /></p>
+<p>A grid with cells representing strategies is arranged in rows and columns. A highlighted node is at the top right.</p>
+<p>Figure 3-6</p>
+<p>Local extremes</p>
+<p>Fortunately, we are not the only ones faced with the task of finding the optimal solution in a vast space of possible variations. There is a special section of engineering that deals with this problem, and we can take advantage of the results of the work of a large number of scientists who have devoted many years to this branch of science. Optimization algorithms are the central part of this area. We’ll talk about them in more detail in Chapter <a href="615867_1_En_6_Chapter.xhtml">6</a>, but for now it’s important to understand the general logic of how they work.</p>
+<p>The task of optimization algorithms is to maximize the value of a function by selecting its parameters.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Figa_HTML.jpg" /></p>
+<p>An equation. Max with the modulus of X, f of X = f of X asterisk = f asterisk.</p>
+<p>In this formula,</p>
+<p><em><strong>X</strong></em> is a vector of our variable parameters, in other words, a set of values for the strategy parameters.</p>
+<p><em><strong>|X|</strong></em> is the set of permissible parameter values and is precisely the restrictions imposed on our parameters.</p>
+<p><em><strong>f</strong></em> is the objective function or optimization criterion. In relation to a strategy, this criterion may be equal, for example, to the average monthly profitability of the strategy. It is usually calculated using the formula (ending balance – opening balance) / opening balance. In other words, this is how much percent of the initial capital the strategy earned.</p>
+<p><em><strong>X*</strong></em> is a vector of variable values at which the objective function reaches its optimal, in our case maximum, value. These are just the specific values of the constant LookbackPeriod or TimeInterval for each indicator.</p>
+<p><em><strong>f*</strong></em> is the optimal value of the objective function.</p>
+<p>It is also worth noting that most modern optimization algorithms have not been proven to have absolute convergence. This means they have not been proven to find the most optimal result, but they do find a fairly good value of the objective function in a more acceptable time than millennia.</p>
+<p>The following algorithm for finding the optimal strategy is obtained as shown here:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>We pass a set of parameters with their constraints to the optimization algorithm. In response to this, they generate for us sets of parameter values, based on which we can create a strategy. That is, the algorithm will give us what the LookbackPeriod should be equal to, for example, for a specific opening signal indicator.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Our system simulates real trading with this strategy using historical data and, based on the results, calculates the optimization criterion for each set of parameters.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Again, we go to step 1; that is, we transfer the sets of parameters with the calculated criterion for each of them again to the optimization algorithm and, based on this data, it again generates a set of values for us. This loop continues until the stopping condition occurs. Such a condition can be the number of iterations or the fact that we have gone through all possible variations, or, for example, search degradation. This is when new sets of values don’t differ very much from each other. See Figure <a href="#Fig7">3-7</a>.</p>
+</li>
+</ol>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig7_HTML.jpg" /></p>
+<p>A flow diagram depicts how the theory undergoes an optimization algorithm to give N number of strategies. The strategies are calculated and aligned into parameters, values, and criterions and feedback is given to the optimization algorithm.</p>
+<p>Figure 3-7</p>
+<p>One-step process</p>
+<h4 id="two-step-approach">Two-Step Approach</h4>
+<p>I showed how to implement a one-step system to search for a strategy, but I was not impressed with the results of its work. The fact is that optimization algorithms are evaluated by two criteria: the accuracy of determining the optimal value and the coverage of all possible variations of parameters in their space. In practice, this means that if the algorithm is more tuned to coverage, then it will not find the most optimal solution, but the options that it will consider will be as varied as possible. And in the case of a bias toward optimization, the algorithm will find an extremum, but with a high degree of probability it will be local and not global.</p>
+<p>So, I tried different optimization algorithms with a wide variation in their settings and was disappointed every time. Breadth-tuned algorithms did not find the best strategies because they did not include a local search algorithm, and the value space can be huge. Algorithms tuned in depth accurately found local maxima but often missed global ones. Also, the calculations took a long time and often had negative results when the theory turned out to be unviable.</p>
+<p>As a result, I decided to complicate my system for finding profitable strategies. First, I wanted to quickly cut off bad theories; for this I used an algorithm configured in breadth and increased the step of parameter values. That is, for example, at the first step for GROUP_1 CONDITION_1 INDICATOR_1, I passed the following to the algorithm:</p>
+<p>GROUP_1</p>
+<p>CONDITION_1</p>
+<p>INDICATOR_1</p>
+<p>LookbackPeriod     from 2 to 300 step 10</p>
+<p>TimeInterval       limited to list of 12 values</p>
+<p>CandlesDeep        from 0 to 0 step 1</p>
+<p>I increased the step for LookbackPeriod by 10 times, which automatically reduced the number of variations by the same value.</p>
+<p>An urgent question arose in the automatic determination of viable theories. I didn’t like the strategy of simply selecting the best strategies sorted by the value of the optimization criterion, because the sample, for example, included strategies with 10 trades over five years or with a large number of losing positions and only a few, but large, winning ones. I consider such strategies unstable and do not work with them. Our task is to look for stable, albeit not very profitable, strategies.</p>
+<p>Therefore, I came up with and developed another essence of my system, the <em><strong>quality condition</strong></em>. Its task is to analyze the calculated strategies and give a yes/no answer, that is, whether our theory is suitable for further research or not. Obviously, there is no point in analyzing all strategies, since they are already ranked according to the optimality criterion. This means that in the suitability condition it is necessary to specify a certain number or percentage of strategies that we are ready to consider. Next, we need to indicate the selection conditions by which the strategy can be classified as suitable. If at least one of the pool of strategies turns out to be suitable, then the entire theory is considered suitable, and we will continue to work with it. See Figure <a href="#Fig8">3-8</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig8_HTML.jpg" /></p>
+<p>The quality condition block intakes the pool of strategies and gives a yes or no answer. The quality condition calculates the number of deals, percentage of profitable trades, max drawdown, average performance per month, and recovery factor.</p>
+<p>Figure 3-8</p>
+<p>Quality condition entity</p>
+<p>It is worth noting here that all these conditions can be included in the optimization criterion. For example, if maxDrawdown becomes more than 2%, then make it negative, and then the optimization algorithm will stop considering this strategy to generate the next set of variable values. However, I refused this because such strategies may be promising, but they just need to be optimized, which means they cannot be discarded from the field of view of the optimization algorithm.</p>
+<p>Since in our sequence of searching for a profitable strategy, another operation appeared to vary the intervals and steps of parameters, there was also a need for another entity that contains data on these changes. I called it <em><strong>SubTheory</strong></em>. While the theory contains settings on the basis of which we will search for strategies, SubTheory will contain a specific optimization algorithm, rules for generating and calculating strategies. It is also obvious that SubTheories are generated based on theory. See Figure <a href="#Fig9">3-9</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig9_HTML.jpg" /></p>
+<p>A diagram defines the flow of theory into sub-theory. Both the theory and sub-theory include open signal, close signal, risk control, and capital management. Theory performs a set of parameters with default intervals, while sub-theory performs individual intervals and steps.</p>
+<p>Figure 3-9</p>
+<p>SubTheory entity</p>
+<p>Based on theories, a set of SubTheory will be formed. And each SubTheory will generate strategies. That is, strategies are not built on the basis of theory. To test the theory, we created one SubTheory. See Figure <a href="#Fig10">3-10</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig10_HTML.jpg" /></p>
+<p>A tree diagram lists the theories. It comprises N number of sub-theories. Each sub-theory has N number of strategies.</p>
+<p>Figure 3-10</p>
+<p>Relationship between Theory and SubTheories</p>
+<p>Let’s assume that one of our theories turns out to be suitable. That is, with a high degree of probability, one or even several good strategies can be obtained from our theory. All that remains is to find them. When determining suitability, we reduced the number of variations by increasing the parameter step. When searching for a profitable strategy, this approach will not suit us, because our task is to find the most optimal strategy possible and not one close to it. This means that the search accuracy should be as high as possible, and therefore the parameter step should be minimal. But let me remind you that in practice I realized that this approach does not work. Therefore, I decided to act iteratively. That is, reduce the step gradually while simultaneously narrowing the ranges of parameter values. In practice, this means that at each search step a new SubTheory will be created. Now the strategy search scheme looks like Figure <a href="#Fig11">3-11</a> and Figure <a href="#Fig12">3-12</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig11_HTML.jpg" /></p>
+<p>A block diagram defines the first step. The theory undergoes quality sub-theory and an optimization algorithm to give N number of strategies. The strategies are calculated and feedbacked to the optimization algorithm with a set of parameters, values, and criteria.</p>
+<p>Figure 3-11</p>
+<p>First step</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig12_HTML.jpg" /></p>
+<p>A block diagram defines the second step. Individual intervals and steps are calculated from the theory and derived as sub-theory, which is feedback to the calculated intervals with a stopping condition check. The sub-theory undergoes an optimization algorithm to give N number of strategies.</p>
+<p>Figure 3-12</p>
+<p>Second step</p>
+<p>Let’s look at the second step in more detail.</p>
+<p>To simplify, let’s imagine that our theory is characterized by only two parameters (Table <a href="#Tab1">3-1</a>).</p>
+<p>Table 3-1</p>
+<p>Set of Params with Default Intervals and Steps</p>
+<p>Param</p>
+<p>from</p>
+<p>to</p>
+<p>step</p>
+<p>LookbackPeriod</p>
+<p>1</p>
+<p>300</p>
+<p>1</p>
+<p>Value</p>
+<p>1</p>
+<p>100</p>
+<p>0.1</p>
+<p>It is easy to calculate that this theory can have 300,000 strategies. This is not an impressive number that can simply be sorted out, but let me remind you that this is a simplified example and in real theories this number will be approximately 3.072395344219699* 1035.</p>
+<p>So let’s get started. Before creating SubTheory, we need to decide on the step and interval of each parameter. For the first time, we will take the default intervals from theory and increase the step so that the number of parameter values is limited by the user settings. For example, let’s take 20. We get the set shown in Table <a href="#Tab2">3-2</a>.</p>
+<p>Table 3-2</p>
+<p>Set of Params with <strong>Individual</strong> Intervals and Steps</p>
+<p>Param</p>
+<p>from</p>
+<p>to</p>
+<p>step</p>
+<p>LookbackPeriod</p>
+<p>1</p>
+<p>300</p>
+<p>300/20 = 15</p>
+<p>Value</p>
+<p>1</p>
+<p>100</p>
+<p>100/20 = 5</p>
+<p>So, the first SubTheory has been created. Let’s imagine that 20 strategies were generated and calculated on its basis. I understand that this number is lower than the number of all variations of strategies that can be generated based on this SubTheory, but I remind you that the optimization algorithm is not a brute-force method. The goal of these algorithms is to find the maximum value of the objective function in the least number of calculations.</p>
+<p>Now, based on the results of these 20 strategies, you need to generate custom intervals and steps for the next SubTheory. The logic for defining the steps is clear, but what about the intervals? How to reduce them? Let’s look at the LookbackPeriod parameter as an example. Let’s take the values of this parameter from the five best strategies of this SubTheory. How many strategies do we take? And what rule (percentage or quantity) should be specified by the user at the stage of theory formation in the Search settings block? See Table <a href="#Tab3">3-3</a>.</p>
+<p>Table 3-3</p>
+<p>Calculated Strategies</p>
+<p>Strategy</p>
+<p>Value of LookbackPeriod</p>
+<p>Strategy 1</p>
+<p>91</p>
+<p>Strategy 2</p>
+<p>16</p>
+<p>Strategy 3</p>
+<p>196</p>
+<p>Strategy 4</p>
+<p>166</p>
+<p>Strategy 5</p>
+<p>16</p>
+<p>From these values it is clear that the optimal value is in the interval 16 - 196. But since this is not the final solution, we will add one step in each direction. As a result, we will get an interval from 1 to 211. Next we need to reduce the step. And again we take 20 intervals. The step will then be equal to 211/20 = 10.55, but we know that the minimum possible step for this parameter is 1, which means it is necessary to round 10.55 to units. As a result, we get 11. We do the same with the second parameter.</p>
+<p>This strategy for calculating new intervals and steps is not the only one. Better solutions can be devised, such as exploring multiple subintervals to more accurately probe these local extrema. You can also change the step size depending on the number of our iteration and/or the total number of strategies. Here I showed an example of the simplest implementation.</p>
+<p>Now we need to discuss the conditions for exiting this cycle. I’m using a double condition. The first is the number of iterations. But it happens that the intervals narrow so much that the system has the opportunity to go through all possible strategy options in an acceptable time. Therefore, I also set the number of strategies after which the system could switch to the brute-force method. And after searching through all possible values, it stopped.</p>
+<h3 id="selection-and-forward-testing">Selection and Forward Testing</h3>
+<p>The second step is complete, so now we’ll select strategies for forward testing. I acted according to the following logic: I set the number of strategies I needed and the condition of suitability. My system followed a list of strategies sorted in descending order of the value of the optimization criterion; if any of them fulfilled the suitability condition, then the system allowed it to proceed to the next step. This should continue until either the required number of strategies is collected or the pool, the settings of which are specified in the suitability criteria, is exhausted.</p>
+<p>We now need to test suitable strategies on stocks that were not included in the search process. This is necessary to make sure that the chosen strategies are truly profitable and not tailored to specific stocks. This test will also give us information about the operation of strategies, which can be applied in real trading in the risk control module. What is forward testing in relation to our system? This is simply modeling the operation of a strategy based on historical data and preselected instruments. Next, all results are checked according to the suitability condition, and if they all meet the condition, then the strategy is considered profitable and can be used in real trading. See Figure <a href="#Fig13">3-13</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig13_HTML.jpg" /></p>
+<p>A block diagram defines the third step. The output from the second step is processed for quality conditions, forward calculation, and final quality condition.</p>
+<p>Figure 3-13</p>
+<p>Third step</p>
+<h3 id="selection-of-financial-instruments">Selection of Financial Instruments</h3>
+<p>At this stage we have profitable strategies. But on what instruments are they profitable? On what instruments can they be used in real trading? There are many possible solutions to this issue. First, we need to divide all the tools we use by type. In the simplest sense, this is a division by price ranges and trading volumes. This division is necessary due to the widely used indicator theories based on price or trading volume.</p>
+<p>This is not the only way to choose an instrument for real trading. There are many more options; for example, you can divide charts by type, highly volatile, trend, flat, and so on. Of course, to make the user’s work easier, you can automate the creation of historical data with the automatic distribution of price charts into groups.</p>
+<p>We all understand that the market situation can change, and this means that the instruments can change the group. So, we need to take care of two more things. First, we need to think about the distribution of instruments or the segments of their price charts into groups when connecting a new instrument. Second, we need to take care of a real-time monitoring system that will turn on or off strategies on instruments when the market situation changes.</p>
+<p>So, charts or instruments are divided into types, which means that the system must check, search, conduct forward analysis, and conduct real trading on instruments of the same type. This is important, because a profitable strategy will cease to be profitable in completely new conditions. This approach looks like tweaking a strategy, but it’s not at all because the types of tools can be broad rather than limited to one or two instances. Of course, if you set the conditions for a group that only one or two instruments fall under, then yes, this will be an adjustment. In this matter, it is important to maintain a balance between the breadth of coverage of tools or types of charts and understanding the specifics of how each of your theories works.</p>
+<h3 id="setting-up-a-search-for-a-profitable-strategy">Setting Up a Search for a Profitable Strategy</h3>
+<p>In the previous steps, we talked a lot about the fact that the user must set some parameters to generate theories and find profitable strategies. Let’s collect all this information in one place.</p>
+<p>Obviously, the entire search process is governed by theory, which means that search settings should be stored in it. And since the theory can be created not only manually, the user must select these settings in the generator.</p>
+<p>Also, the search settings should contain all the necessary information about the search parameters in all three steps and include a list of tools or segments of historical data on which strategy indicators will be calculated (see Figure <a href="#Fig14">3-14</a> and Figure <a href="#Fig15">3-15</a>).</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig14_HTML.jpg" /></p>
+<p>A diagram defines how the user sends the data to the theory and theory generator. The theory includes open signal, close signal, risk control, and capital management. The theory generator comprises risk control and capital management with indicators, signal templates, and search settings.</p>
+<p>Figure 3-14</p>
+<p>Theory generation process</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig15_HTML.jpg" /></p>
+<p>A block diagram of the search settings block lists its steps. The first and second steps include instruments and optimization algorithms. The first step performs quality conditions, while the second step performs exit conditions. The final step comprises quality conditions, forward test instruments, and final quality conditions.</p>
+<p>Figure 3-15</p>
+<p>Search settings at every step</p>
+<h3 id="the-logic-of-searching-for-profitable-strategies">The Logic of Searching for Profitable Strategies</h3>
+<p>Let’s summarize and describe the general vision of the algorithm for finding profitable strategies:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The user creates a theory manually or using a theory generator. The user must make all the necessary settings to find a profitable setup, as well as signal templates and a list of indicators to generate strategies.</p>
+</li>
+<li>
+<p>1.</p>
+<p>An initial check of the quality of the theory is carried out on a reduced field of possible parameter values using an optimization algorithm configured to cover a wide range of possible parameter values.</p>
+</li>
+<li>
+<p>1.</p>
+<p>If the previous step is completed successfully and the theory is considered to be of high quality, then the optimal strategy is searched by iteratively narrowing the possible options for parameters with a gradual increase in their accuracy.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The required number of strategies is selected from the entire pool of counted strategies in step 3 using the quality criterion specified in the search settings.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Selected strategies undergo forward testing. Using the final quality condition, the required number of final strategies that are suitable for real trading are selected from them.</p>
+</li>
+</ol>
+<h3 id="real-trading">Real Trading</h3>
+<p>At the previous step, several promising strategies were found that performed well in forward testing. We also know what types of instruments or chart types each of these strategies can use.</p>
+<p>This means that in a real trading system there should always be a robot running that monitors all available instruments and in real time determines their type or the type of their charts. As I said earlier, there are many options. To keep things simple, I will use tool types in this book. For example, if a tool has increased in price from $15 to $50, then the robot must record this and change its type.</p>
+<p>Another robot is also needed that constantly checks the strategies and types of tools. If one of the tools has changed its type, then you need to turn off the strategies that no longer correspond to it. Here it is necessary to pay special attention to the mechanism for disconnecting the strategy from the tool. Imagine a situation where a tool changes its type frequently. So, should the system constantly turn the strategy on and off? No, of course, this problem can be approached from two sides. First, correctly configure the definition of the tool type so that it has a reserve and the change of these types does not occur frequently. Second, do not turn off the strategy immediately, but wait for a certain time.</p>
+<p>Also, this robot must include strategies on tools of the appropriate type. For example, if the tool has changed type or a new strategy has appeared, then it needs to be put into operation.</p>
+<p>Our system works with money, which means that an external, additional audit of the strategy’s operation is necessary. In practice, this means that not only the strategy itself, with the help of risk control, will monitor its work, but also an external robot will monitor its performance and, in case of any discrepancies, turn off the strategy. For example, if the balance of a strategy has dropped sharply, or vice versa, if the strategy has earned an amount of money that is not standard for it, then this robot should turn it off.</p>
+<p>In real work, system stability is extremely important. This means we must have prepared scenarios for actions in case of unforeseen circumstances—a sudden shutdown of the exchange for some time, a planned system update when we are forced to stop all or part of the strategies, an unplanned lack of electricity or Internet.</p>
+<p>It is necessary to understand that this system will trade on more than one exchange using dozens of instruments. This will be a large, full-scale program, integrated with dozens of exchanges, using hundreds of tools and thousands of strategies. This point will be critical at the design stage.</p>
+<h2 id="important-questions">Important Questions</h2>
+<p>Previously, we defined the main essence of our future system and also described the main processes associated with the search and operation of profitable strategies. But there are still some points that should be examined in more detail.</p>
+<h3 id="life-cycle-of-a-position">Life Cycle of a Position</h3>
+<p>Each profitable strategy contains signals for opening and closing a position. But what is the position? What are its stages of existence?</p>
+<p>First, I want to separate the concept of a position from the concept of a system (internal) order and an order placed directly at the broker. Let’s start with the latter. This is exactly the order on the basis of which deals are executed and the broker notifies us about the change in status.</p>
+<p>Many brokers provide functionality for placing not only market and limit orders but also such interesting types as stop loss or take profit, etc. But it is important to understand that not all brokers support all types of orders; therefore, we must implement them in our system. This is where the concept of a system order originates. This is the essence of our system, which “monitors” the state of the market, and if specific conditions are met, then it creates an order with the broker and monitors its execution (see Figure <a href="#Fig16">3-16</a>).</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig16_HTML.jpg" /></p>
+<p>A flow diagram defines how the tracking data is fed to the system order that does solving. The solved output processes the order into multiple deals.</p>
+<p>Figure 3-16</p>
+<p>System order process</p>
+<p>Position is one of the central entities of the system. It is this entity that initiates the creation of system orders. Each position can generate several system orders.</p>
+<p>For example, one of the ways to control risk is to place take profit and stop loss orders. This means that when opening a position, we need to create three system orders: buy, take profit, and stop loss. However, not every one of them will generate an exchange order. See Figure <a href="#Fig17">3-17</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig17_HTML.jpg" /></p>
+<p>A tree diagram defines the strategy positions based on orders. Each position has multiple orders.</p>
+<p>Figure 3-17</p>
+<p>Relationship between strategy and orders</p>
+<p>Let’s describe the life cycle of a position. Here I will introduce one of the simplest position management processes. But I do not exclude the possibility of much more complex options. So let’s get started.</p>
+<p>A signal to open a position came from the strategy. This means we need to buy a certain amount of tools. We create a simple system buy order, which generates a market order.</p>
+<p>Each order can have each of these statuses:</p>
+<ul>
+<li>
+<p><strong>New:</strong> Initial status. This means that the broker has successfully registered your request in the system.</p>
+</li>
+<li>
+<p><strong>PartiallyFill:</strong> The order is partially filled. This is not the final status of the order; it only shows that one or more deals were made within the order, which do not cover the entire needs of the order.</p>
+</li>
+<li>
+<p><strong>Fill:</strong> Final order status. This means that the order was successfully executed.</p>
+</li>
+<li>
+<p><strong>Canceled:</strong> Final status. This status is set if you cancel your order yourself. It may come after PartiallyFill. It is normal when you cancel a partially filled order.</p>
+</li>
+<li>
+<p><strong>Rejected:</strong> Final status. This status is set if the broker cancels the order for any reason.</p>
+</li>
+</ul>
+<p>Executing an order at a broker is not a synchronous process. There is also a time delay due to the mechanics of receiving order statuses. We must provide the correct logic for the position to take into account all these nuances. For example, a situation may arise when a market order switches to the Rejected status immediately after it is created or when the system sends a request to create an order and the broker returns an error.</p>
+<p>This means we must provide a position-processing mechanism in the platform that will allow us to correctly process all these situations.</p>
+<h3 id="capital-management">Capital Management</h3>
+<p>In the previous chapter, I described several ways to manage capital. Each method has its own characteristics, advantages, and disadvantages. But all these methods have one thing in common: at the input they must receive data about the operation of the strategy, and at the output they must say the maximum amount for the purchase of an asset and set a strategy for purchasing additional assets. See Figure <a href="#Fig18">3-18</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig18_HTML.jpg" /></p>
+<p>A block diagram depicts capital management block intake strategy indicators and balance history to give the maximum purchase amount and repurchase strategy.</p>
+<p>Figure 3-18</p>
+<p>Capital management entity</p>
+<p>This means the system will refer to the capital management method every time the price of an asset changes to obtain information about the need to repurchase or partially sell the purchased asset. That is, the purpose of this block is to answer the question, is it necessary to buy or sell part of the assets and for what amount?</p>
+<p>To focus on the main thing, implementing a system for the mass search for profitable strategies, we will implement in this book only one method of money management, but we will focus on creating a mechanism that will make it easy to add more complex methods to the system.</p>
+<p>Our first method will be the fixed interest method. This is perhaps one of the easiest methods to implement, as it has only one variable and some elementary logic. It was discussed in detail in the previous chapter, but I will remind you what it is. It specifies the percentage of the balance on the basis of which the maximum purchase amount of the asset will be calculated when opening a position. It is also worth noting that with this method, only one buy order is created for one position; that is, there is no provision for the additional purchase of an asset into the position.</p>
+<h3 id="risk-control">Risk Control</h3>
+<p>There are many approaches to managing your risks, all of which come down to one goal: to prevent the system from losing or gaining too much. I chose three options for myself that can easily be combined with each other. This is the creation of a take profit, stop loss, or trailing system order.</p>
+<h4 id="take-profit-and-stop-loss">Take Profit and Stop Loss</h4>
+<p>This system order does not immediately create an order with the broker. And it sets it only if the closing price of the candle exceeds the price specified during creation. To simplify, I introduced a parameter equal to the percentage of discrepancy in the average price of transactions when executing a system order during the opening of a position. That is, if the price exceeds this percentage, then an order is placed with the broker.</p>
+<p>For example, the strategy gave a signal to open a position. According to the logic of position processing, a simple market system order to buy an asset was first opened. During its execution, the deals in Table <a href="#Tab4">3-4</a> were made.</p>
+<p>Table 3-4</p>
+<p>List of Deals</p>
+<p>Count</p>
+<p>price</p>
+<p>total</p>
+<p>10</p>
+<p>45.4</p>
+<p>454</p>
+<p>2</p>
+<p>45.3</p>
+<p>90.6</p>
+<p>As a result, we get the average purchase price equal to (454 + 90.6) / 12 = 45.38. If the strategy settings indicate that it is necessary to create a system take profit order with execution when the price exceeds the 4% threshold, then the system order will give a command to open an order with the broker when the closing price of the candle exceeds the threshold price equal to 45.38 * 104% = 47.2.</p>
+<p>Stop loss system orders act exactly the opposite. They create an order with the broker if the closing price of a candle falls below a certain level. Regarding the example given earlier, if you set a threshold of 3%, then such a system order will command the broker to sell if the asset price falls below 45.38 * 97% = 44.01.</p>
+<h4 id="trailing-system-order">Trailing System Order</h4>
+<p>A trailing system order is a dynamically changing order designed to maximize profits. In this section, I will present my version of the idea of ​​implementing this type of order.</p>
+<p>The components of a trailing system order are three lines: decision border, profit border, and stop border. The stop border and profit border depend on the trailing price, the change of which is controlled by the decision border. As in the case of take profit and stop loss, if the closing price of the current candle is higher than the profit border or lower than the stop border, then the system initiates the procedure for closing the position, but there is a significant difference: in a trailing order, these borders are dynamic since the trailing price on which they depend may change.</p>
+<p>When creating a system order, the trailing price is equal to the average price of asset purchase transactions. The decision border is a price that is higher than the trailing price by a certain percentage. If the current price is above the decision border, then a special trailing signal is checked. This signal analyzes the current state of the market and shows whether we should expect the asset price to continue moving in the direction we need. If the signal returns “yes,” then the trailing price becomes equal to the current one. This in turn entails a shift in the stop border and profit border prices. I have slightly modified the algorithm for determining the stop border and profit border. For me, they are not calculated using a simple formula that changes the price of the decision border by a certain, predetermined percentage. This formula also includes a factor for narrowing the acceptable price tunnel. When the stop border and profit border with each change the trailing prices become closer to each other. See Figure <a href="#Fig19">3-19</a>.</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig19_HTML.jpg" /></p>
+<p>Two line graphs of steps 1 and 2. Both plots have an increasing trend with several ups and downs employed with the stop border, decision border, and profit border. In step 1, the trailing price is slightly below the decision border. In step 2, the trailing price is at the rising edge of the stop border.</p>
+<p>Figure 3-19</p>
+<p>An example of how trolling order works</p>
+<p>Let’s look at the algorithm in more detail.</p>
+<p>The following variables are necessary for a trailing system order to work:</p>
+<ul>
+<li>
+<p><strong>TrailingPrice:</strong> The price relative to which the boundaries are located. When creating a trailing system order, the trailing price is equal to the average price of transactions when purchasing assets.</p>
+</li>
+<li>
+<p><strong>ProfitBorderCoeff:</strong> What percentage of TrailingPrice is the upper price border.</p>
+</li>
+<li>
+<p><strong>StopBorderCoeff:</strong> What percentage of TrailingPrice is the lower price border.</p>
+</li>
+<li>
+<p><strong>BorderChangeCoeff:</strong> What percentage the distance between the profit border and the stop border decreases by with each shift of the Trailing price.</p>
+</li>
+<li>
+<p><strong>DecisionCoeff:</strong> What percentage of TrailingPrice is the decision line located at.</p>
+</li>
+<li>
+<p><strong>DecisionSignal:</strong> The signal on the basis of which a decision is made to change the TrailingPrice.</p>
+</li>
+<li>
+<p><strong>DecisionCount:</strong> The number of changes TrailingPrice.</p>
+</li>
+</ul>
+<p>The algorithm for processing changes in the asset price will look like this:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>We check the penetration of the profit border. If we break through, then close the position.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We check whether the stop border has been broken. If we break through, then close the position.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We check the penetration of the decision border. If they hit, then we check the signal. If the signal returns “yes,” then TrailingPrice becomes equal to the current price of the asset.</p>
+</li>
+</ol>
+<p>For example, if the price of an asset changed as shown in Table <a href="#Tab5">3-5</a>.</p>
+<p>Table 3-5</p>
+<p>Change in the Price of a Financial Instrument</p>
+<p>Date</p>
+<p>Price</p>
+<p>2021/10/01 11:00</p>
+<p>97</p>
+<p>2021/10/01 11:05</p>
+<p>95</p>
+<p>2021/10/01 11:10</p>
+<p>105</p>
+<p>2021/10/01 11:15</p>
+<p>107</p>
+<p>2021/10/01 11:20</p>
+<p>107.5</p>
+<p>And the variables in the strategy are equal to the values in Table <a href="#Tab6">3-6</a>.</p>
+<p>Table 3-6</p>
+<p>Strategy Parameter Values</p>
+<p>ProfitBorderCoeff</p>
+<p>0.1</p>
+<p>StopBorderCoeff</p>
+<p>0.05</p>
+<p>BorderChangeCoeff</p>
+<p>0.3</p>
+<p>DecisionCoeff</p>
+<p>0.02</p>
+<p>TrailingPrice</p>
+<p>90</p>
+<p>DecisionCount</p>
+<p>0</p>
+<p>Then our algorithm will work as follows:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>2021/10/01 11:00 CurrentPrice = 97</p>
+<ol>
+<li>
+<p>a.</p>
+<p>Checking the penetration of the profit border. To do this, you need to calculate ProtectedPrice, which is the profit border price.</p>
+<p>ProtectedPrice = TrailingPrice * (1 + ProfitBorderCoeff * ((1 - BorderChangeCoeff ) pow DecisionCount)) = 90 * (1 + 0.1 * ((1 - 0.3) pow 0) = 90 * (1 + 0.1 * 1)= 99</p>
+<p>The current price of 97 is less than the ProtectedPrice of 99. This means there is no need to close the position.</p>
+</li>
+<li>
+<p>b.</p>
+<p>Checking the penetration of the stop border. To do this, you need to calculate ProtectedPrice minus the stop border price.</p>
+<p>ProtectedPrice = TrailingPrice * (1 - StopBorderCoeff * ((1 - BorderChangeCoeff ) pow DecisionCount)) = 90 * (1 - 0.05 * ((1 - 0.3) pow 0) = 90 * (1 - 0.05 * 1) = 85.5</p>
+<p>The current price of 97 is more than the ProtectedPrice of 85.5. There is no need to close such a position.</p>
+</li>
+<li>
+<p>c.</p>
+<p>Checking the penetration of the decision border. To do this, let’s calculate DecisionPrice.</p>
+<p>DecisionPrice = TrailingPrice * (1 + DecisionCoeff) = 90 * (1 + 0.02) = 91.8.</p>
+<p>The current price of 97 is greater than the DecisionPrice of 91.8, which means we check the signal. For example, the signal gave the answer “yes.” It turns out that TrailingPrice becomes equal to 97, DecisionCount 1.</p>
+<p><em><strong>Results of the step</strong></em>: We do not close the position. TrailingPrice = 97, DecisionCount = 1.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>1.</p>
+<p>2021/10/01 11:05 CurrentPrice = 95</p>
+<ol>
+<li>
+<p>a.</p>
+<p>Checking the penetration of the profit border.</p>
+<p>ProtectedPrice = TrailingPrice * (1 + ProfitBorderCoeff * ((1 - BorderChangeCoeff ) pow DecisionCount)) = 97 * (1 + 0.1 * ((1 - 0.3) pow 1) = 97 * (1 + 0.1 * 0.7)= 103.79</p>
+<p>The current price is 95 less than the ProtectedPrice of 103.79. This means there is no need to close the position. Please note that not only has the upper price limit changed from 103.79 to 99, but also the distance between the upper and lower limits has decreased.</p>
+</li>
+<li>
+<p>b.</p>
+<p>Checking the penetration of the stop border.</p>
+<p>ProtectedPrice = TrailingPrice * (1 - StopBorderCoeff * ((1 - BorderChangeCoeff ) pow DecisionCount)) = 97 * (1 - 0.05 * ((1 - 0.3) pow 1) = 97 * (1 - 0.05 * 0.7) =93.65</p>
+<p>The current price is 95 more than the ProtectedPrice of 93.65. This means there is no need to close the position.</p>
+</li>
+<li>
+<p>c.</p>
+<p>Checking the penetration of the decision border. To do this, let’s calculate DecisionPrice.</p>
+<p>DecisionPrice = TrailingPrice * (1 + DecisionCoeff) = 97 * (1 + 0.02) = 98.94.</p>
+<p>The current price 97 is greater than DecisionPrice 98.94, which means we check the signal. For example, the signal gave the answer “no.” It turns out that TrailingPrice does not change.</p>
+<p><em><strong>Results of the step</strong></em>: We do not close the position. TrailingPrice = 97, DecisionCount = 1</p>
+</li>
+</ol>
+</li>
+<li>
+<p>1.</p>
+<p>2021/10/01 11:10 CurrentPrice = 105</p>
+<ol>
+<li>
+<p>a.</p>
+<p>Checking the penetration of the profit border.</p>
+<p>ProtectedPrice = TrailingPrice * (1 + ProfitBorderCoeff * ((1 - BorderChangeCoeff ) pow DecisionCount)) = 97 * (1 + 0.1 * ((1 - 0.3) pow 1) = 97 * (1 + 0.1 * 0.7)= 103.79. Obviously it has not changed since the previous step, because TrailingPrice has not changed</p>
+<p>The current price is 105 more than the ProtectedPrice of 103.79. This means we give a signal to close the position.</p>
+<p><em><strong>Results of the step</strong></em>: Closing a position.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>A trailing system order is a very powerful risk control mechanism because it changes its parameters depending on the market situation.</p>
+<h3 id="scalability-of-indicators">Scalability of Indicators</h3>
+<p>There is one big problem that I encountered almost immediately after the first attempt to implement this system: different scales of indicator charts that are compared in signals.</p>
+<p>Imagine a situation where you need to compare ADX and the closing price of a candle, in some signal condition (see Figure <a href="#Fig20">3-20</a>).</p>
+<p><img alt="" src="../images/615867_1_En_3_Chapter/615867_1_En_3_Fig20_HTML.jpg" /></p>
+<p>A multiline graph of A D X versus price. It plots two fluctuating trends with multiple barbs and plunges. At an A D X of 40.00, the maximum price observed is 230.00. Data are approximate.</p>
+<p>Figure 3-20</p>
+<p>Scalability of indicators</p>
+<p>I propose solving this problem in a way that is standard for many trading platforms: scaling the indicators and bringing them to a single coordinate system. To do this, it is necessary to take the maximum and minimum values on the last segment of historical data for each indicator and equate them to 0 and 100%. As a result, each indicator value can be scaled from 0 to 100 using the following formula:</p>
+<p>(currentValue - minValue) / ((maxValue - minValue) * 100)</p>
+<p>It is worth noting here that as the strategy works, the values of minValue and maxValue should change as new data arrives. That is, the start of calculations will occur only after processing a given length of historical data.</p>
+<p>Let’s look at an example. As a result of analyzing historical data, the maximum value of the indicator was 20, and the minimum was 9. See Table <a href="#Tab7">3-7</a>.</p>
+<p>Table 3-7</p>
+<p>Scaled Value Changes over Time</p>
+<p>Date</p>
+<p>Indicator Value</p>
+<p>Maximum Value</p>
+<p>Minimum Value</p>
+<p>Scaled Value</p>
+<p>2018/10/2 08:05</p>
+<p>11</p>
+<p>20</p>
+<p>9</p>
+<p>(11 - 9)/(20 - 9) * 100 = 18.18</p>
+<p>2018/10/2 08:10</p>
+<p>8</p>
+<p>20</p>
+<p>8</p>
+<p>0</p>
+<p>2018/10/2 08:15</p>
+<p>25</p>
+<p>25</p>
+<p>8</p>
+<p>100</p>
+<p>2018/10/2 08:20</p>
+<p>20</p>
+<p>25</p>
+<p>8</p>
+<p>70.59</p>
+<p>2018/10/2 08:25</p>
+<p>27</p>
+<p>27</p>
+<p>8</p>
+<p>100</p>
+<p>2018/10/2 08:30</p>
+<p>19</p>
+<p>27</p>
+<p>8</p>
+<p>57.89</p>
+<p>Thus, you can easily scale any indicator values to a single coordinate system and compare them with each other.</p>
+<h2 id="summary">Summary</h2>
+<p>In this chapter, we went through the first stage of creating an architectural solution, namely, identifying requirements.</p>
+<p>We identified the main entities of the system, as well as their relationships.</p>
+<p>We decided to use optimization algorithms and also realized that the search for profitable strategies should be done in two stages.</p>
+<p>We also discussed how our system should look in a production environment.</p>
+<p>In the next chapter, we will pay more attention to the technical details. Let’s discuss what subsystems and services should be in our system, as well as how they should interact with each other.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4184 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/Algorithmic/html/615867_1_En_7_Chapter/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>615867 1 En 7 Chapter - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-implementation-of-optimization-algorithms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              615867 1 En 7 Chapter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../flutter/ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General View
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brute-force-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brute-Force Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brute-Force Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-set-of-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting a Set of Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genetic-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genetic Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Genetic Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-info_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-a-set-of-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting a Set of Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutation-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutation Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filtering Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtering Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roulette-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roulette Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elitism-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elitism Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breeding-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breeding Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breeding Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selection-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection Step
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selection Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selection-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#panmixia-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panmixia Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crossing-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crossing Step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subtheory-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SubTheory Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>7. Implementation of Optimization Algorithms</p>
+<p>© The Author(s), under exclusive license to APress Media, LLC, part of Springer Nature 2024</p>
+<p>V. DolzhenkoAlgorithmic Trading Systems and Strategies: A New Approach<a href="https://doi.org/10.1007/979-8-8688-0357-4_7">https://doi.org/10.1007/979-8-8688-0357-4_7</a></p>
+<h1 id="7-implementation-of-optimization-algorithms">7. Implementation of Optimization Algorithms</h1>
+<p>Viktoria Dolzhenko<a href="#Aff2">1</a>  </p>
+<p>(1)</p>
+<p>San Jose, Costa Rica</p>
+<p>In the previous chapter, I covered the theory of constructing optimization algorithms. We looked at what genetic algorithms are and from which operators they can be constructed. In this chapter, the time has come to put this information together to create a library that will become one of the important modules of the system for searching for profitable strategies.</p>
+<p>As with building any module or service, creating this will consist of several steps.</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Write a description of use cases. This step is necessary to understand what functionality will be included in the new library and how it will be used.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Make a list of the required functionality.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Implement it.</p>
+</li>
+</ol>
+<p>In this chapter, I plan to first talk to you about my expectations of the optimization algorithms module and describe my general vision.</p>
+<p>After this, we will implement the simplest optimization algorithm, namely, the brute-force algorithm. Since it is simple, when implementing it, most of our effort will be on creating the foundation of the module. Implementing a mechanism that includes new optimization algorithms will not affect library users.</p>
+<p>Once the foundation is ready, we will begin implementing the genetic algorithm.</p>
+<p>I am using a framework to implement .NET, but that does not mean this chapter will be useful only to those who already know or are interested in .NET. I could have used any other popular language and framework with equal success. The ideas discussed in this chapter will be useful to any person who has decided to create their own trading system, regardless of the chosen programming language.</p>
+<p>I hope that after reading this chapter you will have enough information and ideas to create your own library of optimization algorithms.</p>
+<h2 id="general-view">General View</h2>
+<p>In the previous chapter, much attention was paid to the fact that optimization algorithms are not a list of clearly defined rules but rather ideas for constructing your own algorithms. If we take the genetic algorithm as an example, many operators have been developed for it, on the basis of which you can implement a large number of your own variations of the genetic algorithm.</p>
+<p>And since the list of optimization algorithms is not limited and each of them is unique and has its own list of settings and parameters, this means that the optimization algorithm in the service for finding a profitable strategy will be an entity.</p>
+<p>I see the scenario for creating an optimization algorithm as follows:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The user opens a special form for creating an optimization algorithm in the UI part of the application.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The user possibly enters the name of the new algorithm.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The user selects the type. In this chapter, we implement only two types of algorithms: brute-force algorithm and genetic algorithm.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The user configures operator types or other options.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The user sets the values of free parameters.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The user saves the result.</p>
+</li>
+</ol>
+<p>What does the module of optimization algorithms have to do with this? After all, it will not contain a UI or even a database. But pay attention to steps 3, 4, and 5. Where will the application get the list of available algorithm types? What about the types of operators and the list of free parameters for them? All this information will have to be provided by the optimization algorithms module.</p>
+<p>Here we have highlighted the first functionality that the module must implement.</p>
+<p><em>Functional requirement</em>: Return all necessary information for creating and configuring variations of optimization algorithms.</p>
+<p>Let’s say the user created a new optimization algorithm or changed an existing one. How will he understand that his algorithm is efficient enough? Of course, it makes sense to perform a preliminary check by testing it on some simple subtheory with a small number of optimized parameters and on a not too large period of historical data, but is this enough? In addition, even such testing will take time and may not reveal all the advantages or disadvantages of the new optimization algorithm.</p>
+<p>All this leads to the need to create a different way to test the effectiveness of algorithms. And there is such a way. It is based on training algorithms on special mathematical functions. Of course, this method does not give an absolute result. As was correctly noted in the previous chapter, the problem of finding optimal parameter values is completely unformalized. That is, it does not have any mathematical model. This means it is impossible to find a training mathematical function that is remotely similar to this.</p>
+<p>But we know that it is multi-extremal and has a range of permissible values, which is a multidimensional parallelepiped. This knowledge allows us to test the performance of the algorithm on multi-extremal mathematical functions with or without the addition of a range of acceptable values.</p>
+<p><em>Functionality requirement:</em> Provide functionality that allows you to test the created algorithm on training mathematical functions.</p>
+<p>From the fact that using the module it is possible to optimize not only strategies, but also mathematical functions, another requirement follows.</p>
+<p><em>Functional requirement:</em> The module must be independent of the context in which it is used.</p>
+<p>This means that for the algorithms embedded in the module, there should be no difference between the optimization of the candle interval (1 min, 5 min, 1 h, and so on) for calculating the indicator of one of the conditions of the signal to buy the strategy and the value of one of the components of the vector X of the three-dimensional function of Hartman.</p>
+<p>So, using the optimization algorithms module, the user was able to create a new algorithm and test its operation on mathematical functions, after which he selected the new algorithm in the settings of the theory generator and clicked the generate button. Next, the theory is generated, and on its basis a subtheory is created, which uses this algorithm to create and test strategies.</p>
+<p>Let’s imagine that the user has chosen a brute-force algorithm, and according to the subtheory settings, there are several thousand variants of strategies, each of which needs to be tested. Should the algorithm immediately return several thousand variants of parameter values? Of course not. First, saving and queuing thousands of strategies at once is not a good idea, because something can go wrong in the middle of this process.</p>
+<p>Second, there is a possibility that the user may change his mind and stop the calculation. Then it will turn out that a large number of strategies and tasks will be created in vain and will only waste space in the database. This means that it makes sense for the module to provide variations in parameter values in portions.</p>
+<p>The iterative nature of most optimization algorithms also speaks in favor of chunkiness. If we take, for example, a genetic algorithm, then it has the concept of generations, which are also generated sequentially.</p>
+<p><em>Functional requirement:</em> Generating sets of values for calculating the objective function (calculating strategy indicators) must be an iterative process.</p>
+<p>As a result, the operation of the module can be represented as a loop, as shown in Figure <a href="#Fig1">7-1</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_7_Chapter/615867_1_En_7_Fig1_HTML.jpg" /></p>
+<p>A flow diagram depicts how the set of parameter settings is processed via optimization and a calculator with N number of values. The calculated set of parameters with n number of values and criteria is feedback to the optimization algorithm.</p>
+<p>Figure 7-1</p>
+<p>Operation of the optimization module</p>
+<p>Let’s fix the final list of functionality that is required from the library.</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Provide all the necessary information to create and configure variations of optimization algorithms.</p>
+</li>
+<li>
+<p>1.</p>
+<p>A module must be independent of the context in which it is used.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Generating sets of values for calculating the objective function should be an iterative process.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Provide functionality that allows you to test the created algorithm on training mathematical functions.</p>
+</li>
+</ol>
+<h2 id="brute-force-algorithm">Brute-Force Algorithm</h2>
+<p>The essence of this method is to enumerate all the possible options for parameter values. Let’s start with the first requirement: provide information about the algorithm settings. First, let’s discuss how the library classes will be used.</p>
+<p>I see it this way:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The connection will of course be made using IServiceCollection. Dependency injection (DI) facilitates testing by allowing dependencies to be replaced with mock implementations. It also reduces coupling between modules and promotes better separation of responsibilities in code. This is a generally accepted practice that should not be abandoned, even if at first glance it seems that DI is not needed.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Of course, enum or its equivalent will be used to store the list of available algorithm types if we need more advanced functionality in the future.</p>
+</li>
+<li>
+<p>1.</p>
+<p>All functionality will be embedded in classes that implement the IOptimizationAlgorithm interface. One class will be created for each type of optimization algorithm.</p>
+</li>
+<li>
+<p>1.</p>
+<p>To obtain an instance of a class that implements an algorithm, you need to contact the factory, which will match the type of the algorithm with the desired class and generate its instance.</p>
+</li>
+</ol>
+<p>Let’s get started. Listing <a href="#PC1">7-1</a> shows an implementation of an extension to IServiceCollection. Here I use functionality that was implemented in the latest version of .NET 8 Keyed Services. The idea is to be able to add a named implementation of an interface. I use one of the enum elements as the key.</p>
+<p>public static IServiceCollection AddOptimizationAlgorithms(this IServiceCollection services)</p>
+<p>{</p>
+<p>services.AddSingleton<AlgorithmFactory>();</p>
+<p>services</p>
+<p>.AddKeyedTransient<IOptimizationAlgorithm, BruteForceAlgorithm>(</p>
+<p>AlgorithmTypes.BruteForce);</p>
+<p>return services;</p>
+<p>}</p>
+<p>Listing 7-1</p>
+<p>Adding Dependencies</p>
+<p>I connect the factory as a singleton because this class is stateless, so I don’t see the need to generate a new instance every time I get an instance from the collection. But IOptimizationAlgorithm will be Transient, because it will store the necessary settings for calculating the next portion of parameter values.</p>
+<p>Listing <a href="#PC2">7-2</a> shows the implementation of the function that gets an instance of an algorithm in the AlgorithmFactory class.</p>
+<p>public IOptimizationAlgorithm GetOptimizationAlgorithm(</p>
+<p>AlgorithmTypes type)</p>
+<p>{</p>
+<p>return _serviceProvider</p>
+<p>.GetRequiredKeyedService<IOptimizationAlgorithm>(type);</p>
+<p>}</p>
+<p>Listing 7-2</p>
+<p>GetOptimizationAlgorithm Function</p>
+<h3 id="getting-info">Getting Info</h3>
+<p>Let’s take a look at IOptimizationAlgorithm in Listing <a href="#PC3">7-3</a>, since the first step was to implement the functionality of obtaining information about the algorithm. Now it contains only one function.</p>
+<p>public interface IOptimizationAlgorithm</p>
+<p>{</p>
+<p>public AlgorithmTypeInfo GetTypeInfo();</p>
+<p>}</p>
+<p>Listing 7-3</p>
+<p>IOptimizationAlgorithm Interface</p>
+<p>The brute-force algorithm has only one free parameter: the number of returned sets of values at each iteration. So, the AlgorithmTypeInfo class looks simple (Listing <a href="#PC4">7-4</a>), but when we start implementing a genetic algorithm, it becomes much more complex.</p>
+<p>public record AlgorithmTypeInfo(AlgorithmTypes Type)</p>
+<p>{</p>
+<p>public List<AlgorithmTypeInfo\_Param> Params { get; } = new();</p>
+<p>}</p>
+<p>public record AlgorithmTypeInfo_Param(</p>
+<p>ParamTypes Type,</p>
+<p>decimal DefaultValue);</p>
+<p>Listing 7-4</p>
+<p>AlgorithmTypeInfo Record</p>
+<p>The information generation function for BruteForceAlgorithm will look like that shown in Listing <a href="#PC5">7-5</a>.</p>
+<p>public AlgorithmTypeInfo GetTypeInfo()</p>
+<p>{</p>
+<p>var info = new AlgorithmTypeInfo(AlgorithmTypes.BruteForce);</p>
+<p>info.Params</p>
+<p>.Add(new AlgorithmTypeInfo_Param(ParamTypes.PointsCount, 100));</p>
+<p>return info;</p>
+<p>}</p>
+<p>Listing 7-5</p>
+<p>GetTypeInfo for Brute-Force Algorithm</p>
+<p>I’ve added the PointsCount parameter, so now let’s pass it to the class that implements the algorithm. To do this, I created an AlgorithmInfo class, which is very similar to AlgorithmTypeInfo, but instead of defaultValue, you need to fill in the value field.</p>
+<p>You also need to add the Init() function to the IOptimizationAlgorithm interface and call it in the factory. Listing <a href="#PC6">7-6</a> shows the modified code in the AlgorithmFactory class. I made both factory methods public. One creates an algorithm for the purpose of calculation, and the other creates the necessary information.</p>
+<p>public IOptimizationAlgorithm GetOptimizationAlgorithm(</p>
+<p>AlgorithmInfo info,</p>
+<p>List<FunctionVariable> functionVariables)</p>
+<p>{</p>
+<p>IOptimizationAlgorithm optimizationAlgorithm =</p>
+<p>GetOptimizationAlgorithm(info.Type);</p>
+<p>optimizationAlgorithm.Init(info, functionVariables);</p>
+<p>return optimizationAlgorithm;</p>
+<p>}</p>
+<p>public IOptimizationAlgorithm GetOptimizationAlgorithm(</p>
+<p>AlgorithmTypes type)</p>
+<p>{</p>
+<p>return _serviceProvider</p>
+<p>.GetRequiredKeyedService<IOptimizationAlgorithm>(type);</p>
+<p>}</p>
+<p>Listing 7-6</p>
+<p>GetOptimizationAlgorithm Function</p>
+<p>Listing <a href="#PC7">7-7</a> demonstrates the implementation of the Init function of the BruteForceAlgorithm class.</p>
+<p>public void Init(AlgorithmInfo info, List<FunctionVariable> functionVariables)</p>
+<p>{</p>
+<p>_pointsCount =</p>
+<p>(int)info.Params</p>
+<p>.First(p =&gt; p.Type == ParamTypes.PointsCount).Value;</p>
+<p>_functionVariables = functionVariables;</p>
+<p>}</p>
+<p>Listing 7-7</p>
+<p>Init Function</p>
+<p>Let’s take a look at the FunctionVariable type, which is a representation for a function parameter. It is the set of these parameters that the optimization module must optimize. Listing <a href="#PC8">7-8</a> shows my implementation of this class.</p>
+<p>public record FunctionVariable</p>
+<p>{</p>
+<p>public IVariableId Id { get; }</p>
+<p>public decimal? MinValue { get; }</p>
+<p>public decimal? MaxValue { get; }</p>
+<p>public decimal? Step { get; }</p>
+<p>public List<decimal>? Values { get; }</p>
+<p>public FunctionVariable(</p>
+<p>IVariableId id,</p>
+<p>decimal minValue,</p>
+<p>decimal maxValue,</p>
+<p>decimal step)</p>
+<p>{</p>
+<p>Id = id;</p>
+<p>MinValue = minValue;</p>
+<p>MaxValue = maxValue;</p>
+<p>Step = step;</p>
+<p>}</p>
+<p>public FunctionVariable(IVariableId id, List<decimal>? values)</p>
+<p>{</p>
+<p>Id = id;</p>
+<p>Values = values;</p>
+<p>}</p>
+<p>}</p>
+<p>Listing 7-8</p>
+<p>FunctionVariable Record</p>
+<p>First, pay attention to the type of the Id field. Imagine a scenario where an application works with a library. The service for searching for optimal strategies based on subtheory must generate an array of these parameters. Then the library returns sets of these parameters with values. How will the application understand which signal, condition, and indicator this parameter belongs to? It would be possible to make this field as a string in which the application encoded the necessary information, for example, in JSON format. But what if some algorithm needs to sort these identifiers or some other action is needed? It’s just that the string most likely will not be able to provide us with a sufficient level of functionality.</p>
+<p>At this point, the IVariableId interface looks pretty simple.</p>
+<p>interface IVariableId: IEquatable<IVariableId></p>
+<p>I immediately added IEquatable<IVariableId> because implementations of this interface will probably have to be compared with each other.</p>
+<p>Please note that I have significantly simplified the range of acceptable values of the objective function, leaving only min, max parameters or a list of values, because this library is created to find profitable strategies, so I believe that I cannot implement more complex scenarios of limiting functions in it. Pay attention to the two constructors; they ensure data integrity. In one case, the list of values will be filled, and in the other, the boundaries of possible values will be filled. This mechanism could be implemented by using inheritance, where one type would implement a variable with restrictions and another with a list of values.</p>
+<h3 id="getting-a-set-of-values">Getting a Set of Values</h3>
+<p>It’s time to implement a method for getting sets of values. Listing <a href="#PC10">7-9</a> shows my implementation of this function.</p>
+<p>public IEnumerable<AlgorithmPoint> GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? previousResults)</p>
+<p>{</p>
+<p>List<AlgorithmPoint> allPoints = GetPoints();</p>
+<p>IEnumerable<AlgorithmPoint> nextPoints = allPoints</p>
+<p>.Where(allPoint =&gt;</p>
+<p>previousResults == null</p>
+<p>|| !previousResults.Exists(r =&gt; r.Point == allPoint))</p>
+<p>.Take(_pointsCount);</p>
+<p>return nextPoints;</p>
+<p>}</p>
+<p>Listing 7-9</p>
+<p>GetNextPoints Function</p>
+<p>There is nothing complicated about the function itself. Of interest is the AlgorithmPoint class and the comparison operator r.Point == allPoint. Listing <a href="#PC11">7-10</a> shows an implementation of this class.</p>
+<p>public class AlgorithmPoint</p>
+<p>{</p>
+<p>public List<FunctionVariableValue> Values { get; } = new();</p>
+<p>public static bool operator ==(AlgorithmPoint? a, AlgorithmPoint? b)</p>
+<p>{</p>
+<p>if (ReferenceEquals(a, b))</p>
+<p>return true;</p>
+<p>if(a is null || b is null)</p>
+<p>return false;</p>
+<p>if(a.Values.Count != b.Values.Count)</p>
+<p>return false;</p>
+<p>return a.Values</p>
+<p>.OrderBy(v =&gt; v.Id)</p>
+<p>.SequenceEqual(b.Values.OrderBy(v =&gt; v.Id));</p>
+<p>}</p>
+<p>public static bool operator !=(AlgorithmPoint a, AlgorithmPoint b)</p>
+<p>{</p>
+<p>return !(a == b);</p>
+<p>}</p>
+<p>}</p>
+<p>Listing 7-10</p>
+<p>AlgorithmPoint Class</p>
+<p>Let’s take a closer look at this code. First, I ask you to pay attention to the fact that it uses the OrderBy function by identifier, which is an implementation of the IVariableId interface. This means the class that implements this interface must also implement IComparable, because the OrderBy implementation calls the CompareTo function.</p>
+<p>Let’s return to the GetNextPoints function. It left undisclosed the implementation of the GetPoints function. The purpose of this is to return all possible variations of sets of variable values. The difficulty of this algorithm is that we do not know how many variables the target function contains. I built a solution based on templates.</p>
+<p>Imagine that the set of variables has the form in Table <a href="#Tab1">7-1</a>.</p>
+<p>Table 7-1</p>
+<p>Variables Example</p>
+<p>Id</p>
+<p>Min</p>
+<p>max</p>
+<p>step</p>
+<p>1</p>
+<p>1</p>
+<p>2</p>
+<p>1</p>
+<p>2</p>
+<p>10</p>
+<p>20</p>
+<p>10</p>
+<p>3</p>
+<p>100</p>
+<p>200</p>
+<p>100</p>
+<p>Then the algorithm will look like this:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>Take all possible values of variable 1. Obviously, this has only two possible values: 1 and 2. Create a template from these two values. Get an array of two templates.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Take the first template [1, ...] and “expand” it to the values of the second variable. Get the patterns: [1, 10, …] and [1, 20, …].</p>
+</li>
+<li>
+<p>1.</p>
+<p>Take the pattern [1, 10, ...] and expand it to the values of the third variable. Get possible sets of values: [1, 10, 100] and [1, 10, 200].</p>
+</li>
+<li>
+<p>1.</p>
+<p>Repeat steps 2 and 3 until all unfilled templates are exhausted.</p>
+</li>
+</ol>
+<p>The idea of recursion is that steps 2 and 3 are no different from each other; they can be replaced by a function that receives a list of templates as input and then takes an unused variable, “expands” the templates, and calls itself again, and so on until as long as there is an unused variable.</p>
+<p>The call tree will look like Figure <a href="#Fig2">7-2</a>.</p>
+<p><img alt="" src="../../images/615867_1_En_7_Chapter/615867_1_En_7_Fig2_HTML.jpg" /></p>
+<p>A branching diagram defines how the get points module is split into two sub-modules with respective weights. The submodules are again split into root modules with respective weights.</p>
+<p>Figure 7-2</p>
+<p>GetPoints recursion</p>
+<p>Listing <a href="#PC12">7-11</a> demonstrates my simplest implementation of the GetPoints function.</p>
+<p>private List<AlgorithmPoint> GetPoints(AlgorithmPoint? pointTemplate = null)</p>
+<p>{</p>
+<p>pointTemplate ??= new AlgorithmPoint();</p>
+<p>FunctionVariable? remainderVariable = GetRemainderVariable();</p>
+<p>if (remainderVariable == null)</p>
+<p>return new List<AlgorithmPoint>(){ pointTemplate };</p>
+<p>var newTemplates = GetTemplates();</p>
+<p>var result = new List<AlgorithmPoint>();</p>
+<p>foreach (AlgorithmPoint template in newTemplates)</p>
+<p>{</p>
+<p>List<AlgorithmPoint> points = GetPoints(template);</p>
+<p>result.AddRange(points);</p>
+<p>}</p>
+<p>return result;</p>
+<p>FunctionVariable? GetRemainderVariable()</p>
+<p>{</p>
+<p>foreach (FunctionVariable functionVariable in _functionVariables)</p>
+<p>{</p>
+<p>if (!pointTemplate!.Values</p>
+<p>.Exists(v =&gt; v.Id.Equals(functionVariable.Id)))</p>
+<p>return functionVariable;</p>
+<p>}</p>
+<p>return null;</p>
+<p>}</p>
+<p>IEnumerable<AlgorithmPoint> GetTemplates()</p>
+<p>{</p>
+<p>List<decimal> values = remainderVariable.GetValues();</p>
+<p>var templates = new List<AlgorithmPoint>();</p>
+<p>foreach (decimal value in values)</p>
+<p>{</p>
+<p>AlgorithmPoint newTemplate = new AlgorithmPoint();</p>
+<p>newTemplate.Values</p>
+<p>.Add(new FunctionVariableValue(remainderVariable.Id, value));</p>
+<p>foreach (FunctionVariableValue item in pointTemplate.Values)</p>
+<p>{</p>
+<p>newTemplate.Values</p>
+<p>.Add(new FunctionVariableValue(item.Id, item.Value));</p>
+<p>}</p>
+<p>templates.Add(newTemplate);</p>
+<p>}</p>
+<p>return templates;</p>
+<p>}</p>
+<p>}</p>
+<p>Listing 7-11</p>
+<p>GetPoints Function</p>
+<p>The condition for exiting recursion is the fact that the algorithm no longer finds unused variables, that is, when the remainderVariable variable is equal to null. Of course, this algorithm is far from optimal, but it is easy to understand. You can store hashes of used variables in some variable and not loop through all sets of variables each time. But I tried to implement an algorithm that is understandable to everyone. If your skills and knowledge allow you to optimize it, then that’s great!</p>
+<h3 id="how-to-use">How to Use</h3>
+<p>So, BruteForceAlgorithm has been implemented. Let’s try to connect our library and see if it is convenient to use. Listing <a href="#PC13">7-12</a> presents the simplest implementation of the algorithm.</p>
+<p>var services = new ServiceCollection();</p>
+<p>services.AddOptimizationAlgorithms();</p>
+<p>ServiceProvider provider = services.BuildServiceProvider();</p>
+<p>AlgorithmFactory algorithmFactory = provider.GetRequiredService<AlgorithmFactory>();</p>
+<p>AlgorithmInfo info = new(AlgorithmTypes.BruteForce);</p>
+<p>info.Params.Add(new AlgorithmInfo_Param(ParamTypes.PointsCount, 2));</p>
+<p>List<FunctionVariable> functionVariables = new();</p>
+<p>functionVariables.Add(new FunctionVariable(new VariableId("First"), 1, 2, 1));</p>
+<p>functionVariables.Add(new FunctionVariable(new VariableId("Second"), 10, 20, 10));</p>
+<p>functionVariables.Add(new FunctionVariable(new VariableId("Third"), 100, 200, 100));</p>
+<p>IOptimizationAlgorithm? algorithm = algorithmFactory.GetOptimizationAlgorithm(info, functionVariables);</p>
+<p>List<ObjectiveFunctionResult>? previousResults = new();</p>
+<p>List<AlgorithmPoint> points = algorithm!.GetNextPoints(previousResults).ToList();</p>
+<p>List&lt;(int step, List<AlgorithmPoint>)&gt; result = new();</p>
+<p>int step = 0;</p>
+<p>while (points.Any())</p>
+<p>{</p>
+<p>result.Add((step, points));</p>
+<p>step++;</p>
+<p>points</p>
+<p>.ForEach(p =&gt; previousResults.Add(new ObjectiveFunctionResult(p, 1)));</p>
+<p>points = algorithm!.GetNextPoints(previousResults).ToList();</p>
+<p>}</p>
+<p>Listing 7-12</p>
+<p>Example of Using the Algorithm</p>
+<p>In this code, I created an algorithm that returns sets of values of 2. Also, the target function contains variables as in the example we discussed earlier. As a result, this piece of code will return the following result:</p>
+<p>---------------------------------</p>
+<p>| Step | First | Second | Third |</p>
+<p>---------------------------------</p>
+<p>| 0    | 1     | 10     | 100   |</p>
+<p>---------------------------------</p>
+<p>| 0    | 1     | 10     | 200   |</p>
+<p>---------------------------------</p>
+<p>| 1    | 1     | 20     | 100   |</p>
+<p>---------------------------------</p>
+<p>| 1    | 1     | 20     | 200   |</p>
+<p>---------------------------------</p>
+<p>| 2    | 2     | 10     | 100   |</p>
+<p>---------------------------------</p>
+<p>| 2    | 2     | 10     | 200   |</p>
+<p>---------------------------------</p>
+<p>| 3    | 2     | 20     | 100   |</p>
+<p>---------------------------------</p>
+<p>| 3    | 2     | 20     | 200   |</p>
+<p>---------------------------------</p>
+<p>Of course, work on the implementation of this algorithm is far from finished, because the library does not have a single test. But I will leave testing this code outside the scope of the book to focus your attention on the main thing.</p>
+<h2 id="genetic-algorithm">Genetic Algorithm</h2>
+<p>It’s time to implement the genetic algorithm. We already have the foundation of the library. Let’s build a new algorithm into this. I will recall its main aspects. This is one of the population algorithms, the idea of which is based on the creation of several independent agents (population), which, according to some logic, migrate across the range of acceptable values in search of the optimal value of the objective function.</p>
+<p>The general scheme of any population algorithm is as follows:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>According to some logic, an initial population or first set of agents is generated.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The agent migration process is in progress. If we take the genetic algorithm into consideration, then for it the migration process is presented as a set of operators. During the migration process, a new population or the next set of agents is generated.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The search completion conditions are checked. If this is done, then the calculations stop. Otherwise, go to step 2.</p>
+</li>
+</ol>
+<p>The most interesting and difficult part of creating this algorithm is the migration process. As mentioned earlier, for genetic algorithms, it looks like a set of operators.</p>
+<p>These are the types of operators:</p>
+<ul>
+<li>
+<p><strong>Mutation.</strong> The idea of this operator is to use some algorithm to change the values of the agent’s genes and thereby create a new population. That is, the result of this operator is the creation of a new population.</p>
+</li>
+<li>
+<p><strong>Crossover.</strong> In this operator, two agents (individuals) are crossed using some algorithm, resulting in the creation of one or more agents. This operator also entails the emergence of a new population.</p>
+</li>
+<li>
+<p><strong>Selection.</strong> This operator does not entail the creation of new agents, but it is necessary for selecting pairs for the crossover operator. It turns out that you cannot apply the crossover operator until you use the selection operator.</p>
+</li>
+<li>
+<p><strong>Filtering.</strong> This operator is necessary for selecting the fittest individuals. It does not entail the creation of a new population but filters the old one so that poorly adapted individuals do not participate in other operators in the future.</p>
+</li>
+</ul>
+<h3 id="steps">Steps</h3>
+<p>In a general sense, a genetic algorithm is not some kind of strict set of rules but rather a set of instructions with which you can construct as many of your own variations of optimization algorithms as you want. It was this knowledge that prompted me to create the concept of the <em>step</em>. Each step will have its own type, order, and set of parameters, as well as a list of child steps. I have identified four types of steps for myself.</p>
+<ol>
+<li>
+<p>1.</p>
+<p><strong>Initialization.</strong> At this stage, the first population is created.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Mutation.</strong> In this step, a mutation operator is applied to the current population.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Filtering.</strong> At this step, a filtering operator is applied to the current population.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Breeding.</strong> This step contains two steps: Selection Step and Crossing Step. I found it inappropriate to separate these two steps into two different units because you can’t cross without first selecting.</p>
+</li>
+</ol>
+<p>The idea is that you can construct your own algorithms using and combining steps 2, 3, and 4 in any number and in any order. For example, thanks to this architecture, you can create an algorithm like this:</p>
+<ol>
+<li>
+<p>1.</p>
+<p><strong>Initialization.</strong> An initial population is created using the flat operator. That is, agents are created uniformly over the entire range of acceptable values.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Mutation.</strong> The mutation is performed using the random operator.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Breeding.</strong> Using the panmixia method for selection, we produce the crossovering fuzzy operator.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Filtering.</strong> We filter the current population using the elitism-based method.</p>
+</li>
+<li>
+<p>1.</p>
+<p><strong>Mutation.</strong> This happens using the gauss operator.</p>
+</li>
+<li>
+<p>1.</p>
+<p>And so on. This list can go on forever.</p>
+</li>
+</ol>
+<p>In this book I will show the simplest implementation of this algorithm, so I will implement the simplest condition for ending the search: by the number of iterations. It turns out that the algorithm itself will have only one parameter equal to the number of generations.</p>
+<h3 id="getting-info_1">Getting Info</h3>
+<p>Let’s start the implementation with the GetTypeInfo method. Obviously, the genetic algorithm class itself should not know anything about what parameters are needed for each of the steps.</p>
+<p>This means that these are the steps:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The GetTypeInfo method of the GeneticAlgorithm class will call the GetTypeInfo method of all available step types.</p>
+</li>
+<li>
+<p>1.</p>
+<p>You need to create an IAlgorithmStep interface with the GetTypeInfo function. It turns out that each step will be a class that implements this interface.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Since each step will have its own parameters, it is necessary to implement a factory that will help create a step of each type.</p>
+</li>
+</ol>
+<p>Since the concept of steps and their sequences appeared, it is necessary to change the AlgorithmInfo and AlgorithmTypeInfo types.</p>
+<p>Listing <a href="#PC15">7-13</a> presents a new implementation of the AlgorithmTypeInfo type. In this case, I added the AllowedSteps field, because now each algorithm can contain steps.</p>
+<p>public record AlgorithmTypeInfo(AlgorithmTypes Type)</p>
+<p>{</p>
+<p>public List<AlgorithmTypeInfo\_AllowedStep> AllowedSteps { get; } = new();</p>
+<p>public List<AlgorithmTypeInfo\_Param> Params { get; } = new();</p>
+<p>}</p>
+<p>Listing 7-13</p>
+<p>AlgorithmTypeInfo Record</p>
+<p>Listing <a href="#PC16">7-14</a> shows an implementation of the AlgorithmTypeInfo_AllowedStep type. Note that the constructor has an Index parameter. The point is that we need to somehow indicate that a certain step is mandatory and also indicate its sequence number in advance. This concerns the initialization phase. This is mandatory and should always come first. I didn’t create a separate type for the step parameters because I think the AlgorithmTypeInfo_Param type I created earlier is perfect for this task.</p>
+<p>public record AlgorithmTypeInfo_AllowedStep(StepTypes Type, int? Index)</p>
+<p>{</p>
+<p>public List<AlgorithmTypeInfo\_Operator> AllowedOperators { get; } = new();</p>
+<p>public List<AlgorithmTypeInfo\_AllowedStep> Steps { get; } = new();</p>
+<p>public List<AlgorithmTypeInfo\_Param> Params { get; } = new();</p>
+<p>}</p>
+<p>Listing 7-14</p>
+<p>AlgorithmTypeInfo_AllowedStep Record</p>
+<p>The AlgorithmTypeInfo_Operator class, shown in Listing <a href="#PC17">7-15</a>, includes only a set of parameters and a type.</p>
+<p>public record AlgorithmTypeInfo_Operator(OperatorTypes Type)</p>
+<p>{</p>
+<p>public List<AlgorithmTypeInfo\_Param> Params = new();</p>
+<p>}</p>
+<p>Listing 7-15</p>
+<p>AlgorithmTypeInfo_Operator Record</p>
+<p>Listing <a href="#PC18">7-16</a> demonstrates the IAlgorithmStep interface. For now there is only one function in this, but as the functionality expands, this will also grow.</p>
+<p>public interface IAlgorithmStep</p>
+<p>{</p>
+<p>public AlgorithmTypeInfo_AllowedStep GetInfo();</p>
+<p>}</p>
+<p>Listing 7-16</p>
+<p>IAlgorithmStep Interface</p>
+<p>Since we have a new set of classes, we somehow need to add them to the collection and create a factory for them. I don’t want the central part of the library to know anything about the steps and their presence in the algorithm, so I created my own implementation of the extension for IServiceCollection for each algorithm. Listing <a href="#PC19">7-17</a> presents a new implementation of the AddOptimizationAlgorithms function. As you can see, now work with IServiceCollection is hidden in each of the algorithms, which is very convenient.</p>
+<p>public static IServiceCollection AddOptimizationAlgorithms(this IServiceCollection services)</p>
+<p>{</p>
+<p>services.AddSingleton<AlgorithmFactory>();</p>
+<p>services.AddBruteForceAlgorithm();</p>
+<p>services.AddGeneticAlgorithm();</p>
+<p>return services;</p>
+<p>}</p>
+<p>Listing 7-17</p>
+<p>Adding Dependencies</p>
+<p>Listing <a href="#PC20">7-18</a> shows an implementation of the AddGeneticAlgorithm method. In it I add the GeneticAlgorithm class, a factory for creating steps and all the step classes.</p>
+<p>public static IServiceCollection AddGeneticAlgorithm(this IServiceCollection services)</p>
+<p>{</p>
+<p>services</p>
+<p>.AddKeyedTransient<IOptimizationAlgorithm, GeneticAlgorithm>(</p>
+<p>AlgorithmTypes.Genetic);</p>
+<p>services.AddSingleton<StepFactory>();</p>
+<p>services</p>
+<p>.AddKeyedTransient<IAlgorithmStep,BreedingStep>(</p>
+<p>StepTypes.Breeding);</p>
+<p>services</p>
+<p>.AddKeyedTransient<IAlgorithmStep,FilteringStep>(</p>
+<p>StepTypes.Filtering);</p>
+<p>services</p>
+<p>.AddKeyedTransient<IAlgorithmStep,InitializationStep>(</p>
+<p>StepTypes.Initialization);</p>
+<p>services</p>
+<p>.AddKeyedTransient<IAlgorithmStep,MutationStep>(</p>
+<p>StepTypes.Mutation);</p>
+<p>return services;</p>
+<p>}</p>
+<p>Listing 7-18</p>
+<p>AddGeneticAlgorithm Dependencies</p>
+<p>Now that we have the steps already added to the IServiceCollection, it’s time to implement the GetTypeInfo method in the GeneticAlgorithm. Listing <a href="#PC21">7-19</a> shows my implementation. I added one parameter that controls the number of generations. Please note that this is the number of generations, not populations. I did this on purpose because many steps, such as mutation, will generate a population. I call a generation the complete passage of the algorithm through all steps. The interesting thing about this code is how I implemented obtaining information for all steps. I took all the classes that implement the IAlgorithmStep interface and one by one called their methods for obtaining information.</p>
+<p>public AlgorithmTypeInfo GetTypeInfo()</p>
+<p>{</p>
+<p>var info = new AlgorithmTypeInfo(AlgorithmTypes.Genetic);</p>
+<p>info.Params.Add(</p>
+<p>new AlgorithmTypeInfo_Param(ParamTypes.GenerationsCount, 10));</p>
+<p>IEnumerable<IAlgorithmStep> steps =</p>
+<p>_stepFactory.GetAll();</p>
+<p>foreach (IAlgorithmStep step in steps)</p>
+<p>info.AllowedSteps.Add(step.GetInfo());</p>
+<p>return info;</p>
+<p>}</p>
+<p>Listing 7-19</p>
+<p>GetTypeInfo Method</p>
+<p>Let’s dive into the implementation of the GetInfo functions of each of the steps. Obviously, to obtain complete information about the step, it is necessary to obtain information for each of the implemented operators. This means that another IOperator interface is needed. Moreover, each step will have its own, because the purpose and functionality of each of them differs.</p>
+<p>Let’s start with InitializationStep. For this step I implemented two statements: FlatOperator and FlatManagedOperator.</p>
+<p>The idea of FlatOperator is to uniformly distribute a predetermined number of initial individuals over the range of acceptable values.</p>
+<p>FlatManagedOperator is very similar to FlatOperator, but it does not specify the size of the initial population but rather a percentage of the maximum possible number of individuals.</p>
+<p>I won't bore you with showing the implementation of the InitializationStepCollectionExtensions and OperatorFactory classes, because their code is very similar to the code implemented earlier.</p>
+<p>Listing <a href="#PC22">7-20</a> shows my implementation of the GetInfo method of the InitializationStep class. The only interesting thing about this code is that I immediately define the order for this step. This means this step should always come first and cannot be skipped.</p>
+<p>public AlgorithmTypeInfo_AllowedStep GetInfo()</p>
+<p>{</p>
+<p>AlgorithmTypeInfo_AllowedStep info = new(StepTypes.Initialization, 0);</p>
+<p>IEnumerable<IOperator> operators = _operatorFactory.GetAll();</p>
+<p>foreach (IOperator @operator in operators)</p>
+<p>info.AllowedOperators.Add(@operator.GetInfo());</p>
+<p>return info;</p>
+<p>}</p>
+<p>Listing 7-20</p>
+<p>Get Step Function</p>
+<p>Next, in each of the statements, I implemented the GetInfo method approximately, as shown in Listing <a href="#PC23">7-21</a>.</p>
+<p>public AlgorithmTypeInfo_Operator GetInfo()</p>
+<p>{</p>
+<p>var @operator = new AlgorithmTypeInfo_Operator(OperatorTypes.Flat);</p>
+<p>@operator.Params.Add(</p>
+<p>new AlgorithmTypeInfo_Param(ParamTypes.PopulationSize, 10));</p>
+<p>return @operator;</p>
+<p>}</p>
+<p>Listing 7-21</p>
+<p>Get Operator Info Function</p>
+<p>I think we can stop here. I hope the information I gave you will be enough to implement the GetInfo method for the remaining steps and their operators.</p>
+<h3 id="getting-a-set-of-values_1">Getting a Set of Values</h3>
+<p>Let’s move on to the central function of this algorithm, namely, the GetNextPoints function. First, let’s decide on the sequence of actions.</p>
+<p>Let’s imagine that a user has designed the following genetic algorithm:</p>
+<ul>
+<li>
+<p>Initialization</p>
+</li>
+<li>
+<p>Mutation</p>
+</li>
+<li>
+<p>Filtering</p>
+</li>
+<li>
+<p>Breeding</p>
+</li>
+<li>
+<p>Filtering</p>
+</li>
+</ul>
+<p>The stopping condition will be the creation of GenerationsCount generations.</p>
+<p>So, the application calls the GetNextPoints method of our algorithm in a loop, gets a new list of sets of values to calculate, calculates the objective function values for each of them, and calls the GetNextPoints method again. This continues until GetNextPoints returns an empty list of value sets.</p>
+<p>Obviously, to count the number of generations, the optimization algorithm needs to know what generation and step it is at the next time GetNextPoints is called. It would be logical to store this counter in the very instance of the class that implements the optimization algorithm. But you can’t do this, because in reality several instances of the application will be raised, one for each pod. And if so, then there will be several instances of classes.</p>
+<p>We cannot guarantee that GetNextPoints will be called by only one specific instance of the class. Also, do not forget that the pod can cease to exist at any time and then the application will lose information about the current generation and step, which is unacceptable. There are two options left: store information about the current generation somewhere in external storage, such as Redis or PostgreSQL, or entrust this task to the calling application.</p>
+<p>I really don’t like both options; in the first one our library forces the application to use a certain kind of storage, and in the second one we expose some implementation details of the library.</p>
+<p>I chose the second option. That is, I entrusted the storage of information to the calling application. But at the same time, I tried to make this information as impersonal as possible in order not to disclose implementation details and to allow other algorithms to use this field.</p>
+<p>Listing <a href="#PC24">7-22</a> demonstrates how I changed the GetNextPoints function of the IOptimizationAlgorithm interface.</p>
+<p>(List<AlgorithmPoint> points, string? magicString)?</p>
+<p>GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? previousResults = null,</p>
+<p>string? magicString = null);</p>
+<p>Listing 7-22</p>
+<p>GetNextPoints Function</p>
+<p>As you can see, I added the magicString parameter. Great name, isn’t it? This is returned every time the GetNextPoints method is called. The calling application must save it and then pass it back as a parameter the next time the function is called.</p>
+<p>Listing <a href="#PC25">7-23</a> demonstrates my implementation of the MagicData class for a genetic algorithm. It shows that magicString is a JSON string into which the class instance is parsed.</p>
+<p>public class MagicData</p>
+<p>{</p>
+<p>public int GenerationNumber { get; set; }</p>
+<p>public int StepIndex { get; set; }</p>
+<p>public MagicData(string? jsonString = null)</p>
+<p>{</p>
+<p>if (jsonString != null)</p>
+<p>{</p>
+<p>MagicData? obj = JsonSerializer</p>
+<p>.Deserialize<MagicData>(jsonString);</p>
+<p>if (obj == null)</p>
+<p>throw new ArgumentException(nameof(jsonString));</p>
+<p>GenerationNumber = obj.GenerationNumber;</p>
+<p>StepIndex = obj.StepIndex;</p>
+<p>}</p>
+<p>}</p>
+<p>public MagicData(){}</p>
+<p>public override string ToString()</p>
+<p>{</p>
+<p>return JsonSerializer.Serialize(this);</p>
+<p>}</p>
+<p>}</p>
+<p>Listing 7-23</p>
+<p>MagicData Class</p>
+<p>Let’s go through all the steps:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The first call to GetNextPoints occurs. previousResults = null, magicString = null. We deserialize magicString and get GenerationNumber=0, StepIndex=0.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We get an instance of the Initialization class of the step, because StepIndex = 0.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We turn to the method for obtaining a list of sets of values of this step and obtain the following points or the current population.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We get the identifier of the next step, write GenerationNumber=0, StepIndex=1 in magicData and return all the information to the calling method.</p>
+</li>
+<li>
+<p>1.</p>
+<p>GetNextPoints is called. We were returned a certain set of previousResults and GenerationNumber=0, StepIndex=1.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We get an instance of the step Mutation class, because StepIndex = 1. To get the next population, you need to pass the current population to the mutation step method so that it can mutate all agents using the selected operator.</p>
+</li>
+</ol>
+<p>When this is the first generation, it is easy to get the current population, but imagine that this is not the first generation. How do you select only the necessary instances from previousResults?</p>
+<p>It is for this purpose that I added the Id field to the ObjectiveFunctionResult class. And in the MagicData class is the PopulationIds field, which contains a list of solution identifiers. An application that will use a library of optimization algorithms will be able to provide this identifier, because in essence ObjectiveFunctionResult is a mapping of the Task entity, which of course has an identifier.</p>
+<p>Let’s continue:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The Mutation step returned a list of new sets of values to calculate, which we passed to the calling function.</p>
+</li>
+</ol>
+<p>But what’s important is that this set of values is not a new generation. The new generation consists of the population obtained in the previous step plus the list of sets obtained in the Mutation step. It is also necessary to take into account that the mutation step can create a new generation by joining mutated individuals to the previous generation, or it can do this by replacing parents. It turns out that each step must implement two functions: one to get a list of parameter sets and the second to get a new population. The first entails transferring control to the calling function so that it can calculate the objective function for new agents, and the second generates a new population.</p>
+<p>There is another fact that speaks in favor of creating two functions. This is the presence of such a step as Filtering. At this step, new agents are not formed, but a part of the current population is eliminated, and this is how this step forms a new population.</p>
+<p>Let’s say the Mutation step now has two functions. One of them generates a new list of parameter sets, and the second generates a new population. It seems reasonable to first call the function to get new individuals and then get a new population. But this order is not convenient, because after receiving a list of new individuals, it is necessary to transfer control to the calling function, which means there can be no talk of a subsequent call to the function for obtaining a new population.</p>
+<p>Before we continue, I would like to draw your attention to one more point. I mentioned that the Mutation step can have the option of replacing parents with children, which means that each set of values must have its own MagicData. Therefore, I added a field of type string MagicData to the AlgorithmPoint class. And I created the PointMagicData class for this.</p>
+<p>Since the logic of the algorithm has changed, it’s probably worth starting to describe the steps again.</p>
+<ol>
+<li>
+<p>1.</p>
+<p>The first call to GetNextPoints occurs. previousResults = null, magicString = null. We deserialize magicString and get GenerationNumber=0, StepIndex=0. Based on this data, we obtain the current population currentPopulation and the results of calculations obtained from the previous list of new individuals currentPreviousResults. Of course, both of these lists are empty because we called the function for the first time.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We start the loop with the condition that the list of new individuals that need to be returned to the calling function—nextPoints—is empty. On each pass of this loop, the algorithm will call the functions of the next step. Not all steps generate new individuals.</p>
+</li>
+<li>
+<p>1.</p>
+<p>In this loop, we get an instance of the current, zero step and call this GetNextPopulation method. This method does not spawn new individuals, so for the Initialization step, it will always return the list passed to it.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Next we get the next step. In this logic, we will have to make an exception for the Initialization step, because we cannot get the next step but need to stop at the current one.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We call the GetNextPoints method of the current Initialization step, which, of course, will return new individuals that the function will pass to the calling function.</p>
+</li>
+<li>
+<p>1.</p>
+<p>And so on.</p>
+</li>
+</ol>
+<p>Listing <a href="#PC26">7-24</a> shows my implementation of the first step of the GetNextPoints method. This code fragment initializes three important variables: currentMagicData, currentPopulation, and currentPreviousResults, which will be needed in the loop from step 2.</p>
+<p>public (List<AlgorithmPoint> points, string magicString)? GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? previousResults = null,</p>
+<p>string? magicString = null)</p>
+<p>{</p>
+<p>previousResults ??= new();</p>
+<p>MagicData currentMagicData = new MagicData(magicString);</p>
+<p>List<ObjectiveFunctionResult> currentPopulation =</p>
+<p>GetCurrentPopulation(currentMagicData, previousResults);</p>
+<p>List<ObjectiveFunctionResult> currentPreviousResults =</p>
+<p>GetCurrentPreviousResults(currentMagicData, previousResults);</p>
+<p>...</p>
+<p>Listing 7-24</p>
+<p>Start of GetNextPoints Function</p>
+<p>Listing <a href="#PC27">7-25</a> shows a code snippet that implements the loop from step 2.</p>
+<p>List<AlgorithmPoint>? nextPoints = null;</p>
+<p>var nextMagicData = new MagicData();</p>
+<p>while (nextPoints == null || !nextPoints.Any())</p>
+<p>{</p>
+<p>AlgorithmInfo_Step currentStepInfo = _info.Steps</p>
+<p>.First(s =&gt; s.Index == currentMagicData.StepIndex);</p>
+<p>IAlgorithmStep currentStep = _stepFactory</p>
+<p>.GetStep(currentStepInfo, _functionVariables);</p>
+<p>currentPopulation = currentStep</p>
+<p>.GetNextPopulation(currentPopulation, currentPreviousResults);</p>
+<p>nextMagicData.PopulationIds = currentPopulation</p>
+<p>.ConvertAll(i =&gt; i.Id);</p>
+<p>AlgorithmInfo_Step? nextStepInfo = GetNextStep(currentMagicData, currentPopulation);</p>
+<p>bool stoppingConditionFulfilled =</p>
+<p>CheckStoppingCondition(nextStepInfo, currentMagicData, currentStepInfo);</p>
+<p>if (stoppingConditionFulfilled)</p>
+<p>return null;</p>
+<p>nextMagicData.GenerationNumber = currentMagicData.GenerationNumber;</p>
+<p>nextMagicData.StepIndex = nextStepInfo.Index;</p>
+<p>if (nextStepInfo!.Index &lt;= currentStepInfo.Index  &amp;&amp; currentPopulation.Any())</p>
+<p>nextMagicData.GenerationNumber++;</p>
+<p>IAlgorithmStep nextStep = _stepFactory.GetStep(nextStepInfo, _functionVariables);</p>
+<p>nextPoints = nextStep</p>
+<p>.GetNextPoints(</p>
+<p>currentPopulation,</p>
+<p>new PointMagicData(</p>
+<p>nextMagicData.GenerationNumber,</p>
+<p>nextMagicData.StepIndex));</p>
+<p>currentMagicData = nextMagicData;</p>
+<p>}</p>
+<p>Listing 7-25</p>
+<p>Second Part of GetNextPoints Function</p>
+<p>In this piece of code, I do the following:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>I get information about the current step, currentStepInfo. It is necessary to obtain an instance of the class that implements the step.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Using the factory, I get an instance of the currentStep step class.</p>
+</li>
+<li>
+<p>1.</p>
+<p>I call the GetNextPopulation method of the current step and save the result to the currentPopulation variable.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Since we now know the identifiers of individuals in the current population, we need to write them into our magicData.</p>
+</li>
+<li>
+<p>1.</p>
+<p>I receive information about the next step. In Listing <a href="#PC28">7-26</a>, I provided my implementation of the GetNextStep method.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Based on the new step index, we can conclude whether this is the next generation or not. This means we can check the condition for completing the calculations. If the condition has not yet occurred, then we continue the calculations.</p>
+</li>
+<li>
+<p>1.</p>
+<p>If the index of the new step is less than the index of the current one, this means that the algorithm has gone through all the steps and will now begin to generate a new generation. This means you can increase the generation number in the nextMagicData variable.</p>
+</li>
+<li>
+<p>1.</p>
+<p>The GetNextPoints method of the new step is called. If it returns new individuals, then control is transferred to the calling function.</p>
+</li>
+</ol>
+<p>private AlgorithmInfo_Step GetNextStep(</p>
+<p>MagicData currentMagicData,</p>
+<p>List<ObjectiveFunctionResult> previousResults)</p>
+<p>{</p>
+<p>if (!previousResults.Any())</p>
+<p>return _info.Steps.Single(s =&gt; s.Index == 0);</p>
+<p>AlgorithmInfo_Step? nextStep =</p>
+<p>_info.Steps</p>
+<p>.Where(s =&gt; s.Index &gt; currentMagicData.StepIndex)</p>
+<p>.MinBy(s =&gt; s.Index);</p>
+<p>if (nextStep == null)</p>
+<p>nextStep = _info.Steps</p>
+<p>.Where(s =&gt; s.Index &gt; 0)</p>
+<p>.MinBy(s =&gt; s.Index);</p>
+<p>return nextStep!;</p>
+<p>}</p>
+<p>Listing 7-26</p>
+<p>Implementation of a Method to Get the Next Step</p>
+<h3 id="initialization-step">Initialization Step</h3>
+<p>Let’s implement our first step, namely, the Initialization Step. Let me remind you that I plan to implement two operators in this, FlatOperator and FlatManagedOperator.</p>
+<p>Listing <a href="#PC29">7-27</a> demonstrates the implementation of the Init function. There is nothing special about this, except that an instance of the operator class is immediately obtained.</p>
+<p>public void Init(</p>
+<p>AlgorithmInfo_Step step,</p>
+<p>List<FunctionVariable> functionVariables)</p>
+<p>{</p>
+<p>_step = step;</p>
+<p>_functionVariables = functionVariables;</p>
+<p>_operator = _operatorFactory.GetOperator(_step.Operator);</p>
+<p>}</p>
+<p>Listing 7-27</p>
+<p>Init Function</p>
+<p>The GetNextPopulation function, as I said earlier, returns the previousResults sent. Listing <a href="#PC30">7-28</a> shows a simple implementation of the GetNextPoints method. This is where the Generate operator function is called.</p>
+<p>public List<AlgorithmPoint> GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? population = null,</p>
+<p>PointMagicData? magicData = null)</p>
+<p>{</p>
+<p>return _operator.Generate(_functionVariables, magicData);</p>
+<p>}</p>
+<p>Listing 7-28</p>
+<p>GetNextPoints Function</p>
+<p>Let’s start implementing the operators. Let me remind you what their logic is.</p>
+<p>The idea of FlatOperator is to uniformly distribute a predetermined number of initial individuals over the range of acceptable values.</p>
+<p>FlatManagedOperator is very similar to FlatOperator, but it does not specify the size of the initial population but rather a percentage of the maximum possible number of individuals. It turns out that in both operators the same function is called to generate individuals; the difference is only in the desired number of new individuals.</p>
+<p>Listing <a href="#PC31">7-29</a> shows the implementation of the Generate method for FlatOperator. As you can see, there is practically no logic in this.</p>
+<p>public List<AlgorithmPoint> Generate(</p>
+<p>List<FunctionVariable> functionVariables,</p>
+<p>PointMagicData? magicData)</p>
+<p>{</p>
+<p>return PointsFactory.Flat(functionVariables, magicData, _populationSize);</p>
+<p>}</p>
+<p>Listing 7-29</p>
+<p>Generate Points Function</p>
+<p>It gets more interesting when we turn to the implementation of the same method, but for the FlatManagedOperator in Listing <a href="#PC32">7-30</a>. In fact, I call the same PointsFactory.Flat function, but with a pre-calculated number of required individuals.</p>
+<p>public List<AlgorithmPoint> Generate(</p>
+<p>List<FunctionVariable> functionVariables,</p>
+<p>PointMagicData? magicData)</p>
+<p>{</p>
+<p>int populationSize = GetPopulationSize(functionVariables);</p>
+<p>return PointsFactory.Flat(functionVariables, magicData, populationSize);</p>
+<p>}</p>
+<p>private int GetPopulationSize(List<FunctionVariable> functionVariables)</p>
+<p>{</p>
+<p>long variablesCount = 1;</p>
+<p>foreach (var variable in functionVariables)</p>
+<p>{</p>
+<p>List<decimal> values = variable.GetValues();</p>
+<p>variablesCount *= values.Count;</p>
+<p>}</p>
+<p>long populationSizeLong = (long)(_coveredPercent / 100 * variablesCount);</p>
+<p>int populationSize = (int)Math.Min(populationSizeLong, _maxPopulationSize);</p>
+<p>populationSize = Math.Max(populationSize, _minPopulationSize);</p>
+<p>return populationSize;</p>
+<p>}</p>
+<p>Listing 7-30</p>
+<p>Generate Points for FlatManagedOperator</p>
+<p>I showed you the basic idea of implementing this step. I also laid down a fairly simple architecture for the solution, in which to add a new operator. It is enough to add only one class that implements the IOperator interface.</p>
+<h3 id="mutation-step">Mutation Step</h3>
+<p>I will show the implementation of this step using the random operator as an example. The essence of this method is to replace a certain number of parent genes with random values located in the range of acceptable values.</p>
+<p>Listing <a href="#PC33">7-31</a> shows an implementation of the method for obtaining a population. It contains a simple logic of combining the previous population with all the mutated individuals. This means that at this step the number of individuals always doubles.</p>
+<p>public List<ObjectiveFunctionResult></p>
+<p>GetNextPopulation(List<ObjectiveFunctionResult> previousPopulation,</p>
+<p>List<ObjectiveFunctionResult> previousResults)</p>
+<p>{</p>
+<p>List<ObjectiveFunctionResult> nextPopulation = new();</p>
+<p>nextPopulation.AddRange(previousPopulation);</p>
+<p>nextPopulation.AddRange(previousResults);</p>
+<p>return nextPopulation;</p>
+<p>}</p>
+<p>Listing 7-31</p>
+<p>GetNextPopulation for Mutation Step</p>
+<p>The GetNextPoints method presented in Listing <a href="#PC34">7-32</a> is also quite simple. In this cycle, all parents undergo a mutation procedure.</p>
+<p>public List<AlgorithmPoint> GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? population = null,</p>
+<p>PointMagicData? magicData = null)</p>
+<p>{</p>
+<p>var points = new List<AlgorithmPoint>();</p>
+<p>if (population == null)</p>
+<p>return points;</p>
+<p>foreach (ObjectiveFunctionResult parent in population)</p>
+<p>{</p>
+<p>AlgorithmPoint mutant = Mutate(parent);</p>
+<p>if (magicData != null)</p>
+<p>mutant.MagicData = magicData.ToString();</p>
+<p>points.Add(mutant);</p>
+<p>}</p>
+<p>return points;</p>
+<p>}</p>
+<p>Listing 7-32</p>
+<p>GetNextPoints Function</p>
+<p>Listing <a href="#PC35">7-33</a> shows an implementation of this procedure.</p>
+<p>It implements the following algorithm:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>We take all the variables that can contain more than one value and put them in the changeableVariables variable.</p>
+</li>
+<li>
+<p>1.</p>
+<p>After this, we randomly select the required number of genes for the mutation procedure.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Call the Mutation function of the selected operator and replace the parent gene with the resulting value.</p>
+</li>
+</ol>
+<p>private AlgorithmPoint Mutate(ObjectiveFunctionResult parent)</p>
+<p>{</p>
+<p>var mutant = new AlgorithmPoint();</p>
+<p>List<IVariableId> changeableVariables = new();</p>
+<p>foreach (FunctionVariable functionVariable in _functionVariables)</p>
+<p>{</p>
+<p>List<decimal> variations = functionVariable.GetValues();</p>
+<p>if (variations.Count&gt;1)</p>
+<p>changeableVariables.Add(functionVariable.Id);</p>
+<p>}</p>
+<p>var random = new Random();</p>
+<p>List<IVariableId> variablesForMutation =</p>
+<p>random.GetList(changeableVariables, _mutationCount);</p>
+<p>foreach (var parentVariableValue in parent.Point.Values)</p>
+<p>{</p>
+<p>if (variablesForMutation.Contains(parentVariableValue.Id))</p>
+<p>{</p>
+<p>FunctionVariable functionVariable =</p>
+<p>_functionVariables.First(v =&gt; v.Id.Equals(parentVariableValue.Id));</p>
+<p>decimal parentValue = parentVariableValue.Value;</p>
+<p>decimal mutationValue = _operator.Mutation(functionVariable, parentValue);</p>
+<p>mutant.Values.Add(new FunctionVariableValue(parentVariableValue.Id, mutationValue));</p>
+<p>}</p>
+<p>else</p>
+<p>mutant.Values.Add(parentVariableValue);</p>
+<p>}</p>
+<p>return mutant;</p>
+<p>}</p>
+<p>Listing 7-33</p>
+<p>Mutate Function</p>
+<h3 id="filtering-step">Filtering Step</h3>
+<p>Let’s start implementing the filtering step. As a result of this step, new individuals are not created, but a new population is created by selecting more fit individuals. It follows that the GetNextPoints function of the class that implements this step will return null.</p>
+<p>The GetNextPopulation function is very simple. Its implementation is presented in Listing <a href="#PC36">7-34</a>. This calls the selected operator and returns the population that it generated.</p>
+<p>public List<ObjectiveFunctionResult> GetNextPopulation(</p>
+<p>List<ObjectiveFunctionResult> previousPopulation,</p>
+<p>List<ObjectiveFunctionResult> previousResults)</p>
+<p>{</p>
+<p>return _operator.GetNextPopulation(previousPopulation);</p>
+<p>}</p>
+<p>Listing 7-34</p>
+<p>GetNextPopulation for Filtering Step</p>
+<p>I have implemented two operators for this step.</p>
+<h4 id="roulette-operator">Roulette Operator</h4>
+<p>We discussed this method in detail in the previous chapter. I will just remind you of the basic principle. The essence of the method is to present individuals in the form of a roulette wheel, which is divided into sectors. Each sector is assigned to a specific individual. The size of the sector depends on the fitness level of the individual.</p>
+<p>The selection algorithm looks like this:</p>
+<ol>
+<li>
+<p>1.</p>
+<p>For each individual, the probability of its selection is calculated. To do this, take the value of its objective function and divide it by the sum of the values of all individuals in the population.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We divide the interval from 0 to 1 into subintervals proportional to the values from step 1.</p>
+</li>
+<li>
+<p>1.</p>
+<p>We generate a random number from 0 to 1. Depending on which interval it falls in, that individual will be selected.</p>
+</li>
+<li>
+<p>1.</p>
+<p>Repeat step 3 as many times as required.</p>
+</li>
+</ol>
+<p>It follows from the algorithm that this operator has only one free parameter: the required population size.</p>
+<p>Listing <a href="#PC37">7-35</a> shows an implementation of the RouletteOperator’s GetNextPopulation method. It does not yet have the basic logic of the roulette method. I moved this to another class because the roulette method will be used in other operators. Please note that a list of individuals with the weight of each of them is passed to the Roulette.Selection method.</p>
+<p>public List<ObjectiveFunctionResult> GetNextPopulation(</p>
+<p>List<ObjectiveFunctionResult> previousPopulation)</p>
+<p>{</p>
+<p>List&lt;(ObjectiveFunctionResult Entity, double ProbabilityWeight)&gt; listForRoulette =</p>
+<p>previousPopulation.ConvertAll(i =&gt; (i, (double)i.Value));</p>
+<p>List<ObjectiveFunctionResult> nextIndividuals =</p>
+<p>Roulette.Selection(listForRoulette, _populationSize);</p>
+<p>return nextIndividuals;</p>
+<p>}</p>
+<p>Listing 7-35</p>
+<p>GetNextPopulation Function</p>
+<p>Listing <a href="#PC38">7-36</a> shows an implementation of the Roulette.Selection method. This involves initializing the list of roulette sectors by calling the GetProbabilityElements function. Next, the NextDouble function of the Random class is called, which returns a random number from 0 to 1. After this, the sector in which this number falls is selected and places the selected individual in the resulting list. Please note that this method does not check whether the individual has already entered the new population. As mentioned earlier, it is normal when, as a result of the roulette method, some individuals enter a new population several times.</p>
+<p>public static List<T> Selection<T>(</p>
+<p>List&lt;(T Entity, double ProbabilityWeight)&gt; list,</p>
+<p>int size,</p>
+<p>Random? rand = null)</p>
+<p>{</p>
+<p>var result = new List<T>();</p>
+<p>List<ProbabilityElement\<T>> probabilityElements =</p>
+<p>GetProbabilityElements(list);</p>
+<p>var random = rand ?? new Random();</p>
+<p>for (int i = 0; i &lt; size; i++)</p>
+<p>{</p>
+<p>double u = random.NextDouble();</p>
+<p>ProbabilityElement<T> nextPoint =</p>
+<p>probabilityElements</p>
+<p>.First(e =&gt; u &gt; e.MinInterval &amp;&amp; u &lt;= e.MaxInterval);</p>
+<p>result.Add(nextPoint.ListElement.Entity);</p>
+<p>}</p>
+<p>return result;</p>
+<p>}</p>
+<p>Listing 7-36</p>
+<p>Selection Function</p>
+<h4 id="elitism-operator">Elitism Operator</h4>
+<p>This method was developed to ensure that the best individuals are guaranteed to be included in the new population. It consists of two steps. At the first stage, the best individuals are selected. They are placed on the list of individuals of the new population. The second completely copies the roulette method. That is, the missing number of individuals is added to the new population using the roulette method.</p>
+<p>Based on this logic, this operator has two parameters: the percentage of individuals out of the total number that are considered elite and the required size of the new population.</p>
+<p>Listing <a href="#PC39">7-37</a> shows an implementation of the GetNextPopulation method.</p>
+<p>public List<ObjectiveFunctionResult> GetNextPopulation(</p>
+<p>List<ObjectiveFunctionResult> previousPopulation)</p>
+<p>{</p>
+<p>var individuals = new List<ObjectiveFunctionResult>();</p>
+<p>int eliteCount = (int)(_elitePercent / 100 * previousPopulation.Count);</p>
+<p>individuals.AddRange(</p>
+<p>previousPopulation</p>
+<p>.OrderByDescending(i =&gt; i.Value).ToList()</p>
+<p>.GetRange(0, elitCount-1));</p>
+<p>int remainder = _populationSize - individuals.Count;</p>
+<p>List&lt;(ObjectiveFunctionResult Entity, double ProbabilityWeight)&gt; listForRoulette =</p>
+<p>previousPopulation.ConvertAll(i =&gt; (i, (double)i.Value));</p>
+<p>List<ObjectiveFunctionResult> rouletteIndividuals = Roulette.Selection(listForRoulette, remainder);</p>
+<p>individuals.AddRange(rouletteIndividuals);</p>
+<p>return rouletteIndividuals;</p>
+<p>}</p>
+<p>Listing 7-37</p>
+<p>GetNextPopulation Function</p>
+<p>In Listing <a href="#PC39">7-37</a> I first calculate the size of the elite and put that value into the eliteCount variable. After that, I sort the previous population in descending order of the value of the objective function and take the top elements in the resulting eliteCount list. After this, I call the roulette method Roulette.Selection that we previously implemented.</p>
+<h3 id="breeding-step">Breeding Step</h3>
+<p>The purpose of the breeding step is to create new individuals by crossing individuals of the parents. The algorithm for this step is quite simple. First, we select pairs for crossing using some algorithm. Second, we cross them using one of the previously described operators.</p>
+<p>Listing <a href="#PC40">7-38</a> shows an implementation of the GetNextPoints method. In this function, I first check that the current population consists of at least two individuals; otherwise, further steps are meaningless. Then, I call the GetParentsList function configured by the selection step and save the resulting pairs of parents into the parentsList variable. After this, I perform the crossing by calling the Crossing function for each group of parents.</p>
+<p>public List<AlgorithmPoint> GetNextPoints(</p>
+<p>List<ObjectiveFunctionResult>? population = null,</p>
+<p>PointMagicData? magicData = null)</p>
+<p>{</p>
+<p>var nextGeneration = new List<AlgorithmPoint>();</p>
+<p>if (population != null &amp;&amp; population.Count &lt; 2)</p>
+<p>return nextGeneration;</p>
+<p>List<List\<ObjectiveFunctionResult>> parentsList =</p>
+<p>_selectionStep.GetParentsList(population, _groupsCount);</p>
+<p>foreach (List<ObjectiveFunctionResult> parents in parentsList)</p>
+<p>{</p>
+<p>List<AlgorithmPoint> children = _crossingStep</p>
+<p>.Crossing(parents, _functionVariables);</p>
+<p>if (magicData != null)</p>
+<p>{</p>
+<p>string magicDataString = magicData.ToString();</p>
+<p>children.ForEach(c =&gt; c.MagicData = magicDataString);</p>
+<p>}</p>
+<p>nextGeneration.AddRange(children);</p>
+<p>}</p>
+<p>return nextGeneration;</p>
+<p>}</p>
+<p>Listing 7-38</p>
+<p>GetNextPoints Function for Breeding Step</p>
+<p>The GetNextPopulation function, shown in Listing <a href="#PC41">7-39</a>, creates a new population based on a previous, or parent, population and a set of descendant individuals. In this step I added the ReplaceWorst parameter. If this flag has a positive value, then the descendant individuals will completely replace the worst parent individuals. Otherwise, the new population will consist of both offspring and parent individuals. If we look in the long term, then thanks to this logic, offspring individuals will compete not only with individuals of their generation but also with all parent individuals. Of course, this is impossible to find in the real world, because there are no immortal living beings.</p>
+<p>public List<ObjectiveFunctionResult> GetNextPopulation(</p>
+<p>List<ObjectiveFunctionResult> previousPopulation,</p>
+<p>List<ObjectiveFunctionResult> previousResults)</p>
+<p>{</p>
+<p>if (previousPopulation.Count == 1)</p>
+<p>return previousPopulation;</p>
+<p>var individuals = new List<ObjectiveFunctionResult>();</p>
+<p>if (_replaceWorst)</p>
+<p>{</p>
+<p>int needParentsCount =</p>
+<p>previousPopulation.Count&gt;previousResults.Count</p>
+<p>? previousPopulation.Count - previousResults.Count</p>
+<p>: 0;</p>
+<p>var needParents = previousPopulation</p>
+<p>.OrderByDescending(p =&gt; p.Value).Take(needParentsCount);</p>
+<p>individuals.AddRange(needParents);</p>
+<p>individuals.AddRange(previousResults);</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>individuals.AddRange(previousPopulation);</p>
+<p>individuals.AddRange(previousResults);</p>
+<p>}</p>
+<p>individuals = individuals.GroupBy(i =&gt; i.Id)</p>
+<p>.Select(g =&gt; g.First()).ToList();</p>
+<p>return individuals;</p>
+<p>}</p>
+<p>Listing 7-39</p>
+<p>GetNextPopulation Function</p>
+<h4 id="selection-step">Selection Step</h4>
+<p>The purpose of this step is to create a set of parent groups for crossing. The GetParentsList function of the class that implements this step has no logic. It calls the function of the same name of the selected operator.</p>
+<h5 id="selection-operator">Selection Operator</h5>
+<p>The idea of this operator is that only those individuals whose fitness is higher than or equal to the average fitness of the current population are included in the list of parents. Next, pairs are selected using the roulette method, where all elite individuals have an equal probability of being selected into a pair.</p>
+<p>Listing <a href="#PC42">7-40</a> shows an implementation of this operator.</p>
+<p>public List<List\<ObjectiveFunctionResult>> GetParentsList(List<ObjectiveFunctionResult> individuals, int groupsCount)</p>
+<p>{</p>
+<p>var parentsList = new List<List\<ObjectiveFunctionResult>>();</p>
+<p>var elite = new List<ObjectiveFunctionResult>();</p>
+<p>int eliteCount = _elitPercent / 100 * individuals.Count;</p>
+<p>elite.AddRange(individuals.OrderByDescending(i =&gt; i.Value).ToList()</p>
+<p>.GetRange(0, eliteCount-1));</p>
+<p>List&lt;(ObjectiveFunctionResult Entity, double ProbabilityWeight)&gt; listForRoulette =</p>
+<p>elite.ConvertAll(i =&gt; (i, (double)i.Value));</p>
+<p>for (int i = 0; i &lt; groupsCount; i++)</p>
+<p>{</p>
+<p>List<ObjectiveFunctionResult> parentsGroup =</p>
+<p>Roulette.SelectionDistinct(listForRoulette, 2);</p>
+<p>parentsList.Add(parentsGroup);</p>
+<p>}</p>
+<p>return parentsList;</p>
+<p>}</p>
+<p>Listing 7-40</p>
+<p>GetParentsList Function</p>
+<h5 id="panmixia-operator">Panmixia Operator</h5>
+<p>This is perhaps the simplest selection operator. The idea of this operator is to randomly select parental individuals with equal probability. Listing <a href="#PC43">7-41</a> shows its implementation.</p>
+<p>public List<List\<ObjectiveFunctionResult>> GetParentsList(List<ObjectiveFunctionResult> individuals, int groupsCount)</p>
+<p>{</p>
+<p>var parentsList = new List<List\<ObjectiveFunctionResult>>();</p>
+<p>for (int i = 0; i &lt; groupsCount; i++)</p>
+<p>{</p>
+<p>List<ObjectiveFunctionResult> parentsGroup = Roulette.SelectionDistinct(individuals, 2);</p>
+<p>parentsList.Add(parentsGroup);</p>
+<p>}</p>
+<p>return parentsList;</p>
+<p>}</p>
+<p>Listing 7-41</p>
+<p>GetParentsList Function</p>
+<h4 id="crossing-step">Crossing Step</h4>
+<p>The purpose of this step is to create offspring individuals based on the groups of parent individuals formed in the previous step. As in the case of the selection step, the Crossing function of the class that implements this step does not have logic. It calls the function of the same name of the selected operator.</p>
+<p>Let’s look at the flat operator implementation of this step. The idea is that the gene of a descendant is a random number located between the minimum and maximum values of the parents' genes.</p>
+<p>Listing <a href="#PC44">7-42</a> shows an implementation of the Crossing function. Please note that to determine the interval within which the gene value of the descendant will be located, I select the best and worst individual from the group of parent individuals. This operation is actually meaningless for this operator, but it makes a lot of sense for other operators I have implemented, such as the heuristic operator, where the value of the child gene should be located closer to the best value of the parent gene.</p>
+<p>public List<AlgorithmPoint> Crossing(List<ObjectiveFunctionResult> parents, List<FunctionVariable> functionVariables)</p>
+<p>{</p>
+<p>var nextGeneration = new List<AlgorithmPoint>();</p>
+<p>ObjectiveFunctionResult parent1 = parents[0];</p>
+<p>ObjectiveFunctionResult parent2 = parents[1];</p>
+<p>var point = new AlgorithmPoint();</p>
+<p>nextGeneration.Add(point);</p>
+<p>foreach (FunctionVariableValue value1 in parent1.Point.Values)</p>
+<p>{</p>
+<p>FunctionVariableValue value2 = parent2.Point.Values.First(v =&gt; v.Id.Equals(value1.Id));</p>
+<p>FunctionVariable functionVariable = functionVariables.First(v =&gt; v.Id.Equals(value1.Id));</p>
+<p>decimal best = parent1.Value &gt; parent2.Value ? value1.Value : value2.Value;</p>
+<p>decimal worst = parent1.Value &lt; parent2.Value ? value1.Value : value2.Value;</p>
+<p>decimal crossValue = Crossing(best, worst, functionVariable);</p>
+<p>point.Values.Add(new FunctionVariableValue(value1.Id, crossValue));</p>
+<p>}</p>
+<p>return nextGeneration;</p>
+<p>}</p>
+<p>Listing 7-42</p>
+<p>Crossing Function</p>
+<p>Listing <a href="#PC45">7-43</a> demonstrates the implementation of the Crossing function, but for a gene. And again in this code the already implemented Roulette class comes to our aid.</p>
+<p>private decimal Crossing(decimal best, decimal worst, FunctionVariable functionVariable)</p>
+<p>{</p>
+<p>decimal crossValue = best;</p>
+<p>if (best != worst)</p>
+<p>{</p>
+<p>decimal minValue = Math.Min(best, worst);</p>
+<p>decimal maxValue = Math.Max(best, worst);</p>
+<p>List<decimal> accessValues =</p>
+<p>functionVariable.GetValues()</p>
+<p>.Where(v =&gt; v &gt;= minValue &amp;&amp; v &lt;= maxValue).ToList();</p>
+<p>crossValue = Roulette.Selection(accessValues);</p>
+<p>}</p>
+<p>return crossValue;</p>
+<p>}</p>
+<p>Listing 7-43</p>
+<p>Crossing Variable</p>
+<h2 id="test-functions">Test Functions</h2>
+<p>One of the requirements for the module was the requirement for the implementation of mathematical functions, thanks to which you can check the performance of the created algorithm. One of the requirements for such a function is the need for a large number of local extrema. One of the most common functions that satisfies this condition is the Rastrigin function. This is exactly what I was one of the first to implement.</p>
+<p>The formula for this is as follows:</p>
+<p><img alt="" src="../../images/615867_1_En_7_Chapter/615867_1_En_7_Figa_HTML.jpg" /></p>
+<p>F of X = summation limit from i = 1 to the modulus of X of x subscript i squared minus 10 times cosine left parenthesis 2 pi x subscript i right parenthesis plus 10.</p>
+<p>Obviously, the minimum and, accordingly, optimal solution to this function will be 0, with the value of all variables equal to 0.</p>
+<p>I want to draw your attention to the fact that although the optimization problem often sounds like minimizing the value of the objective function, our task in finding the most profitable strategy is a maximization problem. This shouldn’t bother you. If you multiply the value of the objective function by -1, then the maximization problem becomes a minimization problem.</p>
+<p>Listing <a href="#PC46">7-44</a> shows an implementation of the Rastrigin function.</p>
+<p>public static decimal Calculate(</p>
+<p>List<FunctionVariable> functionVariables,</p>
+<p>AlgorithmPoint point)</p>
+<p>{</p>
+<p>double result = 0;</p>
+<p>foreach (FunctionVariable variable in functionVariables)</p>
+<p>{</p>
+<p>double x = (double)point.Values.First(v =&gt; v.Id == variable.Id).Value;</p>
+<p>result += x * x - 10 * Math.Cos(2 * Math.PI * x) + 10;</p>
+<p>}</p>
+<p>return (decimal)result;</p>
+<p>}</p>
+<p>Listing 7-44</p>
+<p>Test Calculate Function</p>
+<h2 id="subtheory-example">SubTheory Example</h2>
+<p>The optimization algorithms module has been implemented. Let’s look at the use case for this in more detail. Let’s imagine that we have a SubTheory with the following parameters:</p>
+<p>Signal to open a position:</p>
+<ul>
+<li>
+<p>Group AND:</p>
+</li>
+<li>
+<p>Volume &lt; Const</p>
+</li>
+<li>
+<p>Bbw &lt; Const</p>
+</li>
+<li>
+<p>Lp &lt; BbwL</p>
+</li>
+</ul>
+<p>Signal to close a position:</p>
+<ul>
+<li>
+<p>Group AND:</p>
+</li>
+<li>
+<p>Hp &gt; BbwU</p>
+</li>
+</ul>
+<p>Risk control will be presented in the form of a stop-loss order.</p>
+<p>Volume is the trading volume of the candle. The candle itself can be obtained thanks to three parameters.</p>
+<ul>
+<li>
+<p><strong>CandleIntervalId:</strong> Candle interval identifier (1min, 2min, and so on)</p>
+</li>
+<li>
+<p><strong>CandleFrom:</strong> Parameter that determines how many candles back you need to move away from the current one</p>
+</li>
+<li>
+<p><strong>CandleTo:</strong> Parameter that determines how many candles back you need to move away from CandleFrom</p>
+</li>
+</ul>
+<p>Thanks to these parameters, you can get a set of candles for which the Volume indicator is calculated. The search for candles for all other indicators that require this occurs in a similar way. If the condition involves two indicators that require information about the candle, then for condition = true, the condition must be met for all candles in the left and right parts.</p>
+<p>Const is a constant or a specific number that does not depend on trading data. For this there is only one parameter, which is volume, that is, the value of the constant itself.</p>
+<p>Bbw (bollinger bands width) is the indicator with two parameters: lookbackPeriods and standardDeviations. This indicator also contains three parameters to determine the candle on which this will be calculated.</p>
+<p>Lp is the low price of the selected candle. It has no specific parameters other than the three (CandleIntervalId, CandleFrom, and CandleTo) described earlier.</p>
+<p>BbwL (bollinger bands lower band) is an indicator with two parameters: lookbackPeriods and standardDeviations. This indicator also contains three parameters to determine the candle on which this will be calculated.</p>
+<p>HP is high price. It has no specific parameters other than the parameters necessary to define a candle.</p>
+<p>BbwU (bollinger bands upper band) is an indicator with two parameters: lookbackPeriods and standardDeviations. This indicator also contains three parameters to determine the candle on which this will be calculated.</p>
+<p>Stop-loss order has only one parameter: protected coefficient. Using this, you can calculate the limit price. If the current price of a financial asset is above this level, the position is closed.</p>
+<p>I would like to draw your attention to the way I decided to set the parameters for the CandleFrom and CandleTo variables. If you use standard from, to, and step, then there is a high probability of intersection of values, as well as invalid data, such as when CandleFrom = 5 and CandleTo = 1. To avoid this, I decided to vary the CandleFrom and CandleInterval parameters. Then CandleTo is easy to define: CandleTo = CandleFrom + CandleInterval.</p>
+<p>If we take all the signal parameters, we get a list of variables for the optimization algorithm, as shown in Table <a href="#Tab2">7-2</a>. As you can see, the transition from SubTheory parameters to optimization algorithm variables is quite easy to implement.</p>
+<p>Table 7-2</p>
+<p>Open Position Signal Params</p>
+<p><strong>Object</strong></p>
+<p><strong>Name</strong></p>
+<p><strong>Param</strong></p>
+<p><strong>From</strong></p>
+<p><strong>To</strong></p>
+<p><strong>Step</strong></p>
+<p>Open signal</p>
+<p>Volume</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>Const</p>
+<p>Volume</p>
+<p>10</p>
+<p>2000</p>
+<p>10</p>
+<p>Bbw</p>
+<p>LookbackPeriods</p>
+<p>7</p>
+<p>500</p>
+<p>1</p>
+<p>StandardDeviations</p>
+<p>2</p>
+<p>5</p>
+<p>1</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>Const</p>
+<p>Volume</p>
+<p>10</p>
+<p>2000</p>
+<p>10</p>
+<p>Lp</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>BbwL</p>
+<p>LookbackPeriods</p>
+<p>7</p>
+<p>500</p>
+<p>1</p>
+<p>StandardDeviations</p>
+<p>2</p>
+<p>5</p>
+<p>1</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>Close signal</p>
+<p>Hp</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>BbwU</p>
+<p>LookbackPeriods</p>
+<p>7</p>
+<p>500</p>
+<p>1</p>
+<p>StandardDeviations</p>
+<p>2</p>
+<p>5</p>
+<p>1</p>
+<p>CandleIntervalId</p>
+<p>1min, 5min, 10min, 1h, 4h</p>
+<p>CandleFrom</p>
+<p>0</p>
+<p>2</p>
+<p>1</p>
+<p>CandleInterval</p>
+<p>0</p>
+<p>5</p>
+<p>1</p>
+<p>Stop-loss</p>
+<p>Protected Coefficient</p>
+<p>Coeff</p>
+<p>0.1%</p>
+<p>10%</p>
+<p>0.1%</p>
+<h2 id="summary">Summary</h2>
+<p>In this chapter, I showed one of the options for implementing the optimization algorithms module. Two algorithms were implemented: brute-force and genetic. But the module is implemented in such a way that adding a new algorithm will not pose a big problem.</p>
+<p>In the generic algorithm, several operators were implemented for each of the steps. This will allow you to design a large number of your own variations of the optimization algorithms. I also showed how to implement one of the mathematical functions that can be used to check and test your optimization algorithms.</p>
+<p>Now the module of optimization algorithms is ready.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

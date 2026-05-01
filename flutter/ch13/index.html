@@ -1,0 +1,4030 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch13/">
+      
+      
+        <link rel="prev" href="../ch12/">
+      
+      
+        <link rel="next" href="../ch14/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Web and Desktop - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-13-web-and-desktop" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web and Desktop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MacOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Menus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktopwindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DesktopWindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptivescaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdaptiveScaffold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AdaptiveScaffold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptivelayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdaptiveLayout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firebase-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Hosting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MacOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Menus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktopwindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DesktopWindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptivescaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdaptiveScaffold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AdaptiveScaffold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptivelayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdaptiveLayout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firebase-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Hosting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-13-web-and-desktop"><a href="../contents/#ch13a">CHAPTER 13 Web and Desktop</a></h1>
+<h2 id="introduction"><a href="../contents/#sc2_249a">Introduction</a></h2>
+<p>In this chapter, you will learn how to run Flutter apps on desktop platforms like macOS, Windows, and Linux, as well as on the web. You will create menus for desktop apps that allow the app to perform more like native apps. Learn about some of the issues when running on the web and learn how to make your UIs more adaptive to the width of larger screens. Learn how to use navigation rails instead of the bottom navigation on the desktop and web. Finally, you will host your web app on Firebase Hosting so that others can see it.</p>
+<h2 id="structure"><a href="../contents/#sc2_250a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>Other platforms</li>
+<li>MacOS</li>
+<li>Menus</li>
+<li>AdaptiveScaffold</li>
+<li>Windows</li>
+<li>Web</li>
+<li>Firebase Hosting</li>
+</ul>
+<h2 id="objectives"><a href="../contents/#sc2_251a">Objectives</a></h2>
+<p>By the end of this chapter, you will know how to create desktop apps for Mac and Windows, as well as menus. You will know how to create an adaptive UI that can expand and change based on the size of the screen. You will have created a web app that solves database issues, allowing your database to run on the web.</p>
+<h2 id="macos"><a href="../contents/#sc2_252a">MacOS</a></h2>
+<p>One of the great benefits of Flutter is that it can run not only on mobile devices but also on the desktop and web. Most of the time, there are not many changes needed to get the app to work on these platforms. Since these platforms have different forms and inputs, they will have different needs. The most obvious is the size difference. The user usually has more room to display information on the desktop and the web. To account for those differences, you may want to show different layouts. If you are familiar with Gmail, you will notice that on the web, there is a list of labels on the left, and you can split your screen into email lists and content. To use the same code, you would break your UI into different components and display them in different holders, depending on the platform. For example, you could have a list of emails as one component that would show up as one screen on a phone but just a part of a larger screen on the desktop or web. You also have menus on desktop platforms that allow you to easily access different parts of the app. Usually, there will be a file menu with all of the actions you can do to files and an edit menu for cut, copy, paste, and so on. You would then have app-specific menus, like accessing search.</p>
+<p>If you are using a Mac or have seen one used, you know that each app has a window with three colored icons in the top left of the window that allows a user to close, minimize, and expand that window. Mac apps also have a menu system that is built into the screen’s top row. This usually has the System Apple menu, a menu with the app’s name, and any app-specific menu. Usually, Mac apps are developed in Xcode, and you can edit the menus there. To fully understand how this works, open up Xcode and navigate to your app’s macOS folder.</p>
+<ol>
+<li>
+<p>Choose File | Open:</p>
+<p><img alt=" " src="../images/1.png" /></p>
+<p>Figure 13.1: macOS folder</p>
+<p>Click the <code>Open</code> button. This will open the correct file for the project. If you click on the <code>Runner</code> folder on the left, you should see the following:</p>
+<p><img alt=" " src="../images/Figure_13.2.png" /></p>
+<p>Figure 13.2: Runner general screen</p>
+<p>This is the General screen and has the targeted macOS version, App Category, Display Name, and Bundle Identifier. Some of these values have already been added when the project was created but you can change them here. For example, you can add a Display Name and version numbers.</p>
+</li>
+<li>
+<p>Go back to the <code>Runner</code> screen and click on <code>Signing &amp; Capabilities</code>. Select the <code>Outgoing Connections (Client)</code> checkbox:</p>
+<p><img alt=" " src="../images/Figure_13.5.png" /></p>
+<p>Figure 13.3: Connections</p>
+</li>
+<li>
+<p>In Android Studio, change the device from your current phone to macOS (desktop) and run the app. You should see just the movies menu, as follows:</p>
+<p><img alt=" " src="../images/Figure_13.6.png" /></p>
+<p>Figure 13.4: Movie menu</p>
+</li>
+<li>
+<p>To fix the lowercase movie name, return the Xcode and enter a Display Name:</p>
+<p><img alt=" " src="../images/Figure_13.7.png" /></p>
+<p>Figure 13.5: Display name</p>
+</li>
+<li>
+<p>Then open <code>Runner/Runner/Configs/AppInfo</code>. Change movies to Movies:</p>
+<p><img alt=" " src="../images/Figure_13.8.png" /></p>
+<p>Figure 13.6: AppInfo</p>
+<p>Stop and restart the app. You may encounter the following dialog. Select <code>Open</code> Anyway`:</p>
+<p><img alt=" " src="../images/Figure_13.9.png" /></p>
+<p>Figure 13.7: Debug running</p>
+<p>This should happen just during development. Your app should work and look as follows:</p>
+<p><img alt=" " src="../images/Figure_13.10.png" /></p>
+<p>Figure 13.8: macOS app</p>
+</li>
+</ol>
+<h2 id="menus"><a href="../contents/#sc2_253a">Menus</a></h2>
+<p>Menus are now built into Flutter but do not work on all platforms yet. The <code>PlatformMenu</code> and the <code>PlatformMenuItem</code> are used to define menu items. These classes define a label and, in the case of <code>PlatformMenu</code>, a list of menus of type <code>PlatformMenuItem</code>. The <code>PlatformMenuItem</code> has an <code>onSelected</code> parameter that is used to handle the user selecting the menu. You can also provide a shortcut or keyboard command. To create your own set of menus you will use Flutter code to create the menus and add them before the <code>MaterialApp</code> call. This will not affect mobile devices. One of the problems with the menu system is that it sits above all of the screens, and a way to communicate the selection of a menu item to the rest of the app is needed. There are several ways to handle this. We will use the <code>EventBus</code> package. This is a package that allows classes to subscribe or listen to events. Any class can send events.</p>
+<ol>
+<li>
+<p>Add the <code>EventBus</code> package to <code>pubspec.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">event_bus</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.0.1</span>
+</code></pre></div>
+</li>
+<li>
+<p>Do a Pub get.</p>
+</li>
+<li>
+<p>In the <code>ui</code> folder, create the file <code>menus.dart</code>. We will start by adding a few event classes. Add:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/services.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/providers.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_riverpod/flutter_riverpod.dart&#39;</span><span class="p">;</span>
+<span class="n">sealed</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">QuitEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">HomeEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">GenreEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">FavoritesEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">SearchEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">SearchMovieEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">MenuEvent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">searchText</span><span class="p">;</span>
+<span class="w">  </span><span class="n">SearchMovieEvent</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">searchText</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+This defines a top level <code>MenuEvent</code> class that all the other classes extend. Most of these do not have any information attached to them, except for the <code>SearchMovieEvent</code> class, which has a <code>searchText</code> string parameter used for a search.</p>
+</li>
+<li>
+<p>Next, create the <code>MenuManager</code> class:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MenuManager</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">;</span>
+<span class="w">  </span><span class="n">MenuManager</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">ref</span><span class="p">);</span>
+<span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PlatformMenu</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createMenus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">createMovieMenu</span><span class="p">(),</span>
+<span class="w">      </span><span class="n">createOptionsMenu</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+This class just takes a Riverpod Ref so that it can access other providers. The main <code>createMenus</code> method will return a list of menus.</p>
+</li>
+<li>
+<p>Next, add the <code>createMovieMenu</code> method at the end of the class:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">PlatformMenu</span><span class="w"> </span><span class="n">createMovieMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">PlatformMenu</span><span class="p">(</span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Movies&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">menus:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="n">PlatformMenuItem</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">QuitEvent</span><span class="p">()),</span>
+<span class="w">    </span><span class="nl">shortcut:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SingleActivator</span><span class="p">(</span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyQ</span><span class="p">,</span><span class="w"> </span><span class="nl">meta:</span><span class="w"> </span><span class="kc">true</span><span class="p">)),</span>
+<span class="w">  </span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div>
+This returns a <code>PlatformMenu</code> with a label and just a <code>Quit</code> menu item. This will fire a <code>Quit</code> event. We will create the <code>eventBusProvider</code> later. Notice the <code>SingleActivator</code>. This is used to allow the user to use the keyboard for keyboard commands. In this case, Command+Q is to quit the app. On Windows, this will be Ctrl+Q.</p>
+</li>
+<li>
+<p>Next, create an <code>Options</code> menu:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">PlatformMenu</span><span class="w"> </span><span class="n">createOptionsMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">PlatformMenu</span><span class="p">(</span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Options&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">menus:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="n">PlatformMenuItem</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Home&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">HomeEvent</span><span class="p">()),</span>
+<span class="w">      </span><span class="nl">shortcut:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SingleActivator</span><span class="p">(</span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyH</span><span class="p">,</span><span class="w"> </span><span class="nl">meta:</span><span class="w"> </span><span class="kc">true</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">PlatformMenuItem</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Genre&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">GenreEvent</span><span class="p">()),</span>
+<span class="w">      </span><span class="nl">shortcut:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SingleActivator</span><span class="p">(</span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyG</span><span class="p">,</span><span class="w"> </span><span class="nl">meta:</span><span class="w"> </span><span class="kc">true</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">PlatformMenuItem</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Favorites&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">FavoritesEvent</span><span class="p">()),</span>
+<span class="w">      </span><span class="nl">shortcut:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SingleActivator</span><span class="p">(</span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyF</span><span class="p">,</span><span class="w"> </span><span class="nl">meta:</span><span class="w"> </span><span class="kc">true</span><span class="p">)),</span>
+<span class="w">    </span><span class="n">PlatformMenuItem</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Search&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">SearchEvent</span><span class="p">()),</span>
+<span class="w">      </span><span class="nl">shortcut:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SingleActivator</span><span class="p">(</span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyS</span><span class="p">,</span><span class="w"> </span><span class="nl">meta:</span><span class="w"> </span><span class="kc">true</span><span class="p">)),</span>
+<span class="w">  </span><span class="p">]);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
+This creates four menus:</p>
+<ul>
+<li><code>Home</code> - Go to the home page</li>
+<li><code>Genre</code> - Go to the genre page</li>
+<li><code>Favorites</code> - Go to the favorites page</li>
+<li><code>Search</code> - Bring up the search dialog</li>
+</ul>
+</li>
+<li>
+<p>Open up <code>providers.dart</code>. Add:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nd">@riverpod</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">SearchTextNotifier</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Notifier</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">build</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="kd">set</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@riverpod</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">CurrentIndexNotifier</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Notifier</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">build</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="kd">set</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">MenuManager</span><span class="w"> </span><span class="n">menuManager</span><span class="p">(</span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">MenuManager</span><span class="p">(</span><span class="n">ref</span><span class="p">);</span>
+
+<span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">EventBus</span><span class="w"> </span><span class="n">eventBus</span><span class="p">(</span><span class="n">Ref</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">EventBus</span><span class="p">();</span>
+</code></pre></div>
+The first provider just stores the current search string. The second is to keep track of the current index and the third is for the menu manager and the fourth is for the EventBus.</p>
+</li>
+<li>
+<p>In the terminal, type: <code>dart run build_runner build</code></p>
+</li>
+<li>
+<p>Open <code>main.dart</code>. In the <code>build</code> method, wrap the <code>MaterialApp</code> widget so that the <code>build</code> method now looks like:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// under `final router = ref.watch(appRouterProvider);`</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">menuManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">menuManagerProvider</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="n">PlatformMenuBar</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">menus:</span><span class="w"> </span><span class="n">menuManager</span><span class="p">.</span><span class="n">createMenus</span><span class="p">(),</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">.</span><span class="n">router</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">routerConfig:</span><span class="w"> </span><span class="n">router</span><span class="p">.</span><span class="n">config</span><span class="p">(),</span>
+<span class="w">    </span><span class="nl">title:</span><span class="w"> </span><span class="s1">&#39;Movies&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">theme:</span><span class="w"> </span><span class="n">createTheme</span><span class="p">(),</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+This wraps <code>MaterialApp</code> with a <code>PlatformMenuBar</code> and calls our <code>createMenus</code> method. Stop and restart your Mac app. Your menus should look like the following:</p>
+<p><img alt=" " src="../images/Figure_13.11.png" /></p>
+<p>Figure 13.9: macOS menus</p>
+</li>
+</ol>
+<h3 id="platforms"><a href="../contents/#sc3_254a">Platforms</a></h3>
+<p>One question you may have is, How do I tell which platform I am on? Flutter has a Platform class that answers these questions. This is found in the <code>dart:io</code> package. The steps are as follows:</p>
+<ol>
+<li>
+<p>Open <code>utils/utils.dart</code>.</p>
+</li>
+<li>
+<p>Add the following:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/foundation.dart&#39;</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isWeb</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">kIsWeb</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isDesktop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kIsWeb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isWindows</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isLinux</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isMacOS</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isMobile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kIsWeb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isIOS</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isAndroid</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isMac</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kIsWeb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isMacOS</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">isWindows</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kIsWeb</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Platform</span><span class="p">.</span><span class="n">isWindows</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+The <code>kIsWeb</code> constant is from Flutter and is how you tell if you are running a web app. For desktop, we check the different desktop platforms. For mobile, we check for iOS and Android. If you need to check for Mac or Windows specifically, use the last two methods.</p>
+</li>
+</ol>
+<h3 id="desktopwindow"><a href="../contents/#sc3_255a">DesktopWindow</a></h3>
+<p>One noticeable difference between mobile and desktop is the use of a free floating window to hold your app's content. These windows can be resized quite a bit. At some point, when making the window smaller, your app becomes unusable. To prevent that, there is a package called <code>desktop_window</code>. This package only has a few methods, but they are very helpful. Here are a few of these methods:</p>
+<ul>
+<li>setWindowSize</li>
+<li>setMinWindowSize</li>
+<li>setMaxWindowSize</li>
+<li>setFullScreen</li>
+</ul>
+<p>We will be using the <code>setWindowSize</code> and <code>setMinWindowSize</code> methods. The steps are as follows:</p>
+<ol>
+<li>
+<p>Add the <code>desktop_window</code> package to <code>pubspec.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">desktop_window</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.4.2</span>
+</code></pre></div>
+</li>
+<li>
+<p>Do a Pub get.</p>
+</li>
+<li>
+<p>Open <code>main.dart</code>. Add the following before the <code>runApp</code> call:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isDesktop</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">DesktopWindow</span><span class="p">.</span><span class="n">setWindowSize</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">700</span><span class="p">,</span><span class="w"> </span><span class="m">600</span><span class="p">));</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">DesktopWindow</span><span class="p">.</span><span class="n">setMinWindowSize</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">700</span><span class="p">,</span><span class="w"> </span><span class="m">600</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="c1">// before `runApp(...`</span>
+</code></pre></div>
+Stop and run the app, and you will see that you cannot make your window size smaller than 700x600. You will see some errors related to SQLite. To fix these, update the <code>drift</code> libraries to newer versions.(目前版本已经使用到2.31.0,应该没有此问题,但未经测试.)</p>
+</li>
+<li>
+<p>In <code>pubspec.yaml</code> change: <code>drift: ^2.31.0</code>, and in <code>dev_dependencies</code>: <code>drift_dev: ^2.31.0</code>.</p>
+</li>
+</ol>
+<h2 id="adaptivescaffold"><a href="../contents/#sc2_256a">AdaptiveScaffold</a></h2>
+<p>As we mentioned, desktop windows can be resized. It would be nice if we could change the layout when the screen changes sizes. If you had an email app, you could show just the list of emails when the screen is small but show the list and the contents of the email when the screen gets bigger. Enter the Flutter Adaptive Scaffold package. This package adapts to a variety of screens and has presets for different screen sizes. This package divides the screen as follows:</p>
+<p><img alt=" " src="../images/Figure_13.12.png" /></p>
+<p>Figure 13.10: Screen layout</p>
+<p>Currently, the movie app just has body and bottom navigation elements. One nice feature of desktop apps is the use of a navigation rail. This is a smaller navigation item that can be placed on the left or right. We still want to use a <code>BottomNavigationBar</code> on a small mobile device but use a <code>NavigationRail</code> on larger devices. The <code>body</code> is the primary screen that takes up the space left by the navigational elements. The <code>secondaryBody</code> acts as an option to split the space between two panes for purposes such as having a detailed view. To make this change, we will update the <code>main_screen.dart</code> file. This will be almost a complete rewrite. The steps are as follows:</p>
+<ol>
+<li>
+<p>Open <code>pubspec.yaml</code>. Add:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">flutter_adaptive_scaffold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.3.3</span>
+</code></pre></div>
+</li>
+<li>
+<p>Do a Pub get.</p>
+</li>
+<li>
+<p>Open the <code>main_screen.dart</code> file.</p>
+</li>
+<li>
+<p>Replace the code with:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MainScreen</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerStatefulWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">MainScreen</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">MainScreen</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_MainScreenState</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">_MainScreenState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">MainScreen</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tabScreens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">  </span><span class="c1">// TODO add other methods</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the <code>initState</code> method:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">initState</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="n">tabScreens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HomeScreen</span><span class="p">());</span>
+<span class="w">  </span><span class="n">tabScreens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">GenreScreen</span><span class="p">());</span>
+<span class="w">  </span><span class="n">tabScreens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FavoriteScreen</span><span class="p">());</span>
+<span class="w">  </span><span class="c1">// 2</span>
+<span class="w">  </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="kd">on</span><span class="o">&lt;</span><span class="n">MenuEvent</span><span class="o">&gt;</span><span class="p">().</span><span class="n">listen</span><span class="p">((</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">HomeEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">      </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">GenreEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">      </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">FavoritesEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">      </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">QuitEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">        </span><span class="n">SystemNavigator</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">SearchEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">        </span><span class="c1">// 3</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mounted</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">showDialog</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">context:</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SearchDialog</span><span class="p">(),</span>
+<span class="w">          </span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">SearchMovieEvent</span><span class="p">()</span><span class="o">:</span>
+<span class="w">        </span><span class="c1">// 4</span>
+<span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">searchTextProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">searchText</span><span class="p">);</span>
+<span class="w">        </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+Here we have the following:</p>
+<ol>
+<li>Add screens to a list to avoid re-creating the screens each time.</li>
+<li>Listen for event bus events.</li>
+<li>Set the current index.</li>
+<li>Set the current index in the provider.</li>
+<li>Show the search dialog. (SearchDialog not written yet)</li>
+<li>Set the search text for the SearchMovieEvent.</li>
+</ol>
+</li>
+</ol>
+<h3 id="adaptivelayout"><a href="../contents/#sc3_257a">AdaptiveLayout</a></h3>
+<p>Next, we will be adding the <code>AdaptiveLayout</code>:</p>
+<ol>
+<li>
+<p>Open the <code>main_screen.dart</code> file.</p>
+</li>
+<li>
+<p>Add the <code>build</code> method:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// 2</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">AdaptiveLayout</span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="nl">primaryNavigation:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">config:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Breakpoint</span><span class="p">,</span><span class="w"> </span><span class="n">SlotLayoutConfig</span><span class="o">&gt;</span><span class="p">{</span>
+<span class="w">        </span><span class="n">Breakpoints</span><span class="p">.</span><span class="nl">mediumAndUp:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">.</span><span class="n">from</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">key:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Key</span><span class="p">(</span><span class="s1">&#39;PrimaryNavigation&#39;</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 4</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">AdaptiveScaffold</span><span class="p">.</span><span class="n">standardNavigationRail</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="m">0</span><span class="p">),</span>
+<span class="w">              </span><span class="nl">destinations:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="n">NavigationRailDestination</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">home</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Home&#39;</span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="n">NavigationRailDestination</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Symbols</span><span class="p">.</span><span class="n">genres</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Genre&#39;</span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="n">NavigationRailDestination</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Favorites&#39;</span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">],</span>
+<span class="w">              </span><span class="nl">onDestinationSelected:</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+<span class="w">                  </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="w">              </span><span class="nl">selectedIndex:</span><span class="w"> </span><span class="n">currentIndex</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="c1">// 5</span>
+<span class="w">    </span><span class="nl">body:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">config:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Breakpoint</span><span class="p">,</span><span class="w"> </span><span class="n">SlotLayoutConfig</span><span class="o">?&gt;</span><span class="p">{</span>
+<span class="w">        </span><span class="n">Breakpoints</span><span class="p">.</span><span class="nl">standard:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">.</span><span class="n">from</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">key:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Key</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span><span class="nl">body:</span><span class="w"> </span><span class="n">tabScreens</span><span class="p">[</span><span class="n">currentIndex</span><span class="p">]);</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="c1">// 6</span>
+<span class="w">    </span><span class="nl">bottomNavigation:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">config:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Breakpoint</span><span class="p">,</span><span class="w"> </span><span class="n">SlotLayoutConfig</span><span class="o">?&gt;</span><span class="p">{</span>
+<span class="w">        </span><span class="n">Breakpoints</span><span class="p">.</span><span class="nl">small:</span><span class="w"> </span><span class="n">SlotLayout</span><span class="p">.</span><span class="n">from</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">key:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Key</span><span class="p">(</span><span class="s1">&#39;bottomNavigation&#39;</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">height:</span><span class="w"> </span><span class="m">80</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="n">BottomNavigationBar</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">currentIndex:</span><span class="w"> </span><span class="n">currentIndex</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">index</span><span class="p">;</span>
+<span class="w">                  </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">currentIndexProvider</span><span class="p">.</span><span class="n">notifier</span><span class="p">).</span><span class="kd">set</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="w">              </span><span class="nl">items:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&lt;</span><span class="n">BottomNavigationBarItem</span><span class="o">&gt;</span><span class="p">[</span>
+<span class="w">                </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">home</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Home&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Symbols</span><span class="p">.</span><span class="n">genres</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Genre&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite</span><span class="p">),</span>
+<span class="w">                  </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Favorites&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">              </span><span class="p">],</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+Here, we use the <code>AdaptiveLayout</code> and set three items:</p>
+<ul>
+<li><code>primaryNavigation</code>: This will be a navigation rails for medium and higher screens.</li>
+<li><code>body</code>: This will be our screens.</li>
+<li><code>bottomNavigation</code>: This will be a bottom navigation bar on small screens.</li>
+</ul>
+<p>Here is a description of the code:</p>
+<ol>
+<li>Get the current index.</li>
+<li>Use the <code>AdaptiveLayout</code> for the top level widget.</li>
+<li>For the primary navigation, use a <code>SlotLayout</code> for medium size layouts.</li>
+<li>Create a navigation rail on the left side.</li>
+<li>For the body, use the tab screens.</li>
+<li>For the bottom, use a <code>BottomNavigationBar</code> for a small display.</li>
+</ol>
+</li>
+</ol>
+<h3 id="search-dialog"><a href="../contents/#sc3_258a">Search dialog</a></h3>
+<p>Now that we have the event for searching, we need to create a search dialog. Flutter has a system method called <code>showDialog</code> that displays a modal dialog with the given content. The steps are as follows:</p>
+<ol>
+<li>
+<p>In the <code>genres</code> folder, create the new file <code>search_dialog.dart</code>.</p>
+</li>
+<li>
+<p>Add the following:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:auto_route/auto_route.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_riverpod/flutter_riverpod.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/providers.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/menus.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/utils/utils.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">SearchDialog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerStatefulWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">SearchDialog</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">SearchDialog</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_SearchDialogState</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">_SearchDialogState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">SearchDialog</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">TextEditingController</span><span class="w"> </span><span class="n">searchTextController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TextEditingController</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">searchTextController</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// TODO Add AlertDialog</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+This creates a widget with a text controller for the search value.</p>
+</li>
+<li>
+<p>Add the code for the dialog:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaQuery</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">0.7</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300.0</span><span class="p">;</span>
+<span class="k">return</span><span class="w"> </span><span class="n">AlertDialog</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">contentPadding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">24.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="m">24.0</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">shape:</span><span class="w"> </span><span class="n">RoundedRectangleBorder</span><span class="p">(</span><span class="nl">borderRadius:</span><span class="w"> </span><span class="n">BorderRadius</span><span class="p">.</span><span class="n">circular</span><span class="p">(</span><span class="m">10.0</span><span class="p">)),</span>
+<span class="w">  </span><span class="nl">content:</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">width:</span><span class="w"> </span><span class="n">width</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">height:</span><span class="w"> </span><span class="n">height</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">child:</span><span class="w"> </span><span class="n">SingleChildScrollView</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">width:</span><span class="w"> </span><span class="n">width</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">height:</span><span class="w"> </span><span class="n">height</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">TextField</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">cursorColor:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">decoration:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">InputDecoration</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">border:</span><span class="w"> </span><span class="n">InputBorder</span><span class="p">.</span><span class="n">none</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">hintText:</span><span class="w"> </span><span class="s1">&#39;Search Movies&#39;</span><span class="p">,</span>
+<span class="w">                  </span><span class="c1">// hintStyle: TextStyle(color: Colors.black),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="nl">autofocus:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">black</span><span class="p">),</span>
+<span class="w">                </span><span class="nl">textInputAction:</span><span class="w"> </span><span class="n">TextInputAction</span><span class="p">.</span><span class="n">done</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">onSubmitted:</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">SearchMovieEvent</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+<span class="w">                  </span><span class="n">context</span><span class="p">.</span><span class="n">router</span><span class="p">.</span><span class="n">maybePop</span><span class="p">();</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nl">controller:</span><span class="w"> </span><span class="n">searchTextController</span><span class="p">,</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">            </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">mainAxisAlignment:</span><span class="w"> </span><span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="n">ElevatedButton</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">router</span><span class="p">.</span><span class="n">maybePop</span><span class="p">(),</span>
+<span class="w">                  </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Cancel&#39;</span><span class="p">),</span>
+<span class="w">                </span><span class="p">),</span>
+<span class="w">                </span><span class="n">addHorizontalSpace</span><span class="p">(</span><span class="m">8</span><span class="p">),</span>
+<span class="w">                </span><span class="n">ElevatedButton</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">ref</span>
+<span class="w">                        </span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">.</span><span class="n">fire</span><span class="p">(</span><span class="n">SearchMovieEvent</span><span class="p">(</span><span class="n">searchTextController</span><span class="p">.</span><span class="n">text</span><span class="p">));</span>
+<span class="w">                    </span><span class="n">context</span><span class="p">.</span><span class="n">router</span><span class="p">.</span><span class="n">maybePop</span><span class="p">();</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Search&#39;</span><span class="p">),</span>
+<span class="w">                </span><span class="p">)</span>
+<span class="w">              </span><span class="p">],</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+This is just a <code>TextField</code> and two buttons: one to cancel and one to send a search event. To implement this event we need to make some changes to the <code>GenreScreen</code>.</p>
+</li>
+<li>
+<p>Open <code>genre_screen.dart</code>.</p>
+</li>
+<li>
+<p>Remove the <code>currentSearchString</code> field.</p>
+</li>
+<li>
+<p>Add a new field:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">searchTextNotifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ValueNotifier</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>In the <code>buildScreen</code> method add the following before the return.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">searchText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">searchTextProvider</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">searchText</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">searchTextNotifier</span><span class="p">.</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">searchTextNotifier</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">searchText</span><span class="p">;</span>
+<span class="w">  </span><span class="n">currentMovieResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="n">expandedNotifier</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="n">search</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change the call to <code>GenreSearchRow</code> to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ValueListenableBuilder</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">valueListenable:</span><span class="w"> </span><span class="n">searchTextNotifier</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">Widget</span><span class="o">?</span><span class="w"> </span><span class="n">child</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">GenreSearchRow</span><span class="p">(</span><span class="n">searchTextNotifier</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">searchString</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">searchTextNotifier</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">searchString</span><span class="p">;</span>
+<span class="w">      </span><span class="n">currentMovieResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">      </span><span class="n">FocusScope</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">unfocus</span><span class="p">();</span>
+<span class="w">      </span><span class="n">expandedNotifier</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">      </span><span class="n">search</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">),</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change all instances of <code>currentSearchString</code> to <code>searchTextNotifier.value</code>.</p>
+</li>
+</ol>
+<p>Next, we need to change <code>GenreSearchRow</code>. The steps are as follows:</p>
+<ol>
+<li>
+<p>Open <code>genre_search_row.dart</code>.</p>
+</li>
+<li>
+<p>Add a new field and change the constructor:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">searchText</span><span class="p">;</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">OnSearch</span><span class="w"> </span><span class="n">onSearch</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">GenreSearchRow</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">searchText</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">onSearch</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change the <code>movieTextController</code> to:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">late</span><span class="w"> </span><span class="n">TextEditingController</span><span class="w"> </span><span class="n">movieTextController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TextEditingController</span><span class="p">(</span><span class="nl">text:</span><span class="w"> </span><span class="n">widget</span><span class="p">.</span><span class="n">searchText</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Remove the <code>initState</code> method, as it is not needed any more.</p>
+</li>
+<li>
+<p>At the beginning of the <code>build</code> method, add:</p>
+<div class="highlight"><pre><span></span><code><span class="n">movieTextController</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">widget</span><span class="p">.</span><span class="n">searchText</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Do a hot restart and try selecting the search menu. It should bring up the search dialog and take you to the genre screen with search results. Try the other menu items and make sure they take you to the given screen.</p>
+<p>You should see the navigation rails on the left, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_13.13.png" /></p>
+<p>Figure 13.11: Navigation rails</p>
+<h2 id="windows"><a href="../contents/#sc2_259a">Windows</a></h2>
+<p>In addition to the Mac, Flutter runs on Windows. Very little needs to be done to get it to work. However, the one area that still needs work is the menus. On Windows, menus are in the window itself. This window is part of the Windows operating system and not Flutter. Currently, the <code>PlatformMenuBar</code> only works on Mac. To create menus on Windows, we need a plugin that helps. There are a lot of packages that put a menu inside of the Flutter canvas but not in the window. We will use an older <code>menubar</code> plugin that will help until <code>PlatformMenuBar</code> works on Windows.</p>
+<p>On Windows, running the app should look as follows:</p>
+<p><img alt=" " src="../images/Figure_13.14.png" /></p>
+<p>Figure 13.12: Windows version</p>
+<p>To add the menu package, do the following:</p>
+<ol>
+<li>
+<p>Add the menubar package to pubspec.yaml:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">menubar</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">git</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/google/flutter-desktop-embedding</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plugins/menubar</span>
+<span class="w">        </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12decbe0f592e14e03223f6f2c0c7e0e2dbd70a1</span>
+</code></pre></div>
+<p>This uses a different way to bring in a plugin. This uses git, specifying a URL, path, and a commit reference.</p>
+</li>
+<li>
+<p>Do a Pub get.</p>
+</li>
+<li>
+<p>Open <code>menus.dart</code>. Add:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">createWindowsMenus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">setApplicationMenu</span><span class="p">([</span><span class="n">createWindowsMovieMenu</span><span class="p">(),</span><span class="w"> </span><span class="n">createWindowsOptionsMenu</span><span class="p">()]);</span>
+<span class="p">}</span>
+
+
+<span class="n">NativeSubmenu</span><span class="w"> </span><span class="n">createWindowsMovieMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">NativeSubmenu</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Movies&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">NativeMenuItem</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">QuitEvent</span><span class="p">()),</span>
+<span class="w">        </span><span class="nl">shortcut:</span><span class="w"> </span><span class="n">LogicalKeySet</span><span class="p">(</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">control</span><span class="p">,</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyQ</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">NativeSubmenu</span><span class="w"> </span><span class="n">createWindowsOptionsMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">NativeSubmenu</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Options&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">NativeMenuItem</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Home&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">HomeEvent</span><span class="p">()),</span>
+<span class="w">        </span><span class="nl">shortcut:</span><span class="w"> </span><span class="n">LogicalKeySet</span><span class="p">(</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">control</span><span class="p">,</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyH</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">      </span><span class="n">NativeMenuItem</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Genre&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">GenreEvent</span><span class="p">()),</span>
+<span class="w">        </span><span class="nl">shortcut:</span><span class="w"> </span><span class="n">LogicalKeySet</span><span class="p">(</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">control</span><span class="p">,</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyG</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">      </span><span class="n">NativeMenuItem</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Favorites&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">FavoritesEvent</span><span class="p">()),</span>
+<span class="w">        </span><span class="nl">shortcut:</span><span class="w"> </span><span class="n">LogicalKeySet</span><span class="p">(</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">control</span><span class="p">,</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyF</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">      </span><span class="n">NativeMenuItem</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Search&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">eventBusProvider</span><span class="p">).</span><span class="n">fire</span><span class="p">(</span><span class="n">SearchEvent</span><span class="p">()),</span>
+<span class="w">        </span><span class="nl">shortcut:</span><span class="w"> </span><span class="n">LogicalKeySet</span><span class="p">(</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">control</span><span class="p">,</span>
+<span class="w">          </span><span class="n">LogicalKeyboardKey</span><span class="p">.</span><span class="n">keyS</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+This uses the menubar package to create menus.</p>
+</li>
+<li>
+<p>Open <code>main.dart</code>. Replace the code in <code>_MainAppState</code> with:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="n">WidgetsBinding</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">addPostFrameCallback</span><span class="p">((</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">initialized</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// 2</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isWindows</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">menuManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">menuManagerProvider</span><span class="p">);</span>
+<span class="w">      </span><span class="n">menuManager</span><span class="p">.</span><span class="n">createWindowsMenus</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">appRouterProvider</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">menuManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">watch</span><span class="p">(</span><span class="n">menuManagerProvider</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isMac</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PlatformMenuBar</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">menus:</span><span class="w"> </span><span class="n">menuManager</span><span class="p">.</span><span class="n">createMenus</span><span class="p">(),</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">.</span><span class="n">router</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">routerConfig:</span><span class="w"> </span><span class="n">router</span><span class="p">.</span><span class="n">config</span><span class="p">(),</span>
+<span class="w">      </span><span class="nl">title:</span><span class="w"> </span><span class="s1">&#39;Movies&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">theme:</span><span class="w"> </span><span class="n">createTheme</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 4</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">.</span><span class="n">router</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">routerConfig:</span><span class="w"> </span><span class="n">router</span><span class="p">.</span><span class="n">config</span><span class="p">(),</span>
+<span class="w">      </span><span class="nl">title:</span><span class="w"> </span><span class="s1">&#39;Movies&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">theme:</span><span class="w"> </span><span class="n">createTheme</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+This code will add a <code>PostFrameCallback</code> that will be called when the <code>build</code> method finishes drawing. The steps are as follows:</p>
+<ol>
+<li>Add a callback to be called when UI finishes drawing.</li>
+<li>If we are on Windows, create the menus (only once).</li>
+<li>If we are on a Mac, use the <code>PlatformMenuBar</code> class to create for menus.</li>
+<li>Otherwise just use a <code>MaterialApp</code> widget.</li>
+</ol>
+</li>
+</ol>
+<p>On Windows, run the app. You should see two menus, namely, the Movies and Option menus (Figure 13.13). If you are a regular Windows user, you will notice that this is not exactly what Windows apps look like but is closer than other plugins. Until <code>PlatformMenuBar</code> works with Windows, there will have to be work around:</p>
+<p><img alt=" " src="../images/Figure_13.15.png" /></p>
+<p>Figure 13.13: Windows menus</p>
+<h2 id="web"><a href="../contents/#sc2_260a">Web</a></h2>
+<p>The web version of Flutter is unique from other platforms. It compiles and renders in three different running ways:</p>
+<ul>
+<li><code>HTML</code>: Uses HTML elements and CSS to render the UI. <strong>This has been deprecated</strong>.</li>
+<li><code>CanvasKit</code>: Uses the <code>Skia</code> graphics engine. It is slower to load but renders fast.</li>
+<li><code>WebAssembly</code>: It compiles to a binary format that the web can understand.</li>
+</ul>
+<p>To get our app to run on the web, we must make several changes, mostly related to the database. Since Flutter updates quite frequently and our web folder is now pretty old, it is time to recreate the folder. Since we have not added any of our files to this folder, it is okay to delete them. Follow these steps:</p>
+<ol>
+<li>
+<p>Delete the <code>web</code> folder.</p>
+</li>
+<li>
+<p>From the terminal type:</p>
+<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>create<span class="w"> </span>--platforms<span class="w"> </span>web<span class="w"> </span>.
+flutter<span class="w"> </span>config<span class="w"> </span>--enable-web
+</code></pre></div>
+</li>
+<li>
+<p>Delete the newly created <code>widget_test.dart</code> in the test folder. This should create an updated <code>index.html</code> file. If the <code>web</code> folder was created with an earlier version of generated code, or you have problems running on the web, this is a good way to fix issues. However, if you have made any custom changes, you must back up the folder first and then copy your changes. As we are using the <code>drift</code> package, we will need a special file: <code>sqlite3.wasm</code>. You can find this file in the project resources for this chapter.</p>
+</li>
+<li>
+<p>Copy <code>sqlite3.wasm</code> and <code>drift_worker.js</code> to the <code>web</code> folder.</p>
+</li>
+<li>
+<p>In the <code>data/database/drift</code> folder, create a new file named <code>connection.dart</code>. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// We use a conditional export to expose the right connection factory depending</span>
+<span class="c1">// on the platform.</span>
+<span class="k">export</span><span class="w"> </span><span class="s1">&#39;unsupported.dart&#39;</span>
+
+<span class="n">if</span><span class="w"> </span><span class="err">(</span><span class="n">dart</span><span class="err">.</span><span class="n">library</span><span class="err">.</span><span class="n">js</span><span class="err">)</span><span class="w"> </span><span class="s1">&#39;web.dart&#39;</span>
+<span class="n">if</span><span class="w"> </span><span class="err">(</span><span class="n">dart</span><span class="err">.</span><span class="n">library</span><span class="err">.</span><span class="n">ffi</span><span class="err">)</span><span class="w"> </span><span class="s1">&#39;native.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Create a new file named <code>native.dart</code>. Add:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;dart:io&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:drift/drift.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:drift/native.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:path_provider/path_provider.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:path/path.dart&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+
+<span class="n">DatabaseConnection</span><span class="w"> </span><span class="n">connect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">DatabaseConnection</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Future</span><span class="p">(()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">dbFolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">getApplicationDocumentsDirectory</span><span class="p">();</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">dbFolder</span><span class="p">.</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;movies.sqlite&#39;</span><span class="p">));</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">NativeDatabase</span><span class="p">.</span><span class="n">createBackgroundConnection</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This will get the application directory and create a file named <code>movies.sqlite</code> and then create a <code>DatabaseConnection</code>.</p>
+</li>
+<li>
+<p>Create a new file named <code>unsupported.dart</code>. Add:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:drift/drift.dart&#39;</span><span class="p">;</span>
+
+<span class="kt">Never</span><span class="w"> </span><span class="n">_unsupported</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">throw</span><span class="w"> </span><span class="n">UnsupportedError</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;No suitable database implementation was found on this platform.&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Depending on the platform the app is compiled to, the following stubs will</span>
+<span class="c1">// be replaced with the methods in native.dart or web.dart</span>
+
+<span class="n">DatabaseConnection</span><span class="w"> </span><span class="n">connect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">_unsupported</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">validateDatabaseSchema</span><span class="p">(</span><span class="n">GeneratedDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">_unsupported</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This is used when there is an unsupported version of Flutter.</p>
+</li>
+<li>
+<p>Create a new file named <code>web.dart</code>. Add the following:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:drift/drift.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:drift/wasm.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/foundation.dart&#39;</span><span class="p">;</span>
+
+<span class="n">DatabaseConnection</span><span class="w"> </span><span class="n">connect</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">DatabaseConnection</span><span class="p">.</span><span class="n">delayed</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Future</span><span class="p">.</span><span class="kd">sync</span><span class="p">(()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">WasmDatabase</span><span class="p">.</span><span class="n">open</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">databaseName:</span><span class="w"> </span><span class="s1">&#39;movies&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">sqlite3Uri:</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;/sqlite3.wasm&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nl">driftWorkerUri:</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;/drift_worker.js&#39;</span><span class="p">),</span>
+<span class="w">      </span><span class="p">);</span>
+
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">missingFeatures</span><span class="p">.</span><span class="n">isNotEmpty</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">debugPrint</span><span class="p">(</span>
+<span class="w">          </span><span class="s1">&#39;Using </span><span class="si">${</span><span class="n">db</span><span class="p">.</span><span class="n">chosenImplementation</span><span class="si">}</span><span class="s1"> due to unsupported &#39;</span>
+<span class="w">          </span><span class="s1">&#39;browser features: </span><span class="si">${</span><span class="n">db</span><span class="p">.</span><span class="n">missingFeatures</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">resolvedExecutor</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+This will use the <code>sqlite3.wasm</code> and <code>drift_worker.js</code> file to create a database file on the web.</p>
+</li>
+<li>
+<p>Open <code>movie_database.dart</code> and add the following import:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/data/database/drift/connection.dart&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">impl</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change the constructor to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MovieDatabase</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">super</span><span class="p">(</span><span class="n">impl</span><span class="p">.</span><span class="n">connect</span><span class="p">());</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Unfortunately, the <code>dotenv</code> package does not work on the web, and the web cannot load files with a dot in the file name, so we need to copy this file and then read it from the assets folder. The steps are as follows:</p>
+<ol>
+<li>
+<p>Copy the .env file to <code>dotenv</code> file in the root directory.</p>
+</li>
+<li>
+<p>Add the following after the <code>.env</code> in the <code>pubspec.yaml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotenv</span>
+</code></pre></div>
+</li>
+<li>
+<p>Update <code>movie_api_service.dart</code>.</p>
+<ol>
+<li>
+<p>Change the definition of the <code>apiKey</code> to:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">late</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">apiKey</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change the constructor and add another method:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">MovieAPIService</span><span class="p">();</span>
+
+<span class="n">Future</span><span class="w"> </span><span class="n">init</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isWeb</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotenv</span><span class="p">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;TMDB_KEY&#39;</span><span class="p">]</span><span class="o">!</span><span class="p">;</span>
+<span class="w">    </span><span class="n">configureDio</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">await</span><span class="w"> </span><span class="n">webLoad</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Future</span><span class="w"> </span><span class="n">webLoad</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">dotEnvString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">rootBundle</span><span class="p">.</span><span class="n">loadString</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dotEnvString</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;TMDB_KEY&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">final</span><span class="w"> </span><span class="n">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotEnvString</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parts</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parts</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">apiKey</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apiKey</span><span class="p">.</span><span class="n">replaceAll</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dotEnvString</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">configureDio</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+This will load the <code>dotenv</code> file and get the API key. Then, we will call the <code>configureDio</code> method.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Update <code>utils.dart</code>. Change the <code>getSizedImageUrl</code> method to use the secure base URL, as websites do not like the http non-secured links.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">getSizedImageUrl</span><span class="p">(</span><span class="n">ImageSize</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">MovieConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">ImageSize</span><span class="p">.</span><span class="nl">small:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">imageUrl</span><span class="p">(</span><span class="n">configuration</span><span class="p">.</span><span class="n">images</span><span class="p">.</span><span class="n">secureBaseUrl</span><span class="p">,</span><span class="w"> </span><span class="n">configuration</span><span class="p">.</span><span class="n">images</span><span class="p">.</span><span class="n">posterSizes</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">file</span><span class="p">);</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">ImageSize</span><span class="p">.</span><span class="nl">large:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">imageUrl</span><span class="p">(</span><span class="n">configuration</span><span class="p">.</span><span class="n">images</span><span class="p">.</span><span class="n">secureBaseUrl</span><span class="p">,</span><span class="w"> </span><span class="n">configuration</span><span class="p">.</span><span class="n">images</span><span class="p">.</span><span class="n">posterSizes</span><span class="p">[</span><span class="m">5</span><span class="p">],</span><span class="w"> </span><span class="n">file</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Change <code>main.dart</code> to not load the <code>.env</code> file if on the web:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isWeb</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">dotenv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nl">fileName:</span><span class="w"> </span><span class="s1">&#39;.env&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This will load the <code>.env</code> file if on the web.</p>
+</li>
+<li>
+<p>Open <code>providers.dart</code> and replace the <code>movieAPIService</code> and <code>movieViewModel</code> with:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">MovieAPIService</span><span class="o">&gt;</span><span class="w"> </span><span class="n">movieAPIService</span><span class="p">(</span><span class="n">MovieAPIServiceRef</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieAPIService</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">service</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Riverpod</span><span class="p">(</span><span class="nl">keepAlive:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="n">MovieViewModel</span><span class="o">&gt;</span><span class="w"> </span><span class="n">movieViewModel</span><span class="p">(</span><span class="n">MovieViewModelRef</span><span class="w"> </span><span class="n">ref</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">driftDatabaseProvider</span><span class="p">.</span><span class="n">future</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">await</span><span class="w"> </span><span class="n">ref</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">movieAPIServiceProvider</span><span class="p">.</span><span class="n">future</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MovieViewModel</span><span class="p">(</span><span class="nl">database:</span><span class="w"> </span><span class="n">database</span><span class="p">,</span><span class="w"> </span><span class="nl">movieAPIService:</span><span class="w"> </span><span class="n">service</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="n">setup</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>In the terminal, type the following:</p>
+<div class="highlight"><pre><span></span><code>dart<span class="w"> </span>run<span class="w"> </span>build_runner<span class="w"> </span>build
+</code></pre></div>
+</li>
+</ol>
+<p>Run the app on the web. Try different pages and notice any problems. One issue you may encounter is problems loading images. Since all these images are from the internet, some websites do not allow you to use them on a web page. This is called cross-origin resource sharing (CORS). This is a security mechanism implemented in browsers to prevent web pages from accessing resources from other domains. Some sites like TMDB allow you to use their images freely while others like YouTube make you use their APIs instead. To fix this, we will change the <code>Trailer</code> class. The steps are as follows:</p>
+<ol>
+<li>
+<p>Open <code>trailers.dart</code>.</p>
+</li>
+<li>
+<p>Change the <code>CachedNetworkImage</code> call to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CachedNetworkImage</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="n">youtubeImageFromId</span><span class="p">(</span><span class="n">movieVideo</span><span class="p">.</span><span class="n">key</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topLeft</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fitHeight</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">height:</span><span class="w"> </span><span class="m">98</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">errorWidget:</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">__</span><span class="p">,</span><span class="w"> </span><span class="n">___</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Placeholder</span><span class="p">(),</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>This will show a placeholder widget when there is an error.</p>
+</li>
+</ol>
+<p>Seeing the Favorites screen on the web shows an overflow problem. To fix that, do the following:</p>
+<ol>
+<li>Open <code>widgets/favorite_row.dart</code>.</li>
+<li>Remove the <code>textWidth</code> variable.</li>
+<li>Wrap the <code>Stack</code> widget with an <code>Expanded</code> widget.</li>
+<li>Remove the <code>SizedBox</code> widget surrounding the <code>AutoSizeText</code>.</li>
+</ol>
+<p>This should make the favorite row fit better.</p>
+<h2 id="firebase-hosting"><a href="../contents/#sc2_261a">Firebase Hosting</a></h2>
+<p>When you build a web project, you need a place to host your web page. There are many ways to do this, but Firebase Hosting is an easy way to host your site. This will require some configuration and setup of Firebase. We will also need to change some of our Dart code to handle web issues. To start, you will need to set up Firebase:</p>
+<ol>
+<li>
+<p>Go to <a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a> and sign up or log in if you already have an account.</p>
+</li>
+<li>
+<p>Create a new project.</p>
+<p><img alt=" " src="../images/Figure_13.16.png" /></p>
+<p>Figure 13.14: New project</p>
+</li>
+<li>
+<p>Type a name for the project and press Continue, as shown in Figure 13.15:</p>
+<p><img alt=" " src="../images/Figure_13.17.png" /></p>
+<p>Figure 13.15: Analytics</p>
+</li>
+<li>
+<p>Disable analytics (unless you want it) and press Create project, as done in Figure 13.16. You will see the following screen while Firebase creates your project:</p>
+<p><img alt=" " src="../images/Figure_13.18.png" /></p>
+<p>Figure 13.16: Loading</p>
+</li>
+<li>
+<p>When finished, press Continue. The screen is as follows:</p>
+<p><img alt=" " src="../images/Figure_13.19.png" /></p>
+<p>Figure 13.17: Project finished</p>
+</li>
+<li>
+<p>Add a new web app. You should see a set of icons for the different types of projects you can create. Click on the &lt;/&gt; icon:</p>
+<p><img alt=" " src="../images/Figure_13.20.png" /></p>
+<p>Figure 13.18: Add web app</p>
+</li>
+<li>
+<p>In the following screen, give your app a name, click the checkbox for Firebase Hosting and then click on Register app:</p>
+<p><img alt=" " src="../images/Figure_13.21.png" /></p>
+<p>Figure 13.19: Adding Firebase to web app</p>
+</li>
+<li>
+<p>Deploy to Firebase Hosting page:</p>
+<p><img alt=" " src="../images/Figure_13.22.png" /></p>
+<p>Figure 13.20: Deploy setup</p>
+</li>
+<li>
+<p>Install the Firebase tools:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>firebase-tools
+</code></pre></div>
+</li>
+<li>
+<p>Login to Firebase:</p>
+<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>login
+</code></pre></div>
+</li>
+<li>
+<p>Initialize Hosting:</p>
+<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>init
+</code></pre></div>
+<p>You should see the following output:</p>
+<p><img alt=" " src="../images/Figure_13.23.png" /></p>
+<p>Figure 13.21: Firebase initialization</p>
+<p>Choose the <code>Use an existing project</code> option if you have one already created or <code>Create a new Project</code> if not.</p>
+</li>
+<li>
+<p>Choose hosting. You will see the following output:</p>
+<p><img alt=" " src="../images/Figure_13.24.png" /></p>
+<p>Figure 13.22: Setup</p>
+</li>
+<li>
+<p>Open <code>firebase.json</code> and add your site below the hosting section:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;site&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;your site name&gt;&quot;</span><span class="p">,</span>
+</code></pre></div>
+</li>
+<li>
+<p>Deploy the project using the following command:</p>
+<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>deploy
+</code></pre></div>
+<p>You will see the following output:</p>
+<p><img alt=" " src="../images/Figure_13.25.png" /></p>
+<p>Figure 13.23: Deploying</p>
+</li>
+<li>
+<p>Click on the Hosting URL link to see the page:</p>
+<blockquote>
+<p>访问终端给出的网址 <a href="https://moviesch13.web.app">https://moviesch13.web.app</a> 没有内容，Firebase console 给出的另一个网址 <a href="https://moviesch13.firebaseapp.com/">https://moviesch13.firebaseapp.com/</a> 可以正常访问。</p>
+</blockquote>
+<p><img alt=" " src="../images/Figure_13.26.png" /></p>
+<p>Figure 13.24: Website</p>
+</li>
+</ol>
+<h2 id="conclusion"><a href="../contents/#sc2_262a">Conclusion</a></h2>
+<p>In this chapter, you have learned how to create apps for the Mac, Windows, and the web. You know how to create menus for desktop platforms, and you have created an adaptive layout that can be adapted to many different form factors. You have also created a dialog for doing searches. You took the leap onto the web and learned about many of the issues with developing websites. You were able to host the site on Firebase, which will allow others to view the work you have done.</p>
+<p>In the next chapter, you will learn all about user input and gestures. This will be helpful for apps that require field entry and note taking, as well as handling different types of gestures, like tapping, long pressing, and more.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

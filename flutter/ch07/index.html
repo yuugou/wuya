@@ -1,0 +1,3477 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch07/">
+      
+      
+        <link rel="prev" href="../ch06/">
+      
+      
+        <link rel="next" href="../ch08/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Advanced Widgets - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-7-advanced-widgets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced Widgets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanded
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexedstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IndexedStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LayoutBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gridview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottomsheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BottomSheets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#movie-trailers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie trailers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expanded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanded
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexedstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IndexedStack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LayoutBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gridview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GridView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottomsheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BottomSheets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#movie-trailers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie trailers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-7-advanced-widgets"><a href="../contents/#ch07a">CHAPTER 7 Advanced Widgets</a></h1>
+<h2 id="introduction"><a href="../contents/#sc2_135a">Introduction</a></h2>
+<p>In this chapter, you will learn about advanced Flutter widgets and how to use them in your movie app. This will allow you to show more information on the screen as well as show that data in different ways. These are essential widgets that are used in Flutter apps. Widgets for showing large numbers of other widgets are critical for most apps.</p>
+<h2 id="structure"><a href="../contents/#sc2_136a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>ListView</li>
+<li>Expanded</li>
+<li>Stack</li>
+<li>IndexedStack</li>
+<li>LayoutBuilder</li>
+<li>GridView</li>
+<li>Table</li>
+<li>Card</li>
+<li>BottomSheets</li>
+<li>Slivers</li>
+<li>Movie trailers</li>
+</ul>
+<h2 id="objectives"><a href="../contents/#sc2_137a">Objectives</a></h2>
+<p>You will learn about the more advanced widgets that Flutter provides. These widgets require more setup but can do some amazing things. As you learn about these widgets, you will build out the movie app with them. By the end of the chapter, you will know how to show horizontal and vertical lists of data, grids of data, and how to stack widgets. You will also have a solid understanding of slivers.</p>
+<h2 id="listview"><a href="../contents/#sc2_138a">ListView</a></h2>
+<p>In the last chapter, you used a column to display some movie titles. If your screen was a bit smaller or you added one more item, you would have seen a striped line with the message about overflow. This happens when your widget overflows the area it can draw. To avoid that problem, you need a widget that can scroll. <code>ListView</code> is one of the main widgets that are used to display a list of items either horizontally or vertically. You will use the same class and just change the orientation field if you want to show them horizontally. <code>ListView</code> has several different constructors you can use to display your list, as follows:</p>
+<ul>
+<li>
+<p><code>ListView</code>: Default constructor. Uses a children parameter for a fixed list of widgets.</p>
+</li>
+<li>
+<p><code>ListView.builder</code>: Uses two key fields <code>itemCount</code> (number of items) and <code>itemBuilder</code> (used to return an item for a specific index).</p>
+</li>
+<li>
+<p><code>ListView.separated</code>: Like a builder but puts dividers between each row.</p>
+</li>
+<li>
+<p><code>ListView.custom</code>: Uses a <code>childrenDelegate</code> that is like a builder, returning items for a given index. Delegates provide a lot more power than just using a builder.</p>
+</li>
+</ul>
+<p>You will probably use either the <code>builder</code> or the <code>separated</code> constructors the most. They are flexible and easy to use.</p>
+<p>All these methods take a <code>ScrollController</code> as a parameter. You do not have to pass one in, but if you do not, one will be created for you. A scroll controller will allow you to jump or animate to a specific position in the list. Vertical lists are the default. If you want a horizontal list, you will pass the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">scrollDirection:</span><span class="w"> </span><span class="n">Axis</span><span class="p">.</span><span class="n">horizontal</span>
+</code></pre></div>
+<p>The <code>builder</code> and <code>separated</code> constructors take a builder parameter that looks as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>Here, the <code>index</code> is the index value in your list of items to show. To see how <code>ListView</code> works, we will convert the <code>VerticalMovieList</code> <code>Column</code> to use a <code>ListView</code> that can handle a scrolling list of movies. Open <code>vert_movie_list.dart</code> and replace the column in the build method with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MovieRow</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">movie:</span><span class="w"> </span><span class="n">movies</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Now, return to <code>genre_screen.dart</code> and update the call to:</p>
+<div class="highlight"><pre><span></span><code><span class="n">VerticalMovieList</span><span class="p">(</span><span class="nl">movies:</span><span class="w"> </span><span class="n">images</span><span class="p">,</span><span class="w"> </span><span class="nl">onMovieTap:</span><span class="w"> </span><span class="p">(</span><span class="n">movieId</span><span class="p">)</span><span class="w"> </span><span class="p">{},),</span>
+</code></pre></div>
+<p>This will send the whole list of movies to the widget. Hot reload. You will probably see a white screen with lots of errors in the console. You will see the following error message a lot:</p>
+<div class="highlight"><pre><span></span><code>Vertical<span class="w"> </span>viewport<span class="w"> </span>was<span class="w"> </span>given<span class="w"> </span>unbounded<span class="w"> </span>height.
+</code></pre></div>
+<p>This means that one or several widgets do not give a fixed height and try to take up an infinite height, which causes this error. How do we solve this? We will use the <code>Expanded</code> widget.</p>
+<h2 id="expanded"><a href="../contents/#sc2_139a">Expanded</a></h2>
+<p>The <code>Expanded</code> widget tries to take up as much width or height as its row or column will allow. <code>Expanded</code> only works in these two widgets - <code>Row</code> and <code>Column</code>. Wrap the <code>ListView</code> call in an <code>Expanded</code> and hot reload. The following code uses an <code>Expanded</code> widget to fill the column and then a <code>ListView</code> with the list of movies:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">MovieRow</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">movie:</span><span class="w"> </span><span class="n">movies</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Here is what we have so far. Notice that you can scroll the list of movies, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_7.1.png" /></p>
+<p>Figure 7.1: ListView</p>
+<p>Now, open <code>horiz_movies.dart</code>. In <a href="../ch04/">Chapter 4</a>, Basic Widgets (Adding a movie row), you added a <code>ListView</code> to this class. Here, you can see that it is a horizontal list and uses the movies list passed in. The code for this is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 1</span>
+<span class="k">return</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">height:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// 2</span>
+<span class="w">    </span><span class="nl">scrollDirection:</span><span class="w"> </span><span class="n">Axis</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// 3</span>
+<span class="w">    </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// 4</span>
+<span class="w">    </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">GestureDetector</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">width:</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">height:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">child:</span><span class="w"> </span><span class="n">CachedNetworkImage</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="n">movies</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">            </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fitHeight</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">height:</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">width:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>The description of the code is as follows:</p>
+<ol>
+<li>This shows a horizontal list of movies at a fixed height of 142 pixels.</li>
+<li>Make this a horizontal list.</li>
+<li>Set the item count to the number of movies.</li>
+<li>Use the <code>itemBuilder</code> to return a 100x142 movie image.</li>
+</ol>
+<h2 id="stack"><a href="../contents/#sc2_140a">Stack</a></h2>
+<p>A <code>Stack</code> widget displays its children, with the first one in the list displayed at the bottom. The advantage of this widget is you can use the <code>Positioned</code> widget to place items on top of each other or on different sides of the stack’s box. The <code>Positioned</code> widget takes the top, left, bottom, and right position parameters. These are pixels from the top and left. You can also use the <code>Align</code> widget, which has an <code>alignment</code> parameter that can be <code>topCenter</code>, <code>topLeft</code>, <code>topRight</code>, <code>centerXXX</code>, and <code>bottomXXX</code>. The detail page will use the stack to show text on top of an image. A <code>Stack</code> with an image would be created by using the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">Stack</span><span class="p">(</span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="n">Align</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">child:</span><span class="w"> </span><span class="n">CachedNetworkImage</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="n">imageUrl</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fitWidth</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">height:</span><span class="w"> </span><span class="m">200</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">width:</span><span class="w"> </span><span class="n">screenWidth</span><span class="p">,</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">]),</span>
+</code></pre></div>
+<p>This will show an image in the top center of the stack. If you add additional images or text, they will lay on top of this image. This is useful for our detail page, where we want to display the movie details above the image.</p>
+<h2 id="indexedstack"><a href="../contents/#sc2_141a">IndexedStack</a></h2>
+<p>A <code>IndexedStack</code> widget is like a stack but displays only one child at a time. It is useful as a paging widget that allows the user to display different pages when they click on a controlling widget. It would look as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">IndexedStack</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">index:</span><span class="w"> </span><span class="n">_selectedIndex</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span><span class="n">widget1</span><span class="p">,</span><span class="w"> </span><span class="n">widget2</span><span class="p">,</span><span class="w"> </span><span class="n">widget3</span><span class="p">],</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Another widget would change <code>_selectedIndex</code> to have the stack change.</p>
+<h2 id="layoutbuilder"><a href="../contents/#sc2_142a">LayoutBuilder</a></h2>
+<p>If you ever need to know how big an area is to draw in, then <code>LayoutBuilder</code> is a great widget. It uses a <code>builder</code> parameter that passes in a <code>BoxConstraints</code>. Then, based on the constraints of <code>min</code> and <code>max</code>, <code>width</code>, and <code>height</code>, you decide whether to show different layouts or just size a widget to the max width or height. This is perfect for when you have a fixed size and want to put an image inside. Just use a <code>SizedBox</code> with the constraints, max width, or height. These constraints are the parent's constraints and are useful if you need to do any custom layouts. You could use one layout for tablets and another for phones using the <code>maxWidth</code> field. The following is a small example:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">home:</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">LayoutBuilder</span><span class="p">(</span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">constraints</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">constraints</span><span class="p">.</span><span class="n">maxWidth</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">600</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Row</span><span class="p">(</span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Wide Screen&#39;</span><span class="p">)]);</span>
+<span class="w">          </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Narrow Screen&#39;</span><span class="p">)]);</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can see that we check the <code>maxWidth</code> property of the <code>constraints</code> parameter, and if it is greater than 600 (which usually signifies a tablet), we show a different layout than if it is smaller than 600 (like on a phone).</p>
+<h2 id="gridview"><a href="../contents/#sc2_143a">GridView</a></h2>
+<p><code>GridView</code> takes lists to the next level. They allow you to display items both horizontally and vertically. There are also ways to display a fixed set of columns or to even stagger mixed widths and heights. Grids work a bit differently in that they take a delegate, which is of type <code>SliverGridDelegate</code> (Slivers will be talked about in upcoming sections), and describe how the rows and columns will be set. Like list views, grids have several constructors, as follows:</p>
+<ul>
+<li><code>GridView</code>: Default constructor.</li>
+<li><code>GridView.builder</code>: Use a builder to return a widget.</li>
+<li><code>GridView.count</code>: Display items with a fixed count of cross-axis items.</li>
+<li><code>GridView.extend</code>: Each item has a maximum cross-axis size.</li>
+<li><code>GridView.custom</code>: Roll your own Grid. There are no defaults; you must provide all parameters.</li>
+</ul>
+<p>Open up <code>genre_section.dart</code> and scroll to the last row. Here, we just showed a list of about four chips. To display more, we will be using a <code>GridView</code>. Replace the <code>Row</code> with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">child:</span><span class="w"> </span><span class="n">GridView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">shrinkWrap:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">chips</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// 2</span>
+<span class="w">  </span><span class="nl">gridDelegate:</span>
+<span class="w">      </span><span class="c1">// 3</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">SliverGridDelegateWithMaxCrossAxisExtent</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">maxCrossAxisExtent:</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">crossAxisSpacing:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">childAspectRatio:</span><span class="w"> </span><span class="m">1.5</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">mainAxisSpacing:</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">  </span><span class="c1">// 4</span>
+<span class="w">  </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">chips</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>This uses the <code>builder</code> constructor with several parameters, as follows:</p>
+<ol>
+<li><code>itemCount</code> is the total number of items.</li>
+<li><code>gridDelegate</code> describes how the grid will be laid out.</li>
+<li>This delegate lays out its children with a width of 100, 16 pixels of vertical space, and an aspect ratio of 1.5 (set the cross-axis height as a ratio of the width).</li>
+<li>Return an item at the given index.</li>
+</ol>
+<p>Back in <code>genre_screen.dart</code>, update the list of genres to include the full list, as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Action&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Adventure&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Crime&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Mystery&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;War&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Comedy&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Romance&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;History&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Music&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Drama&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Thriller&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Family&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Horror&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Western&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Science Fiction&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Animation&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Documentation&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;TV Movie&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="n">GenreState</span><span class="p">(</span><span class="nl">genre:</span><span class="w"> </span><span class="s1">&#39;Fantasy&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">isSelected:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+</code></pre></div>
+<p>Do a hot restart as a reload will not re-run the <code>initState</code> method. The following figure shows a grid of columns and rows:</p>
+<p><img alt=" " src="../images/Figure_7.2.png" /></p>
+<p>Figure 7.2: GridView</p>
+<p>As you can see, there are four columns and five rows. If the screen changes sizes (like on the web), it will expand to fill the area.</p>
+<h2 id="table"><a href="../contents/#sc2_144a">Table</a></h2>
+<p><code>Table</code>s are great for data that needs to be displayed in columns and rows. You can set each column width, and have a border. A <code>Table</code>'s children are a list of <code>TableRow</code> widgets. Each row can contain a normal widget or a <code>TableCell</code> widget. <code>TableCell</code> can control the alignment of the widget it contains. One of the differences between a <code>GridView</code> and a <code>Table</code> is that a <code>GridView</code> tries to size its columns and rows based on its widgets, while a Table forces its widgets to fit into the size of the column. The following is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">home:</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">      </span><span class="c1">// 1</span>
+<span class="w">      </span><span class="nl">body:</span><span class="w"> </span><span class="n">Table</span><span class="p">(</span>
+<span class="w">        </span><span class="c1">// 2</span>
+<span class="w">        </span><span class="nl">border:</span><span class="w"> </span><span class="n">TableBorder</span><span class="p">.</span><span class="n">all</span><span class="p">(),</span>
+<span class="w">        </span><span class="c1">// 3</span>
+<span class="w">        </span><span class="nl">columnWidths:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">TableColumnWidth</span><span class="o">&gt;</span><span class="p">{</span>
+<span class="w">          </span><span class="m">0</span><span class="o">:</span><span class="w"> </span><span class="n">IntrinsicColumnWidth</span><span class="p">(),</span>
+<span class="w">          </span><span class="m">1</span><span class="o">:</span><span class="w"> </span><span class="n">FlexColumnWidth</span><span class="p">(),</span>
+<span class="w">          </span><span class="m">2</span><span class="o">:</span><span class="w"> </span><span class="n">FixedColumnWidth</span><span class="p">(</span><span class="m">64</span><span class="p">),</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nl">defaultVerticalAlignment:</span><span class="w"> </span><span class="n">TableCellVerticalAlignment</span><span class="p">.</span><span class="n">middle</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// 4</span>
+<span class="w">        </span><span class="nl">children:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">TableRow</span><span class="o">&gt;</span><span class="p">[</span>
+<span class="w">          </span><span class="c1">// 5</span>
+<span class="w">          </span><span class="n">TableRow</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">children:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">[</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 1: Column 1&#39;</span><span class="p">),</span>
+<span class="w">              </span><span class="c1">// 6</span>
+<span class="w">              </span><span class="n">TableCell</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">verticalAlignment:</span><span class="w"> </span><span class="n">TableCellVerticalAlignment</span><span class="p">.</span><span class="n">top</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 1: Column 2&#39;</span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 1: Column 3&#39;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">          </span><span class="n">TableRow</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">decoration:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">grey</span><span class="p">,</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">            </span><span class="nl">children:</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">[</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 2: Column 1&#39;</span><span class="p">),</span>
+<span class="w">              </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 2: Column 2&#39;</span><span class="p">),</span>
+<span class="w">              </span><span class="n">Center</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row 2: Column 2&#39;</span><span class="p">),</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This will be displayed as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_7.3.png" /></p>
+<p>Figure 7.3: Table</p>
+<p>The code uses several widgets that are needed for a <code>Table</code>: <code>TableRow</code> for rows and <code>TableCells</code> or other widgets for the individual items. The code is described by the following:</p>
+<ol>
+<li>Start with the <code>Table</code> widget.</li>
+<li>You can specify a border if needed. This can specify the color, line width, and border radius.</li>
+<li>You can specify different column widths. Either fixed or sized for the included widgets.</li>
+<li>The children should have a list of <code>TableRow</code>.</li>
+<li>Each <code>TableRow</code> can have a list of table columns. The number of widgets should match the number of columns.</li>
+<li>Besides regular widgets, you can use a <code>TableCell</code> to add more formatting.</li>
+</ol>
+<p>Of course, tables are great for data that you would use in a spreadsheet, but they can be used if you want fixed columns.</p>
+<h2 id="card"><a href="../contents/#sc2_145a">Card</a></h2>
+<p><code>Card</code>s have rounded borders with elevations. They are useful for having sections stand out from the rest of the layout. You can add a <code>child</code> widget that can also contain other widgets. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Card</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Title of Object&#39;</span><span class="p">),</span>
+<span class="w">      </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Description of Object&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>You can set the <code>color</code>, <code>shadowColor</code>, <code>surfaceTintColor</code>, <code>elevation</code>, and <code>shape</code>. The following is an example of a ticket card:</p>
+<p><img alt=" " src="../images/Figure_7.4.png" /></p>
+<p>Figure 7.4: Card</p>
+<p>Apart from the default constructor (which builds an elevated card), you can use <code>Card.filled</code> for a filled card and <code>Card.outlined</code> for an outline card.</p>
+<h2 id="bottomsheets"><a href="../contents/#sc2_146a">BottomSheets</a></h2>
+<p>As the name implies, <code>BottomSheets</code> are information items that are on the bottom of the screen. There are two kinds: Persistent and modal. Persistent sheets will stay in place, while modal sheets force the user to interact with the sheet until it is dismissed. These sheets can be animated and can have a drag handle. To show a bottom sheet, you would use the <code>showBottomSheet</code> method, and in the <code>builder</code> function, you would return a widget. You can change the background color using the <code>backgroundColor</code> parameter. A <code>BottomSheet</code> might look as follows:</p>
+<p><img alt=" " src="../images/Figure_7.5.png" /></p>
+<p>Figure 7.5: BottomSheet</p>
+<p>The code is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">debugShowCheckedModeBanner:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">home:</span><span class="w"> </span><span class="n">SafeArea</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">body:</span><span class="w"> </span><span class="n">TextButton</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Show Me&#39;</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 1</span>
+<span class="w">            </span><span class="n">showModalBottomSheet</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">context:</span><span class="w"> </span><span class="n">context</span><span class="p">,</span>
+<span class="w">              </span><span class="c1">// 2</span>
+<span class="w">              </span><span class="nl">builder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">                  </span><span class="nl">height:</span><span class="w"> </span><span class="m">300</span><span class="p">,</span>
+<span class="w">                  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">                    </span><span class="nl">mainAxisAlignment:</span><span class="w"> </span><span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+<span class="w">                    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                        </span><span class="s1">&#39;This is a BottomSheet&#39;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">),</span>
+<span class="w">                      </span><span class="p">),</span>
+<span class="w">                    </span><span class="p">],</span>
+<span class="w">                  </span><span class="p">),</span>
+<span class="w">                </span><span class="p">);</span>
+<span class="w">              </span><span class="p">},</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This code shows a modal bottom sheet when the user presses the text button.</p>
+<h2 id="slivers"><a href="../contents/#sc2_147a">Slivers</a></h2>
+<p><code>Slivers</code> are scrollable widgets and can be used in lists of slivers. You need to use a <code>CustomScrollView</code> as a parent widget and then add slivers to the <code>slivers</code> list parameter. There are many different types of slivers, as follows:</p>
+<ul>
+<li><code>SliverList</code>: Displays a linear list of items.</li>
+<li><code>SliverGrid</code>: Displays a 2D array of children.</li>
+<li><code>SliverAppBar</code>: A material design app bar that integrates with a <code>CustomScrollView</code> and allows the bar to change while scrolling other items.</li>
+<li><code>SliverToBoxAdapter</code>: A sliver that contains a single box widget. Useful for converting slivers to a widget that conforms to a regular type of widget.</li>
+<li><code>SliverPadding</code>: Adds padding around another sliver.</li>
+</ul>
+<blockquote>
+<p>通常可滚动组件的子组件可能会非常多、占用的总高度也会非常大；如果要一次性将子组件全部构建出将会非常昂贵！为此，Flutter中提出一个Sliver（中文为“薄片”的意思）概念，Sliver 可以包含一个或多个子组件。Sliver 的主要作用是配合：加载子组件并确定每一个子组件的布局和绘制信息，如果 Sliver 可以包含多个子组件时，通常会实现按需加载模型。</p>
+<p>只有当 Sliver 出现在视口中时才会去构建它，这种模型也称为“基于Sliver的列表按需加载模型”。可滚动组件中有很多都支持基于Sliver的按需加载模型，如ListView、GridView，但是也有不支持该模型的，如SingleChildScrollView。</p>
+</blockquote>
+<p>The first sliver you will use is <code>SliverPadding</code>. You will create your own sliver widget to create a divider. In the widgets folder, create a new file named <code>sliver_divider.dart</code>. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/theme/theme.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">SliverDivider</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">SliverDivider</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">SliverPadding</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">padding:</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">only</span><span class="p">(</span><span class="nl">left:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="nl">top:</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="nl">right:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="nl">bottom:</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
+<span class="w">      </span><span class="nl">sliver:</span><span class="w"> </span><span class="n">SliverToBoxAdapter</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">child:</span><span class="w"> </span><span class="n">Divider</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">color:</span><span class="w"> </span><span class="n">primaryButton</span><span class="p">,</span>
+<span class="w">          </span><span class="nl">thickness:</span><span class="w"> </span><span class="m">1.0</span><span class="p">,</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Since this widget returns a <code>SliverPadding</code>, it is itself a sliver. The <code>SliverToBoxAdapter</code> class converts the widgets below to <code>sliver</code> (in this case, just a regular divider).</p>
+<p>Open up <code>genre_screen.dart</code>. We are going to convert some of the items into slivers. Find the first <code>Row</code>. Remove the <code>Row</code> and <code>GenreSearchRow</code> and replace it with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">CustomScrollView</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">slivers:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">SliverList</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">delegate:</span><span class="w"> </span><span class="n">SliverChildListDelegate</span><span class="p">(</span>
+<span class="w">          </span><span class="p">[</span>
+<span class="w">            </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="m">24.0</span><span class="p">),</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">                </span><span class="s1">&#39;Find a Movie&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">style:</span><span class="w"> </span><span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">textTheme</span><span class="p">.</span><span class="n">titleLarge</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+
+<span class="w">            </span><span class="n">GenreSearchRow</span><span class="p">((</span><span class="n">searchString</span><span class="p">)</span><span class="w"> </span><span class="p">{}),</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Change the <code>Divider</code> to <code>SliverDivider</code> and import the widget. You will next need to fix the number of parentheses and brackets at the end. This is good practice as you will do this many times. The following is what the ending of the widget looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="w">          </span><span class="p">],</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Dealing with parentheses is one area that gets messy with widgets. However, the more you break your widgets up into their own classes, the smaller each class will be and the easier it will be to read. Hot reload your app to make sure it still works. You should get an error, and it should look as follows:</p>
+<div class="highlight"><pre><span></span><code>A RenderViewport expected a child of type RenderSliver but received a child of type _RenderMergeableMaterialListBody.
+</code></pre></div>
+<p>Any idea what this means? If you have a list of slivers and one of them is not one, you will get this message. That means one of the widgets is not a sliver. It looks like <code>VerticalMovieList</code> uses an <code>Expanded</code> (which can only be in a row or column) and a <code>ListView</code>. Let us change that. Open up <code>vert_movie_list.dart</code> and change <code>Expanded</code> and the <code>ListView.builder</code> (up to the <code>itemBuilder</code>) to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">SliverList</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">delegate:</span><span class="w"> </span><span class="n">SliverChildBuilderDelegate</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">childCount:</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">    </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</code></pre></div>
+<p>Open <code>genre_section.dart</code> and add the following before the <code>ExpansionPanelList</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">SliverList</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">delegate:</span><span class="w"> </span><span class="n">SliverChildListDelegate</span><span class="p">([</span>
+</code></pre></div>
+<p>Remove the return before the <code>ExpansionPanelList</code>. Fix the ending parentheses. Next, open up <code>sort_picker.dart</code>. Add a new parameter, as follows: </p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">useSliver</span><span class="p">;</span>
+</code></pre></div>
+<p>Replace the constructor with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">SortPicker</span><span class="p">({</span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">useSliver</span><span class="p">,</span><span class="w"> </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">onSortSelected</span><span class="p">,</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+</code></pre></div>
+<p>Replace the line: <code>Widget build(BuildContext context) {</code> with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">widget</span><span class="p">.</span><span class="n">useSliver</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">SliverToBoxAdapter</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">buildRow</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">buildRow</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Widget</span><span class="w"> </span><span class="n">buildRow</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div>
+<p>Back in <code>genre_screen.dart</code>, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">useSliver:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</code></pre></div>
+<p>The code provides the parameter to the <code>SortPicker</code>. Perform a hot restart, and the code should work. The following shows the Genres screen with the list of movies and the new <code>SliverList</code>:</p>
+<p><img alt=" " src="../images/Figure_7.6.png" /></p>
+<p>Figure 7.6: Genre screen</p>
+<p>You can now scroll through the list of movies and see all the movies on the list.</p>
+<h2 id="movie-trailers"><a href="../contents/#sc2_148a">Movie trailers</a></h2>
+<p>One area that needs work is the ability to show videos. In the case of the movie app, the ability to show movie trailers. These are short videos that showcase the movie. To show a video from YouTube, we will use a plugin called <code>pod_player</code>. Open up <code>pubspec.yaml</code> and add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">pod_player</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.2.2</span>
+</code></pre></div>
+<p>Run <code>flutter pub get</code>. In the <code>ui/screens</code> folder, create a new folder named <code>videos</code>. Then, create a new dart file named <code>video_page.dart</code>. Then add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_riverpod/flutter_riverpod.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:pod_player/pod_player.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">VideoPage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerStatefulWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">movieVideo</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">VideoPage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">movieVideo</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">VideoPage</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_VideoPageState</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">_VideoPageState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ConsumerState</span><span class="o">&lt;</span><span class="n">VideoPage</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">late</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">PodPlayerController</span><span class="w"> </span><span class="n">podPlayerController</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Placeholder</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Here, the only new code is the <code>PodPlayerController</code>. This class is a controller for the <code>PodVideoPlayer</code> widget from the <code>pod_player</code> plugin. Since this variable is defined as a late variable, we need to initialize it using the <code>initState</code> method. First, we need to create a utility method for building a YouTube video URL. Open up <code>utils.dart</code> and add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">String</span><span class="w"> </span><span class="n">youtubeUrlFromId</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">videoId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;https://www.youtube.com/watch?v=</span><span class="si">$</span><span class="n">videoId</span><span class="s1">&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This is a simple method that just concatenates the video id to the URL. Back in <code>video_page.dart</code>, add the following before the build method:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">initState</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// 1</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">playVideoFrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PlayVideoFrom</span><span class="p">.</span><span class="n">youtube</span><span class="p">(</span>
+<span class="w">    </span><span class="n">youtubeUrlFromId</span><span class="p">(</span><span class="n">widget</span><span class="p">.</span><span class="n">movieVideo</span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// 2</span>
+<span class="w">  </span><span class="n">podPlayerController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PodPlayerController</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">playVideoFrom:</span><span class="w"> </span><span class="n">playVideoFrom</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">podPlayerConfig:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">PodPlayerConfig</span><span class="p">(</span><span class="nl">autoPlay:</span><span class="w"> </span><span class="kc">false</span><span class="p">),</span>
+<span class="w">  </span><span class="p">)..</span><span class="n">initialise</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nd">@override</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 3</span>
+<span class="w">  </span><span class="n">podPlayerController</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These two methods, <code>initState</code> and <code>dispose</code>, set up and dispose of the video controller:</p>
+<ol>
+<li>
+<p>Use the new utility method to get the URL and create a <code>PlayVideoFrom</code> class to pass to the controller.</p>
+</li>
+<li>
+<p>Create the controller passing in the video URL class and config.</p>
+</li>
+<li>
+<p>Dispose of the controller when done.</p>
+</li>
+</ol>
+<p>Next, add a method to get the video player. Use the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Widget</span><span class="w"> </span><span class="n">getVideoPlayer</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">appBar:</span><span class="w"> </span><span class="n">AppBar</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">backgroundColor:</span><span class="w"> </span><span class="n">screenBackground</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">leading:</span><span class="w"> </span><span class="n">BackButton</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">      </span><span class="nl">centerTitle:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">title:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Back&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">style:</span><span class="w"> </span><span class="n">Theme</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">textTheme</span><span class="p">.</span><span class="n">headlineMedium</span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="nl">body:</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">width:</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">infinity</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">height:</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">infinity</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">color:</span><span class="w"> </span><span class="n">screenBackground</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">mainAxisSize:</span><span class="w"> </span><span class="n">MainAxisSize</span><span class="p">.</span><span class="n">max</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="n">Expanded</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="n">PodVideoPlayer</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">controller:</span><span class="w"> </span><span class="n">podPlayerController</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">matchVideoAspectRatioToFrame:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>At the bottom of the method is the <code>PodVideoPlayer</code>, use the controller and a flag to match the video's aspect ratio to the screen. Now replace the build method with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">SystemChrome</span><span class="p">.</span><span class="n">setPreferredOrientations</span><span class="p">([</span>
+<span class="w">    </span><span class="n">DeviceOrientation</span><span class="p">.</span><span class="n">portraitUp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DeviceOrientation</span><span class="p">.</span><span class="n">portraitDown</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DeviceOrientation</span><span class="p">.</span><span class="n">landscapeLeft</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DeviceOrientation</span><span class="p">.</span><span class="n">landscapeRight</span><span class="p">,</span>
+<span class="w">  </span><span class="p">]);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">getVideoPlayer</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>SystemChrome</code> class is useful for changing the orientation of the device. Here, we change the device orientation to allow landscape and then return the video player. Return to <code>main_screen.dart</code> and change the last <code>Placerholder</code> with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">screens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">VideoPage</span><span class="p">(</span><span class="s1">&#39;QwW5RD02uJo&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>This calls the video page with a YouTube key that is a trailer for a Kung Fu Panda movie. Stop the app (When you have plugins that have device-specific code, you must rebuild your app and you cannot hot reload). Restart the app and click on the Favorites button.</p>
+<blockquote>
+<p>Note: That we are just using this page to show the video but will be replacing it with favorites later.</p>
+</blockquote>
+<p>The device will turn to landscape, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_7.7.png" /></p>
+<p>Figure 7.7: Video screen</p>
+<p>If you press the expand button, you will see the window expand to full screen. However, this depends on the video that you are playing. This specific video was built for phones in portrait mode, as shown in <a href="#fig7-8">Figure 7.8</a>:</p>
+<p><img alt=" " src="../images/Figure_7.8.png" /></p>
+<p>Figure 7.8: Fullscreen video</p>
+<p>In the chapter on the web and desktop, we will use a different package to show videos for the web.</p>
+<h2 id="conclusion"><a href="../contents/#sc2_149a">Conclusion</a></h2>
+<p>In this chapter, you learned a lot about the more advanced widgets like <code>ListView</code>, <code>GridView</code>, <code>Table</code>, <code>BottomSheets</code>, and <code>Slivers</code>. You were able to update the app to use these advanced widgets to show more items. You also created a video page and were able to show a video trailer for a movie.</p>
+<p>In the next chapter, you will learn about navigation and routing. This is a very important topic that will allow you to switch between different screens. You will use a specific package to push screens on a stack and pop them off when returning.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

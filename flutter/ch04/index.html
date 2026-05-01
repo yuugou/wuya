@@ -1,0 +1,4146 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch04/">
+      
+      
+        <link rel="prev" href="../ch03/">
+      
+      
+        <link rel="next" href="../ch05/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Basic Widgets - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-4-basic-widgets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basic Widgets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flutter-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter project structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flutter project structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspecyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubspec.yaml
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pubspec.yaml">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspec-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pubspec fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lib-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib folder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaffold-appbar-and-navigationbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffold, AppBar, and NavigationBar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaffold, AppBar, and NavigationBar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AppBar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottomnavigationbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BottomNavigationBar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snackbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snackbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-rows-and-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containers, rows, and columns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers, rows, and columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-images-and-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text, images, and icons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text, images, and icons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons-and-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buttons and more
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buttons and more">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatePicker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popupmenubutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PopupMenuButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radio button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TimePicker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-movie-app-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build movie app screens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build movie app screens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie row
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flutter-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter project structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flutter project structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspecyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pubspec.yaml
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pubspec.yaml">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pubspec-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pubspec fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lib-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib folder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Folders
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaffold-appbar-and-navigationbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffold, AppBar, and NavigationBar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaffold, AppBar, and NavigationBar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaffold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AppBar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottomnavigationbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BottomNavigationBar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snackbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snackbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containers-rows-and-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containers, rows, and columns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Containers, rows, and columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-images-and-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text, images, and icons
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text, images, and icons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buttons-and-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buttons and more
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Buttons and more">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DatePicker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popupmenubutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PopupMenuButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radio-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Radio button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TimePicker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-movie-app-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build movie app screens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build movie app screens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie row
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-4-basic-widgets"><a href="../contents/#ch04a">CHAPTER 4 Basic Widgets</a></h1>
+<h2 id="structure"><a href="../contents/#sc2_62a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>Flutter project structure</li>
+<li>Scaffold, AppBar, and NavigationBar</li>
+<li>Containers, rows, and columns</li>
+<li>Text, images, and icons</li>
+<li>Buttons and input fields</li>
+<li>Build the movie home screen</li>
+</ul>
+<h2 id="flutter-project-structure"><a href="../contents/#sc2_64a">Flutter project structure</a></h2>
+<p>In the previous chapter, you created your first app. Now it is time to learn what all the files and folders mean. One of the most important files is <code>pubspec.yaml</code>.</p>
+<h3 id="pubspecyaml"><a href="../contents/#sc3_65a">pubspec.yaml</a></h3>
+<p>The <code>pubspec.yaml</code> file defines your project and all the packages and plugins you will need for your app.</p>
+<p>Open up <code>pubspec.yaml</code>. YAML Ain't Markup Language (YAML) is an easy-to-read file that has a field, a colon, and then a value. One of the key aspects of YAML files is the indentation. You start at the left side, add a field name, and child elements are indented in two spaces. Ensure that it is <strong>spaces and not tabs</strong>. Not three spaces, but two. If you get it wrong, the build will not work.</p>
+<h4 id="pubspec-fields"><a href="../contents/#sc4_66a">Pubspec fields</a></h4>
+<p>The elements under the field are as follows:</p>
+<ul>
+<li>name: At the top is the name field. Here you can put the name of the project.</li>
+<li>description: This describes your app. Go ahead and change this to describe your app. I put in Select your favorite movies and watch them later, but you can use anything.</li>
+<li>publish_to: URL to publish. Currently, it is set to none. If you want to publish your project to pub.dev, you will need to remove this line.</li>
+<li>version: This is just the current version of your app. Update it every time you send out a new version.</li>
+<li>environment: Define the Dart SDK and Flutter version. This is very important. Normally you will not change this unless a major Flutter version comes out and you support it. Right now, it is set to: '&gt;=3.3.4 &lt;4.0.0'. This means that it supports Flutter versions 3.3.4 up to (but not including) 4.0.0. So, every time you run flutter upgrade, Flutter’s version increases and as long as the version number is between these two numbers, you can just rebuild and run your app. Note that this YAML file supports plain Dart projects as well. To tell the system that you are using Flutter, you need to add it as a dependency.</li>
+<li>
+<p>dependencies: Define the packages and plugins to use in the app.</p>
+<p>The following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">flutter</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+</code></pre></div>
+<p>tells the build system to include the Flutter SDK. Next are the packages and plugins that your app uses. Currently, only the <code>cupertino_icons</code> package is provided. This is a set of icons for use on the iOS platform. Try adding the material icons pages by adding the following below <code>cupertino_icons</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ...</span>
+<span class="w">    </span><span class="nt">material_symbols_icons</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^4.2719.3</span>
+</code></pre></div>
+<p>Make sure it is indented two spaces. Next, run <code>flutter pub get</code> in project folder. Now you can use the Material Design icons.</p>
+</li>
+<li>
+<p>dev_dependencies: These are used for builders and other libraries that are needed during the development phase of your project. For writing unit tests, use the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dev_dependencies</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">flutter_test</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+</code></pre></div>
+<p>For integration tests, use the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dev_dependencies</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">integration_test</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+</code></pre></div>
+</li>
+<li>
+<p>Flutter-specific area: You can set the flag to use Material Design, as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">flutter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">uses-material-design</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>After that, you would have an assets section where you would define the assets for your app.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">flutter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">assets</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># ...</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="lints"><a href="../contents/#sc3_67a">Lints</a></h3>
+<p>Flutter uses the <code>flutter_lints</code> package to check for valid code. To add the <code>flutter_lint</code> package, open up <code>pubspec.yaml</code> and add the following under the <code>dev_dependencies</code> section below:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dev_dependencies</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">flutter_test</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+<span class="w">    </span><span class="nt">flutter_lints</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.0.0</span>
+</code></pre></div>
+<p>Run <code>flutter pub get</code> in the terminal under project folder. Next, open up <code>analysis_options.yaml</code>. This file is where you put all of your lint settings. We have one lint we want to add, and that is to require the full package name for imports. There are several settings for this. Under the rules section add the following (make sure it is indented two spaces from the rules section):</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">linter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">avoid_relative_lib_imports</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">always_use_package_imports</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">prefer_relative_imports</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+Now, whenever you add an import, lint will suggest adding the full package name.</p>
+<h3 id="lib-folder"><a href="../contents/#sc3_68a">lib folder</a></h3>
+<p>This is where your dart files reside.</p>
+<h3 id="folders"><a href="../contents/#sc3_69a">Folders</a></h3>
+<p>There are several other folders at the top level. Most are platform-specific.</p>
+<p>For example, the <code>android</code> folder contains all the files needed to run on an Android device. You will normally not need to change these files except to add things like Android icons.
+<code>iOS</code> is for the iPhone, <code>macOS</code> is for the Mac, <code>windows</code> for Windows, etcetera.</p>
+<p>For unit tests, use the <code>test</code> folder, and for integration tests, use <code>integration_test</code>.</p>
+<p>There is no <code>assets</code> folder, but if you want to add files for your app, you must create this folder and add files you can load into your app in that directory.</p>
+<h2 id="scaffold-appbar-and-navigationbar"><a href="../contents/#sc2_70a">Scaffold, AppBar, and NavigationBar</a></h2>
+<h3 id="widgets"><a href="../contents/#sc4_71a">Widgets</a></h3>
+<p>The Flutter team likes to say that <strong>everything is a widget</strong>. That includes UI elements that do not draw anything independently but just lay out their child widgets. While all these widgets are just widgets, they have different purposes.</p>
+<h3 id="scaffold"><a href="../contents/#sc4_72a">Scaffold</a></h3>
+<p>Starting at the very top is the <code>Scaffold</code>. A Scaffold is a Material Design widget that lays out a full screen. It has the following parameters:</p>
+<ul>
+<li><code>appBar</code>: A toolbar for a title, actions, and a navigation menu.</li>
+<li><code>body</code>: This widget will be displayed in the middle, taking up the rest of the screen.</li>
+<li><code>floatingActionButton</code>: A small button that floats at the bottom right of the screen.</li>
+<li><code>bottomNavigationBar</code>: A bar at the bottom of the screen for navigating between screens.</li>
+<li><code>drawer</code>: A side menu tied to the AppBar. A menu that slides in from the left or right.</li>
+</ul>
+<p>All these items are optional except for the <code>body</code>, which is your content. A <code>Scaffold</code> is also needed to show <code>snackbars</code>, which are temporary floating message windows that display errors or messages.</p>
+<h3 id="appbar"><a href="../contents/#sc3_73a">AppBar</a></h3>
+<p>The AppBar is useful for showing the page title, having a menu for options, and a back button.</p>
+<blockquote>
+<p>Note that the AppBar is useful for mobile devices and not as useful on the desktop or web.</p>
+</blockquote>
+<p>The <code>FloatingActionButton</code> is mostly seen on Android platforms but can also be used on iOS. It is useful for creating new items but can be used for almost anything. Some nice packages do things like explode the button into more items.</p>
+<h3 id="bottomnavigationbar"><a href="../contents/#sc3_74a">BottomNavigationBar</a></h3>
+<p>The BottomNavigationBar is very useful when your app has three or four screens. The navigation bar allows the user to switch between the screens by clicking a button at the bottom. You will be using this for the <code>movie</code> app. Note that this does not mean you cannot have more than four screens. You can easily go to other screens from those three or four screens, or you can have a final screen of options that shows a list of other screens.</p>
+<h3 id="drawer"><a href="../contents/#sc3_75a">Drawer</a></h3>
+<p>Some apps use a <code>drawer</code> to display a menu of other options. Although its design has fallen out of favor among designers, some apps still use it.</p>
+<h3 id="snackbar"><a href="../contents/#sc3_76a">Snackbar</a></h3>
+<p>A <code>snackbar</code> is a small floating window that shows a message for a short time, usually for errors. You must have a <code>Scaffold</code> as a parent to show a snackbar.</p>
+<h2 id="containers-rows-and-columns"><a href="../contents/#sc2_77a">Containers, rows, and columns</a></h2>
+<p>Some layout widgets you can use are <code>containers</code>, <code>rows</code>, and <code>columns</code>. A container holds one child widget, which you can decorate with a background color, set a width and height, and other options.</p>
+<h3 id="container"><a href="../contents/#sc3_78a">Container</a></h3>
+<p>A container allows you to surround your widget with the following:</p>
+<ul>
+<li><code>color</code>: Provide a background color.</li>
+<li><code>padding</code>: Pad the interior before showing the widget.</li>
+<li><code>alignment</code>: Align widgets to different sides of the container.</li>
+<li><code>decoration</code>: Add all kinds of decorations, like rounded borders.</li>
+<li><code>width</code> and <code>height</code>: Set the size of the widget.</li>
+<li><code>transform</code>: Transform the container with a matrix. This is a powerful way to rotate, translate, or scale the container.</li>
+</ul>
+<p>The following is an example of a small circle with text inside of the middle:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Container</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">width:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">height:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">decoration:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BoxDecoration</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">shape:</span><span class="w"> </span><span class="n">BoxShape</span><span class="p">.</span><span class="n">circle</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">red</span><span class="p">,</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>As you can see, the Container is very powerful.</p>
+<h3 id="column"><a href="../contents/#sc3_79a">Column</a></h3>
+<p>You will probably be using the Column widget frequently as it allows you to layout a list of items in a vertical format.</p>
+<p>Looking at the design image of the home page of the movie app, you would start with a Column and then add different widgets to build the screen. The following is an example Column:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Column</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">mainAxisAlignment:</span><span class="w"> </span><span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">crossAxisAlignment:</span><span class="w"> </span><span class="n">CrossAxisAlignment</span><span class="p">.</span><span class="n">start</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">mainAxisSize:</span><span class="w"> </span><span class="n">MainAxisSize</span><span class="p">.</span><span class="n">min</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>A Column has four main components:</p>
+<ul>
+<li><code>mainAxisAlignment</code>: How the widgets are aligned going down.</li>
+<li><code>crossAxisAlignment</code>: How the widgets are aligned going across.</li>
+<li><code>mainAxisSize</code>: Take up a minimum or maximum height. Fill the screen or not.</li>
+<li><code>children</code>: Add a list of child widgets.</li>
+</ul>
+<p>There are also a few lesser-used parameters like:</p>
+<ul>
+<li><code>textDirection</code>: Direction of the text. This will be left to right or right to left.</li>
+<li><code>verticalDirection</code>: Defaults to down.</li>
+<li><code>textBaseline</code>: Align text based on alphabetic characters or ideographic characters.</li>
+<li><code>clipBehavior</code>: Allows for clipping if content overflows.</li>
+</ul>
+<p>It is important to set the <code>mainAxisSize</code>, as a <code>Column</code> defaults to max. The following are the <code>mainAxisAlignment</code> values:</p>
+<ul>
+<li><code>start</code>: Left aligned.</li>
+<li><code>end</code>: Right aligned.</li>
+<li><code>center</code>: Center widgets.</li>
+<li><code>spaceBetween</code>: Evenly add free space between the widgets. 头尾没有空隙</li>
+<li><code>spaceAround</code>: Place the free space evenly between the children as well as half of that space before and after the first and last child. 首尾子控件间距为中间子控件间距的一半</li>
+<li><code>spaceEvenly</code>: Place the free space evenly between the children as well as before and after the first and last child.</li>
+</ul>
+<p>The crossAxisAlignment is similar but different. It has the following:</p>
+<ul>
+<li><code>start</code>: Left aligned.</li>
+<li><code>end</code>: Right aligned.</li>
+<li><code>center</code>: Center widgets.</li>
+<li><code>stretch</code>: Require widgets to fill the cross axis.</li>
+<li><code>baseline</code>: Align along the baseline of widgets. Usually used with text.</li>
+</ul>
+<h3 id="rows"><a href="../contents/#sc3_80a">Rows</a></h3>
+<p>Rows lay their children horizontally. This is ideal for widgets that go across the screen. Rows have the same parameters as a Column but have a horizontal direction. The following is an example Row:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Row</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">mainAxisSize:</span><span class="w"> </span><span class="n">MainAxisSize</span><span class="p">.</span><span class="n">max</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Spacer</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">TextButton</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">        </span><span class="s1">&#39;More&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Here we have a Text widget, a Spacer (to fill up extra space and push the button to the right), and a TextButton. This makes up a row that fills up the width of the screen.</p>
+<h2 id="text-images-and-icons"><a href="../contents/#sc2_81a">Text, images, and icons</a></h2>
+<p>Text, images, and icons are a few of the most used widgets.</p>
+<h3 id="text"><a href="../contents/#sc3_82a">Text</a></h3>
+<p>Text is for static text that is shown on the screen. The Text widget has many parameters:</p>
+<ul>
+<li><code>data</code>: String value.</li>
+<li><code>style</code>: TextStyle information on color, font, and size.</li>
+<li><code>strutStyle</code>: Sets the minimum line height (not used much).</li>
+<li><code>textAlign</code>: How the text is aligned horizontally.</li>
+<li><code>textDirection</code>: Left to right (ltr), or right to left (rtl).</li>
+<li><code>locale</code>: Set the user's language and country. Should be rarely used as there is a current global Locale.</li>
+<li><code>softWrap</code>: If true, the text should break when needed in a space.</li>
+<li><code>overflow</code>: If the text overflows its drawing area, what should happen? This will depend on the following command:<ul>
+<li><code>clip</code>: Just cut off the text</li>
+<li><code>fade</code>: Fade the overflowing text to transparent</li>
+<li><code>ellipsis</code>(省略号): Use an ellipsis to indicate that the text has overflowed</li>
+<li><code>visible</code>: Render text outside of the box</li>
+</ul>
+</li>
+<li><code>textScaler</code>: How text should be scaled for better readability (not used much).</li>
+<li><code>maxLines</code>: Useful for specifying whether the text should be a specific number of lines or if set to null, as many lines as needed.</li>
+<li><code>semanticsLabel</code>: mostly used for accessibility purposes, but some testing systems use semantics to find text fields.</li>
+<li><code>textWidthBasis</code>: A way of measuring the width of one or more lines.</li>
+<li><code>textHeightBehavior</code>: How to apply a style’s height (not used much).</li>
+<li><code>selectionColor</code>: Color of text when selected.</li>
+</ul>
+<p>There are many fields, but you will probably only use the actual text and a style. There are times when <code>maxLines</code> come in handy, but in general, this is a pretty easy widget to use.</p>
+<p>The following is a simple example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;My Favorites&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">))</span>
+<span class="n">Text</span><span class="p">(</span><span class="s1">&#39;My Favorites&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+<span class="p">))</span>
+</code></pre></div>
+<h3 id="images"><a href="../contents/#sc3_83a">Images</a></h3>
+<p>Flutter uses the <code>Image</code> widget to display images. This widget can handle images from several sources:</p>
+<ul>
+<li>Local assets directory</li>
+<li>Internet</li>
+<li>File</li>
+<li>Memory</li>
+<li><code>ImageProvider</code>: Class used to return an image</li>
+</ul>
+<p>There are several parameters for creating an image. The most important ones are as follows:</p>
+<ul>
+<li><code>width</code> and <code>height</code>: Define the size of the image</li>
+<li><code>color</code>: color to be blended with each pixel</li>
+<li><code>opacity</code>: Animation for handling opacity</li>
+<li><code>fit</code>: Very important for sizing. Uses the <code>BoxFit</code> enum with (<a href="https://api.flutter.dev/flutter/painting/BoxFit.html">https://api.flutter.dev/flutter/painting/BoxFit.html</a>):<ul>
+<li><code>fill</code>: Fills the target but distorts(扭曲，变形) the aspect ratio</li>
+<li><code>contain</code>: As large as possible inside of the target</li>
+<li><code>cover</code>: As small as possible while covering the target</li>
+<li><code>fitWidth</code>: Full width (height is adjusted)</li>
+<li><code>fitHeight</code>: Full height (width is adjusted)</li>
+<li><code>none</code>: Center and not resized</li>
+<li><code>scaleDown</code>: Center and scale down if needed</li>
+</ul>
+</li>
+</ul>
+<p>You can use static constructors for the different types like: <code>Image.file</code>, <code>Image.network</code>, and <code>Image.asset</code>. The following is a simple asset image:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Image</span><span class="p">.</span><span class="n">asset</span><span class="p">(</span><span class="s1">&#39;assets/cat.png&#39;</span><span class="p">)</span>
+
+<span class="n">For</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">images</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">might</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">something</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nl">follows:</span>
+
+<span class="n">Image</span><span class="p">.</span><span class="n">network</span><span class="p">(</span>
+<span class="w">  </span><span class="s1">&#39;url&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">width:</span><span class="w"> </span><span class="m">120</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">height:</span><span class="w"> </span><span class="m">98</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fill</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="icons"><a href="../contents/#sc3_84a">Icons</a></h3>
+<p>Icons are a way to show standard images without having to create them yourselves. There are the <code>cupertino_icons</code> or the material design icons. Inside the <code>material_symbols_icons</code> package is a file named <code>symbols.dart</code>. This has all the icons available. If you go to <a href="https://fonts.google.com/icons">https://fonts.google.com/icons</a>, you will see a page as follows:</p>
+<p><img alt=" " src="../images/Figure_4.1.png" /></p>
+<p>Figure 4.1: Material icons</p>
+<p>Many common icons are needed for an app. <code>Close</code>, <code>Arrow Back</code> button icons, and more. On this page, you can easily search for an icon that will meet your needs. The following is an example of a search icon (the first icon in the list above):</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">search</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,)</span>
+</code></pre></div>
+<p>Many times, you will use these icons inside of an <code>IconButton</code> class. This provides a click listener for the icon. Also, notice the <code>const</code> before the <code>Icon</code>. Flutter lints will remind you to use <code>const</code> before any widget that does not use any dynamic content.</p>
+<h2 id="buttons-and-more"><a href="../contents/#sc2_85a">Buttons and more</a></h2>
+<h3 id="buttons"><a href="../contents/#sc3_86a">Buttons</a></h3>
+<p>Buttons allow the user to select and perform an action. There are many types of buttons:</p>
+<ul>
+<li><code>IconButton</code>: For showing an icon</li>
+<li><code>TextButton</code>: A button with text, no decoration</li>
+<li><code>ElevatedButton</code>: Adds dimension to a button</li>
+<li><code>FilledButton</code>: Fill a button with a color</li>
+<li><code>OutlinedButton</code>: Rounded corner outline</li>
+<li><code>FloatingActionButton</code>: Floating button.</li>
+<li><code>SegmentedButton</code>: Checkable sections</li>
+</ul>
+<p>These are some of the more common buttons. There is now an <code>ExtendedFloatingActionButton</code> that allows you to have text along with the icon.</p>
+<h3 id="selection"><a href="../contents/#sc3_87a">Selection</a></h3>
+<p>In addition to buttons, there are other widgets that allow you to select. The most common is the <code>Checkbox</code>. <strong>Note that this is just the box, not the text. Usually, you will have these two widgets together</strong>.</p>
+<h3 id="chips"><a href="../contents/#sc3_88a">Chips</a></h3>
+<p>Chips are a newer widget and there are several different types:</p>
+<ul>
+<li><code>InputChip</code>: For attribute information. Contains an icon, text, and close button</li>
+<li><code>ChoiceChip</code>: Are selectable and have a checkmark when selected</li>
+<li><code>FilterChip</code>: Represent filters have an icon and text</li>
+<li><code>ActionChip</code>: Allow the user to start an action by clicking on the chip</li>
+</ul>
+<p>You will be using the <code>FilterChip</code> class to select genres when searching for movies.</p>
+<h3 id="datepicker"><a href="../contents/#sc3_89a">DatePicker</a></h3>
+<p>This widget allows you to create a popup window for selecting a date. A sample popup is as follows:</p>
+<p><img alt=" " src="../images/Figure_4.2.png" /></p>
+<p>Figure 4.2: DatePicker</p>
+<p>An example is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DatePickerDialog</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">restorationId:</span><span class="w"> </span><span class="s1">&#39;date_picker_dialog&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">initialEntryMode:</span><span class="w"> </span><span class="n">DatePickerEntryMode</span><span class="p">.</span><span class="n">calendarOnly</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">initialDate:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">fromMillisecondsSinceEpoch</span><span class="p">(</span><span class="n">arguments</span><span class="o">!</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">int</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">firstDate:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2021</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">lastDate:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">(</span><span class="m">2022</span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="popupmenubutton"><a href="../contents/#sc3_90a">PopupMenuButton</a></h3>
+<p>A menu that is usually tied to a button and shown when the user selects it. An example is as follows:</p>
+<p><img alt=" " src="../images/Figure_4.3.png" /></p>
+<p>Figure 4.3: PopupMenuButton</p>
+<p>The following is an example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">PopupMenuButton</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">initialValue:</span><span class="w"> </span><span class="s1">&#39;Item 1&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">onSelected:</span><span class="w"> </span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">selectedItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">PopupMenuEntry</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;&gt;</span><span class="p">[</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">PopupMenuItem</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">value:</span><span class="w"> </span><span class="s1">&#39;Item 1&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Item 1&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">PopupMenuItem</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">value:</span><span class="w"> </span><span class="s1">&#39;Item 2&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Item 2&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">PopupMenuItem</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">value:</span><span class="w"> </span><span class="s1">&#39;Item 3&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Item 3&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="radio-button"><a href="../contents/#sc3_91a">Radio button</a></h3>
+<p>Another common widget is the radio button. It will look like something as follows:</p>
+<p><img alt=" " src="../images/Figure_4.4.png" /></p>
+<p>Figure 4.4: Radio buttons</p>
+<h3 id="slider"><a href="../contents/#sc3_92a">Slider</a></h3>
+<p>This widget is less common but useful for allowing the user to visually pick values. It has minimum and maximum values. It will look as follows:</p>
+<p><img alt=" " src="../images/Figure_4.5.png" /></p>
+<p>Figure 4.5: Slider</p>
+<h3 id="switch"><a href="../contents/#sc3_93a">Switch</a></h3>
+<p>A visual way to turn something on or off. It has two states, on and off, and will look like this:</p>
+<p><img alt=" " src="../images/Figure_4.6.png" /></p>
+<p>Figure 4.6: Switch</p>
+<h3 id="timepicker"><a href="../contents/#sc3_94a">TimePicker</a></h3>
+<p>Like the DatePicker, the TimePicker allows the user to choose a specific time, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_4.7.png" /></p>
+<p>Figure 4.7: TimePicker</p>
+<p>To allow the user to enter text, you can use the <code>TextField</code> widget. A <code>TextField</code> requires a <code>TextEditingController</code>, which means it needs to be inside of a <code>StatefulWidget</code>. A <code>TextEditingController</code> holds the value of the text the user entered. To update the text in the field, you need to update the controller's text value. If you do not supply a controller, one will be created for you. The easiest way to create and destroy a controller is in the initState and destroy methods of a <code>State</code> class. The code is as follows:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">LoginDialog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatefulWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">LoginDialog</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">State</span><span class="o">&lt;</span><span class="n">LoginDialog</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_LoginDialogState</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">_LoginDialogState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">State</span><span class="o">&lt;</span><span class="n">LoginDialog</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">late</span><span class="w"> </span><span class="n">TextEditingController</span><span class="w"> </span><span class="n">emailTextController</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">initState</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
+<span class="w">    </span><span class="n">emailTextController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TextEditingController</span><span class="p">(</span><span class="nl">text:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">dispose</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">emailTextController</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Then, to use a <code>TextField</code>, you would do something as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">TextField</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">keyboardType:</span><span class="w"> </span><span class="n">TextInputType</span><span class="p">.</span><span class="n">emailAddress</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">onSubmitted:</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">  </span><span class="nl">controller:</span><span class="w"> </span><span class="n">emailTextController</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>There are several options for <code>TextFields</code>, as follows:</p>
+<ul>
+<li><code>controller</code>: Holds the text value.</li>
+<li><code>focusNode</code>: Used to focus or unfocused where the user is adding text.</li>
+<li><code>undoController</code>: Keeps track of the changes. Allows listening to changes and undoing/redoing those changes.</li>
+<li><code>decoration—inputDecoration</code>: Lots of options for changing the border, labels, icons, styles etcetera.</li>
+<li><code>keyboardType</code>: Useful for email, number, dates, password, and phone.</li>
+<li><code>textCapitalization</code>: Can automatically capitalize words, sentences, or characters.</li>
+<li><code>style</code>: Input text style.</li>
+<li><code>textAlign</code>: Align text to different sides of the container.</li>
+<li><code>maxLines</code>, <code>minLines</code>: Min/max lines.</li>
+<li><code>maxLength</code>: Maximum number of characters.</li>
+<li><code>onChanged</code>: Listener for every time a user updates the text.</li>
+<li><code>onSubmitted</code>: Listener for the final entry.</li>
+</ul>
+<p>There are many more fields that can be used, but these are the main ones that you will generally use.</p>
+<h2 id="build-movie-app-screens"><a href="../contents/#sc2_96a">Build movie app screens</a></h2>
+<p>In the previous chapter, you saw a design for the home screen. The following is that figure with sections drawn in red:</p>
+<p><img alt=" " src="../images/Figure_4.8.png" /></p>
+<p>Figure 4.8: Home screen</p>
+<p>If you look at the overall design, you can see that there is a column of rows. The column goes down while the rows go across. Inside your lib folder, create two new folders. Inside the <code>ui</code> folder, create <code>screens</code>, and then inside of that folder, create a <code>home</code>. Next, create the <code>home_screen</code>.dart file inside of that folder. Next, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">HomeScreen</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatefulWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">HomeScreen</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">State</span><span class="o">&lt;</span><span class="n">HomeScreen</span><span class="o">&gt;</span><span class="w"> </span><span class="n">createState</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_HomeScreenState</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">_HomeScreenState</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">State</span><span class="o">&lt;</span><span class="n">HomeScreen</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Placeholder</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This adds a screen with another <code>Placeholder</code>. Return to <code>main_screen.dart</code> and change <code>Placeholder()</code> with <code>HomeScreen()</code>. Import the home screen, then hot reload the app, and you should see the same thing as before. Next, add the <code>Now Playing</code> headline. Inside of <code>HomeScreen</code>, replace <code>Placeholder()</code> with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">body:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Now Playing&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Press hot reload. You will see:</p>
+<p><img alt=" " src="../images/Figure_4.9.png" /></p>
+<p>Figure 4.9: Title</p>
+<p>As you can see, the title is in the status area. By default, Flutter draws to the whole screen. To avoid this, you must ensure you draw in a safe area. In VS Code, right click the widget <code>Scaffold</code>, choose the <code>refactor</code> and then <code>Wrap with widget ...</code>, then type <code>SafeArea</code> to replace <code>widget</code>. This will bring up a menu, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_4.10.png" /></p>
+<p>Figure 4.10: Wrap menu</p>
+<p>You should see the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">SafeArea</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">body:</span><span class="w"> </span><span class="n">Column</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Now Playing&#39;</span><span class="p">),</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Hot reload. Now it looks as follows:</p>
+<p><img alt=" " src="../images/Figure_4.11.png" /></p>
+<p>Figure 4.11: SafeArea</p>
+<p>To make the text bigger, you need to change the text style. We also want to center it. How would you do that? One very convenient widget is the Align widget. Right click <code>Text</code> -&gt; <code>refactor</code> -&gt; <code>Wrap with widget ...</code>, type <code>Align</code> and add <code>alignment</code> property as the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">Align</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Now Playing&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Hot reload, and you should see it in the center. It looks too close to the top. Maybe add some padding?</p>
+<p>Right click <code>Align</code> -&gt; <code>refactor</code> -&gt; <code>Wrap with widget ...</code>, type <code>Padding</code> (or choose <code>Wrap with Padding</code> directly). It will default to 8 pixel margins. We want to have some vertical spacing. Specifically, 16 pixels on the top and 24 at the bottom. Change the padding to the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">16.0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">24</span><span class="p">)</span>
+</code></pre></div>
+<p>The left, top, right, bottom (LTRB) is the order that the values are in. Hot reload, and it should look better.</p>
+<p>Now for the style. The screenshot is from the Figma app, which is a design tool that designers use. When we click on the Now Playing title, we see that it is Roboto semibold 24. We will cover fonts in a different chapter, but for now, we want the font to be bold and 24 pixels tall. After the Now Playing text, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;Now Playing&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span><span class="w"> </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">),</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>The weights for fonts range from 100 to 900. The higher the number, the bolder the text. Hot reload. The screen will be as follows:</p>
+<p><img alt=" " src="../images/Figure_4.12.png" /></p>
+<p>Figure 4.12: Centered title</p>
+<p>You have a title, but if you compare it to the design, the background is black, and the text is white. To get a background color, you can use a Container. Surround the column with a Container and set the color to 0xFF111111 like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">child:</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="hll"><span class="w">  </span><span class="nl">color:</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mh">0xFF111111</span><span class="p">),</span>
+</span><span class="w">  </span><span class="c1">//...</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Now, the title is not visible. Change the color of the text style as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">  </span><span class="c1">// ... other properties</span>
+<span class="w">  </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// ... other properties</span>
+<span class="hll"><span class="w">    </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">,</span>
+</span><span class="w">  </span><span class="p">),</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Hot reload. You should see the following:</p>
+<p><img alt=" " src="../images/Figure_4.13.png" /></p>
+<p>Figure 4.13: Colors</p>
+<p>Next, you will add some libraries to help with the carousel at the top. Open up <code>pubspec.yaml</code>, and after <code>material_symbols_icons</code> add:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">card_swiper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.0.0</span>
+<span class="nt">cached_network_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.3.1</span>
+</code></pre></div>
+<p>The first package adds a carousel, and the second is for caching network images. Run <code>flutter pub get</code> in the terminal. Next, in the <code>home</code> folder, create a new file named <code>home_screen_image.dart</code>.</p>
+<p>Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:cached_network_image/cached_network_image.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:card_swiper/card_swiper.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">delayTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">animationTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+
+<span class="k">const</span><span class="w"> </span><span class="n">images</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/gKkl37BQuKTanygYQG1pyYgLVgf.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/4xJd3uwtL1vCuZgEfEc8JXI9Uyx.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/uuA01PTtPombRPvL9dvsBqOBJWm.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/H6vke7zGiuLsz4v4RPeReb9rsv.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/e1J2oNzSBdou01sUvriVuoYp0pJ.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/hu40Uxp9WtpL34jv3zyWLb5zEVY.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/pKaA8VvfkNfEMUPMiiuL5qSPQYy.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/zK2sFxZcelHJRPVr242rxy5VK4T.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/7qxG0zyt29BI0IzFDfsps62kbQi.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/zDi2U7WYkdIoGYHcYbM9X5yReVD.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/cxevDYdeFkiixRShbObdwAHBZry.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/uXUs1fwSuE06LgYETw2mi4JxQvc.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/fdZpvODTX5wwkD0ikZNaClE4AoW.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/d5NXSklXo0qyIYkgV94XAgMIckC.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/sHJ2OIgpcpSmhqXkuSWxZ3nwg1S.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/upKD8UbH8vQ798aMWgwMxV8t4yk.jpg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="s1">&#39;http://image.tmdb.org/t/p/w780/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg&#39;</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>This sets some constants for the swiper animation and an array of images. Note that we are hard-coding the images that we will be using later in the book. When we get to the networking section, you will get these images directly from the network.</p>
+<p>Next, add the widget:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">HomeScreenImage</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">HomeScreenImage</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">screenWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MediaQuery</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">32</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 2</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">height:</span><span class="w"> </span><span class="m">374</span><span class="p">,</span>
+<span class="w">      </span><span class="c1">// 3</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">Swiper</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">autoplayDelay:</span><span class="w"> </span><span class="n">delayTime</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">duration:</span><span class="w"> </span><span class="n">animationTime</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">itemWidth:</span><span class="w"> </span><span class="n">screenWidth</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">autoplay:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// 4</span>
+<span class="w">        </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">images</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="c1">// 5</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">CachedNetworkImage</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="n">images</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">            </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fitHeight</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">height:</span><span class="w"> </span><span class="m">374</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">width:</span><span class="w"> </span><span class="n">screenWidth</span><span class="p">,</span>
+<span class="w">          </span><span class="p">);</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This code will show a carousel of images. The steps are as follows:</p>
+<ol>
+<li>Get the width of the screen.</li>
+<li>Create a fixed height box of 374 pixels.</li>
+<li>Use the Swiper widget for the carousel and set animation parameters.</li>
+<li>Set the itemCount to the length of the array.</li>
+<li>Use the CachedNetworkImage widget to show the image.</li>
+</ol>
+<p>Back in the home screen, add <code>HomeScreenImage()</code>, after the <code>Padding</code> widget, and import the <code>home_screen_image.dart</code> file. You must stop and restart the app after adding a new plugin. You should see an automated carousel of images:</p>
+<p><img alt=" " src="../images/Figure_4.14.png" /></p>
+<p>Figure 4.14: Carousel</p>
+<p>The designs show a bottom navigation section that shows home, genre, and favorites buttons. These buttons will take the user to the three different screens that you will be creating. To create these, go into <code>main_screen.dart</code>. We need to replace the single call to the home screen with a <code>BottomNavigationBar</code>. This class handles the selection of screens and shows the proper one. Before the build method, add some new variables:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">[];</span>
+</code></pre></div>
+<p>This will keep track of the current index and the screens list will hold the three screens. Now add the initState method:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">initState</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">super</span><span class="p">.</span><span class="n">initState</span><span class="p">();</span>
+<span class="w">  </span><span class="n">screens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HomeScreen</span><span class="p">());</span>
+<span class="w">  </span><span class="n">screens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Placeholder</span><span class="p">());</span>
+<span class="w">  </span><span class="n">screens</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Placeholder</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now change the build method to:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">body:</span><span class="w"> </span><span class="n">screens</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">    </span><span class="nl">bottomNavigationBar:</span><span class="w"> </span><span class="n">BottomNavigationBar</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">items:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">home</span><span class="p">),</span><span class="w"> </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Home&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Symbols</span><span class="p">.</span><span class="n">genres</span><span class="p">),</span><span class="w"> </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Genre&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">BottomNavigationBarItem</span><span class="p">(</span><span class="nl">icon:</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite</span><span class="p">),</span><span class="w"> </span><span class="nl">label:</span><span class="w"> </span><span class="s1">&#39;Favorites&#39;</span><span class="p">),</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nl">currentIndex:</span><span class="w"> </span><span class="n">index</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">(</span><span class="n">navIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">setState</span><span class="p">(()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">navIndex</span><span class="p">;</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>Scaffold</code> will show the current screen based on the current index. The <code>BottomNavigationBar</code> holds <code>BottomNavigationBarItem</code> items that just show the icons and text. The <code>currentIndex</code> is for the screen index currently selected, and the <code>onTap</code> call will set that index only when the user selects it. You will notice that the <code>Symbols.genres</code> cannot be found. This is an icon found in the <code>material_symbols</code> library. Add the following to <code>pubspec.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">material_symbols_icons</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^4.2719.3</span>
+</code></pre></div>
+<p>Run <code>flutter pub get</code> to install the package. Import the symbols package.</p>
+<p>Looking back at the design, you will see three sections named trending, popular, and top-rated movies. They all look the same, which means they are good candidates for custom widgets. Start by creating a title row. In the <code>home</code> folder, create a new file named <code>title_row.dart</code>. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">typedef</span><span class="w"> </span><span class="n">OnMoreClicked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="kt">Function</span><span class="p">();</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">TitleRow</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">text</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">OnMoreClicked</span><span class="w"> </span><span class="n">onMoreClicked</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">TitleRow</span><span class="p">({</span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">onMoreClicked</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Row</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">mainAxisSize:</span><span class="w"> </span><span class="n">MainAxisSize</span><span class="p">.</span><span class="n">max</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">children:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">,</span><span class="w"> </span><span class="m">8.0</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="nl">style:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w600</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">)),</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">Spacer</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">Padding</span><span class="p">(</span>
+<span class="w">          </span><span class="nl">padding:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EdgeInsets</span><span class="p">.</span><span class="n">fromLTRB</span><span class="p">(</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="m">16.0</span><span class="p">,</span><span class="w"> </span><span class="m">8.0</span><span class="p">,</span><span class="w"> </span><span class="m">0.0</span><span class="p">),</span>
+<span class="w">          </span><span class="nl">child:</span><span class="w"> </span><span class="n">TextButton</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">onPressed:</span><span class="w"> </span><span class="n">onMoreClicked</span><span class="p">,</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span>
+<span class="w">              </span><span class="s1">&#39;More&#39;</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">style:</span><span class="w"> </span><span class="n">TextStyle</span><span class="p">(</span><span class="nl">fontSize:</span><span class="w"> </span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="nl">fontWeight:</span><span class="w"> </span><span class="n">FontWeight</span><span class="p">.</span><span class="n">w400</span><span class="p">,</span><span class="w"> </span><span class="nl">color:</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">),</span>
+<span class="w">        </span><span class="p">),</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This code shows a row with the passed in text on the left and a More button on the far right. The steps are as follows:</p>
+<ol>
+<li>Define a function that will be run when the <code>more</code> button is clicked.</li>
+<li>Create a row with several children.</li>
+<li>Have the row take up the full width.</li>
+<li>Show the passed-in title.</li>
+<li>Use a <code>Spacer</code> widget to push the button to the right.</li>
+<li>Use a <code>TextButton</code> to show <code>more</code> text.</li>
+</ol>
+<p>Back in home screen, after <code>HomeScreenImage()</code> add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">TitleRow</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">text:</span><span class="w"> </span><span class="s1">&#39;Trending&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">onMoreClicked:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="p">),</span>
+</code></pre></div>
+<p>Hot reload. You should now see the Trending row. Copy and paste the <code>TitleRow</code> two times and change the text to popular and top-rated. Hot reload, and you should see three titles in a row.</p>
+<h3 id="movie-row"><a href="../contents/#sc3_97a">Movie row</a></h3>
+<p>Now, add the scrollable horizontal row for each type of movie. Create a new .dart file in the home folder named <code>horiz_movies.dart</code>. Add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:cached_network_image/cached_network_image.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">HorizontalMovies</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">StatelessWidget</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">movies</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">HorizontalMovies</span><span class="p">({</span><span class="kd">required</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">movies</span><span class="p">,</span><span class="w"> </span><span class="k">super</span><span class="p">.</span><span class="n">key</span><span class="p">});</span>
+
+<span class="w">  </span><span class="nd">@override</span>
+<span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">height:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">child:</span><span class="w"> </span><span class="n">ListView</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span>
+<span class="w">        </span><span class="nl">scrollDirection:</span><span class="w"> </span><span class="n">Axis</span><span class="p">.</span><span class="n">horizontal</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">itemCount:</span><span class="w"> </span><span class="n">movies</span><span class="p">.</span><span class="n">length</span><span class="p">,</span>
+<span class="w">        </span><span class="nl">itemBuilder:</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="n">GestureDetector</span><span class="p">(</span>
+<span class="w">            </span><span class="nl">onTap:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">            </span><span class="nl">child:</span><span class="w"> </span><span class="n">SizedBox</span><span class="p">(</span>
+<span class="w">              </span><span class="nl">width:</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">height:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">              </span><span class="nl">child:</span><span class="w"> </span><span class="n">CachedNetworkImage</span><span class="p">(</span>
+<span class="w">                </span><span class="nl">imageUrl:</span><span class="w"> </span><span class="n">movies</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
+<span class="w">                </span><span class="nl">alignment:</span><span class="w"> </span><span class="n">Alignment</span><span class="p">.</span><span class="n">topCenter</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">fit:</span><span class="w"> </span><span class="n">BoxFit</span><span class="p">.</span><span class="n">fitHeight</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">height:</span><span class="w"> </span><span class="m">100</span><span class="p">,</span>
+<span class="w">                </span><span class="nl">width:</span><span class="w"> </span><span class="m">142</span><span class="p">,</span>
+<span class="w">              </span><span class="p">),</span>
+<span class="w">            </span><span class="p">),</span>
+<span class="w">          </span><span class="p">);</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">),</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This code will display a horizontal list of images and allow the user to click on individual images. The steps are as follows:</p>
+<ol>
+<li>Pass in a list of movie URLs.</li>
+<li>Each movie will only be 142 pixels high by using <code>SizedBox</code>.</li>
+<li>Use a <code>ListView</code> to show a horizontal list (<code>ListView</code> will be covered in more detail in another chapter).</li>
+<li>Use a <code>GestureDetector</code> to capture a click (<code>GestureDetector</code> will be covered in more detail in another chapter).</li>
+<li>Show the image.</li>
+</ol>
+<p>Back in the home screen, add the following after the first <code>TitleRow</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">HorizontalMovies</span><span class="p">(</span><span class="nl">movies:</span><span class="w"> </span><span class="n">images</span><span class="p">,),</span>
+</code></pre></div>
+<p>Hot reload. You should see at least a part of the images, but what are the yellow and black striped lines? What are the error messages in the console? Now, you will be learning some of the hard parts about Flutter. If you read the error message in the console, you will see the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="n">RenderFlex</span> <span class="n">overflowed</span> <span class="n">by</span> <span class="n">87</span> <span class="n">pixels</span> <span class="n">on</span> <span class="n">the</span> <span class="n">bottom</span><span class="p">.</span>
+
+<span class="n">The</span> <span class="n">relevant</span> <span class="n">error-causing</span> <span class="n">widget</span> <span class="n">was</span><span class="p">:</span>
+<span class="n">Column</span>
+<span class="n">Column</span><span class="p">:</span><span class="n">file</span><span class="p">:///.../</span><span class="n">Mastering</span><span class="k">%</span><span class="n">20Flutter</span><span class="p">/</span><span class="n">git</span><span class="p">/</span><span class="n">Mastering-Flutter</span><span class="p">/</span><span class="n">Chapter4</span><span class="p">/</span><span class="n">final</span><span class="p">/</span><span class="n">movies</span><span class="p">/</span><span class="n">lib</span><span class="p">/</span><span class="n">ui</span><span class="p">/</span><span class="n">screens</span><span class="p">/</span><span class="n">home</span><span class="p">/</span><span class="n">home_screen</span><span class="p">.</span><span class="n">dart</span><span class="p">:</span><span class="n">21</span><span class="p">:</span><span class="n">16</span>
+
+<span class="c"># ...</span>
+</code></pre></div>
+<p>This is saying that the last item in the column went 87 pixels beyond the area on the screen. To fix this, you need some sort of scrollable widget. There is an easy fix for this issue. Simply wrap the top Container with the following:</p>
+<div class="highlight"><pre><span></span><code><span class="n">SingleChildScrollView</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">child:</span><span class="w"> </span><span class="n">Container</span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// ... existing content</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Hot reload, and the error should be gone. You will encounter several of these types of errors as your Flutter career progresses. The following is what your screen should look like:</p>
+<p><img alt=" " src="../images/Figure_4.15.png" /></p>
+<p>Figure 4.15: Scrolling lists</p>
+<p>The project is starting to look like an actual program. Copy the <code>HorizontalMovies</code> widget after each <code>TitleRow</code> and hot reload. You should be able to scroll down and see the three lists. You can even scroll right on the list. That is it for the home screen for now. In upcoming chapters, we will clean up the screen and get actual data from the network.</p>
+<p><a href="../contents/#sc2_98a">Conclusion</a></p>
+<p>In this chapter, you learned about the structure of a Flutter app and most of Flutter’s basic widgets. Although it was a lot of information, you now have a handle on the basics of Flutter. We will continue to learn more about themes and advanced widgets.</p>
+<p>In the next chapter, you will learn about colors, typography, and material design. You will use these to create a theme that sets the color and typography for the whole app at once.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

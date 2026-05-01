@@ -1,0 +1,5528 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/twsApi/accountAndPortfolio/">
+      
+      
+        <link rel="prev" href="../synchronous/">
+      
+      
+        <link rel="next" href="../bulletins/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>账户与投资组合数据 - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tws-api-documentation-tws-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              账户与投资组合数据
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../flutter/ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-portfolio-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account &amp; Portfolio Data / 账户与投资组合数据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account &amp; Portfolio Data / 账户与投资组合数据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Summary / 账户摘要
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Summary / 账户摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Summary / 请求账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-summary-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Summary Tags / 账户摘要标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Summary / 接收账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Account Summary / 取消账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Updates / 账户更新
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Updates / 账户更新">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Updates / 请求账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Updates / 接收账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-value-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Value Keys / 账户值的键
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Account Updates / 取消账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-update-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Update by Model / 通过模型更新账户
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Update by Model / 通过模型更新账户">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-update-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Update by Model / 通过模型请求账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-updates-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Updates by Model / 通过模型接收账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelling-account-updates-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancelling Account Updates by Model / 通过模型取消账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Family Codes / 家族代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Family Codes / 家族代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Family Codes / 请求家族代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Family Codes / 接收家族代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managed Accounts / 管理账户
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managed Accounts / 管理账户">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Managed Accounts / 请求管理账户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Managed Accounts / 接收管理账户
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positions / 持仓
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positions / 持仓">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Positions / 请求持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Positions / 接收持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-positions-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Positions Request / 取消持仓请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positions By Model / 按模型查询仓位
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positions By Model / 按模型查询仓位">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Positions By Model / 按模型请求持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Positions By Model / 按模型接收持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Positions By Model / 按模型取消仓位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profit-loss-pnl-pnl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profit &amp; Loss (PnL) / 损益 (PnL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profit &amp; Loss (PnL) / 损益 (PnL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-pl-for-individual-positions-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request P&amp;L for individual positions / 为单个头寸请求 P&amp;L
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-pl-for-individual-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive P&amp;L for individual positions / 接收单个持仓的盈亏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-pl-request-for-individual-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel P&amp;L request for individual positions / 取消单个持仓的盈亏请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-pl-for-accounts-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request P&amp;L for accounts / 请求账户的 P&amp;L 信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-pl-for-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive P&amp;L for accounts / 接收账户盈亏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-pl-subscription-requests-for-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel P&amp;L subscription requests for accounts / 取消账户的盈亏订阅请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-branding-user-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Branding User Info / 白标用户信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Branding User Info / 白标用户信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-white-branding-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting White Branding Info / 请求白色品牌信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-white-branding-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving White Branding Info / 接收白标品牌信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#account-portfolio-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account &amp; Portfolio Data / 账户与投资组合数据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account &amp; Portfolio Data / 账户与投资组合数据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Summary / 账户摘要
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Summary / 账户摘要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Summary / 请求账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-summary-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Summary Tags / 账户摘要标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Summary / 接收账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-account-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Account Summary / 取消账户摘要
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Updates / 账户更新
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Updates / 账户更新">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Updates / 请求账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Updates / 接收账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-value-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Value Keys / 账户值的键
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-account-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Account Updates / 取消账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-update-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Update by Model / 通过模型更新账户
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Account Update by Model / 通过模型更新账户">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-account-update-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting Account Update by Model / 通过模型请求账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-account-updates-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving Account Updates by Model / 通过模型接收账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelling-account-updates-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancelling Account Updates by Model / 通过模型取消账户更新
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Family Codes / 家族代码
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Family Codes / 家族代码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Family Codes / 请求家族代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-family-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Family Codes / 接收家族代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managed Accounts / 管理账户
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managed Accounts / 管理账户">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Managed Accounts / 请求管理账户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-managed-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Managed Accounts / 接收管理账户
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positions / 持仓
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positions / 持仓">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Positions / 请求持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Positions / 接收持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-positions-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Positions Request / 取消持仓请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positions By Model / 按模型查询仓位
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Positions By Model / 按模型查询仓位">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Positions By Model / 按模型请求持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive Positions By Model / 按模型接收持仓
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-positions-by-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Positions By Model / 按模型取消仓位
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profit-loss-pnl-pnl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profit &amp; Loss (PnL) / 损益 (PnL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profit &amp; Loss (PnL) / 损益 (PnL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-pl-for-individual-positions-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request P&amp;L for individual positions / 为单个头寸请求 P&amp;L
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-pl-for-individual-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive P&amp;L for individual positions / 接收单个持仓的盈亏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-pl-request-for-individual-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel P&amp;L request for individual positions / 取消单个持仓的盈亏请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-pl-for-accounts-pl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request P&amp;L for accounts / 请求账户的 P&amp;L 信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-pl-for-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive P&amp;L for accounts / 接收账户盈亏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-pl-subscription-requests-for-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel P&amp;L subscription requests for accounts / 取消账户的盈亏订阅请求
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-branding-user-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Branding User Info / 白标用户信息
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Branding User Info / 白标用户信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-white-branding-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requesting White Branding Info / 请求白色品牌信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-white-branding-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving White Branding Info / 接收白标品牌信息
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tws-api-documentation-tws-api">TWS API Documentation / TWS API 文档</h1>
+<h2 id="account-portfolio-data">Account &amp; Portfolio Data / 账户与投资组合数据</h2>
+<p>The IBApi.EClient.reqAccountSummary method creates a subscription for the account data displayed in the TWS Account Summary window. It is commonly used with multiple-account structures. Introducing broker (IBroker) accounts with more than 50 subaccounts or configured for on-demand account lookup cannot use reqAccountSummary with group=”All”. A profile name can be accepted in place of group. See Unification of Groups and Profiles.</p>
+<p>IBApi.EClient.reqAccountSummary 方法为 TWS 账户摘要窗口中显示的账户数据创建订阅。它通常用于多账户结构。引入经纪人（IBroker）账户有超过 50 个子账户或配置为按需账户查找的账户不能通过 group=”All” 来使用 reqAccountSummary。可以用配置文件名代替组名。参见组和配置文件的统一。</p>
+<p>The TWS offers a comprehensive overview of your account and portfolio through its Account and Portfolio windows. This information can be obtained via the TWS API through three different kind of requests/operations.</p>
+<p>TWS 通过其账户和投资组合窗口为您提供账户和投资组合综合概览。这些信息可以使用 TWS API 通过三种不同类型的请求/操作获得。</p>
+<h3 id="account-summary">Account Summary / 账户摘要</h3>
+<p>The initial invocation of reqAccountSummary will result in a list of all requested values being returned, and then every three minutes those values which have changed will be returned. The update frequency of 3 minutes is the same as the TWS Account Window and cannot be changed.</p>
+<p>首次调用 reqAccountSummary 将返回所有请求值的列表，然后每三分钟返回已更改的值。3 分钟更新频率与 TWS 账户窗口相同，无法更改。</p>
+<h4 id="requesting-account-summary">Requesting Account Summary / 请求账户摘要</h4>
+<p>Requests a specific account’s summary. This method will subscribe to the account summary as presented in the TWS’ Account Summary tab. Customers can specify the data received by using a specific tags value. See the Account Summary Tags section for available options.</p>
+<p>请求特定账户的摘要。此方法将订阅 TWS 账户摘要标签中显示的账户摘要。客户可以使用特定的标签值来指定接收的数据。有关可用选项，请参阅账户摘要标签部分。</p>
+<p>Alternatively, many languages offer the import of AccountSummaryTags with a method to retrieve all tag values.</p>
+<p>或者，许多语言提供了导入 AccountSummaryTags 的方法，可以检索所有标签值。</p>
+<pre><code>EClient.reqAccountSummary (
+
+    reqId: int. The unique request identifier.
+    reqId: int. 唯一请求标识符。
+
+    group: String. set to “All” to return account summary data for all accounts, or set to a specific Advisor Account Group name that has already been created in TWS Global Configuration.
+    group: String. 设置为“所有”以返回所有账户的账户摘要数据，或设置为已在 TWS 全局配置中创建的特定顾问账户组名称。
+
+    tags: String. A comma separated list with the desired tags
+    tags: String. 以逗号分隔的所需标签列表
+
+)
+</code></pre>
+<blockquote>
+<p><a href="https://www.interactivebrokers.com/campus/ibkr-api-page/twsapi-doc/#account-summary-tags">desired tags</a></p>
+</blockquote>
+<p>Important: only two active summary subscriptions are allowed at a time!</p>
+<p>重要提示：同一时间只允许有两个活跃的摘要订阅！</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="requesting-account-summary-Python" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="requesting-account-summary-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqAccountSummary</span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span> <span class="n">AccountSummaryTags</span><span class="o">.</span><span class="n">AllTags</span><span class="p">)</span>
+</code></pre></div>
+<p>Code example:<br />
+代码示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.contract</span><span class="w"> </span><span class="kn">import</span> <span class="n">Contract</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TradeApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> 
+    <span class="k">def</span><span class="w"> </span><span class="nf">accountSummary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountSummary. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span><span class="s2">&quot;Tag: &quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">accountSummaryEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountSummaryEnd. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradeApp</span><span class="p">()</span>      
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">reqAccountSummary</span><span class="p">(</span><span class="mi">9001</span><span class="p">,</span> <span class="s2">&quot;All&quot;</span><span class="p">,</span> <span class="s1">&#39;NetLiquidation&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="account-summary-tags">Account Summary Tags / 账户摘要标签</h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccountType</td>
+<td>Identifies the IB account structure</td>
+</tr>
+<tr>
+<td>账户类型</td>
+<td>识别 IB 账户结构</td>
+</tr>
+<tr>
+<td>NetLiquidation</td>
+<td>The basis for determining the price of the assets in your account. Total cash value + stock value + options value + bond value</td>
+</tr>
+<tr>
+<td>净清算</td>
+<td>确定您账户中资产价格的基础。总现金价值 + 股票价值 + 期权价值 + 债券价值</td>
+</tr>
+<tr>
+<td>TotalCashValue</td>
+<td>Total cash balance recognized at the time of trade + futures PNL</td>
+</tr>
+<tr>
+<td>总现金价值</td>
+<td>交易时确认的现金余额 + 期货盈亏</td>
+</tr>
+<tr>
+<td>SettledCash</td>
+<td>Cash recognized at the time of settlement – purchases at the time of trade – commissions – taxes – fees</td>
+</tr>
+<tr>
+<td>结算现金</td>
+<td>结算时确认的现金 - 交易时购买 - 手续费 - 税费 - 费用</td>
+</tr>
+<tr>
+<td>AccruedCash</td>
+<td>Total accrued cash value of stock, commodities and securities</td>
+</tr>
+<tr>
+<td>应计现金</td>
+<td>股票、商品和证券的应计现金总额</td>
+</tr>
+<tr>
+<td>BuyingPower</td>
+<td>Buying power serves as a measurement of the dollar value of securities that one may purchase in a securities account without depositing additional funds</td>
+</tr>
+<tr>
+<td>购买力</td>
+<td>购买力是衡量在证券账户中无需追加资金即可购买证券的美元价值的一种指标</td>
+</tr>
+<tr>
+<td>EquityWithLoanValue</td>
+<td>Forms the basis for determining whether a client has the necessary assets to either initiate or maintain security positions. Cash + stocks + bonds + mutual funds</td>
+</tr>
+<tr>
+<td>可交易股本与贷款价值</td>
+<td>作为判断客户是否拥有必要资产以启动或维持担保头寸的基础。现金 + 股票 + 债券 + 共同基金</td>
+</tr>
+<tr>
+<td>PreviousEquityWithLoanValue</td>
+<td>Marginable Equity with Loan value as of 16:00 ET the previous day</td>
+</tr>
+<tr>
+<td></td>
+<td>前一日东部时间 16:00 的具有贷款价值的可交易股本</td>
+</tr>
+<tr>
+<td>GrossPositionValue</td>
+<td>The sum of the absolute value of all stock and equity option positions</td>
+</tr>
+<tr>
+<td></td>
+<td>所有股票和股票期权头寸的绝对值之和</td>
+</tr>
+<tr>
+<td>RegTEquity</td>
+<td>Regulation T equity for universal account</td>
+</tr>
+<tr>
+<td></td>
+<td>通用账户的 T 法规股权</td>
+</tr>
+<tr>
+<td>RegTMargin</td>
+<td>Regulation T margin for universal account</td>
+</tr>
+<tr>
+<td></td>
+<td>通用账户的 T 法规保证金</td>
+</tr>
+<tr>
+<td>SMA</td>
+<td>Special Memorandum Account: Line of credit created when the market value of securities in a Regulation T account increase in value</td>
+</tr>
+<tr>
+<td>特殊备忘账户</td>
+<td>特殊备忘账户：当 T 法规账户中证券的市场价值增加时创建的信贷额度</td>
+</tr>
+<tr>
+<td>InitMarginReq</td>
+<td>Initial Margin requirement of whole portfolio</td>
+</tr>
+<tr>
+<td>初始保证金要求</td>
+<td>整个投资组合的初始保证金要求</td>
+</tr>
+<tr>
+<td>MaintMarginReq</td>
+<td>Maintenance Margin requirement of whole portfolio</td>
+</tr>
+<tr>
+<td>维持保证金要求</td>
+<td>整个投资组合的维持保证金要求</td>
+</tr>
+<tr>
+<td>AvailableFunds</td>
+<td>This value tells what you have available for trading</td>
+</tr>
+<tr>
+<td>可用资金</td>
+<td>这个值告诉你可用于交易的金额</td>
+</tr>
+<tr>
+<td>ExcessLiquidity</td>
+<td>This value shows your margin cushion, before liquidation</td>
+</tr>
+<tr>
+<td>超额流动性</td>
+<td>这个值显示你在被清算前的保证金缓冲</td>
+</tr>
+<tr>
+<td>Cushion</td>
+<td>Excess liquidity as a percentage of net liquidation value</td>
+</tr>
+<tr>
+<td>超额流动性占净资产清算价值的百分比</td>
+<td>超额流动性占净资产清算价值的百分比</td>
+</tr>
+<tr>
+<td>FullInitMarginReq</td>
+<td>Initial Margin of whole portfolio with no discounts or intraday credits</td>
+</tr>
+<tr>
+<td></td>
+<td>无折扣或日内信贷的整个投资组合初始保证金</td>
+</tr>
+<tr>
+<td>FullMaintMarginReq</td>
+<td>Maintenance Margin of whole portfolio with no discounts or intraday credits</td>
+</tr>
+<tr>
+<td></td>
+<td>全组合无折扣或日内信贷的维持保证金</td>
+</tr>
+<tr>
+<td>FullAvailableFunds</td>
+<td>Available funds of whole portfolio with no discounts or intraday credits</td>
+</tr>
+<tr>
+<td>全可用资金</td>
+<td>全组合无折扣或日内信贷的可用资金</td>
+</tr>
+<tr>
+<td>FullExcessLiquidity</td>
+<td>Excess liquidity of whole portfolio with no discounts or intraday credits</td>
+</tr>
+<tr>
+<td>全超额流动性</td>
+<td>全组合多余流动性，无折扣或日内信用</td>
+</tr>
+<tr>
+<td>LookAheadNextChange</td>
+<td>Time when look-ahead values take effect</td>
+</tr>
+<tr>
+<td></td>
+<td>LookAhead 值生效的时间</td>
+</tr>
+<tr>
+<td>LookAheadInitMarginReq</td>
+<td>Initial Margin requirement of whole portfolio as of next period’s margin change</td>
+</tr>
+<tr>
+<td></td>
+<td>下一周期保证金变更时的整个投资组合初始保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadMaintMarginReq</td>
+<td>Maintenance Margin requirement of whole portfolio as of next period’s margin change</td>
+</tr>
+<tr>
+<td></td>
+<td>下一周期保证金变更时的整个投资组合维持保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadAvailableFunds</td>
+<td>This value reflects your available funds at the next margin change</td>
+</tr>
+<tr>
+<td></td>
+<td>这个值反映了你在下次保证金变动时的可用资金</td>
+</tr>
+<tr>
+<td>LookAheadExcessLiquidity</td>
+<td>This value reflects your excess liquidity at the next margin change</td>
+</tr>
+<tr>
+<td></td>
+<td>这个值反映了你在下次保证金变动时的超额流动性</td>
+</tr>
+<tr>
+<td>HighestSeverity</td>
+<td>A measure of how close the account is to liquidation</td>
+</tr>
+<tr>
+<td></td>
+<td>衡量账户接近清算的程度</td>
+</tr>
+<tr>
+<td>DayTradesRemaining</td>
+<td>The Number of Open/Close trades a user could put on before Pattern Day Trading is detected. A value of “-1” means that the user can put on unlimited day trades.</td>
+</tr>
+<tr>
+<td>剩余日内交易次数</td>
+<td>用户在检测到模式日内交易前可以进行的开/平仓交易数量。-1 表示用户可以进行无限次的日内交易。</td>
+</tr>
+<tr>
+<td>Leverage</td>
+<td>GrossPositionValue / NetLiquidation</td>
+</tr>
+<tr>
+<td>杠杆</td>
+<td>总持仓价值 / 净清算价值</td>
+</tr>
+<tr>
+<td>$LEDGER</td>
+<td>Single flag to relay all cash balance tags*, only in base currency.</td>
+</tr>
+<tr>
+<td></td>
+<td>单一标志位用于传递所有现金余额标签*，仅为基础货币。</td>
+</tr>
+<tr>
+<td>$LEDGER:CURRENCY</td>
+<td>Single flag to relay all cash balance tags*, only in the specified currency.</td>
+</tr>
+<tr>
+<td></td>
+<td>单个标志用于转发所有现金余额标签*，仅限于指定货币。</td>
+</tr>
+<tr>
+<td>$LEDGER:ALL</td>
+<td>Single flag to relay all cash balance tags* in all currencies.</td>
+</tr>
+<tr>
+<td></td>
+<td>单个标志用于转发所有货币中的所有现金余额标签*。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="receiving-account-summary">Receiving Account Summary / 接收账户摘要</h4>
+<pre><code>EWrapper.accountSummary (
+
+    reqId: int. the request’s unique identifier.
+    reqId: int. 请求的唯一标识符。
+
+    account: String. the account id
+    account: String. 账户 ID
+
+    tag: String. the account’s attribute being received.
+    tag: String. 接收到的账户属性。
+
+    value: String. the account’s attribute’s value.
+    value: String. 账户属性的值。
+
+    currency: String. the currency on which the value is expressed.
+    currency: String. 表示值的货币。
+
+)
+</code></pre>
+<p>Receives the account information. This method will receive the account information just as it appears in the TWS’ Account Summary Window.</p>
+<p>接收账户信息。此方法将接收与 TWS 账户摘要窗口中显示的账户信息完全相同的账户信息。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="receiving-account-summary-Python" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="receiving-account-summary-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">accountSummary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountSummary. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span><span class="s2">&quot;Tag: &quot;</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">)</span>
+</code></pre></div>
+<p>EWrapper.accountSummaryEnd(</p>
+<pre><code>reqId: String. The request’s identifier.
+reqId: String. 请求的标识符。
+</code></pre>
+<p>)</p>
+</div>
+</div>
+</div>
+<p>Notifies when all the accounts’ information has ben received. Requires TWS 967+ to receive accountSummaryEnd in linked account structures.</p>
+<p>当所有账户信息已接收时通知。需要 TWS 967+ 才能在关联账户结构中接收 accountSummaryEnd。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="receiving-account-summary-Python_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="receiving-account-summary-Python_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">accountSummaryEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountSummaryEnd. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancel-account-summary">Cancel Account Summary / 取消账户摘要</h4>
+<p>Once the subscription to account summary is no longer needed, it can be cancelled via the IBApi::EClient::cancelAccountSummary method:</p>
+<p>一旦不再需要订阅账户摘要，可以通过 IBApi::EClient::cancelAccountSummary 方法取消：</p>
+<pre><code>EClient.cancelAccountSummary (
+
+    reqId: int. The identifier of the previously performed account request
+    reqId: int. 之前执行过的账户请求的标识符
+
+)
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="cancel-account-summary-Python" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="cancel-account-summary-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">cancelAccountSummary</span><span class="p">(</span><span class="mi">9001</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="account-updates">Account Updates / 账户更新</h3>
+<p>The IBApi.EClient.reqAccountUpdates function creates a subscription to the TWS through which account and portfolio information is delivered. This information is the exact same as the one displayed within the TWS’ Account Window. Just as with the TWS’ Account Window, unless there is a position change this information is updated at a fixed interval of three minutes.</p>
+<p>IBApi.EClient.reqAccountUpdates 函数通过创建对 TWS 的订阅来获取账户和投资组合信息。这些信息与 TWS 账户窗口中显示的信息完全相同。与 TWS 账户窗口一样，除非出现头寸变动，否则这些信息会以固定的三分钟间隔更新。</p>
+<p>Unrealized and Realized P&amp;L is sent to the API function IBApi.EWrapper.updateAccountValue function after a subscription request is made with IBApi.EClient.reqAccountUpdates. This information corresponds to the data in the TWS Account Window, and has a different source of information, a different update frequency, and different reset schedule than PnL data in the TWS Portfolio Window and associated API functions (below). In particular, the unrealized P&amp;L information shown in the TWS Account Window which is sent to EWrapper.updatePortfolio will update either (1) when a trade for that particular instrument occurs or (2) every 3 minutes. The realized P&amp;L data in the TWS Account Window is reset to 0 once per day.</p>
+<p>在通过 IBApi.EClient.reqAccountUpdates 发出订阅请求后，未实现盈亏和已实现盈亏会发送到 API 函数 IBApi.EWrapper.updateAccountValue。这些信息与 TWS 账户窗口中的数据相对应，但信息来源、更新频率和重置计划与 TWS 投资组合窗口和关联 API 函数（下文）中的盈亏数据不同。特别是，TWS 账户窗口中发送到 EWrapper.updatePortfolio 的未实现盈亏信息会在 (1) 该特定工具发生交易时，或 (2) 每 3 分钟更新。TWS 账户窗口中的已实现盈亏数据每天重置为 0。</p>
+<p>It is important to keep in mind that the P&amp;L data shown in the Account Window and Portfolio Window will sometimes differ because there is a different source of information and a different reset schedule.</p>
+<p>要记住的是，账户窗口和投资组合窗口中显示的盈亏数据有时会因信息来源不同和重置时间表不同而有所差异。</p>
+<p>See <a href="https://www.interactivebrokers.com/campus/ibkr-api-page/twsapi-doc/#pnl">Profit &amp; Loss</a> for alternative PnL data</p>
+<p>另请参阅盈亏以获取替代盈亏数据</p>
+<h4 id="requesting-account-updates">Requesting Account Updates / 请求账户更新</h4>
+<p>Subscribes to a specific account’s information and portfolio. Through this method, a single account’s subscription can be started/stopped. As a result from the subscription, the account’s information, portfolio and last update time will be received at EWrapper.updateAccountValue, EWrapper.updatePortfolio, EWrapper.updateAccountTime respectively. All account values and positions will be returned initially, and then there will only be updates when there is a change in a position, or to an account value every 3 minutes if it has changed. Only one account can be subscribed at a time. A second subscription request for another account when the previous one is still active will cause the first one to be canceled in favor of the second one.</p>
+<p>订阅特定账户的信息和投资组合。通过此方法，可以开始/停止单个账户的订阅。订阅的结果将在 EWrapper.updateAccountValue、EWrapper.updatePortfolio、EWrapper.updateAccountTime 中分别接收账户信息、投资组合和最后更新时间。所有账户价值和头寸将最初返回，然后只有在头寸发生变化时，或账户价值每 3 分钟变化时才会更新。一次只能订阅一个账户。当之前的订阅仍然活跃时，对另一个账户的第二个订阅请求将导致第一个订阅被取消，以支持第二个订阅。</p>
+<pre><code>EClient.reqAccountUpdates (
+
+    subscribe: bool. Set to true to start the subscription and to false to stop it.
+    subscribe: bool. 设置为 true 以开始订阅，设置为 false 以停止订阅。
+
+    acctCode: String. The account id (i.e. U123456) for which the information is requested.
+    acctCode: String. 请求信息的账户 id（例如 U123456）。
+
+)
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="requesting-account-updates-Python" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="requesting-account-updates-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqAccountUpdates</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">account</span><span class="p">)</span>
+</code></pre></div>
+<p>Code example:  代码示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.contract</span><span class="w"> </span><span class="kn">import</span> <span class="n">Contract</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TradeApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> 
+    <span class="k">def</span><span class="w"> </span><span class="nf">updateAccountValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdateAccountValue. Key:&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="s2">&quot;AccountName:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">updatePortfolio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span><span class="n">marketPrice</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">marketValue</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">averageCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPNL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPNL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdatePortfolio.&quot;</span><span class="p">,</span> <span class="s2">&quot;Symbol:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="s2">&quot;SecType:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="o">.</span><span class="n">secType</span><span class="p">,</span> <span class="s2">&quot;Exchange:&quot;</span><span class="p">,</span><span class="n">contract</span><span class="o">.</span><span class="n">exchange</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">decimalMaxString</span><span class="p">(</span><span class="n">position</span><span class="p">),</span> <span class="s2">&quot;MarketPrice:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">marketPrice</span><span class="p">),</span><span class="s2">&quot;MarketValue:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">marketValue</span><span class="p">),</span> <span class="s2">&quot;AverageCost:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">averageCost</span><span class="p">),</span> <span class="s2">&quot;UnrealizedPNL:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">unrealizedPNL</span><span class="p">),</span> <span class="s2">&quot;RealizedPNL:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">realizedPNL</span><span class="p">),</span> <span class="s2">&quot;AccountName:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">updateAccountTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeStamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdateAccountTime. Time:&quot;</span><span class="p">,</span> <span class="n">timeStamp</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accountDownloadEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountDownloadEnd. Account:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradeApp</span><span class="p">()</span>      
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">reqAccountUpdates</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;U123456&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="receiving-account-updates">Receiving Account Updates / 接收账户更新</h4>
+<p>Resulting account and portfolio information will be delivered via the IBApi.EWrapper.updateAccountValue, IBApi.EWrapper.updatePortfolio, IBApi.EWrapper.updateAccountTime and IBApi.EWrapper.accountDownloadEnd</p>
+<p>结果账户和投资组合信息将通过 IBApi.EWrapper.updateAccountValue、IBApi.EWrapper.updatePortfolio、IBApi.EWrapper.updateAccountTime 和 IBApi.EWrapper.accountDownloadEnd 传递</p>
+<pre><code>EWrapper.updateAccountValue (
+
+    key: String. The value being updated.
+    key: String. 要更新的值。
+
+    value: String. up-to-date value
+    value: String. 最新值
+
+    currency: String. The currency on which the value is expressed.
+    currency: String. 表示该值的货币。
+
+    accountName: String. The account identifier.
+    accountName: String. 账户标识符。
+)
+</code></pre>
+<p>Receives the subscribed account’s information. Only one account can be subscribed at a time. After the initial callback to updateAccountValue, callbacks only occur for values which have changed. This occurs at the time of a position change, or every 3 minutes at most. This frequency cannot be adjusted.</p>
+<p>接收订阅账户的信息。一次只能订阅一个账户。在首次调用 updateAccountValue 进行回调后，只有值发生变化时才会进行回调。这发生在仓位变化时，或最多每 3 分钟一次。此频率不可调整。</p>
+<p>Note: An important key passed back in EWrapper.updateAccountValue after a call to EClient.reqAccountUpdates is a boolean value ‘accountReady’. If an accountReady value of false is returned that means that the IB server is in the process of resetting at that moment, i.e. the account is ‘not ready’. When this occurs subsequent key values returned to EWrapper.updateAccountValue in the current update can be out of date or incorrect.</p>
+<p>注意：在调用 EClient.reqAccountUpdates 后，EWrapper.updateAccountValue 返回的一个重要键值是一个布尔值“accountReady”。如果返回的 accountReady 值为 false，则表示 IB 服务器正在此时重置，即账户“未就绪”。在这种情况下，当前更新中返回到 EWrapper.updateAccountValue 的后续键值可能已过时或不正确。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="receiving-account-updates-Python" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">updateAccountValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span><span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdateAccountValue. Key:&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="s2">&quot;AccountName:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">EWrapper</span><span class="o">.</span><span class="n">updatePortfolio</span> <span class="p">(</span>
+
+    <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="o">.</span> <span class="n">The</span> <span class="n">Contract</span> <span class="k">for</span> <span class="n">which</span> <span class="n">a</span> <span class="n">position</span> <span class="ow">is</span> <span class="n">held</span><span class="o">.</span>
+    <span class="n">合约</span><span class="err">：</span><span class="n">合约</span><span class="err">。</span><span class="n">指持有的合约</span><span class="err">。</span>
+
+    <span class="n">position</span><span class="p">:</span> <span class="n">Decimal</span><span class="o">.</span> <span class="n">The</span> <span class="n">number</span> <span class="n">of</span> <span class="n">positions</span> <span class="n">held</span><span class="o">.</span>
+    <span class="n">仓位</span><span class="err">：</span><span class="n">十进制数</span><span class="err">。</span><span class="n">持有的仓位数量</span><span class="err">。</span>
+
+    <span class="n">marketPrice</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">The</span> <span class="n">instrument</span><span class="err">’</span><span class="n">s</span> <span class="n">unitary</span> <span class="n">price</span>
+    <span class="n">市场价格</span><span class="err">：</span><span class="n">双精度浮点数</span><span class="err">。</span><span class="n">该工具的单位价格</span><span class="err">。</span>
+
+    <span class="n">marketValue</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">Total</span> <span class="n">market</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">instrument</span><span class="o">.</span>
+    <span class="n">市场价值</span><span class="err">：</span><span class="n">双精度浮点数</span><span class="err">。</span><span class="n">该工具的总市场价值</span><span class="err">。</span>
+
+    <span class="n">averageCost</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">Average</span> <span class="n">cost</span> <span class="n">of</span> <span class="n">the</span> <span class="n">overall</span> <span class="n">position</span><span class="o">.</span>
+    <span class="n">averageCost</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">平均持仓成本</span><span class="err">。</span>
+
+    <span class="n">unrealizedPNL</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">Daily</span> <span class="n">unrealized</span> <span class="n">profit</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">on</span> <span class="n">the</span> <span class="n">position</span><span class="o">.</span>
+    <span class="n">unrealizedPNL</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">持仓每日未实现盈亏</span><span class="err">。</span>
+
+    <span class="n">realizedPNL</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">Daily</span> <span class="n">realized</span> <span class="n">profit</span> <span class="ow">and</span> <span class="n">loss</span> <span class="n">on</span> <span class="n">the</span> <span class="n">position</span><span class="o">.</span>
+    <span class="n">realizedPNL</span><span class="p">:</span> <span class="n">Double</span><span class="o">.</span> <span class="n">持仓每日已实现盈亏</span><span class="err">。</span>
+
+    <span class="n">accountName</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">Account</span> <span class="n">ID</span> <span class="k">for</span> <span class="n">the</span> <span class="n">update</span><span class="o">.</span>
+    <span class="n">accountName</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">更新的账户</span> <span class="n">ID</span><span class="err">。</span>
+
+<span class="p">)</span>
+</code></pre></div>
+<p>Receives the subscribed account’s portfolio. This function will receive only the portfolio of the subscribed account. After the initial callback to updatePortfolio, callbacks only occur for positions which have changed.</p>
+<p>接收订阅账户的投资组合。此函数仅接收订阅账户的投资组合。在首次调用 updatePortfolio 后，回调仅发生在发生变化的持仓上。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="receiving-account-updates-Python_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-Python_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">updatePortfolio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span><span class="n">marketPrice</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">marketValue</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">averageCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPNL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPNL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdatePortfolio.&quot;</span><span class="p">,</span> <span class="s2">&quot;Symbol:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="s2">&quot;SecType:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="o">.</span><span class="n">secType</span><span class="p">,</span> <span class="s2">&quot;Exchange:&quot;</span><span class="p">,</span><span class="n">contract</span><span class="o">.</span><span class="n">exchange</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">decimalMaxString</span><span class="p">(</span><span class="n">position</span><span class="p">),</span> <span class="s2">&quot;MarketPrice:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">marketPrice</span><span class="p">),</span><span class="s2">&quot;MarketValue:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">marketValue</span><span class="p">),</span> <span class="s2">&quot;AverageCost:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">averageCost</span><span class="p">),</span> <span class="s2">&quot;UnrealizedPNL:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">unrealizedPNL</span><span class="p">),</span> <span class="s2">&quot;RealizedPNL:&quot;</span><span class="p">,</span> <span class="n">floatMaxString</span><span class="p">(</span><span class="n">realizedPNL</span><span class="p">),</span> <span class="s2">&quot;AccountName:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">EWrapper</span><span class="o">.</span><span class="n">updateAccountTime</span> <span class="p">(</span>
+
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">the</span> <span class="n">last</span> <span class="n">update</span> <span class="n">system</span> <span class="n">time</span><span class="o">.</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">最后一次更新系统时间</span><span class="err">。</span>
+
+<span class="p">)</span>
+</code></pre></div>
+<p>Receives the last time on which the account was updated.</p>
+<p>接收账户最后更新的时间。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="receiving-account-updates-Python_2" name="__tabbed_8" type="radio" /><input id="receiving-account-updates-Python_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-Python_2">Python</label><label for="receiving-account-updates-Python_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">updateAccountTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeStamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;UpdateAccountTime. Time:&quot;</span><span class="p">,</span> <span class="n">timeStamp</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">EWrapper</span><span class="o">.</span><span class="n">accountDownloadEnd</span> <span class="p">(</span>
+
+    <span class="n">account</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">The</span> <span class="n">account</span> <span class="n">identifier</span><span class="o">.</span>
+    <span class="n">account</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">账户标识符</span><span class="err">。</span>
+
+<span class="p">)</span>
+</code></pre></div>
+<p>Notifies when all the account’s information has finished.</p>
+<p>当所有账户信息下载完成后通知。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="receiving-account-updates-Python_4" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-Python_4">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">accountDownloadEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accountName</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountDownloadEnd. Account:&quot;</span><span class="p">,</span> <span class="n">accountName</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="account-value-keys">Account Value Keys / 账户值的键</h4>
+<p>When requesting <a href="https://www.interactivebrokers.com/campus/ibkr-api-page/trader-workstation-api/#request-account-updates">reqAccountUpdates</a> customers will receive values corresponding to various account key/value pairs. The table below documents potential responses and what they mean.</p>
+<p>当请求 reqAccountUpdates 时，客户将收到与各种账户键/值对相对应的值。下表记录了潜在的响应及其含义。</p>
+<p>Account values delivered via <a href="https://www.interactivebrokers.com/campus/ibkr-api-page/trader-workstation-api/#receive-account-updates">IBApi.EWrapper.updateAccountValue</a> can be classified in the following way:</p>
+<p>通过 IBApi.EWrapper.updateAccountValue 传递的账户价值可以按以下方式分类：</p>
+<ul>
+<li>
+<p>Commodities: suffixed by a “-C”</p>
+<p>商品：以“-C”为后缀</p>
+</li>
+<li>
+<p>Securities: suffixed by a “-S”</p>
+<p>证券：以“-S”为后缀</p>
+</li>
+<li>
+<p>Totals: no suffix</p>
+<p>总计：无后缀</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>键</th>
+<th>Description</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccountCode</td>
+<td>账户代码</td>
+<td>The account ID number</td>
+<td>账户 ID 号码</td>
+</tr>
+<tr>
+<td>AccountOrGroup</td>
+<td>账户或组</td>
+<td>“All” to return account summary data for all accounts, or set to a specific Advisor Account Group name that has already been created in TWS Global Configuration</td>
+<td>“全部”以返回所有账户的账户摘要数据，或设置为 TWS 全局配置中已创建的特定顾问账户组名称</td>
+</tr>
+<tr>
+<td>AccountReady</td>
+<td>账户就绪</td>
+<td>If an accountReady value of false is returned that means that the IB server is in the process of resetting at that moment, i.e. the account is ‘not ready’. When this occurs subsequent key values returned to EWrapper.updateAccountValue in the current update can be out of date or incorrect.</td>
+<td>如果返回的 accountReady 值为 false，则表示 IB 服务器正在此时重置中，即账户“未就绪”。当这种情况发生时，当前更新中返回到 EWrapper.updateAccountValue 的后续键值可能已过时或不正确。</td>
+</tr>
+<tr>
+<td>AccountType</td>
+<td>账户类型</td>
+<td>Identifies the IB account structure</td>
+<td>标识 IB 账户结构</td>
+</tr>
+<tr>
+<td>AccruedCash</td>
+<td></td>
+<td>Total accrued cash value of stock, commodities and securities</td>
+<td>股票、商品和证券的累计现金总额</td>
+</tr>
+<tr>
+<td>AccruedCash-C</td>
+<td>应计现金-C</td>
+<td>Reflects the current’s month accrued debit and credit interest to date, updated daily in commodity segment</td>
+<td>反映当前月份累计的借方和贷方利息至当前日期，在商品板块每日更新</td>
+</tr>
+<tr>
+<td>AccruedCash-S</td>
+<td>累计现金-S</td>
+<td>Reflects the current’s month accrued debit and credit interest to date, updated daily in security segment</td>
+<td>反映当前月份累计的借方和贷方利息至当前日期，在证券板块每日更新</td>
+</tr>
+<tr>
+<td>AccruedDividend</td>
+<td>应计股息</td>
+<td>Total portfolio value of dividends accrued</td>
+<td>应计股息的总投资组合价值</td>
+</tr>
+<tr>
+<td>AccruedDividend-C</td>
+<td>应计股息-C</td>
+<td>Dividends accrued but not paid in commodity segment</td>
+<td>商品板块中已应计但未支付的股息</td>
+</tr>
+<tr>
+<td>AccruedDividend-S</td>
+<td>应计股息-S</td>
+<td>Dividends accrued but not paid in security segment</td>
+<td>已计但未支付的证券部分股息</td>
+</tr>
+<tr>
+<td>AvailableFunds</td>
+<td>可用资金</td>
+<td>This value tells what you have available for trading</td>
+<td>此值显示您可用于交易的金额</td>
+</tr>
+<tr>
+<td>AvailableFunds-C</td>
+<td>可用资金-C</td>
+<td>Net Liquidation Value – Initial Margin</td>
+<td>净清算价值 - 初始保证金</td>
+</tr>
+<tr>
+<td>AvailableFunds-S</td>
+<td>可用资金-S</td>
+<td>Equity with Loan Value – Initial Margin</td>
+<td>含贷款价值的股东权益 - 初始保证金</td>
+</tr>
+<tr>
+<td>Billable</td>
+<td>可计费</td>
+<td>Total portfolio value of treasury bills</td>
+<td>国库券总投资组合价值</td>
+</tr>
+<tr>
+<td>Billable-C</td>
+<td>可收费-C</td>
+<td>Value of treasury bills in commodity segment</td>
+<td>商品板块的国债价值</td>
+</tr>
+<tr>
+<td>Billable-S</td>
+<td>可收费-S</td>
+<td>Value of treasury bills in security segment</td>
+<td>证券部门国库券的价值</td>
+</tr>
+<tr>
+<td>BuyingPower</td>
+<td>买入资金</td>
+<td>Cash Account: Minimum (Equity with Loan Value, Previous Day Equity with Loan Value)-Initial Margin, Standard Margin Account: Minimum (Equity with Loan Value, Previous Day Equity with Loan Value) – Initial Margin *4</td>
+<td>现金账户：最低（含贷款价值的权益，前一日含贷款价值的权益）-初始保证金，标准保证金账户：最低（含贷款价值的权益，前一日含贷款价值的权益）-初始保证金*4</td>
+</tr>
+<tr>
+<td>CashBalance</td>
+<td>现金余额</td>
+<td>Cash recognized at the time of trade + futures PNL</td>
+<td>交易时确认的现金+期货盈亏</td>
+</tr>
+<tr>
+<td>CorporateBondValue</td>
+<td>公司债券价值</td>
+<td>Value of non-Government bonds such as corporate bonds and municipal bonds</td>
+<td>公司债券和市政债券等非政府债券的价值</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>货币</td>
+<td>Open positions are grouped by currency</td>
+<td>持仓按货币分组</td>
+</tr>
+<tr>
+<td>Cushion</td>
+<td>缓冲垫</td>
+<td>Excess liquidity as a percentage of net liquidation value</td>
+<td>净清算价值中过剩流动性的百分比</td>
+</tr>
+<tr>
+<td>DayTradesRemaining</td>
+<td></td>
+<td>Number of Open/Close trades one could do before Pattern Day Trading is detected</td>
+<td>在检测到交易模式前，用户可以进行的开/平仓交易次数</td>
+</tr>
+<tr>
+<td>DayTradesRemainingT+1</td>
+<td></td>
+<td>Number of Open/Close trades one could do tomorrow before Pattern Day Trading is detected</td>
+<td>在检测到交易模式前，用户明天可以进行的开/平仓交易次数</td>
+</tr>
+<tr>
+<td>DayTradesRemainingT+2</td>
+<td></td>
+<td>Number of Open/Close trades one could do two days from today before Pattern Day Trading is detected</td>
+<td>距离今天两天内可以进行的开/平仓交易数量，在此期间未检测到交易模式日交易</td>
+</tr>
+<tr>
+<td>DayTradesRemainingT+3</td>
+<td></td>
+<td>Number of Open/Close trades one could do three days from today before Pattern Day Trading is detected</td>
+<td>距离今天三天内可以进行的开/平仓交易数量，在此期间未检测到交易模式日交易</td>
+</tr>
+<tr>
+<td>DayTradesRemainingT+4</td>
+<td></td>
+<td>Number of Open/Close trades one could do four days from today before Pattern Day Trading is detected</td>
+<td>从今天起的四天内，一个人可以进行的开仓/平仓交易数量，直到检测到模式日交易</td>
+</tr>
+<tr>
+<td>EquityWithLoanValue</td>
+<td></td>
+<td>Forms the basis for determining whether a client has the necessary assets to either initiate or maintain security positions</td>
+<td>用于确定客户是否拥有必要的资产来启动或维持证券头寸的基础</td>
+</tr>
+<tr>
+<td>EquityWithLoanValue-C</td>
+<td>带贷款价值的股票-C</td>
+<td>Cash account: Total cash value + commodities option value – futures maintenance margin requirement + minimum (0, futures PNL) Margin account: Total cash value + commodities option value – futures maintenance margin requirement</td>
+<td>现金账户：总现金价值 + 商品期权价值 - 期货维持保证金要求 + 最小值（0，期货 PNL） 保证金账户：总现金价值 + 商品期权价值 - 期货维持保证金要求</td>
+</tr>
+<tr>
+<td>EquityWithLoanValue-S</td>
+<td>权益加贷款价值-S</td>
+<td>Cash account: Settled Cash Margin Account: Total cash value + stock value + bond value + (non-U.S. &amp; Canada securities options value)</td>
+<td>现金账户：结算现金保证金账户：总现金价值 + 股票价值 + 债券价值 + （非美国和加拿大证券期权价值）</td>
+</tr>
+<tr>
+<td>ExcessLiquidity</td>
+<td>超额流动性</td>
+<td>This value shows your margin cushion, before liquidation</td>
+<td>此值显示您的保证金缓冲，在清算之前</td>
+</tr>
+<tr>
+<td>ExcessLiquidity-C</td>
+<td>超额流动性-C</td>
+<td>Equity with Loan Value – Maintenance Margin</td>
+<td>带贷款价值的股票 – 维持保证金</td>
+</tr>
+<tr>
+<td>ExcessLiquidity-S</td>
+<td>超额流动性-S</td>
+<td>Net Liquidation Value – Maintenance Margin</td>
+<td>净清算价值 – 维持保证金</td>
+</tr>
+<tr>
+<td>ExchangeRate</td>
+<td>汇率</td>
+<td>The exchange rate of the currency to your base currency</td>
+<td>该货币兑您基准货币的汇率</td>
+</tr>
+<tr>
+<td>FullAvailableFunds</td>
+<td>全部可用资金</td>
+<td>Available funds of whole portfolio with no discounts or intraday credits</td>
+<td>整个投资组合的可用资金，无折扣或日内信用</td>
+</tr>
+<tr>
+<td>FullAvailableFunds-C</td>
+<td>全可用资金-C</td>
+<td>Net Liquidation Value – Full Initial Margin</td>
+<td>净清算价值——全额初始保证金</td>
+</tr>
+<tr>
+<td>FullAvailableFunds-S</td>
+<td>全可用资金-S</td>
+<td>Equity with Loan Value – Full Initial Margin</td>
+<td>有贷款价值的股票——全额初始保证金</td>
+</tr>
+<tr>
+<td>FullExcessLiquidity</td>
+<td></td>
+<td>Excess liquidity of whole portfolio with no discounts or intraday credits</td>
+<td>全组合超额流动性（无折扣或日内信用）</td>
+</tr>
+<tr>
+<td>FullExcessLiquidity-C</td>
+<td></td>
+<td>Net Liquidation Value – Full Maintenance Margin</td>
+<td>净清算价值——全额维持保证金</td>
+</tr>
+<tr>
+<td>FullExcessLiquidity-S</td>
+<td></td>
+<td>Equity with Loan Value – Full Maintenance Margin</td>
+<td>带贷款价值的股票 - 完整维持保证金</td>
+</tr>
+<tr>
+<td>FullInitMarginReq</td>
+<td></td>
+<td>Initial Margin of whole portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信贷的整个投资组合初始保证金</td>
+</tr>
+<tr>
+<td>FullInitMarginReq-C</td>
+<td></td>
+<td>Initial Margin of commodity segment’s portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信用商品板块投资组合的初始保证金</td>
+</tr>
+<tr>
+<td>FullInitMarginReq-S</td>
+<td></td>
+<td>Initial Margin of security segment’s portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信用证券板块投资组合的初始保证金</td>
+</tr>
+<tr>
+<td>FullMaintMarginReq</td>
+<td></td>
+<td>Maintenance Margin of whole portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信用额度时的整个投资组合维持保证金</td>
+</tr>
+<tr>
+<td>FullMaintMarginReq-C</td>
+<td></td>
+<td>Maintenance Margin of commodity segment’s portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信用额度时的商品板块投资组合维持保证金</td>
+</tr>
+<tr>
+<td>FullMaintMarginReq-S</td>
+<td></td>
+<td>Maintenance Margin of security segment’s portfolio with no discounts or intraday credits</td>
+<td>无折扣或日内信贷的安全部分投资组合的维持保证金</td>
+</tr>
+<tr>
+<td>FundValue</td>
+<td></td>
+<td>Value of funds value (money market funds + mutual funds)</td>
+<td>资金价值（货币市场基金+共同基金）</td>
+</tr>
+<tr>
+<td>FutureOptionValue</td>
+<td></td>
+<td>Real-time market-to-market value of futures options</td>
+<td>期货期权实时市值</td>
+</tr>
+<tr>
+<td>FuturesPNL</td>
+<td>期货 PNL</td>
+<td>Real-time changes in futures value since last settlement</td>
+<td>自上次结算以来期货价值的实时变化</td>
+</tr>
+<tr>
+<td>FxCashBalance</td>
+<td></td>
+<td>Cash balance in related IB-UKL account</td>
+<td>相关 IB-UKL 账户的现金余额</td>
+</tr>
+<tr>
+<td>GrossPositionValue</td>
+<td></td>
+<td>Gross Position Value in securities segment</td>
+<td>证券部门的毛头寸价值</td>
+</tr>
+<tr>
+<td>GrossPositionValue-S</td>
+<td>总持仓价值-S</td>
+<td>Long Stock Value + Short Stock Value + Long Option Value + Short Option Value</td>
+<td>多头股票价值 + 空头股票价值 + 多头期权价值 + 空头期权价值</td>
+</tr>
+<tr>
+<td>IndianStockHaircut</td>
+<td></td>
+<td>Margin rule for IB-IN accounts</td>
+<td>IB-IN 账户的保证金规则</td>
+</tr>
+<tr>
+<td>InitMarginReq</td>
+<td>初始保证金要求</td>
+<td>Initial Margin requirement of whole portfolio</td>
+<td>全组合初始保证金要求</td>
+</tr>
+<tr>
+<td>InitMarginReq-C</td>
+<td></td>
+<td>Initial Margin of the commodity segment in base currency</td>
+<td>商品板块在基准货币中的初始保证金</td>
+</tr>
+<tr>
+<td>InitMarginReq-S</td>
+<td></td>
+<td>Initial Margin of the security segment in base currency</td>
+<td>证券板块的基础货币初始保证金</td>
+</tr>
+<tr>
+<td>IssuerOptionValue</td>
+<td></td>
+<td>Real-time mark-to-market value of Issued Option</td>
+<td>已发行期权实时盯市价值</td>
+</tr>
+<tr>
+<td>Leverage-S</td>
+<td>杠杆-S</td>
+<td>GrossPositionValue / NetLiquidation in security segment</td>
+<td>证券板块总头寸价值 / 净清算</td>
+</tr>
+<tr>
+<td>LookAheadNextChange</td>
+<td></td>
+<td>Time when look-ahead values take effect</td>
+<td>提前值生效时间</td>
+</tr>
+<tr>
+<td>LookAheadAvailableFunds</td>
+<td></td>
+<td>This value reflects your available funds at the next margin change</td>
+<td>此值反映您在下次保证金变动时的可用资金</td>
+</tr>
+<tr>
+<td>LookAheadAvailableFunds-C</td>
+<td></td>
+<td>Net Liquidation Value – look ahead Initial Margin</td>
+<td>净清算价值——前瞻初始保证金</td>
+</tr>
+<tr>
+<td>LookAheadAvailableFunds-S</td>
+<td>前瞻可用资金-S</td>
+<td>Equity with Loan Value – look ahead Initial Margin</td>
+<td>带贷款价值的股权——前瞻初始保证金</td>
+</tr>
+<tr>
+<td>LookAheadExcessLiquidity</td>
+<td>前瞻超额流动性</td>
+<td>This value reflects your excess liquidity at the next margin change</td>
+<td>这个值反映了您在下次保证金变动时的超额流动性</td>
+</tr>
+<tr>
+<td>LookAheadExcessLiquidity-C</td>
+<td></td>
+<td>Net Liquidation Value – look ahead Maintenance Margin</td>
+<td>净资产清算价值——前瞻性维持保证金</td>
+</tr>
+<tr>
+<td>LookAheadExcessLiquidity-S</td>
+<td></td>
+<td>Equity with Loan Value – look ahead Maintenance Margin</td>
+<td>市值与贷款价值——前瞻性维持保证金</td>
+</tr>
+<tr>
+<td>LookAheadInitMarginReq</td>
+<td></td>
+<td>Initial margin requirement of whole portfolio as of next period’s margin change</td>
+<td>下一周期保证金变更时的整个投资组合初始保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadInitMarginReq-C</td>
+<td></td>
+<td>Initial margin requirement as of next period’s margin change in the base currency of the account</td>
+<td>截至下一周期保证金变更时账户基准货币的初始保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadInitMarginReq-S</td>
+<td></td>
+<td>Initial margin requirement as of next period’s margin change in the base currency of the account</td>
+<td>截至下一周期保证金变更时账户基准货币的初始保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadMaintMarginReq</td>
+<td>前瞻维持保证金需求</td>
+<td>Maintenance margin requirement of whole portfolio as of next period’s margin change</td>
+<td>下一期保证金变更时的整个投资组合维持保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadMaintMarginReq-C</td>
+<td></td>
+<td>Maintenance margin requirement as of next period’s margin change in the base currency of the account</td>
+<td>下一期保证金变更时账户基准货币的维持保证金要求</td>
+</tr>
+<tr>
+<td>LookAheadMaintMarginReq-S</td>
+<td></td>
+<td>Maintenance margin requirement as of next period’s margin change in the base currency of the account</td>
+<td>维持保证金要求，自下一期保证金变更时以账户基准货币计算</td>
+</tr>
+<tr>
+<td>MaintMarginReq</td>
+<td></td>
+<td>Maintenance Margin requirement of whole portfolio</td>
+<td>整个投资组合的维持保证金要求</td>
+</tr>
+<tr>
+<td>MaintMarginReq-C</td>
+<td></td>
+<td>Maintenance Margin for the commodity segment</td>
+<td>商品板块维持保证金</td>
+</tr>
+<tr>
+<td>MaintMarginReq-S</td>
+<td></td>
+<td>Maintenance Margin for the security segment</td>
+<td>证券板块维持保证金</td>
+</tr>
+<tr>
+<td>MoneyMarketFundValue</td>
+<td>货币市场基金价值</td>
+<td>Market value of money market funds excluding mutual funds</td>
+<td>货币市场基金（不包括共同基金）的市场价值</td>
+</tr>
+<tr>
+<td>MutualFundValue</td>
+<td>共同基金价值</td>
+<td>Market value of mutual funds excluding money market funds</td>
+<td>共同基金（不包括货币市场基金）的市场价值</td>
+</tr>
+<tr>
+<td>NetDividend</td>
+<td>净红利</td>
+<td>The sum of the Dividend Payable/Receivable Values for the securities and commodities segments of the account</td>
+<td>证券和商品账户的股息应付/应收值的总和</td>
+</tr>
+<tr>
+<td>NetLiquidation</td>
+<td>净清算</td>
+<td>The basis for determining the price of the assets in your account</td>
+<td>确定您账户中资产价格的基础</td>
+</tr>
+<tr>
+<td>NetLiquidation-C</td>
+<td>净清算-C</td>
+<td>Total cash value + futures PNL + commodities options value</td>
+<td>总现金价值 + 期货盈亏 + 商品期权价值</td>
+</tr>
+<tr>
+<td>NetLiquidation-S</td>
+<td>净清算-S</td>
+<td>Total cash value + stock value + securities options value + bond value</td>
+<td>总现金价值 + 股票价值 + 证券期权价值 + 债券价值</td>
+</tr>
+<tr>
+<td>NetLiquidationByCurrency</td>
+<td>按货币净清算</td>
+<td>Net liquidation for individual currencies</td>
+<td>单个货币的净清算</td>
+</tr>
+<tr>
+<td>OptionMarketValue</td>
+<td>期权市场价值</td>
+<td>Real-time mark-to-market value of options</td>
+<td>期权实时盯市价值</td>
+</tr>
+<tr>
+<td>PASharesValue</td>
+<td></td>
+<td>Personal Account shares value of whole portfolio</td>
+<td>个人账户整个投资组合的股票价值</td>
+</tr>
+<tr>
+<td>PASharesValue-C</td>
+<td></td>
+<td>Personal Account shares value in commodity segment</td>
+<td>个人账户商品板块的股份价值</td>
+</tr>
+<tr>
+<td>PASharesValue-S</td>
+<td></td>
+<td>Personal Account shares value in security segment</td>
+<td>个人账户在证券部分的股份价值</td>
+</tr>
+<tr>
+<td>PostExpirationExcess</td>
+<td></td>
+<td>Total projected “at expiration” excess liquidity</td>
+<td>总预计“到期时”超额流动性</td>
+</tr>
+<tr>
+<td>PostExpirationExcess-C</td>
+<td></td>
+<td>Provides a projected “at expiration” excess liquidity based on the soon-to expire contracts in your portfolio in commodity segment</td>
+<td>基于您投资组合中即将到期的商品板块合约，提供“到期时”超额流动性的预计</td>
+</tr>
+<tr>
+<td>PostExpirationExcess-S</td>
+<td></td>
+<td>Provides a projected “at expiration” excess liquidity based on the soon-to expire contracts in your portfolio in security segment</td>
+<td>根据您投资组合中即将到期的合约，在证券板块提供预计的“到期时”超额流动性</td>
+</tr>
+<tr>
+<td>PostExpirationMargin</td>
+<td></td>
+<td>Total projected “at expiration” margin</td>
+<td>预计的“到期时”总保证金</td>
+</tr>
+<tr>
+<td>PostExpirationMargin-C</td>
+<td></td>
+<td>Provides a projected “at expiration” margin value based on the soon-to expire contracts in your portfolio in commodity segment</td>
+<td>根据您投资组合中即将到期的商品板块合约，提供预计的“到期时”保证金价值</td>
+</tr>
+<tr>
+<td>PostExpirationMargin-S</td>
+<td></td>
+<td>Provides a projected “at expiration” margin value based on the soon-to expire contracts in your portfolio in security segment</td>
+<td>根据您投资组合中即将到期的证券板块合约，提供预计的“到期时”保证金价值</td>
+</tr>
+<tr>
+<td>PreviousDayEquityWithLoanValue</td>
+<td></td>
+<td>Marginable Equity with Loan value as of 16:00 ET the previous day in securities segment</td>
+<td>前一日证券部门截至东部时间 16:00 的含贷款价值的可交易资本</td>
+</tr>
+<tr>
+<td>PreviousDayEquityWithLoanValue-S</td>
+<td></td>
+<td>IMarginable Equity with Loan value as of 16:00 ET the previous day</td>
+<td>前一日东部时间 16:00 的含贷款价值可交易资本</td>
+</tr>
+<tr>
+<td>RealCurrency</td>
+<td>真实货币</td>
+<td>Open positions are grouped by currency</td>
+<td>持仓按货币分组</td>
+</tr>
+<tr>
+<td>RealizedPnL</td>
+<td>已实现盈亏</td>
+<td>Shows your profit on closed positions, which is the difference between your entry execution cost and exit execution costs, or (execution price + commissions to open the positions) – (execution price + commissions to close the position)</td>
+<td>显示已关闭持仓的利润，即入场成交成本与出场成交成本之间的差额，或（成交价+开仓佣金）–（成交价+平仓佣金）</td>
+</tr>
+<tr>
+<td>RegTEquity</td>
+<td></td>
+<td>Regulation T equity for universal account</td>
+<td>通用账户的 Regulation T 股票权益</td>
+</tr>
+<tr>
+<td>RegTEquity-S</td>
+<td></td>
+<td>Regulation T equity for security segment</td>
+<td>证券部分的 Regulation T 股票权益</td>
+</tr>
+<tr>
+<td>RegTMargin</td>
+<td></td>
+<td>Regulation T margin for universal account</td>
+<td>通用账户的 T 法规保证金</td>
+</tr>
+<tr>
+<td>RegTMargin-S</td>
+<td></td>
+<td>Regulation T margin for security segment</td>
+<td>证券部分的 T 法规保证金</td>
+</tr>
+<tr>
+<td>SMA</td>
+<td></td>
+<td>Line of credit created when the market value of securities in a Regulation T account increase in value</td>
+<td>当监管 T 账户中的证券市值增加时产生的信贷额度</td>
+</tr>
+<tr>
+<td>SMA-S</td>
+<td></td>
+<td>Regulation T Special Memorandum Account balance for security segment</td>
+<td>监管 T 特别备忘录账户证券板块的余额</td>
+</tr>
+<tr>
+<td>SegmentTitle</td>
+<td>分段标题</td>
+<td>Account segment name</td>
+<td>账户分段名称</td>
+</tr>
+<tr>
+<td>StockMarketValue</td>
+<td>股票市场价值</td>
+<td>Real-time mark-to-market value of stock</td>
+<td>股票实时盯市价值</td>
+</tr>
+<tr>
+<td>TBondValue</td>
+<td></td>
+<td>Value of treasury bonds</td>
+<td>国债价值</td>
+</tr>
+<tr>
+<td>TBillValue</td>
+<td></td>
+<td>Value of treasury bills</td>
+<td>国库券价值</td>
+</tr>
+<tr>
+<td>TotalCashBalance</td>
+<td>总现金余额</td>
+<td>Total Cash Balance including Future PNL</td>
+<td>包含未来盈亏的总现金余额</td>
+</tr>
+<tr>
+<td>TotalCashValue</td>
+<td>总现金价值</td>
+<td>Total cash value of stock, commodities and securities</td>
+<td>股票、商品和证券的总现金价值</td>
+</tr>
+<tr>
+<td>TotalCashValue-C</td>
+<td>总现金价值-C</td>
+<td>CashBalance in commodity segment</td>
+<td>商品板块现金余额</td>
+</tr>
+<tr>
+<td>TotalCashValue-S</td>
+<td>总现金价值-S</td>
+<td>CashBalance in security segment</td>
+<td>证券部分的现金余额</td>
+</tr>
+<tr>
+<td>TradingType-S</td>
+<td>交易类型-S</td>
+<td>Account Type</td>
+<td>账户类型</td>
+</tr>
+<tr>
+<td>UnrealizedPnL</td>
+<td>未实现盈亏</td>
+<td>The difference between the current market value of your open positions and the average cost, or Value – Average Cost</td>
+<td>您当前持仓的市场价值与平均成本之间的差额，或价值减去平均成本</td>
+</tr>
+<tr>
+<td>WarrantValue</td>
+<td></td>
+<td>Value of warrants</td>
+<td>认股权证的价值</td>
+</tr>
+<tr>
+<td>WhatIfPMEnabled</td>
+<td></td>
+<td>To check projected margin requirements under Portfolio Margin model</td>
+<td>在投资组合保证金模型下检查预计保证金要求</td>
+</tr>
+</tbody>
+</table>
+<h4 id="cancel-account-updates">Cancel Account Updates / 取消账户更新</h4>
+<p>Once the subscription to account updates is no longer needed, it can be cancelled by invoking the IBApi.EClient.reqAccountUpdates method while specifying the subscription flag to be False.</p>
+<p>一旦不再需要订阅账户更新，可以通过调用 IBApi.EClient.reqAccountUpdates 方法并指定订阅标志为 False 来取消订阅。</p>
+<p>Important: only one account at a time can be subscribed at a time. Attempting a second subscription without previously cancelling an active one will not yield any error message although it will override the already subscribed account with the new one. With Financial Advisory (FA) account structures there is an alternative way of specifying the account code such that information is returned for ‘All’ sub accounts- this is done by appending the letter ‘A’ to the end of the account number, i.e. reqAccountUpdates(true, “F123456A”)</p>
+<p>重要提示：一次只能订阅一个账户。如果在取消当前活跃订阅之前尝试进行第二次订阅，虽然不会显示错误消息，但新订阅将覆盖已订阅的账户。对于金融顾问（FA）账户结构，可以通过在账户号码末尾附加字母“A”来指定账户代码，以便返回所有子账户的信息，即 reqAccountUpdates(true, “F123456A”)</p>
+<div class="highlight"><pre><span></span><code><span class="n">EClient</span><span class="o">.</span><span class="n">reqAccountUpdates</span> <span class="p">(</span>
+
+<span class="n">subscribe</span><span class="p">:</span> <span class="nb">bool</span><span class="o">.</span> <span class="n">Set</span> <span class="n">to</span> <span class="n">true</span> <span class="n">to</span> <span class="n">start</span> <span class="n">the</span> <span class="n">subscription</span> <span class="ow">and</span> <span class="n">to</span> <span class="n">false</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">订阅</span><span class="err">：</span><span class="n">布尔值</span><span class="err">。</span><span class="n">设置为</span> <span class="n">true</span> <span class="n">以开始订阅</span><span class="err">，</span><span class="n">设置为</span> <span class="n">false</span> <span class="n">以停止</span><span class="err">。</span>
+
+<span class="n">acctCode</span><span class="p">:</span> <span class="n">String</span><span class="o">.</span> <span class="n">The</span> <span class="n">account</span> <span class="nb">id</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">U123456</span><span class="p">)</span> <span class="k">for</span> <span class="n">which</span> <span class="n">the</span> <span class="n">information</span> <span class="ow">is</span> <span class="n">requested</span><span class="o">.</span>
+<span class="n">acctCode</span><span class="err">：</span><span class="n">字符串</span><span class="err">。</span><span class="n">请求信息的账户</span> <span class="nb">id</span><span class="err">（</span><span class="n">例如</span> <span class="n">U123456</span><span class="err">）。</span>
+
+<span class="p">)</span>
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="cancel-account-updates-Python" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="cancel-account-updates-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqAccountUpdates</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">account</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="account-update-by-model">Account Update by Model / 通过模型更新账户</h3>
+<h4 id="requesting-account-update-by-model">Requesting Account Update by Model / 通过模型请求账户更新</h4>
+<p>The IBApi.EClient.reqAccountUpdatesMulti can be used in any account structure to create simultaneous account value subscriptions from one or multiple accounts and/or models. As with IBApi.EClient.reqAccountUpdates the data returned will match that displayed within the TWS Account Window.</p>
+<p>IBApi.EClient.reqAccountUpdatesMulti 可用于任何账户结构中，从一个或多个账户和/或模型创建同时的账户价值订阅。与 IBApi.EClient.reqAccountUpdates 类似，返回的数据将与 TWS 账户窗口中显示的数据相匹配。</p>
+<pre><code>EClient.reqAccountUpdatesMulti (
+
+    reqId: int. Identifier to label the request
+    reqId: int. 用于标记请求的标识符
+
+    account: String. Account values can be requested for a particular account
+    account: String. 可请求特定账户的账户值
+
+    modelCode: String. Values can also be requested for a model
+    modelCode: String. 也可以请求模型的值
+
+    ledgerAndNLV: bool. returns light-weight request; only currency positions as opposed to account values and currency positions
+    ledgerAndNLV: bool. 返回轻量级请求；仅返回货币头寸，而不是账户值和货币头寸
+
+)
+</code></pre>
+<p>Requests account updates for account and/or model.</p>
+<p>请求账户和/或模型的更新。</p>
+<p>IBApi.EClient.reqAccountUpdatesMulti cannot be used with Account=”All” in IBroker accounts with more than 50 subaccounts.</p>
+<p>IBApi.EClient.reqAccountUpdatesMulti 不能在拥有超过 50 个子账户的 IBroker 账户中使用 Account=”All”。</p>
+<p>A profile name can be accepted in place of group in the account parameter for <a href="https://www.interactivebrokers.com/campus/ibkr-api-page/trader-workstation-api/#financial-advisors">Financial Advisors</a></p>
+<p>在账户参数中，可以为财务顾问使用个人资料名称代替组名称</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="requesting-account-update-by-model-Python" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="requesting-account-update-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqAccountUpdatesMulti</span><span class="p">(</span><span class="n">reqId</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">account</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p>Code example:<br />
+代码示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TradeApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">accountUpdateMulti</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountUpdateMulti. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;ModelCode:&quot;</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">,</span> <span class="s2">&quot;Key:&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">accountUpdateMultiEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountUpdateMultiEnd. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradeApp</span><span class="p">()</span>      
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">reqAccountUpdatesMulti</span><span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="s1">&#39;U123456&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="receiving-account-updates-by-model">Receiving Account Updates by Model / 通过模型接收账户更新</h4>
+<p>The resulting account and portfolio information will be delivered via the IBApi.EWrapper.accountUpdateMulti and IBApi.EWrapper.accountUpdateMultiEnd</p>
+<p>生成的账户和投资组合信息将通过 IBApi.EWrapper.accountUpdateMulti 和 IBApi.EWrapper.accountUpdateMultiEnd 交付</p>
+<pre><code>EWrapper.accountUpdateMulti (
+
+    requestId: int. The id of request.
+    requestId: int. 请求的 ID。
+
+    account: String. The account with updates.
+    account: String. 带有更新的账户。
+
+    modelCode: String. The model code with updates.
+    modelCode: String. 带有更新的模型代码。
+
+    key: String. The name of parameter.
+    key: String. 参数的名称。
+
+    value: String. The value of parameter.
+    value: String. 参数的值。
+
+    currency: String. The currency of parameter.
+    currency: String. 参数的货币。
+)
+</code></pre>
+<p>Provides the account updates.</p>
+<p>提供账户更新。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:1"><input checked="checked" id="receiving-account-updates-by-model-Python" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">accountUpdateMulti</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountUpdateMulti. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;ModelCode:&quot;</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">,</span> <span class="s2">&quot;Key:&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">&quot;Currency:&quot;</span><span class="p">,</span> <span class="n">currency</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>EWrapper.accountUpdateMultiEnd (</p>
+<pre><code>requestId: int. The id of request
+requestId: int. 请求的 id
+</code></pre>
+<p>)</p>
+<p>Indicates all the account updates have been transmitted.</p>
+<p>表示所有账户更新信息已传输完毕。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:1"><input checked="checked" id="receiving-account-updates-by-model-Python_1" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="receiving-account-updates-by-model-Python_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">accountUpdateMultiEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AccountUpdateMultiEnd. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancelling-account-updates-by-model">Cancelling Account Updates by Model / 通过模型取消账户更新</h4>
+<pre><code>EClient.reqAccountUpdatesMulti (
+
+    reqId: int. Identifier to label the request
+    reqId: int. 标识请求的标识符
+
+    account: String. Account values can be requested for a particular account
+    account: String. 可为特定账户请求账户值
+
+    modelCode: String. Values can also be requested for a model
+    modelCode: String. 也可以为模型请求值
+
+    ledgerAndNLV: bool. Specify false to cancel your subscription.
+    ledgerAndNLV: bool. 指定为 false 以取消您的订阅。
+
+)
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:1"><input checked="checked" id="cancelling-account-updates-by-model-Python" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="cancelling-account-updates-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqAccountUpdatesMulti</span><span class="p">(</span><span class="n">reqId</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">account</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="family-codes">Family Codes / 家族代码</h3>
+<p>It is possible to determine from the API whether an account exists under an account family, and find the family code using the function reqFamilyCodes.</p>
+<p>可以通过 API 判断一个账户是否属于某个账户家族，并使用 reqFamilyCodes 函数找到家族代码。</p>
+<p>For instance, if individual account U112233 is under a financial advisor with account number F445566, if the function reqFamilyCodes is invoked for the user of account U112233, the family code “F445566A” will be returned, indicating that it belongs within that account family.</p>
+<p>例如，如果个人账户 U112233 属于一位财务顾问，其账户号为 F445566，当为账户 U112233 的用户调用 reqFamilyCodes 函数时，将返回家族代码“F445566A”，表明该账户属于该账户家族。</p>
+<h4 id="request-family-codes">Request Family Codes / 请求家族代码</h4>
+<pre><code>EClient.reqFamilyCodes()
+</code></pre>
+<p>Requests family codes for an account, for instance if it is a FA, IBroker, or associated account.</p>
+<p>请求账户的家庭代码，例如如果是 FA、IBroker 或关联账户。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:1"><input checked="checked" id="request-family-codes-Python" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="request-family-codes-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqFamilyCodes</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="receive-family-codes">Receive Family Codes / 接收家族代码</h4>
+<pre><code>EWrapper.familyCodes(
+
+    familyCodes: FamilyCodes[]. Unique family codes array of accountIds.
+    familyCodes: FamilyCodes[]. 账户 ID 的唯一家族代码数组。
+
+)
+</code></pre>
+<p>Returns array of family codes.</p>
+<p>返回家族代码数组。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:1"><input checked="checked" id="receive-family-codes-Python" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="receive-family-codes-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">familyCodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">familyCodes</span><span class="p">:</span> <span class="n">ListOfFamilyCode</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Family Codes:&quot;</span><span class="p">,</span> <span class="n">familyCodes</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="managed-accounts">Managed Accounts / 管理账户</h3>
+<p>A single user name can handle more than one account. As mentioned in the Connectivity section, the TWS will automatically send a list of managed accounts once the connection is established. The list can also be fetched via the IBApi.EClient.reqManagedAccts method.</p>
+<p>一个用户名可以管理多个账户。正如连接部分所述，一旦建立连接，TWS 将自动发送管理账户列表。该列表也可以通过 IBApi.EClient.reqManagedAccts 方法获取。</p>
+<h4 id="request-managed-accounts">Request Managed Accounts / 请求管理账户</h4>
+<pre><code>EClient.reqManagedAccts()
+</code></pre>
+<p>Requests the accounts to which the logged user has access to.
+请求登录用户可访问的账户。</p>
+<p>self.reqManagedAccts()</p>
+<h4 id="receive-managed-accounts">Receive Managed Accounts / 接收管理账户</h4>
+<pre><code>EWrapper.managedAccounts (
+
+    accountsList: String. A comma-separated string with the managed account ids.
+    accountsList: String. 以逗号分隔的受管理账户 ID 字符串。
+
+)
+</code></pre>
+<p>Returns a string of all available accounts for the logged in user. Occurs automatically on initial API client connection.</p>
+<p>返回登录用户所有可用账户的字符串。在初始 API 客户端连接时自动发生。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:1"><input checked="checked" id="receive-managed-accounts-Python" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="receive-managed-accounts-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">managedAccounts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accountsList</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Account list:&quot;</span><span class="p">,</span> <span class="n">accountsList</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="positions">Positions / 持仓</h3>
+<p>A limitation of the function <code>IBApi.EClient.reqAccountUpdates</code> is that it can only be used with a single account at a time. To create a subscription for position updates from multiple accounts, the function <code>IBApi.EClient.reqPositions</code> is available.</p>
+<p><code>IBApi.EClient.reqAccountUpdates</code> 函数的一个限制是它一次只能用于一个账户。要为多个账户创建位置更新订阅，可以使用 <code>IBApi.EClient.reqPositions</code> 函数。</p>
+<p>Note: The reqPositions function is not available in Introducing Broker or Financial Advisor master accounts that have very large numbers of subaccounts (&gt; 50) to optimize the performance of TWS/IB Gateway. Instead the function reqPositionsMulti can be used to subscribe to updates from individual subaccounts. Also not available with IBroker accounts configured for on-demand account lookup.</p>
+<p>注意：reqPositions 函数在拥有大量子账户（&gt;50）的介绍经纪人或财务顾问主账户中不可用，以优化 TWS/IB Gateway 的性能。相反，可以使用 reqPositionsMulti 函数来订阅单个子账户的更新。配置为按需账户查找的 IBroker 账户也不可用。</p>
+<p>After initially invoking reqPositions, information about all positions in all associated accounts will be returned, followed by the <code>IBApi::EWrapper::positionEnd</code> callback. Thereafter, when a position has changed an update will be returned to the <code>IBApi::EWrapper::position</code> function. To cancel a reqPositions subscription, invoke <code>IBApi::EClient::cancelPositions</code>.</p>
+<p>调用 reqPositions 后，会返回所有关联账户中所有持仓的信息，然后触发 <code>IBApi::EWrapper::positionEnd</code> 回调。之后，当持仓发生变化时，会通过 <code>IBApi::EWrapper::position</code> 函数返回更新。要取消 reqPositions 订阅，请调用 <code>IBApi::EClient::cancelPositions</code>。</p>
+<h4 id="request-positions">Request Positions / 请求持仓</h4>
+<p>EClient.reqPositions()</p>
+<p>Subscribes to position updates for all accessible accounts. All positions sent initially, and then only updates as positions change.</p>
+<p>订阅所有可访问账户的持仓更新。初始时发送所有持仓，之后仅发送持仓变更的更新。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:1"><input checked="checked" id="request-positions-Python" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="request-positions-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqPositions</span><span class="p">()</span>
+</code></pre></div>
+Code example:<br />
+代码示例：
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">markdownlint</span><span class="o">-</span><span class="n">disable</span> <span class="n">MD037</span> <span class="o">--&gt;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TradingApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position.&quot;</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;Contract:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="s2">&quot;Avg cost:&quot;</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">positionEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionEnd&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">websocket_con</span><span class="p">():</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradingApp</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">con_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">websocket_con</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">con_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">reqPositions</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<h4 id="receive-positions">Receive Positions / 接收持仓</h4>
+<pre><code>EWrapper.position(
+
+    account: String. The account holding the position.
+    账户：String。持有该持仓的账户。
+
+    contract: Contract. The position’s Contract
+    合约：Contract。该持仓的合约
+
+    pos: decimal. The number of positions held. avgCost the average cost of the position.
+    pos：decimal。持有的持仓数量。avgCost 该持仓的平均成本。
+
+    avgCost: double. The total average cost of all trades for the currently held position.
+    avgCost：double。当前持有的持仓所有交易的总体平均成本。
+)
+</code></pre>
+<p>Provides the portfolio’s open positions. After the initial callback (only) of all positions, the <code>IBApi.EWrapper.positionEnd</code> function will be triggered.</p>
+<p>提供投资组合的未结仓位。在所有仓位完成初始回调（仅此一次）后，<code>IBApi.EWrapper.positionEnd</code> 函数将被触发。</p>
+<p>For futures, the exchange field will not be populated in the position callback as some futures trade on multiple exchanges</p>
+<p>对于期货，由于部分期货在多个交易所交易，因此仓位回调中不会填充交易所字段。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:1"><input checked="checked" id="receive-positions-Python" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="receive-positions-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Position.&quot;</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;Contract:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="s2">&quot;Avg cost:&quot;</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>EWrapper.positionEnd()</p>
+<p>Indicates all the positions have been transmitted. Only returned after the initial callback of EWrapper.position.</p>
+<p>表示所有仓位信息已传输完成。仅在 EWrapper.position 的初始回调后返回。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:1"><input checked="checked" id="receive-positions-Python_1" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="receive-positions-Python_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">positionEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionEnd&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancel-positions-request">Cancel Positions Request / 取消持仓请求</h4>
+<p>EClient.cancelPositions()</p>
+<p>Cancels a previous position subscription request made with <code>EClient.reqPositions()</code>.</p>
+<p>取消之前使用 <code>EClient.reqPositions()</code> 发起的仓位订阅请求。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:1"><input checked="checked" id="cancel-positions-request-Python" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="cancel-positions-request-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">cancelPositions</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="positions-by-model">Positions By Model / 按模型查询仓位</h3>
+<p>The function <code>IBApi.EClient.reqPositionsMulti</code> can be used with any account structure to subscribe to positions updates for multiple accounts and/or models. The account and model parameters are optional if there are not multiple accounts or models available. It is more efficient to use this function for a specific subset of accounts than using <code>IBApi.EClient.reqPositions</code>. A profile name can be accepted in place of group in the account parameter.</p>
+<p>可以使用 <code>IBApi.EClient.reqPositionsMulti</code> 函数与任何账户结构一起订阅多个账户和/或模型的仓位更新。如果不存在多个账户或模型，则账户和模型参数是可选的。对于特定的账户子集，使用此函数比使用 <code>IBApi.EClient.reqPositions</code> 更高效。在账户参数中，可以使用配置文件名代替组名。</p>
+<h4 id="request-positions-by-model">Request Positions By Model / 按模型请求持仓</h4>
+<pre><code>EClient.reqPositionsMulti(
+
+    requestId: int. Request’s identifier.
+    requestId: int. 请求的标识符。
+
+    account: String. If an account Id is provided, only the account’s positions belonging to the specified model will be delivered.
+    account: String. 如果提供了账户 ID，则仅会返回该账户属于指定模型的持仓。
+
+    modelCode: String. The code of the model’s positions we are interested in.
+    modelCode: String. 我们感兴趣的模型持仓的代码。
+)
+</code></pre>
+<p>Requests position subscription for account and/or model Initially all positions are returned, and then updates are returned for any position changes in real time.</p>
+<p>为账户和/或模型请求持仓订阅。最初返回所有持仓，然后实时返回任何持仓变化的更新。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:1"><input checked="checked" id="request-positions-by-model-Python" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="request-positions-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqPositionsMulti</span><span class="p">(</span><span class="n">requestid</span><span class="p">,</span> <span class="s2">&quot;U1234567&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Code example:<br />
+代码示例：
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TradingApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">positionMulti</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionMulti. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;ModelCode:&quot;</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">,</span> <span class="s2">&quot;Contract:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="p">,</span> <span class="s2">&quot;,Position:&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;AvgCost:&quot;</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">)</span>         
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">positionMultiEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionMultiEnd. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>      
+
+<span class="k">def</span><span class="w"> </span><span class="nf">websocket_con</span><span class="p">():</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradingApp</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7497</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">con_thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">websocket_con</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">con_thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="n">app</span><span class="o">.</span><span class="n">reqPositionsMulti</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;DU1234567&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1">#To specify a U-account number</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">reqPositionsMulti</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Group1&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>     <span class="c1">#To specify a Financial Advisor Group / Profile </span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<h4 id="receive-positions-by-model">Receive Positions By Model / 按模型接收持仓</h4>
+<pre><code>EWrapper.positionMulti(
+
+    requestId: int. The id of request
+    requestId: int. 请求的 id
+
+    account: String. The account holding the position.
+    account: String. 持有该持仓的账户。
+
+    modelCode: String. The model code holding the position.
+    modelCode: String. 持有该持仓的模型代码。
+
+    contract: Contract. The position’s Contract
+    contract: Contract. 该持仓的合约
+
+    pos: decimal. The number of positions held.
+    pos: decimal. 持有的头寸数量。
+
+    avgCost: double. The average cost of the position.
+    avgCost: double. 头寸的平均成本。
+)
+
+Provides the portfolio’s open positions.
+
+提供投资组合中的未平仓头寸。
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:1"><input checked="checked" id="receive-positions-by-model-Python" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="receive-positions-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">positionMulti</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">account</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">contract</span><span class="p">:</span> <span class="n">Contract</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionMulti. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Account:&quot;</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="s2">&quot;ModelCode:&quot;</span><span class="p">,</span> <span class="n">modelCode</span><span class="p">,</span> <span class="s2">&quot;Contract:&quot;</span><span class="p">,</span> <span class="n">contract</span><span class="p">,</span> <span class="s2">&quot;,Position:&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;AvgCost:&quot;</span><span class="p">,</span> <span class="n">avgCost</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>EWrapper.positionMultiEnd(</p>
+<pre><code>requestId: int. The id of request
+requestId: int. 请求的 id
+</code></pre>
+<p>)</p>
+<p>Indicates all the positions have been transmitted.</p>
+<p>表示所有仓位已传输。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:1"><input checked="checked" id="receive-positions-by-model-Python_1" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="receive-positions-by-model-Python_1">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">positionMultiEnd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PositionMultiEnd. RequestId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancel-positions-by-model">Cancel Positions By Model / 按模型取消仓位</h4>
+<pre><code>EClient.cancelPositionsMulti (
+
+    requestId: int. The identifier of the request to be canceled.
+    requestId: int. 要取消的请求的标识符。
+
+)
+</code></pre>
+<p>Cancels positions request for account and/or model.</p>
+<p>取消账户和/或模型的头寸请求。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:1"><input checked="checked" id="cancel-positions-by-model-Python" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="cancel-positions-by-model-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">cancelPositionsMulti</span><span class="p">(</span><span class="n">requestid</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="profit-loss-pnl-pnl">Profit &amp; Loss (PnL) / 损益 (PnL)</h3>
+<p>Requests can be made to receive real time updates about the daily P&amp;L and unrealized P&amp;L for an account, or for individual positions. Financial Advisors can also request P&amp;L figures for ‘All’ subaccounts, or for a portfolio model. This is further extended to include realized P&amp;L information at the account or individual position level.</p>
+<p>可以请求接收有关账户每日损益和未实现损益的实时更新，或针对单个头寸。财务顾问还可以请求“所有”子账户的损益数据，或针对投资组合模型。这进一步扩展到包括账户或单个头寸的已实现损益信息。</p>
+<p>The P&amp;L API functions demonstrated below return the data which is displayed in the TWS Portfolio Window in current versions of TWS. As such, the P&amp;L values are calculated based on the reset schedule specified in TWS Global Configuration (by default an instrument-specific reset schedule) and this setting affects values sent to the associated API functions as well. Also in TWS, P&amp;L data from virtual forex positions will be included in the account P&amp;L if and only if the Virtual Fx section of the Account Window is expanded.</p>
+<p>下面展示的 P&amp;L API 函数返回的数据，在 TWS 当前版本中会显示在 TWS 投资组合窗口中。因此，P&amp;L 值是根据 TWS 全局配置中指定的重置计划（默认为特定工具的重置计划）计算的，并且此设置会影响发送到相关 API 函数的值。此外，在 TWS 中，只有当账户窗口的虚拟外汇部分展开时，虚拟外汇头寸的 P&amp;L 数据才会包含在账户 P&amp;L 中。</p>
+<p>See <a href="https://www.interactivebrokers.com/campus/ibkr-api-page/twsapi-doc/#account-updates">Account Updates</a> for alternative PnL data.</p>
+<p>另请参阅账户更新，以获取替代的 PnL 数据。</p>
+<h4 id="request-pl-for-individual-positions-pl">Request P&amp;L for individual positions / 为单个头寸请求 P&amp;L</h4>
+<p>Subscribe using the IBApi::EClient::reqPnLSingle function Cannot be used with IBroker accounts configured for on-demand lookup with account = ‘All’. Currently updates are returned to IBApi.EWrapper.pnlSingle approximately once per second*.</p>
+<p>使用 IBApi::EClient::reqPnLSingle 函数订阅, 不能与配置为按需查找（账户='All'）的 IBroker 账户一起使用。目前更新大约每秒返回一次到 IBApi.EWrapper.pnlSingle*。</p>
+<ul>
+<li>
+<p>If a P&amp;L subscription request is made for an invalid conId or contract not in the account, there will not be a response.</p>
+<p>如果对无效的 conId 或账户中不存在的合约发起 P&amp;L 订阅请求，则不会有响应。</p>
+</li>
+<li>
+<p>As elsewhere in the API, a max double value will indicate an ‘unset’ value. This corresponds to an empty cell in TWS.</p>
+<p>与 API 的其他部分一样，一个最大双精度值将表示一个“未设置”的值。这对应于 TWS 中的空白单元格。</p>
+</li>
+<li>
+<p>Introducing broker accounts without a large number of subaccounts (&lt;50) can receive aggregate data by specifying the account as “All”.</p>
+<p>引入没有大量子账户（&lt;50）的经纪账户可以通过指定账户为“所有”来接收聚合数据。</p>
+</li>
+<li>
+<p>*Cannot be used with IBroker accounts configured for on-demand lookup with account = ‘All’</p>
+<p>*不能与配置为按需查找且账户为‘所有’的 IBroker 账户一起使用</p>
+</li>
+</ul>
+<p>*subject to change in the future.</p>
+<p>*未来可能变更。</p>
+<pre><code>EClient.reqPnLSingle (
+
+    reqId: int. Request identifier for to track the data.
+    reqId: int. 用于跟踪数据的请求标识符。
+
+    account: String. Account in which position exists
+    account: String. 存在持仓的账户。
+
+    modelCode: String. Model in which position exists
+    modelCode: String. 存在持仓的模型
+
+    conId: int. Contract ID (conId) of contract to receive daily PnL updates for. Note: does not return message if invalid conId is entered
+    conId: int. 接收每日盈亏更新的合约 ID（conId）。注意：如果输入无效的 conId，则不会返回消息
+
+)
+</code></pre>
+<p>Requests real time updates for daily PnL of individual positions.</p>
+<p>请求单个持仓的实时每日盈亏更新。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:1"><input checked="checked" id="request-pl-for-individual-positions-pl-Python" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="request-pl-for-individual-positions-pl-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqPnLSingle</span><span class="p">(</span><span class="n">requestId</span><span class="p">,</span> <span class="s2">&quot;U1234567&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">265598</span><span class="p">)</span>
+</code></pre></div>
+Code example:<br />
+代码示例：
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TradeApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pnlSingle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Daily PnL Single. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;DailyPnL:&quot;</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">,</span> <span class="s2">&quot;UnrealizedPnL:&quot;</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">,</span> <span class="s2">&quot;RealizedPnL:&quot;</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradeApp</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">reqPnLSingle</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="s2">&quot;U123456&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">8314</span><span class="p">)</span> <span class="c1">#IBM conId: 8314</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<h4 id="receive-pl-for-individual-positions">Receive P&amp;L for individual positions / 接收单个持仓的盈亏</h4>
+<pre><code>EWrapper.pnlSingle (
+
+    reqId: int. Request identifier used for tracking.
+    reqId: int. 请求标识符，用于跟踪。
+
+    pos: decimal. Current size of the position
+    pos: decimal. 当前持仓的规模
+
+    dailyPnL: double. DailyPnL for the position
+    dailyPnL: double. 仓位每日盈亏
+
+    unrealizedPnL: double. Total unrealized PnL for the position (since inception) updating in real time
+    unrealizedPnL: double. 仓位自开仓以来的总未实现盈亏（实时更新）
+
+    realizedPnL: double. Total realized PnL for the position (since inception) updating in real time
+    realizedPnL: double. 仓位自开仓以来的总已实现盈亏（实时更新）
+
+    value: double. Current market value of the position.
+    value: double. 仓位当前市场价值
+)
+</code></pre>
+<p>Receives real time updates for single position daily PnL values</p>
+<p>接收单个持仓每日盈亏的实时更新</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:1"><input checked="checked" id="receive-pl-for-individual-positions-Python" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="receive-pl-for-individual-positions-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">pnlSingle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Daily PnL Single. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;Position:&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;DailyPnL:&quot;</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">,</span> <span class="s2">&quot;UnrealizedPnL:&quot;</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">,</span> <span class="s2">&quot;RealizedPnL:&quot;</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">,</span> <span class="s2">&quot;Value:&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancel-pl-request-for-individual-positions">Cancel P&amp;L request for individual positions / 取消单个持仓的盈亏请求</h4>
+<pre><code>EClient.cancelPnLSingle (
+
+    reqId: int. Request identifier to cancel the P&amp;L subscription for.
+    reqId: int. 用于取消 P&amp;L 订阅的请求标识符。
+)
+
+Cancels real time subscription for a positions daily PnL information.
+
+取消订阅实时获取持仓每日 P&amp;L 信息。
+
+=== "Python"
+``` python
+self.cancelPnLSingle(requestId);
+```
+</code></pre>
+<h4 id="request-pl-for-accounts-pl">Request P&amp;L for accounts / 请求账户的 P&amp;L 信息</h4>
+<p>Subscribe using the IBApi::EClient::reqPnL function. Updates are sent to IBApi.EWrapper.pnl.</p>
+<p>使用 IBApi::EClient::reqPnL 函数订阅。更新信息将发送至 IBApi.EWrapper.pnl。</p>
+<ul>
+<li>
+<p>Introducing broker accounts with less than 50 subaccounts can receive aggregate PnL for all subaccounts by specifying ‘All’ as the account code.</p>
+<p>介绍：拥有少于 50 个子账户的经纪账户可以通过将账户代码指定为“全部”来接收所有子账户的汇总盈亏。</p>
+</li>
+<li>
+<p>With requests for advisor accounts with many subaccounts and/or positions can take several seconds for aggregated P&amp;L to be computed and returned.</p>
+<p>对于拥有许多子账户和/或头寸的建议账户，计算并返回汇总盈亏的请求可能需要几秒钟的时间。</p>
+</li>
+<li>
+<p>For account P&amp;L data the TWS setting “Prepare portfolio PnL data when downloading positions” must be checked.</p>
+<p>对于账户盈亏数据，TWS 设置“下载头寸时准备投资组合盈亏数据”必须被勾选。</p>
+<p>EClient.reqPnL (</p>
+<pre><code>reqId: int. Request ID to track the data.
+reqId: int. 用于跟踪数据的请求 ID。
+
+account: String. Account for which to receive PnL updates
+account: String. 接收盈亏更新（PnL）的账户。
+
+modelCode: String. Specify to request PnL updates for a specific model.
+modelCode: String. 指定请求特定模型的盈亏更新（PnL）。
+</code></pre>
+<p>)</p>
+</li>
+</ul>
+<p>Creates subscription for real time daily PnL and unrealized PnL updates.</p>
+<p>创建订阅以接收实时每日盈亏（PnL）和未实现盈亏（PnL）的更新。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:1"><input checked="checked" id="request-pl-for-accounts-pl-Python" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="request-pl-for-accounts-pl-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">reqPnL</span><span class="p">(</span><span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;U1234567&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+Code example:<br />
+代码示例：
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.client</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">markdownlint</span><span class="o">-</span><span class="n">disable</span> <span class="n">MD037</span> <span class="o">--&gt;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ibapi.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TradeApp</span><span class="p">(</span><span class="n">EWrapper</span><span class="p">,</span> <span class="n">EClient</span><span class="p">):</span> 
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="n">EClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span> 
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pnl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Daily PnL. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;DailyPnL:&quot;</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">,</span> <span class="s2">&quot;UnrealizedPnL:&quot;</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">,</span> <span class="s2">&quot;RealizedPnL:&quot;</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">TradeApp</span><span class="p">()</span>      
+<span class="n">app</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">7496</span><span class="p">,</span> <span class="n">clientId</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">reqPnL</span><span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="s2">&quot;U123456&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<h4 id="receive-pl-for-accounts">Receive P&amp;L for accounts / 接收账户盈亏</h4>
+<pre><code>EWrapper.pnl (
+
+    reqId: int. Request identifier for tracking data.
+    reqId: int. 用于跟踪数据的请求标识符。
+
+    dailyPnL: double. DailyPnL updates for the account in real time
+    dailyPnL: double. 实时更新账户的每日盈亏
+
+    unrealizedPnL: double. Total Unrealized PnL updates for the account in real time
+    unrealizedPnL: double. 实时更新账户的总未实现盈亏
+
+    realizedPnL: double. Total Realized PnL updates for the account in real time
+    realizedPnL: double. 实时更新账户的总已实现盈亏
+
+)
+</code></pre>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:1"><input checked="checked" id="receive-pl-for-accounts-Python" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="receive-pl-for-accounts-Python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">pnl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reqId</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Daily PnL. ReqId:&quot;</span><span class="p">,</span> <span class="n">reqId</span><span class="p">,</span> <span class="s2">&quot;DailyPnL:&quot;</span><span class="p">,</span> <span class="n">dailyPnL</span><span class="p">,</span> <span class="s2">&quot;UnrealizedPnL:&quot;</span><span class="p">,</span> <span class="n">unrealizedPnL</span><span class="p">,</span> <span class="s2">&quot;RealizedPnL:&quot;</span><span class="p">,</span> <span class="n">realizedPnL</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="cancel-pl-subscription-requests-for-accounts">Cancel P&amp;L subscription requests for accounts / 取消账户的盈亏订阅请求</h4>
+<pre><code>EClient.cancelPnL (
+
+    reqId: int. Request identifier for tracking data.
+    reqId: int. 请求标识符，用于跟踪数据。
+)
+</code></pre>
+<p>Cancels subscription for real time updated daily PnL params reqId</p>
+<p>取消订阅实时更新的每日 PnL 参数的 reqId</p>
+<pre><code>=== "Python"
+``` python
+self.cancelPnL(reqId)
+```
+</code></pre>
+<h3 id="white-branding-user-info">White Branding User Info / 白标用户信息</h3>
+<p>This function will return <a href="https://www.interactivebrokers.com/en/trading/white-branding.php">White Branding ID</a> associated with the user.</p>
+<p>这个函数将返回与用户关联的白色品牌 ID。</p>
+<p>Please note, that nothing will be returned if requesting username is not associated with any White Branding entity.</p>
+<p>请注意，如果请求的用户名不与任何白色品牌实体相关联，则不会返回任何内容。</p>
+<h4 id="requesting-white-branding-info">Requesting White Branding Info / 请求白色品牌信息</h4>
+<pre><code>EClient.reqUserInfo(
+
+    reqId: int. Request ID  
+    reqId: int. 请求 ID
+
+)
+
+=== "Python"
+``` python
+self.reqUserInfo(reqId)
+```
+</code></pre>
+<h4 id="receiving-white-branding-info">Receiving White Branding Info / 接收白标品牌信息</h4>
+<pre><code>EWrapper.userInfo (
+
+    reqId: int. Identifier for the given request.
+    reqId: int. 给定请求的标识符。
+
+    whiteBrandingId: String. Identifier for the white branded entity.
+    whiteBrandingId: String. 白色品牌实体的标识符。
+)
+
+=== "Python"
+``` python
+def userInfo(self, reqId: int, whiteBrandingId: str):
+    print("UserInfo.", "ReqId:", reqId, "WhiteBrandingId:", whiteBrandingId)
+```
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>

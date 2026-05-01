@@ -1,0 +1,3497 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="yuugou">
+      
+      
+        <link rel="canonical" href="http://localhost:8111/flutter/ch18/">
+      
+      
+        <link rel="prev" href="../ch17/">
+      
+      
+        <link rel="next" href="../ch19/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Testing and Performance - WUYA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M14%2010V4.5l5.5%205.5M5%203c-1.11%200-2%20.89-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2V9l-6-6z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-18-testing-and-performance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WUYA" class="md-header__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WUYA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testing and Performance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sites/studyNotes/" class="md-tabs__link">
+          
+  
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../twsApi/" class="md-tabs__link">
+          
+  
+  
+  TWS API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../PySide6/" class="md-tabs__link">
+          
+  
+  
+  PySide6
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ch01/" class="md-tabs__link">
+          
+  
+  
+  Flutter
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../rustStudy/" class="md-tabs__link">
+          
+  
+  
+  Rust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MKDocs/" class="md-tabs__link">
+          
+  
+  
+  MKDocs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cooking/breakfast/" class="md-tabs__link">
+          
+  
+  
+  Cooking
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test/doc1/" class="md-tabs__link">
+          
+  
+  
+  测试
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WUYA" class="md-nav__button md-logo" aria-label="WUYA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WUYA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    首页
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sites/studyNotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    TWS API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    目录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/notesAndLimitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注意事项和限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS 或 IB Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWS 设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/downloadApi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下载 TWS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TWSAPI 基础教程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/thirdParty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三方 API 平台
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/uniqueConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    独特的配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除与支持
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/pacing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    节流限制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/connectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    连接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/synchronous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/accountAndPortfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    账户与投资组合数据
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/bulletins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公告
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../twsApi/contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    合约（金融工具）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PySide6
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发工具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PySide6 与 PyQt6 的区别
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PySide6/first/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一个 PySide6 应用
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dart Essentials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building the Movie App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes, Colors and Fonts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation and Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Animations and Transitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Futures and Async/Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Storage and Databases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web and Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handling User Input and Gestures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Channels and Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing and Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-plugin-unit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie plugin unit test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-widget-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First widget test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widget-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevTools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building and Publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建、编译和运行项目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rustStudy/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MKDocs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MKDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MKDocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cooking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cooking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/breakfast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    早餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/lunch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    午餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cooking/dinner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    晚餐
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    测试
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    测试
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test/doc2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movie-plugin-unit-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Movie plugin unit test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-widget-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First widget test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widget-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevTools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-18-testing-and-performance"><a href="../contents/#ch18a">CHAPTER 18 Testing and Performance</a></h1>
+<h2 id="introduction"><a href="../contents/#sc2_326a">Introduction</a></h2>
+<p>Flutter is a very fast framework, and normally, you will not need to worry about performance. However, there are times when parts of your app may show performance problems. In addition, testing your app will ensure that it performs the way you expect and is as fast as you need it to. In this chapter, you will learn about the different types of testing, how to write tests for your app or plugin, how to write UI tests, and how to view performance information. With this information, you can make sure new code does not break existing functionality by monitoring tests and making sure they do not break. You will also be able to find areas in your app that are slowing down parts of your app. Flutter includes a lot of tools for writing tests and measuring your app's performance.</p>
+<h2 id="structure"><a href="../contents/#sc2_327a">Structure</a></h2>
+<p>The chapter covers the following topics:</p>
+<ul>
+<li>Testing</li>
+<li>Unit testing</li>
+<li>Widget testing</li>
+<li>Integration</li>
+<li>Performance</li>
+</ul>
+<h2 id="objectives"><a href="../contents/#sc2_328a">Objectives</a></h2>
+<p>By the end of this chapter, you will know about the three different types of testing and how to write those tests. You will know when to write unit tests when to write widget tests, and when to write integration tests. Finally, you will understand how to use Flutter's DevTools to measure performance.</p>
+<h2 id="testing"><a href="../contents/#sc2_329a">Testing</a></h2>
+<p>Testing is a way to make sure your app functions properly and, more importantly, that it will catch changes in your code that break how your app works. Testing helps identify bugs in your code and can even be used in the creation of code. In test-driven development (TDD), you write your tests first before you write your code. While we will not be using this in this chapter, it is a popular way to write code because you have several advantages:</p>
+<ul>
+<li><strong>Improved code quality</strong>: Testing improves the code you write because it has to be testable.</li>
+<li><strong>Higher test coverage</strong>: By writing tests first, you ensure you have more tests covering all parts of your app.</li>
+<li><strong>Higher confidence</strong>: More tests make you more confident that your code will work the way you expect.</li>
+</ul>
+<p>The way testing works is:</p>
+<ul>
+<li><strong>Write a failing test</strong>: Write the test that tests what you want your class to achieve. You will have to write the bare minimum for the class, but with no functionality, it will fail.</li>
+<li><strong>Fix the failing test</strong>: Write code that causes the test to pass.</li>
+<li><strong>Refactor</strong>: Clean up the code.</li>
+<li><strong>Repeat</strong>: Repeat the process for each test.</li>
+</ul>
+<p>In Flutter (and other platforms), there are three different types of tests:</p>
+<ul>
+<li><strong>Unit tests</strong>: Test a single class or method. This will be for testing how a function or class works.</li>
+<li><strong>Widget tests</strong>: Test a single Flutter widget. This test will ensure the widget performs properly in multiple states. For example, a switch shows that it is on when that state is set and off when the state has been turned off.</li>
+<li><strong>Integration tests</strong>: Tests parts of an app and the integration of multiple screens. This could be a sign-in screen with dialogs and other screens associated with the sign-in functionality.</li>
+</ul>
+<p>One nice feature of tests is that there are mocking libraries that allow you to mock functionality. For example, say you have an API for logging into a system. You may not want to have to log a user in to run a test. By using a mocking library, you can mock the API, and have it return login information or just return that the user is logged in.</p>
+<h2 id="unit-testing"><a href="../contents/#sc2_330a">Unit testing</a></h2>
+<p>Unit tests are usually the easiest to write. They are usually just Dart code and not Flutter. They will test to make sure the function returns the correct value for the different input values. These are usually pretty easy to maintain, but they only test a very small part of your app and only give you confidence in that one function. Unit tests do not test UI but functionality. You could use it to test a view model or classes that perform calculations. All unit tests go in the test folder.</p>
+<p>Each test file in the <code>test/</code> folder will need to import the <code>test</code> package:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:test/test.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Each test will have a main function. Inside that function, you will usually use the <code>test</code> method that takes the name of the test and a function. This looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="n">testWidgets</span><span class="p">(</span><span class="s1">&#39;&lt;name of test&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">WidgetTester</span><span class="w"> </span><span class="n">tester</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The testing package contains functions that will test the values of your tests. This is the <code>expect()</code> function. This takes the actual value, a matcher, and a reason string that will be printed if it fails. This looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="n">expect</span><span class="p">(</span><span class="o">&lt;</span><span class="n">actual</span><span class="w"> </span><span class="n">result</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">what</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="kd">get</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;optional reason why it failed&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>This is how you make sure your test is producing the correct result. If this fails, the whole test fails. If you perform a computation and that function should always return the same value given a certain input, then if that function changes, your test will fail, and you will either have to fix your function or change the test to reflect the change.</p>
+<h3 id="movie-plugin-unit-test"><a href="../contents/#sc3_331a">Movie plugin unit test</a></h3>
+<p>We will be writing a unit test to test the functionality of the methods of the <code>MoviePlugin</code>. While we are not running on an actual device, we need to mock the underlying storage. Mocking is a way to create fake classes that either do nothing or return values that we want them to. This way, we can test the actual class without worrying about the other classes it uses. For the <code>MoviePlugin</code> class, we need to mock the <code>prefs</code> portion of the plugin. Let us create the movie plugin test:</p>
+<ol>
+<li>
+<p>Open the <code>movie_plugin</code> project.</p>
+</li>
+<li>
+<p>Add the test dependency. In a terminal type:</p>
+<div class="highlight"><pre><span></span><code>flutter<span class="w"> </span>pub<span class="w"> </span>add<span class="w"> </span>dev:test
+</code></pre></div>
+</li>
+<li>
+<p>In the <code>test/</code> folder, create a new file named <code>movie_plugin_test.dart</code>.</p>
+</li>
+<li>
+<p>Add the following imports:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:test/test.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movie_plugin/movie_plugin.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movie_plugin/movie_plugin_platform_interface.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:plugin_platform_interface/plugin_platform_interface.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Create the <code>MockMoviePluginPlatform</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MockMoviePluginPlatform</span>
+<span class="w">    </span><span class="kd">with</span><span class="w"> </span><span class="n">MockPlatformInterfaceMixin</span>
+<span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">MoviePluginPlatform</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Add Code Here</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note that <code>MockPlatformInterfaceMixin</code> is part of Flutter's plugin platform interface.</p>
+</li>
+<li>
+<p>Create a map to store the preferences:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">dynamic</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mockPrefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">dynamic</span><span class="o">&gt;</span><span class="p">{};</span>
+</code></pre></div>
+</li>
+<li>
+<p>Start implementing the methods of the <code>MoviePluginPlatform</code> interface:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">clear</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mockPrefs</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nd">@override</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">containsKey</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">mockPrefs</span><span class="p">.</span><span class="n">containsKey</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These two methods will clear the map and return the value of the containsKey method of the map.</p>
+</li>
+<li>
+<p>Add the string methods:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">getString</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nd">@override</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">setString</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the int methods:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Future</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">getInt</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nd">@override</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">setInt</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These methods just use the map to set and retrieve values.</p>
+</li>
+<li>
+<p>Add the Boolean methods:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">getBool</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nd">@override</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">setBool</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the double methods:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="n">Future</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">getDouble</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="nd">@override</span>
+<span class="n">Future</span><span class="w"> </span><span class="n">setDouble</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">mockPrefs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Future</span><span class="p">.</span><span class="n">value</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now that we have the mock class written, let us start writing the tests.</p>
+</li>
+<li>
+<p>Add a <code>main</code> function after the <code>MockMoviePluginPlatform</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the first test for the <code>setString</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="p">(</span><span class="s1">&#39;setString: Add One item&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MoviePlugin</span><span class="w"> </span><span class="n">moviePlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MoviePlugin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MockMoviePluginPlatform</span><span class="w"> </span><span class="n">fakePlatform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockMoviePluginPlatform</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MoviePluginPlatform</span><span class="p">.</span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fakePlatform</span><span class="p">;</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Value 1&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</li>
+</ol>
+<p>This test creates the <code>MoviePlugin</code> class and sets the <code>MoviePluginPlatform.instance</code> to our mock platform. We then call the <code>setString</code> method and make sure it returns true. This is just a very simple test to make sure we get the expected value back. You will usually want to build your tests up from simple to more complex and make sure you test all conditions that could happen. In writing tests, you will find yourself thinking about different scenarios that could happen with your code. This will help you in writing your code and you may find a test that your code does not cover.</p>
+<h3 id="groups"><a href="../contents/#sc3_332a">Groups</a></h3>
+<p>You can also combine your tests into groups. You would use the group just like the test method by giving it a name and then the function. That function will have multiple test functions. It would look something as follows:</p>
+<pre><code>```dart
+group('Test All String methods', () {
+  test('setString: Add One item', () {
+    &lt;Code here&gt;
+  });
+  test('setString: Add One item and then clear', () {
+    &lt;Code here&gt;
+  });
+  test('setString: Add One item and then get the string', () {
+    &lt;Code here&gt;
+  });
+});
+```
+</code></pre>
+<ol>
+<li>
+<p>Click on the green Run button to run the test. You should see:</p>
+<p><img alt=" " src="../images/Figure_18.1.png" /></p>
+<p>Figure 18.1: First test</p>
+</li>
+<li>
+<p>Add the next test for the <code>clear</code> and <code>containsKey</code> functions:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="p">(</span><span class="s1">&#39;setString: Add One item and then clear&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MoviePlugin</span><span class="w"> </span><span class="n">moviePlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MoviePlugin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MockMoviePluginPlatform</span><span class="w"> </span><span class="n">fakePlatform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockMoviePluginPlatform</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MoviePluginPlatform</span><span class="p">.</span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fakePlatform</span><span class="p">;</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Value 1&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">clear</span><span class="p">(),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">containsKey</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Here, we set the string, clear it, and then make sure that it does not still exist. Try running these tests. What other tests can you think of?</p>
+</li>
+<li>
+<p>Next, test setting the value and verifying that the value exists:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="p">(</span><span class="s1">&#39;setString: Add One item and then get the string&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">MoviePlugin</span><span class="w"> </span><span class="n">moviePlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MoviePlugin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MockMoviePluginPlatform</span><span class="w"> </span><span class="n">fakePlatform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockMoviePluginPlatform</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MoviePluginPlatform</span><span class="p">.</span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fakePlatform</span><span class="p">;</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Value 1&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;Value 1&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>We have tested some strings, but we should test the other types as well. We will test ints. We are starting to see some duplicate code here. You can create other methods for setup.</p>
+</li>
+<li>
+<p>Add some variables and create a new method just under main:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">late</span><span class="w"> </span><span class="n">MoviePlugin</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">;</span>
+<span class="kd">late</span><span class="w"> </span><span class="n">MockMoviePluginPlatform</span><span class="w"> </span><span class="n">fakePlatform</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">moviePlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MoviePlugin</span><span class="p">();</span>
+<span class="w">  </span><span class="n">fakePlatform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MockMoviePluginPlatform</span><span class="p">();</span>
+<span class="w">  </span><span class="n">MoviePluginPlatform</span><span class="p">.</span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fakePlatform</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Now replace all this code with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="p">();</span>
+</code></pre></div>
+<p>Your first test will look like:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="p">(</span><span class="s1">&#39;setString: Add One item&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">setup</span><span class="p">();</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">setString</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Value 1&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>Write the int test:</p>
+<div class="highlight"><pre><span></span><code><span class="n">test</span><span class="p">(</span><span class="s1">&#39;Test Ints&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">setup</span><span class="p">();</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">setInt</span><span class="p">(</span><span class="s1">&#39;IntKey&#39;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">getInt</span><span class="p">(</span><span class="s1">&#39;IntKey&#39;</span><span class="p">),</span><span class="w"> </span><span class="m">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">containsKey</span><span class="p">(</span><span class="s1">&#39;IntKey&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">clear</span><span class="p">(),</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="kd">await</span><span class="w"> </span><span class="n">moviePlugin</span><span class="p">.</span><span class="n">containsKey</span><span class="p">(</span><span class="s1">&#39;IntKey&#39;</span><span class="p">),</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</li>
+</ol>
+<p>The other tests are left as an exercise for you.</p>
+<h2 id="widget-testing"><a href="../contents/#sc2_333a">Widget testing</a></h2>
+<p>As the name implies, widget testing involves testing just one widget at a time. These tests are still in the <code>test</code> folder and run in memory on the development machine and not on a real device. This makes these tests very fast. Luckily, there is the <code>flutter_test</code> package provided by Flutter. This package provides the <code>WidgetTester</code> class and the <code>testWidgets</code> function, which provides a <code>WidgetTester</code> for each test. It also provides <code>Finder</code> classes for searching for widgets. Then, you will use <code>Matcher</code> constants to verify the widget. You will need to import the <code>flutter_test</code> package. You should already have it in <code>pubspec.yaml</code>, but it will be in the <code>dev_dependencies</code> section and look as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">dev_dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">flutter_test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+</code></pre></div>
+<p>With the <code>WidgetTester</code> class, there are a few important methods. For testing widgets, the <code>pumpWidget</code> method will display your widget. There is also a <code>pumpAndSettle</code> method that will wait for all animations to finish, and there are no more frames to display. Once you have your widget displayed, you need to find it and test it to make sure it is displayed the way you expect. Flutter provides the <code>Finder</code> class that has many methods for finding widgets. A few important methods:</p>
+<ul>
+<li><code>text</code>: Find a <code>Text</code>, <code>EditableText</code>, or <code>RichText</code> widget with the given text.</li>
+<li><code>textContaining</code>: Find the Pattern of text in the above widgets.</li>
+<li><code>widgetWithText</code>: Look for descendants that are of type <code>Text</code> with the given text string.</li>
+<li><code>image</code>: Find an image.</li>
+<li><code>byKey</code>: Find a widget with the given key.</li>
+<li><code>bySubtype</code>: Find a widget by sub-type, that is, <code>StatefulWidget</code> will find all classes that subclass it.</li>
+<li><code>byType</code>: Find widgets of a certain type.</li>
+<li><code>byIcon</code>, <code>widgetWithIcon</code>: Finds a widget containing an icon.</li>
+<li><code>byTooltip</code>: finds widgets with the given tooltip text.</li>
+</ul>
+<p>There are also several methods that let you search through all widgets and make a decision on each widget. One of the most important methods is the <code>byWidgetPredicate</code>. Here is a helper method you can use:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Finder</span><span class="w"> </span><span class="n">findWidgetOfType</span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">finder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byWidgetPredicate</span><span class="p">((</span><span class="n">widget</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">widget</span><span class="p">.</span><span class="n">runtimeType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">finder</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The callback receives a widget, and it checks to see if the <code>runtimeType</code> is of a given type. There are many ways can create helper functions to search for widgets of your making.</p>
+<p>Once you find the widget you are looking for, you will use the expect method with the following matcher types:</p>
+<ul>
+<li><code>findsOneWidget</code>: Asserts that there is only one widget found.</li>
+<li><code>findsNothing</code>: Asserts that no widget was found.</li>
+<li><code>findsWidgets</code>: Asserts that at least one widget was found.</li>
+</ul>
+<h3 id="first-widget-test"><a href="../contents/#sc3_334a">First widget test</a></h3>
+<p>Since we have several widgets that we have built over time, they are great candidates for testing. To start creating a widget test, the steps are as follows:</p>
+<ol>
+<li>
+<p>Open up the <code>movies</code> project.</p>
+</li>
+<li>
+<p>In the <code>test</code> folder, create a new file named <code>widget_tests.dart</code>.</p>
+</li>
+<li>
+<p>Add the following imports and the main function:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_test/flutter_test.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/widgets/text_icon.dart&#39;</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the first test for testing the <code>TextIcon</code> widget:</p>
+<div class="highlight"><pre><span></span><code><span class="n">testWidgets</span><span class="p">(</span><span class="s1">&#39;Test TextIcon&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">WidgetTester</span><span class="w"> </span><span class="n">tester</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpWidget</span><span class="p">(</span><span class="n">TextIcon</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">text:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="nl">icon:</span><span class="w"> </span><span class="n">IconButton</span><span class="p">(</span>
+<span class="w">      </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="nl">icon:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span>
+<span class="w">        </span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite_outlined</span><span class="p">,</span>
+
+<span class="w">        </span><span class="nl">size:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span>
+<span class="w">      </span><span class="p">)),</span>
+<span class="w">  </span><span class="p">));</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">textFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">expect</span><span class="p">(</span><span class="n">textFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>Try running the test. You should see an error. In the case of the <code>TextIcon</code> widget, the <code>IconButton</code> requires the <code>MaterialApp</code> or <code>WidgetsApp</code> to be the parent. Modify the <code>pumpWidget</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpWidget</span><span class="p">(</span><span class="n">MaterialApp</span><span class="p">(</span><span class="nl">home:</span><span class="w"> </span><span class="n">TextIcon</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">text:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="nl">icon:</span><span class="w"> </span><span class="n">IconButton</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">onPressed:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nl">icon:</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Icon</span><span class="p">(</span>
+<span class="w">      </span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite_outlined</span><span class="p">,</span>
+<span class="w">      </span><span class="nl">size:</span><span class="w"> </span><span class="m">24</span><span class="p">,</span>
+<span class="w">    </span><span class="p">)),</span>
+<span class="p">)));</span>
+</code></pre></div>
+</li>
+<li>
+<p>Now, try running, and your test will pass.</p>
+<p>Another simple test is to add a search for the icon.</p>
+</li>
+<li>
+<p>After the expected, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">iconFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byIcon</span><span class="p">(</span><span class="n">Icons</span><span class="p">.</span><span class="n">favorite_outlined</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">iconFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run the test again.</p>
+<p>The next test will be a bit more complex. We want to test the <code>ButtonRow</code> widget. To do that, we need to display the widget and tap on the favorite icon. Create a new test in the same file:</p>
+</li>
+<li>
+<p>Add the new test:</p>
+<div class="highlight"><pre><span></span><code><span class="n">testWidgets</span><span class="p">(</span><span class="s1">&#39;Test ButtonRow&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">WidgetTester</span><span class="w"> </span><span class="n">tester</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpWidget</span><span class="p">(</span><span class="n">MaterialApp</span><span class="p">(</span><span class="nl">home:</span><span class="w"> </span><span class="n">ButtonRow</span><span class="p">(</span><span class="nl">favoriteSelected:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nl">onFavoriteSelected:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">));</span>
+</code></pre></div>
+<p>This test is for the <code>ButtonRow</code> widget that we want to test by pressing the favorite button. We do not need to handle the favorite callback.</p>
+</li>
+<li>
+<p>Next, find the Favorite button and make sure it exists:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">textFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;Favorite&#39;</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">textFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Now find the <code>TextIcon</code> by finding the ancestor of the <code>Text</code> widget and then the icon button by finding the descendant of that widget:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">textIconFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">ancestor</span><span class="p">(</span><span class="nl">of:</span><span class="w"> </span><span class="n">textFinder</span><span class="p">,</span><span class="w"> </span><span class="nl">matching:</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">TextIcon</span><span class="p">));</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">iconButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">descendant</span><span class="p">(</span><span class="nl">of:</span><span class="w"> </span><span class="n">textIconFinder</span><span class="p">,</span><span class="w"> </span><span class="nl">matching:</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">IconButton</span><span class="p">));</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">iconButton</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Now find the Icon under that and make sure it is white:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">iconFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">descendant</span><span class="p">(</span><span class="nl">of:</span><span class="w"> </span><span class="n">iconButton</span><span class="p">,</span><span class="w"> </span><span class="nl">matching:</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">Icon</span><span class="p">));</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">widget</span><span class="p">(</span><span class="n">iconFinder</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">((</span><span class="n">icon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">Icon</span><span class="p">).</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">white</span><span class="p">);</span>
+</code></pre></div>
+<p>The <code>tester.widget</code> method is useful for getting the actual widget. This way we can test the color of the widget.</p>
+</li>
+<li>
+<p>Now tap the button, wait for the animation to finish, and make sure the icon is red.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">tap</span><span class="p">(</span><span class="n">iconButton</span><span class="p">);</span>
+<span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pump</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span><span class="w"> </span><span class="m">3</span><span class="p">));</span>
+<span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">idle</span><span class="p">();</span>
+<span class="n">iconFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">descendant</span><span class="p">(</span><span class="nl">of:</span><span class="w"> </span><span class="n">iconButton</span><span class="p">,</span><span class="w"> </span><span class="nl">matching:</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">Icon</span><span class="p">));</span>
+<span class="n">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">widget</span><span class="p">(</span><span class="n">iconFinder</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">icon</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">red</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run the test to make sure it passes.</p>
+</li>
+</ol>
+<p>These are two examples of testing a widget. As you may have noticed, you will not see the test on your device. To do that, we will move on to integration testing.</p>
+<h2 id="integration-testing"><a href="../contents/#sc2_335a">Integration testing</a></h2>
+<p>So far, we have just tested the code and individual widgets. To test your app, you need to run integration tests. This runs your app on a device and allows you to interact with the screen as well as navigate to other screens. Usually, you will test the functionality of a specific area. For example, you could test a sign-in page. You would have a test user that you can use to sign in and verify that the user successfully signed in. You could also test entering invalid data and see how the UI responds.</p>
+<blockquote>
+<p>Note: If you read articles about navigating flutter_driver, that is an older technology and should not be used.</p>
+</blockquote>
+<p>One area that would be good to test is movie loading and scrolling. The <code>MovieListing</code> class does some complex paging. What if we could run a test that navigates to the <code>MovieListing</code> page and scrolls several pages' worth of data? To do this, we will create an integration test that sets up the app, similar to the way it does in <code>main.dart</code>, and then run a <code>testWidgets</code> function. We will then start the <code>MainApp</code>, click on the first More button, go to the <code>MovieListing</code> screen, and then scroll several pages and verify that the page list contains a certain amount of items. This is a bit complex, so we will step through each part:</p>
+<ol>
+<li>
+<p>Create a new folder at the top level named <code>integration_test</code>.</p>
+</li>
+<li>
+<p>Create a new file named <code>movie_tests.dart</code>.</p>
+</li>
+<li>
+<p>Add the following imports:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:colorize_lumberdash/colorize_lumberdash.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:firebase_core/firebase_core.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_dotenv/flutter_dotenv.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_riverpod/flutter_riverpod.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:flutter_test/flutter_test.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:infinite_scroll_pagination/infinite_scroll_pagination.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:integration_test/integration_test.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:lumberdash/lumberdash.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movie_data/movie_data.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/firebase_options.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/main.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/screens/home/title_row.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/ui/widgets/movie_row.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;package:movies/utils/utils.dart&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>These will be the imports needed for the test.</p>
+</li>
+<li>
+<p>Add the main function and the initialization (this looks just like the main, except we are not using Crashlytics). Add the main function:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntegrationTestWidgetsFlutterBinding</span><span class="p">.</span><span class="n">ensureInitialized</span><span class="p">();</span>
+<span class="w">  </span><span class="n">binding</span><span class="p">.</span><span class="n">framePolicy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LiveTestWidgetsFlutterBindingFramePolicy</span><span class="p">.</span><span class="n">fullyLive</span><span class="p">;</span>
+<span class="w">  </span><span class="n">WidgetsFlutterBinding</span><span class="p">.</span><span class="n">ensureInitialized</span><span class="p">();</span>
+<span class="w">  </span><span class="n">putLumberdashToWork</span><span class="p">(</span><span class="nl">withClients:</span><span class="w"> </span><span class="p">[</span><span class="n">ColorizeLumberdash</span><span class="p">()]);</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">Firebase</span><span class="p">.</span><span class="n">initializeApp</span><span class="p">(</span>
+<span class="w">    </span><span class="nl">options:</span><span class="w"> </span><span class="n">DefaultFirebaseOptions</span><span class="p">.</span><span class="n">currentPlatform</span><span class="p">,</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">isWeb</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">await</span><span class="w"> </span><span class="n">dotenv</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nl">fileName:</span><span class="w"> </span><span class="s1">&#39;.env&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// TODO Add Test</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This is the same code as in the <code>main</code> function except for the first two lines.</p>
+</li>
+<li>
+<p>Replace the <code>TODO</code> with the test:</p>
+<div class="highlight"><pre><span></span><code><span class="n">testWidgets</span><span class="p">(</span><span class="s1">&#39;Test scrolling the Movie Listing&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">tester</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Build our app and trigger a frame.</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpWidget</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ProviderScope</span><span class="p">(</span><span class="nl">child:</span><span class="w"> </span><span class="n">MainApp</span><span class="p">()));</span>
+<span class="p">});</span>
+</code></pre></div>
+</li>
+<li>
+<p>After the <code>pumpWidget</code>, add code to find the more button:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpAndSettle</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span><span class="w"> </span><span class="m">1</span><span class="p">));</span>
+
+<span class="kd">final</span><span class="w"> </span><span class="n">moreButtonFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">TitleRow</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">moreButtonFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsAtLeast</span><span class="p">(</span><span class="m">1</span><span class="p">));</span>
+</code></pre></div>
+<p>This waits for the app to load, finds the <code>TitleRow</code>, and asserts that at least one was found.</p>
+</li>
+<li>
+<p>Add the code to find the first <code>More</code> button and tap on it:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">firstMoreButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">moreButtonFinder</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">textButtonFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">descendant</span><span class="p">(</span>
+<span class="w">  </span><span class="nl">of:</span><span class="w"> </span><span class="n">firstMoreButton</span><span class="p">,</span>
+<span class="w">  </span><span class="nl">matching:</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">TextButton</span><span class="p">),</span>
+<span class="p">);</span>
+<span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">tap</span><span class="p">(</span><span class="n">textButtonFinder</span><span class="p">);</span>
+<span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpAndSettle</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span><span class="w"> </span><span class="m">1</span><span class="p">));</span>
+</code></pre></div>
+<p>This finds the first <code>More</code> button (there are several) and then finds the <code>TextButton</code> inside of it. It then taps on that button.</p>
+</li>
+<li>
+<p>Open <code>movie_listing.dart</code> and add a scrolling controller. This is needed for our test. After the <code>_pagingController</code>, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">_scrollController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollController</span><span class="p">();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Before the <code>state</code> in the <code>PagedListView</code>, add the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nl">scrollController:</span><span class="w"> </span><span class="n">_scrollController</span><span class="p">,</span>
+</code></pre></div>
+</li>
+<li>
+<p>Back in <code>movie_tests</code>, find the Movie Listing (a <code>PagedListView</code>) and get the paging and scrolling controllers:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">movieListFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">PagedListView</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">MovieResults</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">movieListFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">movieList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">widget</span><span class="p">(</span><span class="n">movieListFinder</span><span class="p">);</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">movieList</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">PagedListView</span><span class="p">).</span><span class="n">controller</span><span class="p">;</span>
+
+<span class="kd">final</span><span class="w"> </span><span class="n">pagingControllerFinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span>
+<span class="w">  </span><span class="n">PagingListener</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">MovieResults</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">pagingControllerFinder</span><span class="p">,</span><span class="w"> </span><span class="n">findsOneWidget</span><span class="p">);</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">pagingController</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="p">(</span><span class="n">tester</span><span class="p">.</span><span class="n">widget</span><span class="p">(</span><span class="n">pagingControllerFinder</span><span class="p">)</span>
+<span class="w">            </span><span class="k">as</span><span class="w"> </span><span class="n">PagingListener</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">MovieResults</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">controller</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Next, get the first <code>MovieRow</code> and figure out its height and then what a page of <code>MovieRow</code> heights are:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">final</span><span class="w"> </span><span class="n">renderRow</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="n">tester</span><span class="p">.</span><span class="n">renderObject</span><span class="p">(</span><span class="n">find</span><span class="p">.</span><span class="n">byType</span><span class="p">(</span><span class="n">MovieRow</span><span class="p">).</span><span class="n">first</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">RenderBox</span><span class="p">;</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">rowHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">renderRow</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+<span class="kd">final</span><span class="w"> </span><span class="n">pageHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rowHeight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">20</span><span class="p">;</span><span class="w"> </span><span class="c1">// 20 items/page</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">currentPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pageHeight</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Scroll five times, and then make sure we have 120 items. (6x20)</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">controller</span><span class="o">?</span><span class="p">.</span><span class="n">jumpTo</span><span class="p">(</span><span class="n">currentPosition</span><span class="p">);</span>
+<span class="w">  </span><span class="n">currentPosition</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pageHeight</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpAndSettle</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="p">(</span><span class="nl">milliseconds:</span><span class="w"> </span><span class="m">500</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kd">await</span><span class="w"> </span><span class="n">tester</span><span class="p">.</span><span class="n">pumpAndSettle</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="p">(</span><span class="nl">seconds:</span><span class="w"> </span><span class="m">1</span><span class="p">));</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">pagingController</span><span class="p">.</span><span class="n">items</span><span class="o">?</span><span class="p">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="m">120</span><span class="p">);</span>
+</code></pre></div>
+<p>This uses the paging controllers itemList to check how many items have been loaded.</p>
+</li>
+<li>
+<p>Run the test and make sure it works.</p>
+</li>
+</ol>
+<blockquote>
+<p>Note: You may need to do <code>flutter clean</code> and <code>flutter pub get</code> commands to get the tests to work.</p>
+</blockquote>
+<h2 id="performance"><a href="../contents/#sc2_336a">Performance</a></h2>
+<p>Now that you have your app written, it is time to think about performance. How does it perform starting up? How much time does it take to transition to other pages? Are certain actions taking too long? If your app is on the market, are customers complaining about something taking too long? Flutter itself is fast, drawing at 60 frames per second, but there are a number of ways you can accidentally slow that down. Slow loading times, unresponsiveness, and increased battery consumption will cause users to abandon your app.</p>
+<h3 id="widget-tree"><a href="../contents/#sc3_337a">Widget tree</a></h3>
+<p>You can slow your screen down by having overly complex widget trees (the set of widgets that make up your screen). You can also slow it down by not breaking your screen into individual widgets. In other words, instead of one long build method, breaking sections into their own widget class. This causes Flutter to optimize drawing and not redraw widgets that do not need to be drawn. If you have one long build method and you call <code>setState</code>, the whole tree will need to be redrawn. Using large images can also slow things down as well. Using stateless widgets is faster as well. Try and use them if you do not have any state. Also, do not do any background tasks in the UI. Minimize the use of clipping as that can affect rendering performance. Make sure you follow the recommended lint warnings and make as many widgets constant as possible.</p>
+<h3 id="devtools"><a href="../contents/#sc3_338a">DevTools</a></h3>
+<p>One of the best tools for measuring performance is Flutter's DevTools. It provides the following tools:</p>
+<ul>
+<li><code>Performance view</code>: Timing and performance information.</li>
+<li><code>CPU profiler</code>: Record and profile a session.</li>
+<li><code>Memory profiler</code>: Analyze memory usage.</li>
+<li><code>Debugger</code>: Set breakpoints, check the console, and call stack.</li>
+<li><code>Network</code>: View network calls. Shows methods and duration.</li>
+<li><code>Logging</code>: Shows logging information.</li>
+<li><code>App size</code>: Analyze app snapshots.</li>
+</ul>
+<p>You can access these tools from the right side of Android Studio, as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_18.2.png" /></p>
+<p>Figure 18.2: Tools</p>
+<p>This is a suite of developer tools as shown in the following figure:</p>
+<p><img alt=" " src="../images/Figure_18.3.png" /></p>
+<p>Figure 18.3: Performance tools</p>
+<p>This is the Performance tab. There are many things you can do on this page. Pressing button number, one overlays the performance graph on the app. Pressing number two brings up another dialog for adding more options:</p>
+<p><img alt=" " src="../images/Figure_18.4.png" /></p>
+<p>Figure 18.4: Performance options</p>
+<p>Pressing number three opens up options for rendering:</p>
+<p><img alt=" " src="../images/Figure_18.5.png" /></p>
+<p>Figure 18.5: Rendering options</p>
+<p>The next tab is the CPU Profiler:</p>
+<p><img alt=" " src="../images/Figure_18.6.png" /></p>
+<p>Figure 18.6: CPU Profiler</p>
+<p>Pressing the circled button will start recording. Once you press the button again, it will show you details. This will show you the time and percentage each task took. Most of these will be Flutter The next tab shows the memory usage of all the classes. You can sort and filter to see how much memory your classes are taking. As you can see here, images will usually take up most of your memory. The CPU flame chart is a nice way to see:</p>
+<p><img alt=" " src="../images/Figure_18.7.png" /></p>
+<p>Figure 18.7: Memory</p>
+<p>Skipping the Debugger tab, we next have the Network tab. This shows all of the API calls you make as well as calls to retrieve images and videos.</p>
+<p><img alt=" " src="../images/Figure_18.8_%281%29.png" /></p>
+<p>Figure 18.8: Networking</p>
+<p>You can see the status of the network call (200 is a success), the type, and the time it took to get the value. Here we have some images, and you can see how long it took to download. Luckily, we use the <code>CachedNetworkImage</code> package that will cache that image and not download it again.</p>
+<p>Next is the Logging tab. The author prefers using Android Studio's console and using their own logging. This shows more system logs:</p>
+<p><img alt=" " src="../images/Figure_18.9.png" /></p>
+<p>Figure 18.9: Logging</p>
+<p>Take some time to get to know these tabs and see what you can learn about the app.</p>
+<h2 id="conclusion"><a href="../contents/#sc2_339a">Conclusion</a></h2>
+<p>In this chapter, you have learned how to write three different kinds of tests. Unit tests for business logic, widget tests for your individual widgets, and integration tests for your full app. This will help you make sure your app works the way it should and does not regress when you make changes. Finally, you learned how to view the performance of your app and use the tools Flutter provides to see what is happening with your app and where there are performance bottlenecks. In the next chapter, you will learn how to build and publish your app to the Google Play Store and the Apple App Store.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
